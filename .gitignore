@@ -4,7 +4,7 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
-src/main/resources/application-secret.yml
+src/application-secret.yml
 
 ### STS ###
 .apt_generated
@@ -36,3 +36,28 @@ out/
 
 ### VS Code ###
 .vscode/
+
+# Node 관련 파일
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# 빌드 결과물
+/build
+/dist
+
+# 환경 변수 파일
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE 및 에디터 관련 파일
+.idea/
+
+# OS 관련 파일
+.DS_Store
+Thumbs.db
