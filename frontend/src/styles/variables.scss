@@ -1,0 +1,16 @@
+$primaryColor: blue;
+$secondaryColor: lightblue;
+
+$border: 1px solid #dddddd;
+
+$fontBold: 700;
+
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flexColumn {
+    displat: flex;
+    flex-direction: column;
+}
