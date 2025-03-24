@@ -11,6 +11,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+
 @Service
 @RequiredArgsConstructor
 public class AuthService {
@@ -32,6 +34,7 @@ public class AuthService {
                     .nickname(request.nickname())
                     .provider(request.provider())
                     .providerId(request.providerId())
+                    .createdAt(LocalDateTime.now())
                     .build();
 
             userRepository.save(user);
