@@ -1,7 +1,8 @@
 package com.example.battle_coding.controller;
 
-import com.example.battle_coding.dto.LoginRequestDto;
-import com.example.battle_coding.dto.SignupRequestDto;
+import com.example.battle_coding.dto.request.LoginRequestDto;
+import com.example.battle_coding.dto.request.SignupRequestDto;
+import com.example.battle_coding.dto.response.SignupResponseDto;
 import com.example.battle_coding.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +19,7 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping("/signup")
-    public ResponseEntity<String> signup(@RequestBody SignupRequestDto request) {
+    public ResponseEntity<SignupResponseDto> signup(@RequestBody SignupRequestDto request) {
         return ResponseEntity.ok(authService.signup(request));
     }
 

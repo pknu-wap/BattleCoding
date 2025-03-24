@@ -34,20 +34,18 @@ const InputInfo = ({ onChange, OnChangeValidation }) => {
             isValidValue = value.length >= 4 && value.length <= 12;
             setIsValid((prev) => ({ ...prev, nickname: isValidValue }));
         }
-
         if (name === "email") {
             isValidValue = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
             setIsValid((prev) => ({ ...prev, email: isValidValue }));
         }
-
         if (name === "password") {
             isValidValue = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,16}$/.test(value);
             setIsValid((prev) => ({
                 ...prev,
                 password: isValidValue,
+                passwordCheck: inputData.passwordCheck === value,
             }));
         }
-
         if (name === "passwordCheck") {
             isValidValue = inputData.password === value;
             setIsValid((prev) => ({ ...prev, passwordCheck: isValidValue }));
