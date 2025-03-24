@@ -1,0 +1,46 @@
+/*게임 헤더*/
+.GameHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  background-color: rgb(155, 162, 79);
+}
+.GameHeader_background {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0px 32px;
+}
+.HeaderLayout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.HeaderLayout h3 {
+  margin: 10px;
+}
+.GameHeader_root {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.HeaderButton_login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 40px;
+  margin: 5px;
+  background-color: #ffffff;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.HeaderButton_login:hover {
+  background-color: #b1b1b1;
+} /*버튼 위에 마우스 커서 올릴 때 어둡게*/
