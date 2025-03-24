@@ -1,0 +1,35 @@
+@import '../../../styles/variables.scss';
+
+.loginSubmitForm {
+    @include flexColumn;
+    align-items: center;
+    width: 100%;
+    max-width: 25rem;
+
+    input {
+        width: 100%;
+        max-width: 23rem;
+        height: 3rem;
+        margin: 1rem 0 0.5rem 0;
+        border: $border;
+        border-radius: 0.5rem;
+    }
+
+    button {
+        width: 23rem;
+        height: 3rem;
+        margin: 1rem 0;
+        border: $border;
+        border-radius: 0.5rem;
+        background-color: $primaryColor;
+        color: #ffffff;
+        font-size: 1rem;
+        cursor: pointer;
+
+        &:disabled {
+            background-color: lightblue;
+            color: rgb(50, 50, 50);
+            cursor: auto;
+        }
+    }
+}
