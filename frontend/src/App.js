@@ -1,15 +1,27 @@
-import './App.css';
-import logo2 from './logo2.png';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import Main from './pages/Main/Main'
+import Login from './pages/Login/Login';
+import GameHeader from "./pages/Game/GameHeader/GameHeader";
+import Game from "./pages/Game/Game";
+import './App.scss';
 
 function App() {
+  const navigate = useNavigate();
+
   return (
-    <div id="logo-container">
-      <img id="logo-image" src={logo2} alt="logo2" />
-      <div id="button-container">
-        <button>게스트로 참여하기</button>
-        <button>로그인 하러가기</button>
+    <>
+      <div className="main">
+        <Login />
       </div>
-    </div>
+      <div id="GamePage">
+        <GameHeader />
+        <Game />
+      </div>
+      <div>
+        <Main />
+      </div>
+    </>
   );
 }
 

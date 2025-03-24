@@ -1,12 +1,15 @@
 server:
+  address: 0.0.0.0
   port: 8080
 
 spring:
   config:
-    import: ../../application-secret.yml
+    import: application-secret.yml
   datasource:
-    url: jdbc:mysql://localhost:3306/codingbattle?serverTimezone=UTC&characterEncoding=UTF-8
+    url: jdbc:mysql://localhost:3307/battle_coding?authenticationPlugins=com.mysql.cj.protocol.a.authentication.MysqlNativePasswordPlugin&useSSL=false&allowPublicKeyRetrieval=true
     driver-class-name: com.mysql.cj.jdbc.Driver
+
+
   jpa:
     hibernate:
       ddl-auto: update

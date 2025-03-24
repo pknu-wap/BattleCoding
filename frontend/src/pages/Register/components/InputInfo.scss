@@ -1,0 +1,36 @@
+@import '/src/styles/variables.scss';
+
+input {
+    width: 100%;
+    max-width: 23rem;
+    height: 3rem;
+    margin: 1rem 0 0.5rem 0;
+    border: $border;
+    border-radius: 0.5rem;
+}
+
+input.valid {
+    border-color: lightblue;
+}
+
+input.invalid {
+    border-color: red;
+}
+
+p.valid {
+    width: 100%;
+    max-width: 23rem;
+    color: lightblue;
+    text-align: left;
+    font-size: 0.8rem;
+    font-weight: $fontBold;
+}
+
+p.invalid {
+    width: 100%;
+    max-width: 23rem;
+    color: red;
+    text-align: left;
+    font-size: 0.8rem;
+    font-weight: $fontBold;
+}

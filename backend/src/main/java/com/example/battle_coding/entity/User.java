@@ -2,6 +2,7 @@ package com.example.battle_coding.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
 
 import java.time.LocalDateTime;
 
@@ -41,6 +42,7 @@ public class User {
     @Column(length = 500)
     private String refreshToken;  // JWT Refresh Token 저장
 
+    @CreatedDate
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
 

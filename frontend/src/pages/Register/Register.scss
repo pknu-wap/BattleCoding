@@ -1,0 +1,25 @@
+@import '/src/styles/variables.scss';
+
+.register {
+    @include flexCenter;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+
+    .registerForm {
+        border: 1px solid lightblue;
+        border-radius: 1rem;
+        padding: 2rem 3rem;
+        @include flexCenter;
+        flex-direction: column;
+        width: 100%;
+        max-width: 30rem;
+        margin: 0 auto;
+
+        .registerTitle {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: $fontBold;
+        }
+    }
+}
