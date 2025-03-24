@@ -19,3 +19,9 @@ body{
   height: auto;
   transform: translateY(-70px);
 }
+
+#button-container{
+  display: flex;
+  align-items: center; /* 가운데 정렬 */
+  margin-top: 10px; /* 이미지와 버튼 사이 간격 */
+}
