@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Register from './pages/Register/Register';
+import Login from './pages/Login/Login';
 import './App.scss';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div className="main">
-      <Register />
+      <Login />
     </div>
   );
 }

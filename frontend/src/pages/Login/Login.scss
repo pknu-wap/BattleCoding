@@ -1,0 +1,49 @@
+@import '../../styles/variables.scss';
+
+.login {
+    @include flexCenter;
+    justify-content: center;
+    height: 80vh;
+    padding-top: 5rem;
+
+    .loginForm {
+        border: $border;
+        border-radius: 1rem;
+        padding: 2rem 3rem;
+
+        .loginTitle {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: $fontBold;
+        }
+    }
+
+    button {
+        width: 23rem;
+        height: 3rem;
+        margin: 1rem 0;
+        border: $border;
+        border-radius: 0.5rem;
+        background: $primaryColor;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+
+        &:disabled {
+            background-color: lightblue;
+            color: rgb(50, 50, 50);
+            cursor: auto;
+        }
+    }
+
+    .registerBtn {
+        width: 23rem;
+        height: 3rem;
+        margin: 1rem 0;
+        border: none;
+        background-color: transparent;
+        color: lightblue;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+}
