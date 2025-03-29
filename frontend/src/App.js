@@ -2,19 +2,13 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Main from "./pages/Main/Main";
 import Login from "./pages/Login/Login";
-import GameHeader from "./pages/Game/GameHeader/GameHeader";
+import GameHeaderGuest from "./pages/Game/GameHeader/GameHeader_Guest";
+import GameHeaderUser from "./pages/Game/GameHeader/GameHeader_User";
 import Game from "./pages/Game/Game";
 import "./App.scss";
 
 function App() {
-  const [filteredGames, setFilteredGames] = useState(GameCard_Data);
-
-  const handleSearch = (term) => {
-    const filtered = GameCard_Data.filter((game) =>
-      game.title.toLowerCase().includes(term.toLowerCase())
-    );
-    setFilteredGames(filtered);
-  };
+  const navigate = useNavigate();
 
   return (
     <>
@@ -22,7 +16,9 @@ function App() {
         <Login />
       </div>
       <div id="GamePage">
-        <GameHeader />
+        <GameHeaderGuest />
+        <Game />
+        <GameHeaderUser />
         <Game />
       </div>
       <div>

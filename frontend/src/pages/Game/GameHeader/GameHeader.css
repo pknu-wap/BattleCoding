@@ -20,8 +20,10 @@
   justify-content: space-between;
   width: 100%;
 }
-.HeaderLayout h3 {
-  margin: 10px;
+.Logo {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
 }
 .GameHeader_root {
   display: flex;
