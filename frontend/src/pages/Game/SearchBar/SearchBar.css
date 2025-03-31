@@ -36,4 +36,5 @@
 }
 .Search_button:hover {
   background-color: #b1b1b1;
+  font-weight: bold;
 }

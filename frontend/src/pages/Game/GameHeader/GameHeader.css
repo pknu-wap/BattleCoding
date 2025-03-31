@@ -25,6 +25,9 @@
   height: 40px;
   cursor: pointer;
 }
+.Logo:hover {
+  filter: brightness(70%);
+}
 .GameHeader_root {
   display: flex;
   align-items: center;
@@ -45,4 +48,5 @@
 }
 .HeaderButton_login:hover {
   background-color: #b1b1b1;
-} /*버튼 위에 마우스 커서 올릴 때 어둡게*/
+  font-weight: bold;
+}
