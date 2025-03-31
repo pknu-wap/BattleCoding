@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import InputInfo from './InputInfo';
 import './UserInputForm.scss';
+import axios from "axios";
 
 const UserInputForm = () => {
     const [info, setInfo] = useState({
@@ -34,8 +35,30 @@ const UserInputForm = () => {
         });
     }, []);
 
-    const submitHandler = event => {
+    const submitHandler = async event => {
         event.preventDefault();
+
+        const signupData = {
+            email: info.email,
+            password: info.password,
+            nickname: info.nickname,
+            provider: 'LOCAL',
+            providerId: info.email
+        };
+
+        try {
+            const response = await axios.post('http://localhost:8080/auth/signup', signupData);
+
+            if (response.data.success) {
+                alert('회원가입이 완료되었습니다.');
+                navigate('/auth/login');
+            } else {
+                alert(response.data.message);
+            }
+        } catch (error) {
+            console.error('회원가입 중 오류 발생:', error);
+            alert('서버와 통신 중 문제가 발생했습니다.');
+        }
         console.log('Submitting form:', info);
     }
 
