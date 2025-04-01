@@ -2,7 +2,7 @@ import React from 'react';
 import './Main.css';
 import logo2 from './logo/logo2.png';
 
-const MainPage = () => {
+const Main = () => {
   return (
     <div className="container">
       <div className="logo-container">
