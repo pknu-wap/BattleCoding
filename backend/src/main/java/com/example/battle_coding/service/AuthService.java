@@ -2,6 +2,7 @@ package com.example.battle_coding.service;
 
 import com.example.battle_coding.dto.request.LoginRequestDto;
 import com.example.battle_coding.dto.request.SignupRequestDto;
+import com.example.battle_coding.dto.response.LoginResponseDto;
 import com.example.battle_coding.dto.response.SignupResponseDto;
 import com.example.battle_coding.entity.LoginProvider;
 import com.example.battle_coding.entity.User;
@@ -44,9 +45,16 @@ public class AuthService {
         }
     }
 
-    public String login(LoginRequestDto request) {
+    public LoginResponseDto login(LoginRequestDto request) {
         User user = validateUserCredentials(request.email(), request.password());
-        return jwtTokenProvider.createAccessToken(user.getEmail());
+        String token = jwtTokenProvider.createAccessToken(user.getEmail());
+
+        return new LoginResponseDto(
+                true,
+                "로그인 성공!",
+                token,
+                user.getNickname()
+        );
     }
 
     private User validateUserCredentials(String email, String rawPassword) {
