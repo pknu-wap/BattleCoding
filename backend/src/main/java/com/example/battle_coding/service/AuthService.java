@@ -73,6 +73,4 @@ public class AuthService {
             throw new IllegalArgumentException("이미 가입된 소셜 로그인 계정입니다.");
         }
     }
-
-
 }

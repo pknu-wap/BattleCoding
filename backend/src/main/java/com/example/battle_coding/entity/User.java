@@ -37,7 +37,7 @@ public class User {
     private int totalCorrect = 0;  // 맞춘 문제 개수
 
     @Column(nullable = false, columnDefinition = "INT DEFAULT 0")
-    private int xp = 0;  // 경험치 (랭킹 시스템 활용)
+    private int xp = 0;  // 경험치, 랭킹 계산에 사용
 
     @Column(length = 500)
     private String refreshToken;  // JWT Refresh Token 저장

@@ -9,29 +9,6 @@ import ReadyPage from "./pages/Page/ReadyPage";
 import ResultPage from "./pages/Page/ResultPage";
 import "./App.scss";
 
-function App() {
-  const navigate = useNavigate();
-
-  return (
-    <>
-      <div className="main">
-        <Login />
-      </div>
-      <div id="GamePage">
-        <GameHeaderGuest />
-        <Game />
-        <GameHeaderUser />
-        <Game />
-      </div>
-      <div>
-        <ReadyPage />
-        <ResultPage />
-      </div>
-      <div>
-        <Main />
-      </div>
-    </>
-  );
-}
+function App() {}
 
 export default App;
