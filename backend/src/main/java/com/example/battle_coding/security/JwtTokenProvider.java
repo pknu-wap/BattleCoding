@@ -1,13 +1,19 @@
 package com.example.battle_coding.security;
 
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Component;
 
 import javax.crypto.SecretKey;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 
 @Slf4j
@@ -56,5 +62,14 @@ public class JwtTokenProvider {
             log.error("Invalid JWT token: {}", e.getMessage());
             return false;
         }
+    }
+
+    public Authentication getAuthentication(String token) {
+        String email = getEmailFromToken(token);
+
+        return new UsernamePasswordAuthenticationToken(
+                email,
+                null,
+                Collections.singletonList(new SimpleGrantedAuthority("ROLE_USER")));
     }
 }
