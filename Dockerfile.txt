@@ -1,0 +1,11 @@
+# OpenJDK 21 기반 Spring Boot 이미지
+FROM openjdk:21-jdk-slim
+
+# 작업 디렉토리 설정
+WORKDIR /app
+
+# 프로젝트 JAR 파일 복사 (빌드 후 실행할 JAR 파일)
+COPY target/*.jar app.jar
+
+# 컨테이너에서 실행할 명령어
+CMD ["java", "-jar", "app.jar"]
