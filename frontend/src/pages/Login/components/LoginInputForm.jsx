@@ -56,19 +56,27 @@ const LoginInputForm = () => {
 
     return (
         <form className='loginSubmitForm' onSubmit={loginHandler}>
-            <input 
-                placeholder='이메일' 
-                name='email' 
-                onChange={inputHandler} 
-                value={input.email}
-            />
-            <input
-                placeholder='비밀번호'
-                name='password'
-                type='password'
-                onChange={inputHandler}
-                value={input.password}
-            />
+            <div className='EmailField'>
+                <label htmlFor='email'>이메일</label>
+                <input 
+                    placeholder='이메일' 
+                    name='email' 
+                    onChange={inputHandler} 
+                    value={input.email}
+                />
+            </div>
+            
+            <div className='PasswordField'>
+                <label htmlFor='password'>비밀번호</label>
+                <input
+                    placeholder='비밀번호'
+                    name='password'
+                    type='password'
+                    onChange={inputHandler}
+                    value={input.password}
+                />
+            </div>
+            
             <button disabled={!isValidate}>로그인</button>
         </form>
     );
