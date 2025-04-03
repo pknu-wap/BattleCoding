@@ -10,7 +10,7 @@
     margin: 0 auto;
     padding: 1rem 0;
 
-    .EmailField {
+    .EmailField, .PasswordField {
         display: flex;
         padding: 8px 0;
         flex-direction: column;
@@ -22,7 +22,7 @@
             color: #FFF;
             text-align: center;
             font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 600;
             line-height: 24px;
         }
@@ -36,38 +36,12 @@
             background: #F7F7F7;
             padding: 0 10px;
             font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-            font-size: 14px;
+            font-size: 12px;
         }
     }
 
     .PasswordField {
-        display: flex;
         padding: 10px 0 50px 0;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 4px;
-
-        label {
-            color: #FFF;
-            text-align: center;
-            font-size: 16px;
-            font-weight: 600;
-            line-height: 24px;
-            font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-        }
-
-        input {
-            width: 300px;
-            height: 40px;
-            border-radius: 8px;
-            border: 1px solid #CCC;
-            box-sizing: border-box;
-            background: #F7F7F7;
-            padding: 0 10px;
-            font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-            font-size: 14px;
-        }
     }
     
 
@@ -84,7 +58,7 @@
         box-sizing: border-box;
         background: #66BFCB;
         font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 600;
 
         &:hover {
