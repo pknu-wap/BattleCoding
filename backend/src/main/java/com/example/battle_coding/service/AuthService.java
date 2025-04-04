@@ -23,47 +23,35 @@ public class AuthService {
     private final JwtTokenProvider jwtTokenProvider;
 
     public SignupResponseDto signup(SignupRequestDto request) {
-        try {
-            validateEmailDuplicate(request.email());
-            validateProviderIdDuplicate(request.providerId());
+        validateEmailDuplicate(request.email());
+        validateProviderIdDuplicate(request.providerId());
 
-            String encodedPassword = passwordEncoder.encode(request.password());
+        String encodedPassword = passwordEncoder.encode(request.password());
 
-            User user = User.builder()
-                    .email(request.email())
-                    .password(encodedPassword)
-                    .nickname(request.nickname())
-                    .provider(request.provider())
-                    .providerId(request.providerId())
-                    .createdAt(LocalDateTime.now())
-                    .build();
+        User user = User.builder()
+                .email(request.email())
+                .password(encodedPassword)
+                .nickname(request.nickname())
+                .provider(request.provider())
+                .providerId(request.providerId())
+                .createdAt(LocalDateTime.now())
+                .build();
 
-            userRepository.save(user);
-            return new SignupResponseDto(true, "회원가입 성공!");
-        } catch (IllegalArgumentException e) {
-            return new SignupResponseDto(false, e.getMessage());
-        }
+        userRepository.save(user);
+        return new SignupResponseDto(true, "회원가입 성공!");
     }
 
-    public LoginResponseDto login(LoginRequestDto request) {
-        try {
-            User user = validateUserCredentials(request.email(), request.password());
-            String token = jwtTokenProvider.createAccessToken(user.getEmail());
 
-            return new LoginResponseDto(
-                    true,
-                    "로그인 성공!",
-                    token,
-                    user.getNickname()
-            );
-        } catch (IllegalArgumentException e) {
-            return new LoginResponseDto(
-                    false,
-                    e.getMessage(),
-                    null,
-                    null
-            );
-        }
+    public LoginResponseDto login(LoginRequestDto request) {
+        User user = validateUserCredentials(request.email(), request.password());
+        String token = jwtTokenProvider.createAccessToken(user.getEmail());
+
+        return new LoginResponseDto(
+                true,
+                "로그인 성공!",
+                token,
+                user.getNickname()
+        );
     }
 
     private User validateUserCredentials(String email, String rawPassword) {
