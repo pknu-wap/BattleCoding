@@ -1,5 +1,6 @@
 package com.example.battle_coding.config;
 
+import com.example.battle_coding.security.CustomAuthenticationEntryPoint;
 import com.example.battle_coding.security.JwtAuthenticationFilter;
 import com.example.battle_coding.security.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
@@ -24,7 +25,7 @@ public class SecurityConfig {
     }
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity http, CustomAuthenticationEntryPoint customAuthenticationEntryPoint) throws Exception {
         http
                 .csrf(AbstractHttpConfigurer::disable) // CSRF 보호 비활성화
                 .authorizeHttpRequests(auth -> auth
@@ -32,6 +33,9 @@ public class SecurityConfig {
                         .anyRequest().authenticated() // 그 외의 모든 요청은 인증 필요
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .exceptionHandling(e -> e
+                        .authenticationEntryPoint(customAuthenticationEntryPoint)
+                )
                 .addFilterBefore(
                         new JwtAuthenticationFilter(jwtTokenProvider),
                         UsernamePasswordAuthenticationFilter.class
