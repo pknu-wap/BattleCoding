@@ -46,15 +46,24 @@ public class AuthService {
     }
 
     public LoginResponseDto login(LoginRequestDto request) {
-        User user = validateUserCredentials(request.email(), request.password());
-        String token = jwtTokenProvider.createAccessToken(user.getEmail());
+        try {
+            User user = validateUserCredentials(request.email(), request.password());
+            String token = jwtTokenProvider.createAccessToken(user.getEmail());
 
-        return new LoginResponseDto(
-                true,
-                "로그인 성공!",
-                token,
-                user.getNickname()
-        );
+            return new LoginResponseDto(
+                    true,
+                    "로그인 성공!",
+                    token,
+                    user.getNickname()
+            );
+        } catch (IllegalArgumentException e) {
+            return new LoginResponseDto(
+                    false,
+                    e.getMessage(),
+                    null,
+                    null
+            );
+        }
     }
 
     private User validateUserCredentials(String email, String rawPassword) {
