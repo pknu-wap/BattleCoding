@@ -5,6 +5,8 @@ import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -27,8 +29,11 @@ public class Question {
     @Column(length = 500, nullable = true)
     private String imageUrl;  // 코드 관련 문제는 이미지로 저장
 
-    @Column(nullable = false)
-    private String answer;  // 정답 (사용자가 입력할 정답)
+    // 다중 정답 허용
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name="question_answers", joinColumns = @JoinColumn(name="question_id"))
+    @Column(name="answer", nullable = false)
+    private List<String> answers = new ArrayList<>();
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
