@@ -20,7 +20,7 @@ public class Question {
     private Integer id;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @Column(length = 50, nullable = false)
     private QuestionType type;  // 예: FILL_IN_BLANK, PREDICT_OUTPUT, CODING_TRIVIA
 
     @Column(columnDefinition = "TEXT", nullable = true)
