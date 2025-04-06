@@ -23,7 +23,7 @@ public class User {
     @Column(nullable = true)
     private String password;  // 소셜 로그인 사용자는 비밀번호가 없을 수도 있음
 
-    @Column(unique = true, nullable = false, length = 10)
+    @Column(unique = true, nullable = false, length = 25)
     private String nickname;
 
     @Enumerated(EnumType.STRING)
