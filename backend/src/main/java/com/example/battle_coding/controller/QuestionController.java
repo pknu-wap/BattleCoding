@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -15,16 +16,20 @@ import java.util.List;
 public class QuestionController {
 
     private final QuestionService questionService;
+
     @PostMapping
     public ResponseEntity<QuestionResponse> createQuestion(@RequestBody QuestionRequest request) {
-        return ResponseEntity.ok(questionService.createQuestion(request));
+        QuestionResponse response = questionService.createQuestion(request);
+        return ResponseEntity.created(URI.create("/api/questions/" + response.getId())).body(response);
     }
+
     @GetMapping
     public ResponseEntity<List<QuestionResponse>> getAllQuestions() {
         return ResponseEntity.ok(questionService.getAllQuestions());
     }
+
     @GetMapping("/{id}")
-    public ResponseEntity<QuestionResponse> getQuestionById(@PathVariable Long id) {
+    public ResponseEntity<QuestionResponse> getQuestionById(@PathVariable Integer id) {
         return ResponseEntity.ok(questionService.getQuestionById(id));
     }
 }

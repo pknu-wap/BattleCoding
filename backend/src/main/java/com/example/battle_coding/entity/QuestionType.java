@@ -5,3 +5,4 @@ public enum QuestionType {
     PREDICT_OUTPUT,
     CODING_TRIVIA
 }
+
