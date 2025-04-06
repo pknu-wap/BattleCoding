@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LoginInputForm.scss';
 import axios from "axios";
+import api from './api';
 
 let regExpForEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 let regExpForPwd = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/;
@@ -32,25 +33,40 @@ const LoginInputForm = () => {
         checkValidate(input.email, input.password);
     }, [input.email, input.password]);
 
+    const getMyInfo = async () => {
+        try {
+            const response = await api.get("/user/me");
+            console.log("내 정보:", response.data);
+        } catch (error) {
+            alert(error.response?.data?.message || "에러 발생");
+        }
+    };
+
     const loginHandler = async (event) => {
         event.preventDefault();
         
         try {
-            const response = await axios.post('http://localhost:8080/auth/login', input);
+            const response = await axios.post("http://localhost:8080/auth/login", {
+                email: input.email,
+                password: input.password,
+                provider: "LOCAL",
+                providerId: input.email
+            });
             
             if (response.data.success) {
                 alert('로그인되었습니다.');
-                localStorage.setItem('token', response.data.token);
-                localStorage.setItem('nickname', response.data.nickname);
-                // 로그인 후 이동할 경로 작성하기
+                const token = response.data.token;
+                localStorage.setItem("token", token);
+                alert("로그인에 성공하였습니다.");
+                await getMyInfo();
             }      
             else {
                 alert(response.data.message);
             } 
         }
         catch (error) {
-            console.log('로그인 실패: ', error);
-            alert('서버와의 연결에 실패하였습니다.');
+            console.error(error)
+            alert('로그인 중 오류가 발생하였습니다.');
         }
     };
 
