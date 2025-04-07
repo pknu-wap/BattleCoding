@@ -1,10 +1,10 @@
 import { useState } from "react";
-import SearchBar from "./Game_main/SearchBar/SearchBar";
-import GameCard from "./Game_main/GameCard/GameCard";
-import GameCard_Data from "./Game_main/GameCard/GameCard_Data";
-import "./Game.css";
+import "./Game_main.css";
+import SearchBar from "./SearchBar/SearchBar";
+import GameCard from "./GameCard/GameCard";
+import GameCard_Data from "./GameCard/GameCard_Data";
 
-const Game = () => {
+function Game_main() {
   const [filteredGames, setFilteredGames] = useState(GameCard_Data);
 
   const handleSearch = (term) => {
@@ -22,7 +22,7 @@ const Game = () => {
           <div className="GameCard_root">
             <div className="GameCardList" role="list">
               {filteredGames.length === 0 ? (
-                <div>검색 결과가 없습니다.</div>
+                <div className="Browsing">검색 결과가 없습니다.</div>
               ) : (
                 filteredGames.map((data, index) => (
                   <GameCard
@@ -39,6 +39,6 @@ const Game = () => {
       </div>
     </div>
   );
-};
+}
 
-export default Game;
+export default Game_main;

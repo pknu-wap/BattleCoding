@@ -1,18 +1,18 @@
 import "./GameHeader.css";
-import Logo from "./Logo.png";
+import LogoImage from "./Logo.png";
 
 function GameHeader() {
   return (
     <header className="GameHeader">
       <div className="GameHeader_background">
         <div className="HeaderLayout">
-          <img src={Logo} alt="Logo" className="Logo" />
+          <img src={LogoImage} alt="Logo" className="LogoImage" />
           <div className="GameHeader_root">
-            <button type="button" className="HeaderButton_login">
-              마이페이지
+            <button type="button" className="HeaderButton_log">
+              로그인
             </button>
-            <button type="button" className="HeaderButton_login">
-              로그아웃
+            <button type="button" className="HeaderButton_my">
+              회원가입
             </button>
           </div>
         </div>

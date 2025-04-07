@@ -1,0 +1,99 @@
+/*게임리스트*/
+.GameCardLayout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto !important;
+  width: 100%;
+}
+.GameCardList {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  max-width: 900px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  row-gap: 10px;
+}
+@media (max-width: 900px) {
+  .GameCardList {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 700px) {
+  .GameCardList {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 530px) {
+  .GameCardList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 350px) {
+  .GameCardList {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.GameCard {
+  display: flex;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.GameCard_main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  font-variant: tabular-nums;
+  flex-direction: column;
+  max-width: 150px;
+}
+.GameCard_main:hover {
+  filter: brightness(70%);
+}
+.game_card_cover {
+  display: flex;
+  width: 160px;
+  height: 150px;
+}
+.game_card_image {
+  display: flex;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.game_card_body {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  background-color: #2a2d3a;
+  border-radius: 5px;
+  width: 150px;
+  height: 90px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.game_card_text {
+  display: flex;
+  flex-direction: column;
+}
+.game_card_title {
+  font-weight: bold;
+  color: white;
+  font-size: 15px;
+  width: 100%;
+}
+.game_card_elaborate {
+  font-size: 12px;
+  color: whitesmoke;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
