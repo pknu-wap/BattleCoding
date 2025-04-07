@@ -1,6 +1,9 @@
 import "./GamePage_result.css";
+import { useNavigate } from "react-router-dom";
 
 function GamePage_result() {
+  const navigate = useNavigate();
+
   return (
     <div className="PageBackground">
       <div className="PageLayout">
@@ -21,7 +24,11 @@ function GamePage_result() {
                   <button className="ResultButton" type="button">
                     마이페이지
                   </button>
-                  <button className="ResultButton" type="button">
+                  <button
+                    className="ResultButton"
+                    type="button"
+                    onClick={() => navigate("/game/ready")}
+                  >
                     다시하기
                   </button>
                   <button className="ResultButton" type="button">
