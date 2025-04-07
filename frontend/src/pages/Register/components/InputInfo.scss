@@ -1,36 +1,55 @@
 @import '/src/styles/variables.scss';
 
-input {
-    width: 100%;
-    max-width: 23rem;
-    height: 3rem;
-    margin: 1rem 0 0.5rem 0;
-    border: $border;
-    border-radius: 0.5rem;
+.NicknameField, .EmailField, .PasswordField, .PasswordCheckField {
+    display: flex;
+    padding: 6px 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+
+    label {
+        color: #FFF;
+        text-align: center;
+        font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 24px;
+    }
+
+    input {
+        width: 300px;
+        height: 40px;  
+        padding: 0 10px;
+        font-size: 12px; 
+        font-weight: 600;
+        font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+        border-radius: 8px;
+        border: 1px solid #CCC;
+        background: #F7F7F7;
+        box-sizing: border-box;
+    }
+
+    p {
+        width: 300px;
+        margin: 4px 0 0 2px;
+        padding-left: 1px;
+        font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1.4;
+    }
+
+    p.valid {
+        color: #00f0ff;
+    }
+    p.invalid {
+        color: #f7f7f7;
+    }
 }
 
-input.valid {
-    border-color: lightblue;
-}
 
-input.invalid {
-    border-color: red;
-}
 
-p.valid {
-    width: 100%;
-    max-width: 23rem;
-    color: lightblue;
-    text-align: left;
-    font-size: 0.8rem;
-    font-weight: $fontBold;
-}
-
-p.invalid {
-    width: 100%;
-    max-width: 23rem;
-    color: red;
-    text-align: left;
-    font-size: 0.8rem;
-    font-weight: $fontBold;
+.PasswordCheckField {
+    padding: 12px 0 30px 0;
 }
