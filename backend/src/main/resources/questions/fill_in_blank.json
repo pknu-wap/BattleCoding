@@ -1,0 +1,9 @@
+[
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/images/q1.png",
+    "answers": ["::-1", "None:None:-1", "len(s)-1::-1"],
+    "difficulty": "MEDIUM"
+  }
+]
