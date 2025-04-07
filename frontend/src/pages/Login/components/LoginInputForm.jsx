@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LoginInputForm.scss';
 import axios from "axios";
-import api from './api';
+import api from '../../../api.js';
 
 let regExpForEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 let regExpForPwd = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/;
