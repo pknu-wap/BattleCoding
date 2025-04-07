@@ -64,34 +64,43 @@ const InputInfo = ({ onChange, OnChangeValidation }) => {
 
     return (
         <>
-            <input {...INPUT_FIELDS[0]} value={inputData.nickname} onChange={inputHandler} />
-            {isValid.nickname && <p className="valid">사용 가능한 닉네임입니다.</p>}
-            {!isValid.nickname && inputData.nickname && (
-                <p className="invalid">닉네임은 4~12자 영문과 숫자로 입력해 주세요.</p>
+            <div className="NicknameField">
+                <label htmlFor="nickname">닉네임</label>
+                <input {...INPUT_FIELDS[0]} value={inputData.nickname} onChange={inputHandler} />
+                {isValid.nickname && <p className="valid">사용 가능한 닉네임입니다.</p>}
+                {!isValid.nickname && inputData.nickname && (
+                    <p className="invalid">닉네임은 4~12자로 입력해 주세요.</p>
                 )}
-
-            <input {...INPUT_FIELDS[1]} value={inputData.email} onChange={inputHandler} />
-            {inputData.email && (
-                isValid.email ? (
-                    <p className="valid">올바른 이메일 형식입니다.</p>
-                ) : (
-                    <p className="invalid">올바른 이메일 주소를 입력해 주세요.</p>
-                )
-            )}
-
-            <input {...INPUT_FIELDS[2]} value={inputData.password} onChange={inputHandler} />
-            {isValid.password && <p className="valid">사용 가능한 비밀번호입니다.</p>}
-            {!isValid.password && inputData.password && (
-                <p className="invalid">비밀번호는 영문, 숫자, 특수문자를 포함해 8~16자로 입력해 주세요.</p>
-            )}
-
-            <input {...INPUT_FIELDS[3]} value={inputData.passwordCheck} onChange={inputHandler} />
-            {inputData.passwordCheck.length > 0 && isValid.passwordCheck && (
-                <p className="valid">비밀번호가 일치합니다.</p>
-            )}
-            {!isValid.passwordCheck && inputData.passwordCheck && (
-                <p className="invalid">비밀번호를 한 번 더 입력해 주세요.</p>
-            )}
+            </div>
+            <div className="EmailField">
+                <label htmlFor="email">이메일</label>
+                <input {...INPUT_FIELDS[1]} value={inputData.email} onChange={inputHandler} />
+                {inputData.email && (
+                    isValid.email ? (
+                        <p className="valid">올바른 이메일 형식입니다.</p>
+                    ) : (
+                        <p className="invalid">올바른 이메일 주소를 입력해 주세요.</p>
+                    )
+                )}
+            </div>
+            <div className="PasswordField">
+                <label htmlFor="password">비밀번호</label>
+                <input {...INPUT_FIELDS[2]} value={inputData.password} onChange={inputHandler} />
+                {isValid.password && <p className="valid">사용 가능한 비밀번호입니다.</p>}
+                {!isValid.password && inputData.password && (
+                    <p className="invalid">비밀번호는 영문, 숫자, 특수문자를 포함해 8~16자로 입력해 주세요.</p>
+                )}
+            </div>
+            <div className="PasswordCheckField">
+                <label htmlFor="passwordCheck">비밀번호 확인</label>
+                <input {...INPUT_FIELDS[3]} value={inputData.passwordCheck} onChange={inputHandler} />
+                {inputData.passwordCheck.length > 0 && isValid.passwordCheck && (
+                    <p className="valid">비밀번호가 일치합니다.</p>
+                )}
+                {!isValid.passwordCheck && inputData.passwordCheck && (
+                    <p className="invalid">비밀번호를 한 번 더 입력해 주세요.</p>
+                )}
+            </div>
         </>
     );
 };
