@@ -17,5 +17,5 @@ export default function Navbar() {
                 <button className='btnRegister' onClick={() => navigate('/register')}>회원가입</button>
             </div>
         </nav>
-    )
+    );
 }

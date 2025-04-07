@@ -9,6 +9,7 @@ function Main() {
     <div className='main'>
       <Navbar />
       <HeroSection />
+      <QuizSection />
     </div>
   );
 }
