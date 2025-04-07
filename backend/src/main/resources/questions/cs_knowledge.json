@@ -1,0 +1,44 @@
+[
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "운영체제에서 하나의 프로세스 내에서 실행되는 작업 단위로, 스택을 별도로 가지고 CPU 스케줄링의 기본 단위가 되는 것은?",
+    "imageUrl": null,
+    "answers": ["스레드", "쓰레드", "Thread", "thread"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "TCP/IP 4계층 모델에서 데이터의 종단 간 전송을 담당하고, 흐름 제어 및 혼잡 제어 기능을 제공하는 계층은?",
+    "imageUrl": null,
+    "answers": ["전송 계층", "트랜스포트 계층", "Transport Layer"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "OSI 7계층 중에서 IP 주소를 기준으로 라우팅을 수행하며, 네트워크 간 통신을 담당하는 계층은?",
+    "imageUrl": null,
+    "answers": ["네트워크 계층", "Network Layer"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "거리 벡터 라우팅 프로토콜이라고도 불리며, 최단 경로 탐색에 Bellman-Ford 알고리즘이 사용되는 프로토콜은?",
+    "imageUrl": null,
+    "answers": ["RIP", "rip", "경로 선택 정보 프로토콜", "Routing Information Protocol"],
+    "difficulty": "HARD"
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "디스크 스케줄링 알고리즘 중에서 현재 헤드 위치를 기준으로 가까운 요청부터 처리하는 방식은?",
+    "imageUrl": null,
+    "answers": ["SSTF", "sstf", "Shortest Seek Time First"],
+    "difficulty": "HARD"
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "최단 경로 탐색에 Dijkstra 알고리즘을 사용하며, 링크 상태를 실시간으로 반영하여 최단 경로로 라우팅을 지원하는 프로토콜은?",
+    "imageUrl": null,
+    "answers": ["OSPF", "ospf", "Open Shortest Path First"],
+    "difficulty": "HARD"
+  }
+]
