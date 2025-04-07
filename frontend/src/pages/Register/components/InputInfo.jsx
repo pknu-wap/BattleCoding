@@ -69,7 +69,7 @@ const InputInfo = ({ onChange, OnChangeValidation }) => {
                 <input {...INPUT_FIELDS[0]} value={inputData.nickname} onChange={inputHandler} />
                 {isValid.nickname && <p className="valid">사용 가능한 닉네임입니다.</p>}
                 {!isValid.nickname && inputData.nickname && (
-                    <p className="invalid">닉네임은 4~12자 영문과 숫자로 입력해 주세요.</p>
+                    <p className="invalid">닉네임은 4~12자로 입력해 주세요.</p>
                 )}
             </div>
             <div className="EmailField">
