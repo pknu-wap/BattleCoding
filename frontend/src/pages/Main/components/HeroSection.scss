@@ -1,0 +1,44 @@
+.hero {
+    width: 100%;
+    padding: 50px 0;
+    background: linear-gradient(to bottom, #141E30, #243B55);
+    text-align: center;
+
+    .heroContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .heroTitle {
+        font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+        font-size: 64px;
+        font-weight: 800;
+        color: #00f0ff;
+        margin-bottom: 12px;
+    }
+
+    .heroSubtitle {
+        font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+        font-size: 20px;
+        color: #cccccc;
+        margin-bottom: 60px;
+    }
+
+    .heroBtn {
+        background-color: #00f0ff;
+        color: #000;
+        font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+        font-weight: bold;
+        font-size: 24px;
+        padding: 16px 28px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+}

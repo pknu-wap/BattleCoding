@@ -8,7 +8,7 @@ function Main() {
   return (
     <div className='main'>
       <Navbar />
-      
+      <HeroSection />
     </div>
   );
 }
