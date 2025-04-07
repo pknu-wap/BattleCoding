@@ -45,19 +45,21 @@ const LoginInputForm = () => {
     const loginHandler = async (event) => {
         event.preventDefault();
         
+        const loginData = {
+            email: input.email,
+            password: input.password,
+            provider: "LOCAL",
+            providerId: input.email
+        };
+
         try {
-            const response = await axios.post("http://localhost:8080/auth/login", {
-                email: input.email,
-                password: input.password,
-                provider: "LOCAL",
-                providerId: input.email
-            });
+            const response = await axios.post("http://localhost:8080/auth/login", loginData);
             
             if (response.data.success) {
-                alert('로그인되었습니다.');
                 const token = response.data.token;
                 localStorage.setItem("token", token);
-                alert("로그인에 성공하였습니다.");
+
+                alert("로그인 되었습니다.");
                 await getMyInfo();
             }      
             else {
