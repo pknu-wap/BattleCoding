@@ -12,13 +12,19 @@ const Login = () => {
   return (
     <>
       <div className="login">
-        <section className="loginForm">
-          <h1 className="loginTitle">로그인</h1>
-          <LoginInputForm />
-          <button className="registerBtn" onClick={buttonHandler}>
-            아직 회원이 아니신가요?
-          </button>
-        </section>
+        <div className="loginCard">
+          <div className="loginContainer">
+            <div className="logoArea">
+              <h1 className="loginTitle">Battle Coding</h1>
+            </div>
+            <div className="formArea">
+              <LoginInputForm />
+              <button className="registerBtn" onClick={buttonHandler}>
+                회원가입
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
