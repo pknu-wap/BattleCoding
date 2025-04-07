@@ -1,0 +1,68 @@
+.navbar {
+    width: 100%;
+    background-color: #282534;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 48px;
+    box-sizing: border-box;
+
+    .navbarLogo {
+        font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+        color: #ffffff;
+    }
+    
+    .navbarMenu {
+        display: flex;
+        gap: 32px;
+    
+        a {
+            color: #ffffff;
+            font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+        
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .navbarAuth {
+        display: flex;
+        gap: 12px;
+    
+        button {
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+    
+        .btnLogin {
+            background-color: #00F0FF;
+            color: #000000;
+            border: none;
+        
+            &:hover {
+                opacity: 0.9;
+            }
+        }
+
+        .btnRegister {
+            background-color: transparent;
+            color: #00d9ff;
+            border: 1px solid #00F0FF;
+
+            &:hover {
+                background-color: rgba(0, 217, 255, 0.1);
+            }
+        }
+    }
+}
