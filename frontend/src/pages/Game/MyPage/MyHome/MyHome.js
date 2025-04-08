@@ -11,7 +11,7 @@ function My_Home() {
               <span className="MyImage">
                 <img
                   className="AccountImage"
-                  alt="내 사진"
+                  alt="프로필 사진"
                   src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fyt3.googleusercontent.com%2Fytc%2FAIdro_lID9IEcsQjGr44894Ha1y2gjAmMzAl9Cp1mQKNDfbJmg%3Ds900-c-k-c0x00ffffff-no-rj&type=sc960_832"
                 />
               </span>
