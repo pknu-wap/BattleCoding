@@ -1,0 +1,72 @@
+[
+  {
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C1.png?raw=true",
+    "answers": ["[20, 30]"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C2.png?raw=true",
+    "answers": ["BATTLECODING "],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C3.png?raw=true",
+    "answers": ["[10, 20, 100, 200]"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C4.png?raw=true",
+    "answers": ["[6, 3, 18]"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C5.png?raw=true",
+    "answers": ["wpawp"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C6.png?raw=true",
+    "answers": ["Alice B Bob A"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C7.png?raw=true",
+    "answers": ["zero"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C8.png?raw=true",
+    "answers": ["hi ok"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C9.png?raw=true",
+    "answers": ["2468"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C10.png?raw=true",
+    "answers": ["$10 $20 $30"],
+    "difficulty": "MEDIUM"
+  }
+]
