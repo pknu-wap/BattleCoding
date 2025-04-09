@@ -1,7 +1,6 @@
 package com.example.battle_coding.controller;
 
 import com.example.battle_coding.dto.response.QuestionResponseDto;
-import com.example.battle_coding.entity.Question;
 import com.example.battle_coding.entity.QuestionType;
 import com.example.battle_coding.service.QuestionService;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +19,7 @@ public class QuestionController {
     @GetMapping("/random/by-type")
     public ResponseEntity<List<QuestionResponseDto>> getRandomQuestionByType(
             @RequestParam QuestionType type,
-            @RequestParam int count
+            @RequestParam(defaultValue = "10") int count
     ){
         return ResponseEntity.ok(questionService.getRandomQuestionsByType(type, count));
     }
