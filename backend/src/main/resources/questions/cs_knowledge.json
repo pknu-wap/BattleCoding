@@ -206,7 +206,7 @@
     "type": "CS_KNOWLEDGE",
     "question": "멀티스레드 환경에서 두 개 이상의 스레드가 동시에 같은 자원에 접근하면서 실행 순서에 따라 결과가 달라지는 오류 상황은 무엇인가?",
     "imageUrl": null,
-    "answers": ["경쟁 조건", "경쟁 상태", "경쟁 상황", "Race Condition"],
+    "answers": ["경쟁 조건", "경쟁 상태", "경쟁 상황", "레이스 컨디션", "Race Condition"],
     "difficulty": "HARD"
   }
 
