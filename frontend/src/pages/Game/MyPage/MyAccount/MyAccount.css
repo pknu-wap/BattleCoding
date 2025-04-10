@@ -2,16 +2,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px 20px 10px 20px;
-  background-color: aliceblue;
+  padding: 30px 20px 10px 20px;
 }
 .MyImage {
   display: flex;
   padding: 10px;
 }
 .ProfileImage {
-  width: 100px;
-  height: 100px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -27,11 +26,14 @@
   gap: 25px;
 }
 .MyNickname {
-  font-size: 30px;
-  font-weight: bold;
+  color: aqua;
+  font-size: 40px;
+  font-weight: 900;
 }
 .MyID {
+  color: #00f0ff;
   font-size: 15px;
+  font-weight: bold;
 }
 .MyButton {
   display: flex;
@@ -41,16 +43,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 130px;
+  width: 150px;
   height: 40px;
   margin: 5px;
-  background-color: white;
-  color: black;
+  background-color: #2a2d3a;
+  color: white;
+  font-weight: 500;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
 }
 .chageButton:hover {
   background-color: #b1b1b1;
+  color: whitesmoke;
   font-weight: bold;
 }
