@@ -2,8 +2,79 @@
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/images/q1.png",
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/images/q1.png?raw=true",
     "answers": ["::-1", "None:None:-1", "len(s)-1::-1"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/1.PNG?raw=true",
+    "answers": ["s"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/2.PNG?raw=true",
+    "answers": ["1"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/3.PNG?raw=true",
+    "answers": ["1"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/4.PNG?raw=true",
+    "answers": ["_"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/5.PNG?raw=true",
+    "answers": ["intersection"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/6-1.PNG?raw=true",
+    "answers": ["score"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/7.PNG?raw=true",
+    "answers": ["prod"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/8.PNG?raw=true",
+    "answers": ["arr[0]"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/9-1.PNG?raw=true",
+    "answers": ["tolower"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/10.PNG?raw=true",
+    "answers": ["power"],
     "difficulty": "MEDIUM"
   }
 ]
+
