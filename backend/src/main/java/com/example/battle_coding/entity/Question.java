@@ -21,7 +21,7 @@ public class Question {
 
     @Enumerated(EnumType.STRING)
     @Column(length = 50, nullable = false)
-    private QuestionType type;  // 예: FILL_IN_BLANK, PREDICT_OUTPUT, CODING_TRIVIA
+    private QuestionType type;  // 예: FILL_IN_BLANK, PREDICT_OUTPUT, CS_KNOWLEDGE
 
     @Column(columnDefinition = "TEXT", nullable = true)
     private String question;  // 텍스트 문제 (코딩 상식 퀴즈용)
@@ -38,6 +38,10 @@ public class Question {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Difficulty difficulty;  // EASY, MEDIUM, HARD
+
+    // 연습모드 출제 여부 설정
+    @Column(nullable = false)
+    private boolean isRankingOnly = false;
 
     @CreatedDate
     @Column(nullable = false, updatable = false)
