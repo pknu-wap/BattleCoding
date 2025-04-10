@@ -1,5 +1,6 @@
 package com.example.battle_coding.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
@@ -41,6 +42,7 @@ public class Question {
 
     // 연습모드 출제 여부 설정
     @Column(nullable = false)
+    @JsonProperty("isRankingOnly")
     private boolean isRankingOnly = false;
 
     @CreatedDate

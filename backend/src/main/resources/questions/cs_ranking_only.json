@@ -1,0 +1,26 @@
+[
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "한 릴레이션 내에 있는 속성들의 집합으로 구성된 키로, 릴레이션을 구성하는 모든 튜플에 대해 유일성만을 만족하는 키는?",
+    "imageUrl": null,
+    "answers": ["슈퍼키", "수퍼키", "Super Key"],
+    "difficulty": "MEDIUM",
+    "isRankingOnly": true
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "후보키(Candidate Key)는 릴레이션을 구성하는 속성들 중에서 튜플을 유일하게 식별하기 위해 사용되는 속성들의 부분집합으로, 유일성과 (      )을/를 만족하는 특징이 있다.",
+    "imageUrl": null,
+    "answers": ["최소성", "minimality"],
+    "difficulty": "HARD",
+    "isRankingOnly": true
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "릴레이션을 구성하는 용어로, 튜플의 개수를 의미하는 용어는?",
+    "imageUrl": null,
+    "answers": ["카디널리티", "cardinality"],
+    "difficulty": "EASY",
+    "isRankingOnly": true
+  }
+]

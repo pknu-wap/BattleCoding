@@ -68,13 +68,6 @@
     "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/9-1.PNG?raw=true",
     "answers": ["tolower"],
     "difficulty": "MEDIUM"
-  },
-  {
-    "type": "FILL_IN_BLANK",
-    "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/10.PNG?raw=true",
-    "answers": ["power"],
-    "difficulty": "MEDIUM"
   }
 ]
 
