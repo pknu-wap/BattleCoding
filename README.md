@@ -61,13 +61,13 @@
 ## 👥 팀원 소개
 > **Battle Coding**은 이들의 손에서 만들어집니다!
 
-| 이름 | GitHub | 역할 | 담당                      | 한 줄 소개 |
-|------|--------|------|-------------------------|-------------|
-| 🧠 문혁 | [@Seol-Munhyeok](https://github.com/Seol-Munhyeok) | 백엔드 리더 | API 개발 총괄, 배포           | 설명도 개발도 다 하는 팀장 |
-| 🧱 예찬 | [@yckim9137](https://github.com/yckim9137) | 백엔드 개발 | 문제 API, 랭킹 API 개발       | 로직에 진심인 디버깅 마스터 |
-| 🎨 유림 | [@yuurmj](https://github.com/yuurmj) | 프론트엔드 리더 | API 연동, 메인, 회원가입, 로그인 화면 설계 | 감각적인 설계의 핵심 담당 |
-| 🧩 주현 | [@juhyun0415](https://github.com/juhyun0415) | 프론트엔드 개발 | 마이페이지, 게임 화면 설계         | 꼼꼼하고 빠르게 성장 중 |
-| 🧪 연지 | [@PKJYJ](https://github.com/PKJYJ) | 프론트엔드 개발 | 랭킹 화면 설계                | UX를 책임지는 마무리 담당 |
+| 이름      | GitHub | 역할 | 담당                      |
+|---------|--------|------|-------------------------|
+| **설문혁** | [@Seol-Munhyeok](https://github.com/Seol-Munhyeok) | 백엔드 리더 | API 개발 총괄, 배포           |
+| **김예찬** | [@yckim9137](https://github.com/yckim9137) | 백엔드 개발 | 문제 API, 랭킹 API 개발       |
+| **정유림** | [@yuurmj](https://github.com/yuurmj) | 프론트엔드 리더 | API 연동, 메인, 회원가입, 로그인 화면 설계 |
+| **전주현** | [@juhyun0415](https://github.com/juhyun0415) | 프론트엔드 개발 | 마이페이지, 게임 화면 설계         |
+| **정연지** | [@PKJYJ](https://github.com/PKJYJ) | 프론트엔드 개발 | 랭킹 화면 설계                |
 
 
 ---
