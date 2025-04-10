@@ -60,16 +60,19 @@
 ---
 ## 👥 팀원 소개
 > **Battle Coding**은 이들의 손에서 만들어집니다!
+#### 🛠 백엔드 팀
 
-### 👥 팀원 소개
+| ![설문혁](https://github.com/Seol-Munhyeok.png?size=100) | ![김예찬](https://github.com/yckim9137.png?size=100) |
+|:--:|:--:|
+| **설문혁**<br>[@Seol-Munhyeok](https://github.com/Seol-Munhyeok)<br>**백엔드 리더**<br><sub>- API 개발 총괄<br>- 배포 환경 구축 및 운영</sub> | **김예찬**<br>[@yckim9137](https://github.com/yckim9137)<br>**백엔드 개발**<br><sub>- 문제 관련 API 구현<br>- 랭킹 시스템 API 구현</sub> |
 
-### 👥 팀원 소개
+---
 
-| ![설문혁](https://github.com/Seol-Munhyeok.png?size=100) | ![김예찬](https://github.com/yckim9137.png?size=100) | ![정유림](https://github.com/yuurmj.png?size=100) | ![전주현](https://github.com/juhyun0415.png?size=100) | ![정연지](https://github.com/PKJYJ.png?size=100) |
-|:--:|:--:|:--:|:--:|:--:|
-| **설문혁**<br>[@Seol-Munhyeok](https://github.com/Seol-Munhyeok)<br>**백엔드 리더**<br><sub>- API 개발 총괄<br>- 배포 환경 구축 및 운영</sub> | **김예찬**<br>[@yckim9137](https://github.com/yckim9137)<br>**백엔드 개발**<br><sub>- 문제 관련 API 구현<br>- 랭킹 시스템 API 구현</sub> | **정유림**<br>[@yuurmj](https://github.com/yuurmj)<br>**프론트엔드 리더**<br><sub>- 로그인 / 회원가입 / 메인 화면<br>- API 연동</sub> | **전주현**<br>[@juhyun0415](https://github.com/juhyun0415)<br>**프론트엔드 개발**<br><sub>- 마이페이지 구현<br>- 게임 플레이 화면 설계</sub> | **정연지**<br>[@PKJYJ](https://github.com/PKJYJ)<br>**프론트엔드 개발**<br><sub>- 랭킹 화면 UI 설계 및 구현</sub> |
+#### 🎨 프론트엔드 팀
 
-
+| ![정유림](https://github.com/yuurmj.png?size=100) | ![전주현](https://github.com/juhyun0415.png?size=100) | ![정연지](https://github.com/PKJYJ.png?size=100) |
+|:--:|:--:|:--:|
+| **정유림**<br>[@yuurmj](https://github.com/yuurmj)<br>**프론트 리더**<br><sub>- 로그인 / 회원가입 / 메인 화면<br>- API 연동</sub> | **전주현**<br>[@juhyun0415](https://github.com/juhyun0415)<br>**프론트 개발**<br><sub>- 마이페이지<br>- 게임 플레이 화면 설계</sub> | **정연지**<br>[@PKJYJ](https://github.com/PKJYJ)<br>**프론트 개발**<br><sub>- 랭킹 화면 UI 설계 및 구현</sub> |
 
 ---
 
