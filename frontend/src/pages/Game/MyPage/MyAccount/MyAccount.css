@@ -1,0 +1,56 @@
+.MyAccount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 20px 10px 20px;
+  background-color: aliceblue;
+}
+.MyImage {
+  display: flex;
+  padding: 10px;
+}
+.ProfileImage {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.MY {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 5px;
+}
+.MyName {
+  display: flex;
+  align-items: baseline;
+  gap: 25px;
+}
+.MyNickname {
+  font-size: 30px;
+  font-weight: bold;
+}
+.MyID {
+  font-size: 15px;
+}
+.MyButton {
+  display: flex;
+  gap: 10px;
+}
+.chageButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 40px;
+  margin: 5px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.chageButton:hover {
+  background-color: #b1b1b1;
+  font-weight: bold;
+}
