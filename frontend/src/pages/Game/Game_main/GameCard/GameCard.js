@@ -1,9 +1,18 @@
 import "./GameCard.css";
+import { useNavigate } from "react-router-dom";
 
 function GameCard({ image, title, description }) {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/game/ready", {
+      state: { image, title, description },
+    });
+  };
+
   return (
     <div className="GameCard">
-      <div className="GameCard_main" role="listitem">
+      <div className="GameCard_main" role="listitem" onClick={handleClick}>
         <div className="game_card_cover">
           <img className="game_card_image" src={image} alt={title} />
         </div>

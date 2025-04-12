@@ -1,5 +1,6 @@
 import React from "react";
 import "./MyRank.css";
+import UserRank from "../MyRank/UserRank";
 
 function My_Rank() {
   return (
@@ -20,7 +21,9 @@ function My_Rank() {
           </span>
         </div>
       </div>
-      <div className="UserRanking"></div>
+      <div className="User_Ranking">
+        <UserRank />
+      </div>
     </div>
   );
 }
