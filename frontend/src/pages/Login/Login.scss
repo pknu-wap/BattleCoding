@@ -1,90 +1,93 @@
-@import '../../styles/variables.scss';
+@import "../../style/variables.scss";
 
 .login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #282534;
+
+  .loginCard {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
-    background-color: #282534;
+    width: 400px;
+    padding: 24px 24px;
+    gap: 16px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    border: 1px solid #00f0ff;
+    background: linear-gradient(to bottom, #141e30, #243b55);
 
-    .loginCard {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 400px;
-        padding: 24px 24px;
-        gap: 16px;
-        flex-shrink: 0;
-        border-radius: 16px;
-        border: 1px solid #00F0FF;
-        background: linear-gradient(to bottom, #141E30, #243B55);
-        
-        .loginContainer {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            padding: 24px;
-            gap: 20px;
-            flex-shrink: 0;
-        }
-
-        .logoArea {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 12px 0 8px;
-            gap: 4px;
-
-            .loginTitle {
-                color: #00F0FF;
-                text-align: center;
-                font-family:  'Inter', sans-serif;
-                font-size: 44px;
-                font-weight: 800;
-                line-height: 1.4;
-            }
-        }
-
-        .formArea {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
-            padding: 0 4px;
-            gap: 6px;
-            width: 100%;
-            max-width: 400px;
-
-            .registerBtn {
-                all: unset;
-                text-align: center;
-                font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;                font-size: 16px;
-                font-size: 14px;
-                text-align: center;
-                width: 100%;
-                color: #AAAAAA;
-                cursor: pointer;
-
-                &:hover {
-                    color:#00F0FF;
-                }
-            }
-        } 
+    .loginContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 24px;
+      gap: 20px;
+      flex-shrink: 0;
     }
+
+    .logoArea {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 12px 0 8px;
+      gap: 4px;
+
+      .loginTitle {
+        color: #00f0ff;
+        text-align: center;
+        font-family: "Inter", sans-serif;
+        font-size: 44px;
+        font-weight: 800;
+        line-height: 1.4;
+      }
+    }
+
+    .formArea {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 0 4px;
+      gap: 6px;
+      width: 100%;
+      max-width: 400px;
+
+      .registerBtn {
+        all: unset;
+        text-align: center;
+        font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR",
+          sans-serif;
+        font-size: 16px;
+        font-size: 14px;
+        text-align: center;
+        width: 100%;
+        color: #aaaaaa;
+        cursor: pointer;
+
+        &:hover {
+          color: #00f0ff;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 480px) {
-    .loginCard {
-      width: 90%;
-      padding: 24px;
-    }
-  
-    input, button {
-      width: 100%;
-    }
+  .loginCard {
+    width: 90%;
+    padding: 24px;
   }
+
+  input,
+  button {
+    width: 100%;
+  }
+}

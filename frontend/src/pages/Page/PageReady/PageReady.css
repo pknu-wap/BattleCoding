@@ -1,0 +1,90 @@
+.Background {
+  height: auto !important;
+  background-color: antiquewhite;
+}
+.Layout {
+  height: auto !important;
+}
+.Content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: auto !important;
+  min-height: 0px !important;
+  width: 100%;
+}
+.Ready {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+.Ready_main {
+  padding: 20px;
+  width: 100%;
+}
+.ImageCover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: aqua;
+}
+.Image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  height: 200px;
+}
+.TextBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: #b1b1b1;
+  width: 100%;
+  margin: 15px auto;
+  padding: 20px 25px;
+  box-sizing: border-box;
+}
+.Readytitle {
+  font-weight: bold;
+  font-size: 20px;
+  width: auto;
+  max-width: 100%;
+}
+.Readyelaborate {
+  font-size: 15px;
+  overflow-wrap: break-word;
+}
+.ReadyButtonList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  border: 15px auto;
+  box-sizing: border-box;
+}
+.ReadyButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 50px;
+  margin: 5px;
+  background-color: #ffffff;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+}
+.ReadyButton:hover {
+  background-color: #b1b1b1;
+  font-weight: bold;
+}
