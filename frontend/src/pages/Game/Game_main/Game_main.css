@@ -1,7 +1,7 @@
 /*게임배경*/
 .GamePage_background {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   height: auto !important;
   min-height: 100vh;
