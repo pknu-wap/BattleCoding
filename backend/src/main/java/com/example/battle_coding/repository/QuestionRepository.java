@@ -2,9 +2,16 @@ package com.example.battle_coding.repository;
 
 import com.example.battle_coding.entity.Question;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public interface QuestionRepository extends JpaRepository<Question, Long> {
+    @Query(value = "SELECT * FROM questions WHERE type = :type ORDER BY RAND() LIMIT :count", nativeQuery = true)
+    List<Question> findRandomByType(@Param("type") String type, @Param("count") int count);
+
 }
 
