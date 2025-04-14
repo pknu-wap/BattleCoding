@@ -18,14 +18,13 @@ function GameHeader() {
     <header className="GameHeader">
       <div className="GameHeader_background">
         <div className="HeaderLayout">
-          <img
-            src={LogoImage}
-            alt="Logo"
-            className="LogoImage"
-            onClick={handleLogoClick}
-          />
+          <img src={LogoImage} alt="Logo" className="LogoImage" />
           <div className="GameHeader_root">
-            <button type="button" className="HeaderButton">
+            <button
+              type="button"
+              className="HeaderButton"
+              onClick={handleLogoClick}
+            >
               나가기
             </button>
           </div>
