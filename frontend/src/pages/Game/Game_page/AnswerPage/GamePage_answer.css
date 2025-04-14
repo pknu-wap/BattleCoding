@@ -1,0 +1,71 @@
+.PageBackground {
+  height: 100vh;
+  background-color: #0f1225;
+}
+.PageLayout {
+  height: auto !important;
+}
+.AnswerContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.Answer_main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.Explan_main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+.Explan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2a2d3a;
+  padding: 20px;
+  width: 400px;
+  height: 300px;
+}
+.AnswerText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 70px;
+  margin: 20px auto;
+  padding: 20px 25px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #2a2d3a;
+}
+.Answer_Right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Right {
+  font-size: 20px;
+  color: whitesmoke;
+}
+.Yes {
+  font-size: 25px;
+  color: white;
+}
+.Answer_Wrong {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Wrong {
+  font-size: 20px;
+  color: whitesmoke;
+}
+.No {
+  font-size: 25px;
+  color: white;
+}
