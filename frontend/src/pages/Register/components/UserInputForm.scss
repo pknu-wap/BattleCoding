@@ -1,14 +1,14 @@
-@import '/src/styles/variables.scss';
+@import "../../../style/variables.scss";
 
 .regsiterSubmitForm {
-    @include flexColumn;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 400px;
-    height: 100%;
-    margin: 0 auto;
-    padding: 2rem 0;
+  @include flexColumn;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 2rem 0;
 
     button {
         width: 290px;
@@ -30,4 +30,5 @@
             color: #2A2D3A;
         }
     }
+  }
 }

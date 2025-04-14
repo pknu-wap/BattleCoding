@@ -1,12 +1,12 @@
-@import '../../styles/variables.scss';
+@import "../../style/variables.scss";
 
 .login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-    background-color: #282534;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #282534;
 
     .loginCard {
         display: flex;
@@ -69,7 +69,7 @@
                 cursor: pointer;
 
                 &:hover {
-                    color:#00F0FF;
+                  color: #00f0ff;
                 }
             }
         } 

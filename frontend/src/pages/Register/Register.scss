@@ -1,14 +1,37 @@
-@import '/src/styles/variables.scss';
+@import "../../style/variables.scss";
 
 .register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #282534;
+
+  .registerCard {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
-    background-color: #282534;
+    width: 420px;
+    padding: 16px 20px;
+    gap: 16px;
+    flex-shrink: 0;
+    border: 1px solid #00f0ff;
+    border-radius: 16px;
+    background: linear-gradient(to bottom, #141e30, #243b55);
 
-    .registerCard {
+    .registerContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 16px;
+      gap: 12px;
+      flex-shrink: 0;
+
+      .logoArea {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -59,16 +82,18 @@
                 max-width: 400px;
             }
         }
-    }
-}
+      }
 
-@media (max-width: 480px) {
-    .registerCard {
-      width: 90%;
-      padding: 24px;
-    }
-  
-    input, button {
-      width: 100%;
+      .fomrmArea {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 0 8px;
+        gap: 8px;
+        width: 100%;
+        max-width: 400px;
+      }
     }
   }
+}

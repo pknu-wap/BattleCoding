@@ -1,14 +1,14 @@
-@import '../../../styles/variables.scss';
+@import "../../../style/variables.scss";
 
 .loginSubmitForm {
-    @include flexColumn;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 400px;
-    height: 100%;
-    margin: 0 auto;
-    padding: 1rem 0;
+  @include flexColumn;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 1rem 0;
 
     .EmailField, .PasswordField {
         display: flex;
@@ -41,7 +41,6 @@
     .PasswordField {
         margin-bottom: 70px;
     }
-    
 
     button {
         display: flex;
@@ -68,4 +67,5 @@
             cursor: auto;
         }
     }
+  }
 }

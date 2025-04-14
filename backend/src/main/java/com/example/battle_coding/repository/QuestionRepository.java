@@ -13,5 +13,15 @@ public interface QuestionRepository extends JpaRepository<Question, Long> {
     @Query(value = "SELECT * FROM questions WHERE type = :type ORDER BY RAND() LIMIT :count", nativeQuery = true)
     List<Question> findRandomByType(@Param("type") String type, @Param("count") int count);
 
+    @Query(value = "SELECT * FROM questions WHERE difficulty = :difficulty ORDER BY RAND() LIMIT :count", nativeQuery = true)
+    List<Question> findRandomByDifficulty(@Param("difficulty") String difficulty, @Param("count") int count);
+
+    @Query(value = "SELECT * FROM questions WHERE type = :type AND difficulty = :difficulty ORDER BY RAND() LIMIT :count", nativeQuery = true)
+    List<Question> findRandomByTypeAndDifficulty(
+            @Param("type") String type,
+            @Param("difficulty") String difficulty,
+            @Param("count") int count
+    );
+
 }
 

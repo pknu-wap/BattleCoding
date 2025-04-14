@@ -1,0 +1,77 @@
+.Background {
+  height: 100vh;
+  background-color: antiquewhite;
+}
+.Layout {
+  height: auto !important;
+}
+.Content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: auto !important;
+  min-height: 0px !important;
+  width: 100%;
+}
+.Result {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+.Result_main {
+  padding: 20px;
+  width: 100%;
+}
+.guitar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: aqua;
+}
+.CountText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #b1b1b1;
+  width: 100%;
+  margin: 15px auto;
+  padding: 20px 15px;
+  box-sizing: border-box;
+}
+.Score {
+  font-size: 15px;
+}
+.ResultContent {
+  font-size: 13px;
+}
+.ResultButtonList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  border: 15px auto;
+  box-sizing: border-box;
+}
+.ResultButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 40px;
+  margin: 5px;
+  background-color: #ffffff;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+}
+.ResultButton:hover {
+  background-color: #b1b1b1;
+  font-weight: bold;
+}

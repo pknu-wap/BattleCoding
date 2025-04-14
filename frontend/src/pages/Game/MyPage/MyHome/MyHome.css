@@ -1,0 +1,16 @@
+.MyBackground {
+  height: auto !important;
+  min-height: 100vh;
+}
+.MyLayout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.MyContent {
+  display: flex;
+}
+.MyProfile {
+  display: flex;
+  flex-direction: column;
+}
