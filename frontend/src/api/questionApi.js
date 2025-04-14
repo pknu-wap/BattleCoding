@@ -1,0 +1,27 @@
+import axios from "axios";
+
+export const getRandomQuestionByType = async ({ type, count = 10 }) => {
+    const token = localStorage.getItem("token");
+
+    if (!type || !token) {
+        throw new Error('문제 type 또는 JWT 토큰이 누락되었습니다.');
+    }
+
+    try {
+        const response = await axios.get(
+            `http://localhost:8080/questions/random/by-type`,
+            {
+                params: { type, count },
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            }
+        );
+
+        return response.data;
+    }
+    catch (error) {
+        console.error("문제 가져오기 오류: ", error);
+        throw new Error('문제를 불러오는 중 오류가 발생했습니다.');
+    }
+}

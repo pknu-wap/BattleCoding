@@ -3,21 +3,28 @@
   background-color: #0f1225;
 }
 .PageLayout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: auto !important;
 }
 .QuestionContent {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 .Question_main {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .Matter_main {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   padding: 30px;
 }
 .Matter {
@@ -28,6 +35,7 @@
   padding: 20px;
   width: 400px;
   height: 300px;
+  text-align: center;
 }
 .Enter_main {
   display: flex;
