@@ -13,6 +13,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+
 @Service
 @RequiredArgsConstructor
 public class SubmissionService {
@@ -45,6 +47,7 @@ public class SubmissionService {
                 .timeTaken(request.timeTaken())
                 .xpEarned(xpEarned)
                 .isRanking(request.isRanking())
+                .submittedAt(LocalDateTime.now())
                 .build();
 
         submissionRepository.save(submission);
@@ -65,9 +68,8 @@ public class SubmissionService {
         }
 
         String email = (String) authentication.getPrincipal();
-        User user = userRepository.findByEmail(email)
+        return userRepository.findByEmail(email)
                 .orElseThrow(() -> new IllegalArgumentException("유저 정보를 찾을 수 없습니다."));
-        return user;
     }
 
     private Question getQuestionById(Integer questionId) {
