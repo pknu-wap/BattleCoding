@@ -10,23 +10,25 @@
   margin: 0 auto;
   padding: 2rem 0;
 
-  button {
-    width: 300px;
-    height: 40px;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #66bfcb;
-    font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    border: none;
-    border-radius: 8px;
-    box-sizing: border-box;
+    button {
+        width: 290px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #2A2D3A;
+        color: #00f0ff;
+        font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        border: 1px solid #00f0ff;
+        border-radius: 8px;
+        box-sizing: border-box;
 
-    &:hover {
-      background-color: #00f0ff;
+        &:hover {
+            background-color: #00f0ff;
+            color: #2A2D3A;
+        }
     }
   }
 }

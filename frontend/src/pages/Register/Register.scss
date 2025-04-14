@@ -36,19 +36,51 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 0;
-        gap: 2px;
+        width: 500px;
+        padding: 32px 40px;
+        gap: 16px;
+        flex-shrink: 0;
+        border: 1px solid #00f0ff;
+        border-radius: 16px;
+        background: linear-gradient(to bottom, #141E30, #243B55);
+  
 
-        .registerTitle {
-          text-align: center;
-          font-size: 2rem;
-          font-weight: $fontBold;
-          color: #00f0ff;
-          font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR",
-            sans-serif;
-          font-size: 36px;
-          font-weight: 800;
-          line-height: 1.2;
+        .registerContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 16px;
+            gap: 12px;
+            flex-shrink: 0;
+
+            .logoArea {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2px;
+
+                .registerTitle {
+                    text-align: center;
+                    font-size: 50px;
+                    font-weight: bold;
+                    color: #00f0ff;
+                    font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+                    font-weight: 800;
+                }
+            }
+
+            .fomrmArea {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                gap: 20px;
+                width: 100%;
+                max-width: 400px;
+            }
         }
       }
 
@@ -63,17 +95,5 @@
         max-width: 400px;
       }
     }
-  }
-}
-
-@media (max-width: 480px) {
-  .registerCard {
-    width: 90%;
-    padding: 24px;
-  }
-
-  input,
-  button {
-    width: 100%;
   }
 }

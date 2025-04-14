@@ -1,56 +1,53 @@
 @import "../../../style/variables.scss";
 
-.NicknameField,
-.EmailField,
-.PasswordField,
-.PasswordCheckField {
-  display: flex;
-  padding: 6px 0;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 4px;
+.NicknameField, .EmailField, .PasswordField, .PasswordCheckField {
+    display: flex;
+    margin-bottom: 25px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5px;
 
-  label {
-    color: #fff;
-    text-align: center;
-    font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 24px;
-  }
+    label {
+        color: #FFF;
+        text-align: center;
+        font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 28px;
+    }
 
-  input {
-    width: 300px;
-    height: 40px;
-    padding: 0 10px;
-    font-size: 12px;
-    font-weight: 600;
-    font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    background: #f7f7f7;
-    box-sizing: border-box;
-  }
+    input {
+        width: 380px;
+        height: 52px;  
+        padding: 0 16px;
+        font-size: 16px; 
+        font-weight: 600;
+        font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+        border-radius: 10px;
+        border: 1px solid #CCC;
+        background: #F7F7F7;
+        box-sizing: border-box;
+    }
 
-  p {
-    width: 300px;
-    margin: 4px 0 0 2px;
-    padding-left: 1px;
-    font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 1.4;
-  }
+    p {
+        width: 300px;
+        margin: 4px 0 0 2px;
+        padding-left: 1px;
+        font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.4;
+    }
 
-  p.valid {
-    color: #00f0ff;
-  }
-  p.invalid {
-    color: #f7f7f7;
-  }
+    p.valid {
+        color: #00f0ff;
+    }
+    p.invalid {
+        color: #f7f7f7;
+    }
 }
 
 .PasswordCheckField {
-  padding: 12px 0 30px 0;
+    margin-bottom: 50px;
 }
