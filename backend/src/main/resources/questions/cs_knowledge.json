@@ -10,14 +10,14 @@
     "type": "CS_KNOWLEDGE",
     "question": "TCP/IP 4계층 모델에서 데이터의 종단 간 전송을 담당하고, 흐름 제어 및 혼잡 제어 기능을 제공하는 계층은?",
     "imageUrl": null,
-    "answers": ["전송 계층", "트랜스포트 계층", "Transport Layer"],
+    "answers": ["전송", "트랜스포트", "Transport" ,"전송 계층", "트랜스포트 계층", "Transport Layer"],
     "difficulty": "EASY"
   },
   {
     "type": "CS_KNOWLEDGE",
     "question": "OSI 7계층 중에서 IP 주소를 기준으로 라우팅을 수행하며, 네트워크 간 통신을 담당하는 계층은?",
     "imageUrl": null,
-    "answers": ["네트워크 계층", "Network Layer"],
+    "answers": ["네트워크", "Network", "네트워크 계층", "Network Layer"],
     "difficulty": "EASY"
   },
   {
@@ -40,5 +40,174 @@
     "imageUrl": null,
     "answers": ["OSPF", "ospf", "Open Shortest Path First"],
     "difficulty": "HARD"
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "HTTP 상태 코드 중 요청이 성공적으로 처리되었음을 나타내는 상태 코드는 무엇인가?",
+    "imageUrl": null,
+    "answers": ["200", "OK", "200 OK"],
+    "difficulty": "EASY"
+  },
+  {
+  "type": "CS_KNOWLEDGE",
+  "question": "프로그램이 실행되는 동안 데이터가 저장되는 메모리 영역으로, 함수 호출과 지역 변수를 관리하는 영역은 무엇인가?",
+  "imageUrl": null,
+  "answers": ["스택", "Stack", "스택 영역"],
+  "difficulty": "MEDIUM"
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "웹 페이지의 구조를 정의하는 데 사용되는 표준 마크업 언어는 무엇인가?",
+    "imageUrl": null,
+    "answers": ["HTML", "html", "HyperText Markup Language"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "운영체제에서 메모리의 일부만 미리 로드하고 나머지는 필요할 때 로드하여 메모리를 효율적으로 관리하는 방식은 무엇인가?",
+    "imageUrl": null,
+    "answers": ["요구 페이징", "Demand Paging"],
+    "difficulty": "HARD"
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "데이터베이스 트랜잭션 특성 중, 트랜잭션이 완전히 실행되거나 전혀 실행되지 않아야 한다는 특성은 무엇인가?",
+    "imageUrl": null,
+    "answers": ["원자성", "Atomicity"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "데이터베이스 트랜잭션 특성 중, 트랜잭션의 실행 결과가 데이터베이스의 무결성을 보장해야 한다는 특성은 무엇인가?",
+    "imageUrl": null,
+    "answers": ["일관성", "Consistency"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "데이터베이스 트랜잭션 특성 중, 동시에 실행되는 트랜잭션이 서로 영향을 미치지 않아야 한다는 특성은 무엇인가?",
+    "imageUrl": null,
+    "answers": ["격리성", "독립성", "고립성", "Isolation"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "데이터베이스 트랜잭션 특성 중, 트랜잭션이 성공적으로 완료되면 그 결과가 영구적으로 유지되어야 한다는 특성은 무엇인가?",
+    "imageUrl": null,
+    "answers": ["지속성", "영속성", "Durability"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "프로세스가 작업을 수행하는 도중 다른 프로세스의 요청을 기다리며 아무것도 하지 못하는 상태를 무엇이라 하는가?",
+    "imageUrl": null,
+    "answers": ["교착 상태", "데드락", "Deadlock"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "프로그램이 실행 중에 동적으로 메모리를 할당할 때 사용하는 영역을 무엇이라 하는가?",
+    "imageUrl": null,
+    "answers": ["힙", "힙 영역", "Heap"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "인터넷에서 원격으로 다른 컴퓨터에 암호화된 안전한 연결을 통해 로그인하여 명령어를 실행할 수 있도록 지원하는 프로토콜은 무엇인가?",
+    "imageUrl": null,
+    "answers": ["SSH", "Secure Shell", "ssh"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "웹 서버와 웹 브라우저 간의 안전한 통신을 위한 프로토콜로 HTTP의 보안 확장 버전은 무엇인가?",
+    "imageUrl": null,
+    "answers": ["HTTPS", "Hypertext Transfer Protocol Secure"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "IP 또는 ICMP의 특성을 악용하여 특정 사이트에 집중적으로 데이터를 보내 네트워크 또는 시스템의 상태를 불능으로 만드는 공격 방법은?",
+    "imageUrl": null,
+    "answers": ["Smurfing", "스머핑"],
+    "difficulty": "HARD"
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "웹과 컴퓨터 프로그램에서 용량이 적은 데이터를 교환하기 위해 데이터 객체를 속성-값의 쌍 형태로 표현하는 형식의 자바스크립트(JavaScript)를 토대로 개발되어진 형식은?",
+    "imageUrl": null,
+    "answers": ["JSON", "JavaScript Object Notation", "제이슨"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "IP 프로토콜의 취약점을 이용하여 비정상적으로 큰 크기의 패킷을 전송해 상대방 시스템을 마비시키는 공격 방법은 무엇인가?",
+    "imageUrl": null,
+    "answers": ["Ping of Death", "ping of death", "핑 오브 데스", "핑오브데스", "죽음의 핑", "PoD"],
+    "difficulty": "HARD"
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "패킷을 전송할 때 송신 IP 주소와 수신 IP 주소를 모두 공격 대상의 IP 주소로 설정하여 공격 대상이 자기 자신에게 무한히 응답하게 만드는 공격 방법은 무엇인가?",
+    "imageUrl": null,
+    "answers": ["LAND Attack", "land attack", "LAND", "랜드 어택", "랜드어택"],
+    "difficulty": "HARD"
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "컴퓨터에서 중앙 처리 장치로, 데이터 처리와 명령 실행을 담당하는 장치는 무엇인가? (영어로 작성)",
+    "imageUrl": null,
+    "answers": ["CPU", "Central Processing Unit"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "웹 페이지의 스타일과 레이아웃을 정의하는 데 사용되는 언어는 무엇인가?",
+    "imageUrl": null,
+    "answers": ["CSS", "Cascading Style Sheets"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "컴퓨터가 현재 실행 중인 프로그램과 데이터를 빠르게 접근하여 임시로 저장하는 휘발성 메모리는 무엇인가?",
+    "imageUrl": null,
+    "answers": ["RAM", "램", "Random Access Memory"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "컴퓨터에서 데이터를 영구적으로 저장하며 전원을 끄더라도 데이터가 유지되는 메모리는 무엇인가?",
+    "imageUrl": null,
+    "answers": ["ROM", "롬", "Read Only Memory"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "인터넷에서 웹 페이지를 요청할 때 사용하는 HTTP 메소드는 무엇인가?",
+    "imageUrl": null,
+    "answers": ["GET", "get"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "웹에서 클라이언트가 이전 요청 상태를 유지하기 위해 서버가 클라이언트에 저장하는 작은 데이터 파일은 무엇인가?",
+    "imageUrl": null,
+    "answers": ["쿠키", "Cookie"],
+    "difficulty": "HARD"
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "하나의 IP 주소로 여러 내부 네트워크 장치가 인터넷을 사용할 수 있게 IP 주소를 변환해주는 기술은 무엇인가?",
+    "imageUrl": null,
+    "answers": ["NAT", "Network Address Translation"],
+    "difficulty": "HARD"
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "멀티스레드 환경에서 두 개 이상의 스레드가 동시에 같은 자원에 접근하면서 실행 순서에 따라 결과가 달라지는 오류 상황은 무엇인가?",
+    "imageUrl": null,
+    "answers": ["경쟁 조건", "경쟁 상태", "경쟁 상황", "레이스 컨디션", "Race Condition"],
+    "difficulty": "HARD"
   }
+
 ]
