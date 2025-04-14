@@ -10,61 +10,63 @@
   margin: 0 auto;
   padding: 1rem 0;
 
-    .EmailField, .PasswordField {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 16px;
-        width: 380px;
+  .EmailField,
+  .PasswordField {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+    width: 380px;
 
-        label {
-            color: #FFF;
-            text-align: left;
-            font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-            font-size: 20px;
-            font-weight: 600;
-            line-height: 24px;
-        }
-
-        input {  
-            padding: 0 16px;
-            border-radius: 10px;
-            border: 1px solid #CCC;
-            box-sizing: border-box;
-            background: #F7F7F7;
-            font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-            font-size: 16px;
-        }
+    label {
+      color: #fff;
+      text-align: left;
+      font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR",
+        sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 24px;
     }
 
-    .PasswordField {
-        margin-bottom: 70px;
+    input {
+      padding: 0 16px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      background: #f7f7f7;
+      font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR",
+        sans-serif;
+      font-size: 16px;
+    }
+  }
+
+  .PasswordField {
+    margin-bottom: 70px;
+  }
+
+  button {
+    display: flex;
+    width: 290px;
+    height: 60px;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #00f0ff;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+
+    &:hover {
+      background-color: #00f0ff;
+      color: #2a2d3a;
     }
 
-    button {
-        display: flex;
-        width: 290px;
-        height: 60px;
-        border: none;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid #00f0ff;
-        border-radius: 8px;
-        box-sizing: border-box;
-        font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-        font-size: 20px;
-        font-weight: 600;
-
-        &:hover {
-            background-color: #00f0ff;
-            color: #2A2D3A;
-        }
-
-        &:disabled {
-            background: #2A2D3A;
-            color: #00f0ff;
-            cursor: auto;
-        }
+    &:disabled {
+      background: #2a2d3a;
+      color: #00f0ff;
+      cursor: auto;
     }
   }
