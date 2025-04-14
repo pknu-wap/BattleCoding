@@ -6,15 +6,17 @@ export default function Navbar() {
     
     return (
         <nav className='navbar'>
-            <div className='navbarLogo'>Battle Coding</div>
-            <div className='navbarMenu'>
-                <a href='#'>Home</a>
-                <a href='#'>Quizzes</a>
-                <a href='#'>Ranking</a>
-            </div>
-            <div className='navbarAuth'>
-                <button className='btnLogin' onClick={() => navigate('/auth/login')}>로그인</button>
-                <button className='btnRegister' onClick={() => navigate('/register')}>회원가입</button>
+            <div className='navbarLogo' onClick={() => navigate("/")}>Battle Coding</div>
+            
+            <div className='navbarRight'>
+                <div className='navbarMenu'>
+                    <a href='#'>Quizzes</a>
+                    <a href='#'>Ranking</a>
+                </div>
+                <div className='navbarAuth'>
+                    <button className='btnLogin' onClick={() => navigate('/auth/login')}>로그인</button>
+                    <button className='btnRegister' onClick={() => navigate('/register')}>회원가입</button>
+                </div>
             </div>
         </nav>
     );

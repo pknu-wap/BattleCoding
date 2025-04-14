@@ -1,12 +1,23 @@
 .quizsection {
-    padding: 80px 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 130px 16px;
     text-align: center;
-    background-color: #2A2D3A;
+    background-color: #282534;
+    box-sizing: border-box;
 
     .quizsectionGrid {
-        display: flex;
-        justify-content: center;
-        gap: 32px;
-        flex-wrap: wrap;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 0 16px;
+      box-sizing: border-box;
     }
 }
