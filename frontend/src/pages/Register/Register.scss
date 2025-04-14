@@ -13,8 +13,8 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 420px;
-        padding: 16px 20px;
+        width: 500px;
+        padding: 32px 40px;
         gap: 16px;
         flex-shrink: 0;
         border: 1px solid #00f0ff;
@@ -37,18 +37,15 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                padding: 0;
                 gap: 2px;
 
                 .registerTitle {
                     text-align: center;
-                    font-size: 2rem;
-                    font-weight: $fontBold;
+                    font-size: 50px;
+                    font-weight: bold;
                     color: #00f0ff;
                     font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-                    font-size: 36px;
                     font-weight: 800;
-                    line-height: 1.2;
                 }
             }
 
@@ -57,8 +54,7 @@
                 flex-direction: column;
                 align-items: flex-start;
                 justify-content: center;
-                padding: 0 8px;
-                gap: 8px;
+                gap: 20px;
                 width: 100%;
                 max-width: 400px;
             }

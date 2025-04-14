@@ -12,62 +12,59 @@
 
     .EmailField, .PasswordField {
         display: flex;
-        padding: 8px 0;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        gap: 4px;
+        gap: 16px;
+        width: 380px;
 
         label {
             color: #FFF;
-            text-align: center;
+            text-align: left;
             font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-            font-size: 14px;
+            font-size: 20px;
             font-weight: 600;
             line-height: 24px;
         }
 
-        input {
-            width: 300px;
-            height: 40px;   
-            border-radius: 8px;
+        input {  
+            padding: 0 16px;
+            border-radius: 10px;
             border: 1px solid #CCC;
             box-sizing: border-box;
             background: #F7F7F7;
-            padding: 0 10px;
             font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-            font-size: 12px;
+            font-size: 16px;
         }
     }
 
     .PasswordField {
-        padding: 10px 0 50px 0;
+        margin-bottom: 70px;
     }
     
 
     button {
         display: flex;
-        width: 300px;
-        height: 40px;
-        padding: 0;
+        width: 290px;
+        height: 60px;
         border: none;
         justify-content: center;
         align-items: center;
-        gap: 10px;
+        border: 1px solid #00f0ff;
         border-radius: 8px;
         box-sizing: border-box;
-        background: #66BFCB;
         font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-        font-size: 14px;
+        font-size: 20px;
         font-weight: 600;
 
         &:hover {
-            background-color: #00F0FF;
+            background-color: #00f0ff;
+            color: #2A2D3A;
         }
 
         &:disabled {
-            background-color: #66BFCB;
-            color: rgb(50, 50, 50);
+            background: #2A2D3A;
+            color: #00f0ff;
             cursor: auto;
         }
     }
