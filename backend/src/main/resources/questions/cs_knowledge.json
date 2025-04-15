@@ -207,6 +207,27 @@
     "question": "멀티스레드 환경에서 두 개 이상의 스레드가 동시에 같은 자원에 접근하면서 실행 순서에 따라 결과가 달라지는 오류 상황은 무엇인가?",
     "imageUrl": null,
     "answers": ["경쟁 조건", "경쟁 상태", "경쟁 상황", "레이스 컨디션", "Race Condition"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "구현부에서 추상층을 분리하여, 서로가 독립적으로 확장할 수 있도록 구성한 패턴으로, 기능과 구현을 두 개의 별도 클래스로 구현하는 특징이 있는 디자인 패턴은?",
+    "imageUrl": null,
+    "answers": ["Bridge Pattern", "Bridge", "브릿지", "브릿지 패턴"],
+    "difficulty": "HARD"
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "한 객체의 상태가 변화하면 객체에 상속된 다른 객체들에게 변화된 상태를 전달하는 패턴으로, 일대다의 의존성을 정의하는 디자인 패턴은?",
+    "imageUrl": null,
+    "answers": ["Observer Pattern", "Observer", "옵서버", "옵저버", "옵서버 패턴", "옵서버 배턴"],
+    "difficulty": "HARD"
+  },
+  {
+    "type": "CS_KNOWLEDGE",
+    "question": "키트(Kit) 패턴이라고도 불리며, 구체적인 클래스에 의존하지 않고, 인터페이스를 통해 서로 연관, 의존하는 객체들의 그룹으로 생성하여 추상적으로 표현하는 디자인 패턴은?",
+    "imageUrl": null,
+    "answers": ["Abstract Factory Pattern", "Abstract Factory", "추상 팩토리 패턴", "추상 팩토리"],
     "difficulty": "HARD"
   }
 
