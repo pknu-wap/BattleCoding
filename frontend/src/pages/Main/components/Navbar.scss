@@ -1,40 +1,47 @@
 .navbar {
-    width: 100%;
     background-color: #282534;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 48px;
-    box-sizing: border-box;
-    height: 72px;
-    overflow: hidden;
 
-    .navbarLogo {
-        flex: 1;
-        font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-        font-size: 30px;
-        font-weight: bold;
-        color: #ffffff;
-        cursor: pointer;
+    width: 100%;
+    height: 56px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Pretendard', sans-serif;
+
+    .navbarInner {
+        width: 100%;
+        max-width: 1100px;
+        padding: 0 20px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
-    
-    .navbarRight {
+
+    .navbarLeft {
         display: flex;
         align-items: center;
-        gap: 48px;
+        gap: 40px;
+    }
+    .navbarLogo {
+        font-size: 20px;
+        font-weight: 700;
+        color: #ffffff;
+
+        cursor: pointer;
     }
 
     .navbarMenu {
         display: flex;
-        align-items: center;
-        gap: 36px;
+        gap: 24px;
     
         a {
-            color: #ffffff;
-            font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-            font-size: 24px;
-            font-weight: 600;
+            font-size: 16px;
+            font-weight: 500;
             text-decoration: none;
+            color: #ffffff;
         
             &:hover {
                 text-decoration: underline;
@@ -44,36 +51,42 @@
 
     .navbarAuth {
         display: flex;
-        align-items: center;
-        gap: 12px;
+        gap: 10px;
     
         button {
-            padding: 8px 18px;
-            border-radius: 8px;
-            font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-            font-size: 19px;
-            font-weight: bold;
+            padding: 6px 16px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 6px;
+
+            font-size: 14px;
+            font-weight: 600;
+
             cursor: pointer;
-            transition: all 0.3s ease-in-out;
+            transition: background-color 0.2s, color 0.2s;
         }
-    
-        .btnLogin {
+        
+        .btnMypage {
             background-color: #00F0FF;
-            color: #000000;
+            color: #2A2D3A;
             border: none;
         
             &:hover {
-                opacity: 0.9;
+                background-color: #00d6e6;
             }
         }
 
-        .btnRegister {
+        .btnLogin, .btnRegister {
             background-color: transparent;
-            color: #00d9ff;
+            color: #00F0FF;
             border: 1px solid #00F0FF;
 
             &:hover {
-                background-color: rgba(0, 217, 255, 0.1);
+                background-color: #00F0FF;
+                color: #2A2D3A;
             }
         }
     }

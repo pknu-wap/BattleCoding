@@ -1,77 +1,60 @@
-@import "../../style/variables.scss";
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#root {
+    width: 100%;
+    height: 100%;
+}
 
 .login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background-color: #282534;
+    background-color: #282534;
+    
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 
-    .loginCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    font-family: 'Pretendard', sans-serif;
+    
+    .loginTitle {
+        position: absolute;
+        top: 4vh;
+
+        font-size: 36px;
+        font-weight: 800;
+        color: #00f0ff;
+        text-align: center;
+    }
+
+    .formArea {
+        width: 100%;
+        margin-top: 14vh;
+        padding: 60px 40px;
+        box-sizing: border-box;
+
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        width: 500px;
-        padding: 32px 40px;
-        gap: 16px;
-        flex-shrink: 0;
-        border-radius: 16px;
-        border: 1px solid #00F0FF;
-        background: linear-gradient(to bottom, #141E30, #243B55);
-        
-        .loginContainer {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            padding: 16px;
-            gap: 20px;
+        justify-content: center;
+
+        .registerBtn {
+            all: unset;
+            
+            font-family: 'Pretendard', sans-serif;
+            font-size: 16px;
+            text-align: center;
+            color: #00f0ff;
+
+            cursor: pointer;
         }
-
-        .logoArea {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 4px;
-
-            .loginTitle {
-                color: #00F0FF;
-                text-align: center;
-                font-family:  'Inter', sans-serif;
-                font-size: 50px;
-                font-weight: 800;
-                line-height: 1.4;
-                text-align: center;
-            }
-        }
-
-        .formArea {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            width: 100%;
-            max-width: 400px;
-
-            .registerBtn {
-                all: unset;
-                text-align: center;
-                font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;                font-size: 16px;
-                font-size: 16px;
-                text-align: center;
-                width: 100%;
-                color: #eeeeee;
-                cursor: pointer;
-
-                &:hover {
-                  color: #00f0ff;
-                }
-            }
-        } 
     }
 }

@@ -1,71 +1,99 @@
-@import "../../../style/variables.scss";
-
 .loginSubmitForm {
-  @include flexColumn;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 400px;
-  height: 100%;
-  margin: 0 auto;
-  padding: 1rem 0;
+    width: 100vw;
+    padding: 20px 0 40px 0;
+    gap: 40px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-    .EmailField, .PasswordField {
+    .inputArea {
+        background: linear-gradient(to bottom, #141E30, #243B55);
+
+        width: 100vw;
+        min-height: 300px;
+        padding: 50px 20px;
+
         display: flex;
         flex-direction: column;
+        align-items: center;
         justify-content: center;
-        align-items: flex-start;
-        gap: 16px;
-        width: 380px;
 
-        label {
-            color: #FFF;
-            text-align: left;
-            font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-            font-size: 20px;
-            font-weight: 600;
-            line-height: 24px;
+        .formWrapper {
+            width: 100%;
+            max-width: 500px;
+            padding: 0 20px;
+            gap: 50px;
+      
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .EmailField, .PasswordField {
+                width: 100%;
+                max-width: 320px;
+                gap: 10px;
+
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                font-family: 'Pretendard', sans-serif;
+
+                label {
+                    margin-left: 4px;
+
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: #F7F7F7;
+                }
+
+                input {
+                    background-color: #F7F7F7;
+
+                    width: 100%;
+                    max-width: 320px;
+                    height: 40px;
+                    padding: 0 12px;
+                    box-sizing: border-box;
+
+                    font-size: 14px;
+                    font-weight: 500;
+
+                    border-radius: 8px;
+                    border: 1px solid #cccccc;
+                }
+            }
         }
-
-        input {  
-            padding: 0 16px;
-            border-radius: 10px;
-            border: 1px solid #CCC;
-            box-sizing: border-box;
-            background: #F7F7F7;
-            font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-            font-size: 16px;
-        }
-    }
-
-    .PasswordField {
-        margin-bottom: 70px;
     }
 
     button {
+        background-color: transparent;
+
+        width: 260px;
+        height: 50px;
+
         display: flex;
-        width: 290px;
-        height: 60px;
-        border: none;
         justify-content: center;
         align-items: center;
-        border: 1px solid #00f0ff;
+
         border-radius: 8px;
-        box-sizing: border-box;
-        font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-        font-size: 20px;
-        font-weight: 600;
+        border: 1px solid #00f0ff;
+    
+        font-size: 18px;
+        font-weight: 700;
+        color: #00f0ff;
+
+        cursor: pointer;
+        transition: background-color 0.2s;
 
         &:hover {
             background-color: #00f0ff;
             color: #2A2D3A;
         }
-
-        &:disabled {
-            background: #2A2D3A;
-            color: #00f0ff;
-            cursor: auto;
-        }
     }
-  }
 }
+
+
+    

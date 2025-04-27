@@ -7,9 +7,9 @@ import './Main.scss';
 function Main() {
   return (
     <div className='main'>
-      <Navbar />
-      <HeroSection />
-      <QuizSection />
+        <Navbar />
+        <HeroSection />
+        <QuizSection />
     </div>
   );
 }

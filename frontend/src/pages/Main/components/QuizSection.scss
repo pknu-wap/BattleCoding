@@ -1,23 +1,64 @@
 .quizsection {
-    width: 100%;
-    height: 100%;
+  background-color: #282534;
+
+  width: 100%;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  font-family: 'Pretendard', sans-serif;
+
+  .quizCards {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0 2vw;
+    gap: 24px;
+
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 130px 16px;
-    text-align: center;
-    background-color: #282534;
-    box-sizing: border-box;
+    flex-wrap: wrap;
+  }
 
-    .quizsectionGrid {
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: center;
-      align-items: center;
-      gap: 50px;
-      max-width: 1024px;
-      margin: 0 auto;
-      padding: 0 16px;
-      box-sizing: border-box;
+  .quizCard {
+    background-color: #2A2D3A ;
+
+    width: 240px;
+    height: 110px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    border-radius: 12px;
+    border: 1px solid #00f0ff;
+
+    font-size: 16px;
+    color: #e0e0e0;
+    text-align: left;
+
+    .quizEmoji {
+      margin-bottom: 8px;
+
+      font-size: 18px;
     }
+    
+    .quizMain {
+      margin-bottom: 10px;
+
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .quizSub {
+      margin-top: 8px;
+
+      font-size: 14px;
+      font-weight: 400;
+      color: #cccccc;
+    }
+  }
 }
