@@ -46,4 +46,8 @@ public class User {
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
 
+    public void updateXpAndCorrect(int xp, boolean correct) {
+        this.xp += xp;
+        if (correct) this.totalCorrect += 1;
+    }
 }

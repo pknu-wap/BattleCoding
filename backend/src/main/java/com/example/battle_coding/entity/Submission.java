@@ -17,6 +17,10 @@ public class Submission {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    // 연습모드 / 랭킹모드 구분
+    @Column(nullable = false)
+    private Boolean isRanking;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
@@ -34,6 +38,7 @@ public class Submission {
     @Column(nullable = false)
     private Integer timeTaken;  // 문제 풀이에 걸린 시간 (초 단위)
 
+    // XP는 랭킹모드에서만 부여됨 (연습모드면 0)
     @Column(nullable = false)
     private Integer xpEarned;  // 사용자가 해당 제출에서 얻은 경험치
 

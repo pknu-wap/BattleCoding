@@ -24,6 +24,9 @@ public class QuestionJsonLoader {
         loadFromJson("questions/fill_in_blank.json");
         loadFromJson("questions/predict_output.json");
         loadFromJson("questions/cs_knowledge.json");
+        loadFromJson("questions/cs_ranking_only.json");
+        loadFromJson("questions/fill_ranking_only.json");
+        loadFromJson("questions/predict_ranking_only.json");
     }
 
     private void loadFromJson(String filePath) {
