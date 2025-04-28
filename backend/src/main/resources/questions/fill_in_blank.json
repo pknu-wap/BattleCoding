@@ -2,13 +2,6 @@
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/images/q1.png?raw=true",
-    "answers": ["::-1", "None:None:-1", "len(s)-1::-1"],
-    "difficulty": "MEDIUM"
-  },
-  {
-    "type": "FILL_IN_BLANK",
-    "question": null,
     "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/1.PNG?raw=true",
     "answers": ["s"],
     "difficulty": "EASY"
@@ -16,7 +9,7 @@
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/2.PNG?raw=true",
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/2-2.PNG?raw=true",
     "answers": ["1"],
     "difficulty": "EASY"
   },
@@ -74,7 +67,265 @@
     "question": null,
     "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/10.PNG?raw=true",
     "answers": ["power"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/-1.PNG?raw=true",
+    "answers": ["-1"],
     "difficulty": "MEDIUM"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/10-2.PNG?raw=true",
+    "answers": ["10"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/2.PNG?raw=true",
+    "answers": ["2"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/False.PNG?raw=true",
+    "answers": ["False", "false", "FALSE"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/String%5B%5D.PNG?raw=true",
+    "answers": ["String[]"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/System.out.printIn.PNG?raw=true",
+    "answers": ["System.out.printIn"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/True.PNG?raw=true",
+    "answers": ["True", "true", "TRUE"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/append.PNG?raw=true",
+    "answers": ["append"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/arr.PNG?raw=true",
+    "answers": ["arr"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/arr%5B0%5D.PNG?raw=true",
+    "answers": ["arr[0]"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/arr%5Bmid%5D.PNG?raw=true",
+    "answers": ["arr[mid]"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/count.PNG?raw=true",
+    "answers": ["count"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/cout.PNG?raw=true",
+    "answers": ["cout"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/currentSum.PNG?raw=true",
+    "answers": ["currentSum"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/discriminant.PNG?raw=true",
+    "answers": ["discriminant"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/else.PNG?raw=true",
+    "answers": ["else"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/fib.PNG?raw=true",
+    "answers": ["fib"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/fib2.PNG?raw=true",
+    "answers": ["fib"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/fib%5Bi%5D.PNG?raw=true",
+    "answers": ["fib[i]"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/gcd.PNG?raw=true",
+    "answers": ["gcd"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/imaginaryPart.PNG?raw=true",
+    "answers": ["imaginaryPart"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/isPrime.PNG?raw=true",
+    "answers": ["isPrime"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/is_prime.PNG?raw=true",
+    "answers": ["is_prime"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/max_sum.PNG?raw=true",
+    "answers": ["max_sum"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/max_sum2.PNG?raw=true",
+    "answers": ["max_sum"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/pivot.PNG?raw=true",
+    "answers": ["pivot"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/power.PNG?raw=true",
+    "answers": ["power"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/prime.PNG?raw=true",
+    "answers": ["prime"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/prime%5Bi%5D.PNG?raw=true",
+    "answers": ["prime[i]"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/prime%5Bp%5D.PNG?raw=true",
+    "answers": ["prime[p]"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/printIn.PNG?raw=true",
+    "answers": ["printIn"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/quickSort.PNG?raw=true",
+    "answers": ["quickSort"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/return.PNG?raw=true",
+    "answers": ["return"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/root.PNG?raw=true",
+    "answers": ["root"],
+    "difficulty": "HARD"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/temp.PNG?raw=true",
+    "answers": ["temp"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/vec%5B0%5D.PNG?raw=true",
+    "answers": ["vec[0]"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/while.PNG?raw=true",
+    "answers": ["while"],
+    "difficulty": "EASY"
   }
 ]
-
