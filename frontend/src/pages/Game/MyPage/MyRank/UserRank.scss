@@ -1,0 +1,73 @@
+.userRanking {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  font-family: 'Pretendard', sans-serif;
+
+  .readerboard {
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+
+  .userList {
+    width: 100%;
+    padding: 0 10px;
+    gap: 10px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+
+    .userRow {
+      background-color: #2a2d3a;
+      padding: 10px;
+      
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      border-radius: 8px;
+
+      .placing {
+        background-color: #2a2d3a;
+        
+        padding: 8px 20px;
+
+        font-size: 16px;
+        color: #ffffff;
+
+        border-radius: 8px;
+
+        .rank {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          font-size: 20px;
+        }
+      }
+
+      .username {
+        gap: 4px;
+        display: flex;
+
+        font-size: 16px;
+        color: #cccccc;
+      }
+
+      .percent {
+        font-size: 16px;
+        color: #00f0ff;
+      }
+    }
+  }
+}

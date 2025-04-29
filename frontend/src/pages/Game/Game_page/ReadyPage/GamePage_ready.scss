@@ -1,0 +1,101 @@
+.pageBackground {
+  background-color: #282534;
+
+  width: 100%;
+  min-height: calc(100vh - 56px);
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  .problemSection {
+    background: linear-gradient(to bottom, #141E30, #243B55);
+
+    width: 100%;
+    padding: 40px; 
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+    .problemWrapper {
+      width: 100%;
+      gap: 30px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .problemImage {
+        display: flex;
+        justify-content: center;
+        align-items: center;        
+  
+        img {
+          height: 400px;
+          width: auto;
+  
+          object-fit: contain;
+        }
+      }
+
+      .problemDescription {
+        background-color: #2a2d3a;
+        
+        width: 100%;
+        max-width: 600px;
+        box-sizing: border-box;
+        
+        font-family: 'Pretendard', sans-serif;
+        text-align: center;
+  
+        h2 {
+          margin-bottom: 10px;
+  
+          font-size: 24px;
+          font-weight: 600;
+          color: #ffffff;
+        }
+  
+        p {
+          font-size: 16px;
+          font-weight: 500;
+          color: #e0e0e0;
+        }
+      }
+    }
+  }
+
+  .buttonSection {
+    padding: 38px;
+    gap: 40px;
+
+    display: flex;
+    justify-content: center;
+
+    .readyButton {
+      background-color: #2A2D3A;
+
+      width: 160px;
+      height: 70px;
+
+      border: 1px solid #00F0FF;
+      border-radius: 8px;
+
+      font-family: 'Pretendard', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: #00F0FF;
+
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: #00F0FF;
+        color: #2a2d3a;
+      }
+    }
+  }
+}

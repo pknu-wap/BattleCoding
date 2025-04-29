@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from './components/Navbar';
+import Navbar from '../Navbar/Navbar';
 import HeroSection from './components/HeroSection';
 import QuizSection from './components/QuizSection';
 import './Main.scss';

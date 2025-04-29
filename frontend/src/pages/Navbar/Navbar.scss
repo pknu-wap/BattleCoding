@@ -67,26 +67,26 @@
 
             cursor: pointer;
             transition: background-color 0.2s, color 0.2s;
-        }
-        
-        .btnMypage {
-            background-color: #00F0FF;
-            color: #2A2D3A;
-            border: none;
-        
-            &:hover {
-                background-color: #00d6e6;
-            }
-        }
 
-        .btnLogin, .btnRegister {
-            background-color: transparent;
-            color: #00F0FF;
-            border: 1px solid #00F0FF;
-
-            &:hover {
+            &.btnLogin, &.btnMypage {
                 background-color: #00F0FF;
                 color: #2A2D3A;
+                border: none;
+            
+                &:hover {
+                    background-color: #00d6e6;
+                }
+            }
+
+            &.btnRegister, &.btnLogout {
+                background-color: transparent;
+                color: #00F0FF;
+                border: 1px solid #00F0FF;
+    
+                &:hover {
+                    background-color: #00F0FF;
+                    color: #2A2D3A;
+                }
             }
         }
     }

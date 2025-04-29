@@ -1,16 +1,24 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Game.css";
-import UserHeader from "./Game_main/GameHeader/GameHeader_user";
+import Navbar from "../Navbar/Navbar";
 import GameMain from "./Game_main/Game_main";
 
 function GameUser() {
+  const [isLogin, setIsLogin] = useState(false);
+
   useEffect(() => {
-    localStorage.setItem("isLogin", "true");
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsLogin(true);
+    }
+    else {
+      setIsLogin(false);
+    }
   }, []);
 
   return (
     <div id="Member">
-      <UserHeader />
+      <Navbar type={"user" /* isLogin ? "user" : "guest" */} />
       <GameMain />
     </div>
   );

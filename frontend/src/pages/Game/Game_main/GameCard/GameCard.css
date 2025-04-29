@@ -3,12 +3,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: auto !important;
+  height: auto;
   width: 100%;
 }
 .GameCardList {
   display: grid;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   max-width: 900px;
@@ -16,7 +16,8 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10px;
-  row-gap: 10px;
+  row-gap: 24px;
+  min-height: 340px;
 }
 @media (max-width: 900px) {
   .GameCardList {

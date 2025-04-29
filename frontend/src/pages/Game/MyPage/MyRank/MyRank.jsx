@@ -1,6 +1,6 @@
 import React from "react";
-import "./MyRank.css";
-import UserRank from "../MyRank/UserRank";
+import "./MyRank.scss";
+import UserRank from "./UserRank";
 
 function My_Rank() {
   return (
