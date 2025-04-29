@@ -3,21 +3,28 @@
   background-color: #0f1225;
 }
 .PageLayout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: auto !important;
 }
 .QuestionContent {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 .Question_main {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .Matter_main {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   padding: 30px;
 }
 .Matter {
@@ -28,6 +35,7 @@
   padding: 20px;
   width: 400px;
   height: 300px;
+  text-align: center;
 }
 .Enter_main {
   display: flex;
@@ -69,4 +77,12 @@
 .Enter_button:hover {
   background-color: #00f0ff;
   font-weight: bold;
+}
+
+.Matter img {
+  max-width: 110%; /* 부모 영역 대비 100%까지만 허용 */
+  height: auto; /* 비율은 유지하면서 줄이기 */
+  display: block; /* 가운데 정렬하려면 block 필요 */
+  margin: 0 auto; /* 가운데 정렬 */
+  object-fit: contain; /* 비율 유지하면서 이쁘게 */
 }

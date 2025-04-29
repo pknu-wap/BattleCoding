@@ -19,6 +19,7 @@ public class GlobalExceptionHandler {
     // 서버 예외
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponseDto> handleException(Exception e) {
+        e.printStackTrace();
         return ResponseEntity
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body(new ErrorResponseDto(false, "서버 내부 오류가 발생했습니다."));
