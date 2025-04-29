@@ -1,4 +1,4 @@
-import "./GameCard.css";
+import "./GameCard.scss";
 import { useNavigate } from "react-router-dom";
 
 function GameCard({ image, title, description }) {
@@ -19,8 +19,8 @@ function GameCard({ image, title, description }) {
         <div className="game_card_body">
           <div className="game_card_content">
             <div className="game_card_text">
-              <span className="game_card_title">{title}</span>
-              <span className="game_card_elaborate">{description}</span>
+              <div className="game_card_title">{title}</div>
+              <div className="game_card_elaborate" dangerouslySetInnerHTML={{ __html: description }} />
             </div>
           </div>
         </div>

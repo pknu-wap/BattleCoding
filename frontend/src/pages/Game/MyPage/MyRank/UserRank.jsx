@@ -4,7 +4,7 @@ import "./UserRank.scss";
 function User_Rank() {
   return (
     <div className="UserRanking">
-      <div className="Readerboard">🎖️ READERBOARD 🎖️</div>
+      <div className="Readerboard">🎖️ ReaderBoard 🎖️</div>
       
       <div className="userList">
         {["1st", "2nd", "3rd"].map((place, index) => (
@@ -16,7 +16,7 @@ function User_Rank() {
             </div>
             <span className="username">{place} User</span>
             <span className="scoreline">
-              <b className="aNumber">???</b>/<b className="rNumber">???</b>/<b className="wNumber">???</b>
+              <b className="aNumber">? </b>/<b className="rNumber">? </b>/<b className="wNumber">?</b>
             </span>
             <span className="percent">
               <b className="r">XX.xx</b> %

@@ -17,8 +17,7 @@ function GamePage_ready() {
             </div>
             <div className="problemDescription">
               <h2>{title}</h2>
-              <p>{description}</p>
-            </div>
+              <p>{description.replace(/<br\s*\/?>/g, " ")}</p>            </div>
           </div>
         </div>
 
