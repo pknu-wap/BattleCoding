@@ -9,7 +9,6 @@ spring:
     url: jdbc:mysql://localhost:3307/battle_coding?authenticationPlugins=com.mysql.cj.protocol.a.authentication.MysqlNativePasswordPlugin&useSSL=false&allowPublicKeyRetrieval=true
     driver-class-name: com.mysql.cj.jdbc.Driver
 
-
   jpa:
     hibernate:
       ddl-auto: update

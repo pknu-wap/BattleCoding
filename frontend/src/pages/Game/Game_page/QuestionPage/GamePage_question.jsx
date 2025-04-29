@@ -15,8 +15,7 @@ function GamePage_question() {
           count: 10,
         });
         setQuestions(data);
-      }
-      catch (err) {
+      } catch (err) {
         alert(err.message);
       }
     };
@@ -25,7 +24,11 @@ function GamePage_question() {
   }, []);
 
   if (questions.length === 0) {
-    return <div className="Matter">문제를 불러오는 중...</div>
+    return <div className="Matter">문제를 불러오는 중...</div>;
+  }
+
+  if (currentIndex >= questions.length) {
+    return <div className="Matter">모든 문제를 풀었습니다!</div>;
   }
 
   const currentQuestion = questions[currentIndex];
@@ -34,7 +37,7 @@ function GamePage_question() {
     console.log("입력한 정답: ", answer);
     setAnswer("");
     setCurrentIndex((prev) => prev + 1);
-  }
+  };
 
   return (
     <div className="PageBackground">
@@ -42,17 +45,27 @@ function GamePage_question() {
         <div className="QuestionContent">
           <div className="Question_main">
             <div className="Matter_main">
-              <div className="Matter">{currentQuestion.question}</div>
+              <div className="Matter">
+                {currentQuestion.question ? (
+                  <div>{currentQuestion.question}</div>
+                ) : currentQuestion.imageUrl ? (
+                  <img src={currentQuestion.imageUrl} alt="문제 이미지" />
+                ) : (
+                  <div>문제 없음</div>
+                )}
+              </div>
             </div>
             <div className="Enter_main">
               <span className="Enter_input">
-                <input 
+                <input
                   aria-label="정답창"
-                  placeholder="정답을 입력해주세요." 
+                  placeholder="정답을 입력해주세요."
                   value={answer}
                   onChange={(e) => setAnswer(e.target.value)}
                 />
-                <button className="Enter_button" onClick={handleSubmit}>🕹️</button>
+                <button className="Enter_button" onClick={handleSubmit}>
+                  🕹️
+                </button>
               </span>
             </div>
           </div>

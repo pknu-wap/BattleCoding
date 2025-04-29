@@ -78,3 +78,11 @@
   background-color: #00f0ff;
   font-weight: bold;
 }
+
+.Matter img {
+  max-width: 110%; /* 부모 영역 대비 100%까지만 허용 */
+  height: auto; /* 비율은 유지하면서 줄이기 */
+  display: block; /* 가운데 정렬하려면 block 필요 */
+  margin: 0 auto; /* 가운데 정렬 */
+  object-fit: contain; /* 비율 유지하면서 이쁘게 */
+}
