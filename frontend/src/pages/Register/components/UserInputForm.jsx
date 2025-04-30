@@ -68,7 +68,11 @@ const UserInputForm = () => {
 
     return (
         <form className="regsiterSubmitForm" onSubmit={submitHandler}>
-            <InputInfo onChange={infoHandler} OnChangeValidation={validationHandler} />
+            <div className="inputArea">
+                <div className='formWrapper'>
+                    <InputInfo onChange={infoHandler} OnChangeValidation={validationHandler} />
+                </div>
+            </div>
             <button disabled={!isValidButton}>회원가입</button>
         </form>
     );

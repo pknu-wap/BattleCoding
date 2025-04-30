@@ -61,6 +61,8 @@ const LoginInputForm = () => {
 
                 alert("로그인 되었습니다.");
                 await getMyInfo();
+
+                navigate("/");
             }      
             else {
                 alert(response.data.message);
@@ -74,25 +76,30 @@ const LoginInputForm = () => {
 
     return (
         <form className='loginSubmitForm' onSubmit={loginHandler}>
-            <div className='EmailField'>
-                <label htmlFor='email'>이메일</label>
-                <input 
-                    placeholder='이메일' 
-                    name='email' 
-                    onChange={inputHandler} 
-                    value={input.email}
-                />
-            </div>
-            
-            <div className='PasswordField'>
-                <label htmlFor='password'>비밀번호</label>
-                <input
-                    placeholder='비밀번호'
-                    name='password'
-                    type='password'
-                    onChange={inputHandler}
-                    value={input.password}
-                />
+            <div className='inputArea'>
+                <div className='formWrapper'>
+                    <div className='EmailField'>
+                        <label htmlFor='email'>이메일</label>
+                        <input 
+                            placeholder='이메일' 
+                            name='email'
+                            type='email'
+                            onChange={inputHandler} 
+                            value={input.email}
+                        />
+                    </div>
+                    
+                    <div className='PasswordField'>
+                        <label htmlFor='password'>비밀번호</label>
+                        <input
+                            placeholder='비밀번호'
+                            name='password'
+                            type='password'
+                            onChange={inputHandler}
+                            value={input.password}
+                        />
+                    </div>
+                </div>
             </div>
             
             <button disabled={!isValidate}>로그인</button>

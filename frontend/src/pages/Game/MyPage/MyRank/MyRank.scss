@@ -1,0 +1,75 @@
+.MyRank {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+
+  font-family: 'Pretendard', sans-serif;
+
+  .MyRanking {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    .Ranking {
+      color: #ffffff;
+      font-size: 32px;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .Rank {
+      background-color: #2a2d3a;
+
+      width: 100%;
+      max-width: 490px;
+      padding: 10px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+
+      border-radius: 8px;
+      color: #ffffff;
+      font-weight: 600;
+
+      .Placing {
+        color: white;
+        padding: 8px 20px;
+        border-radius: 8px;
+        font-size: 16px;
+
+        .MyPlacing {
+          font-size: 20px;
+          font-weight: 700;
+          color: #00f0ff;
+        }
+      }
+
+      .Ranker {
+        color: #00f0ff;
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .r {
+        color: #00f0ff;
+        font-size: 20px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .User_Ranking {
+    width: 100%;
+    max-width: 1100px;
+  }
+}

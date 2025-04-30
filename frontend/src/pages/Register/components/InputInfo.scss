@@ -1,53 +1,55 @@
-@import "../../../style/variables.scss";
-
 .NicknameField, .EmailField, .PasswordField, .PasswordCheckField {
+    width: 100%;
+    gap: 10px;
+    
     display: flex;
-    margin-bottom: 25px;
     flex-direction: column;
-    justify-content: center;
     align-items: flex-start;
-    gap: 5px;
+
+    font-family: 'Pretendard', sans-serif;
 
     label {
-        color: #FFF;
-        text-align: center;
-        font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-        font-size: 20px;
+        margin-left: 4px;
+
+        font-size: 16px;
         font-weight: 600;
-        line-height: 28px;
+        color: #F7F7F7;
+        text-align: center;
     }
 
     input {
-        width: 380px;
-        height: 52px;  
-        padding: 0 16px;
-        font-size: 16px; 
-        font-weight: 600;
-        font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-        border-radius: 10px;
-        border: 1px solid #CCC;
-        background: #F7F7F7;
+        background-color: #F7F7F7;
+
+        width: 100%;
+        max-width: 320px;
+        height: 40px;  
+        padding: 0 12px;
         box-sizing: border-box;
+
+        font-size: 14px; 
+        font-weight: 500;
+
+        border-radius: 8px;
+        border: 1px solid #CCCCCC;
     }
 
     p {
-        width: 300px;
-        margin: 4px 0 0 2px;
-        padding-left: 1px;
-        font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-        font-size: 18px;
+        width: auto;
+        max-width: 400px;
+        margin: 4px 0 0 4px;
+
+        white-space: nowrap;
+        overflow: visible;
+        text-overflow: initial;
+
+        font-size: 12px;
         font-weight: 500;
-        line-height: 1.4;
-    }
 
-    p.valid {
-        color: #00f0ff;
+        &.valid {
+            color: #00F0FF;
+        }
+        &.invalid {
+            color: #F7F7F7;
+        }
     }
-    p.invalid {
-        color: #f7f7f7;
-    }
-}
-
-.PasswordCheckField {
-    margin-bottom: 50px;
 }

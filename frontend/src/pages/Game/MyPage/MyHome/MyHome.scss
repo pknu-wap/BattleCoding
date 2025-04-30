@@ -1,0 +1,30 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.MyBackground {
+  display: flex;
+  flex-direction: column;
+
+  .MyLayout {
+    min-height: calc(100vh - 56px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    background: linear-gradient(to bottom, #141E30, #243B55);
+    
+    .MyContent {
+      display: flex;
+
+      .MyProfile {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}

@@ -1,12 +1,12 @@
 import React from "react";
 import "./Game_page.css";
-import PlayHeader from "./PageHeader/PagePlayHeader";
+import Navbar_game from "../../Navbar/Navbar_game";
 import Question from "./QuestionPage/GamePage_question";
 
 function PageQuestion() {
   return (
     <div className="Game_Page">
-      <PlayHeader />
+      <Navbar_game />
       <Question />
     </div>
   );

@@ -1,48 +1,81 @@
 .hero {
-    width: 100%;
-    min-height: 45vh;
-    padding: 32px 0;
     background: linear-gradient(to bottom, #141E30, #243B55);
+
+    width: 100%;
+    flex: 1;
+
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    
+    font-family: 'Pretendard', sans-serif;
 
-    .heroContent {
+    .heroInner {
+        width: 100%;
+        max-width: 1100px;
+        padding: 0 20vw;
+        gap: 24px;
+
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
     .heroTitle {
-        font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-        font-size: 100px;
+        margin: 0;
+
+        font-size: 50px;
         font-weight: 800;
         color: #00f0ff;
-        margin-bottom: 0px;
+        
+        text-align: center;
     }
 
     .heroSubtitle {
-        font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-        font-size: 32px;
-        color: #cccccc;
-        margin-bottom: 70px;
+        margin-top: 5px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+
+        font-size: 18px;
+
+        text-align: center;
+
+        .heroHighlight {
+            font-weight: 600;
+            color: #e0e0e0;
+        }
+
+        .heroSubtext {
+            font-weight: 500;
+            color: #cccccc;
+        }
     }
 
     .heroBtn {
-        background-color: #00f0ff;
-        color: #000;
-        font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-        font-weight: bold;
-        font-size: 28px;
-        padding: 20px 36px;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: opacity 0.3s ease;
+        margin-top: 12px;
 
-        &:hover {
-            opacity: 0.9;
-            transform: translateY(4px);
+        button {
+            background-color: #00f0ff;
+
+            padding: 12px 24px;
+
+            font-size: 16px;
+            font-weight: 600;
+            color: #2A2D3A;
+
+            border-radius: 8px;
+            border: none;
+
+            cursor: pointer;
+            transition: background-color 0.2s;
+
+            &:hover {
+                background-color: #00d6e6;
+            }
         }
     }
 }
