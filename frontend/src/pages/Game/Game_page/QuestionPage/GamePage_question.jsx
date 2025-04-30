@@ -14,15 +14,17 @@ function GamePage_question() {
           type: "FILL_IN_BLANK",
           count: 10,
         });
+        console.log("받아온 데이터:", data);
         setQuestions(data);
       } catch (err) {
+        console.error("에러:", err);
         alert(err.message);
       }
     };
 
     fetchQuestions();
   }, []);
-
+  console.log("questions 상태:", questions);
   if (questions.length === 0) {
     return <div className="Matter">문제를 불러오는 중...</div>;
   }

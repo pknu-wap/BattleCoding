@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getRandomQuestionByType = async ({ type, count = 10 }) => {
     const token = localStorage.getItem("token");
-
+    console.log("getRandomQuestionByType 함수 진입");
     if (!type || !token) {
         throw new Error('문제 type 또는 JWT 토큰이 누락되었습니다.');
     }
@@ -17,7 +17,7 @@ export const getRandomQuestionByType = async ({ type, count = 10 }) => {
                 },
             }
         );
-
+        console.log("API 응답:", response);
         return response.data;
     }
     catch (error) {

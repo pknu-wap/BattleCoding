@@ -1,7 +1,7 @@
 import React from "react";
 import "./Game_page.css";
 import Navbar_game from "../../Navbar/Navbar_game";
-import Question from "./QuestionPage/GamePage_question";
+import Question from "./QuestionPage/GamePage_question.jsx";
 
 function PageQuestion() {
   return (
