@@ -26,8 +26,15 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             @NonNull final HttpServletResponse response,
             @NonNull final FilterChain filterChain
     ) throws ServletException, IOException {
+        String uri = request.getRequestURI();
 
-        if (request.getRequestURI().startsWith("/auth/login") || request.getRequestURI().startsWith("/auth/signup")) {
+        if (uri.startsWith("/auth/") ||
+                uri.startsWith("/static/") ||
+                uri.equals("/") ||
+                uri.startsWith("/favicon.ico") ||
+                uri.startsWith("/manifest.json") ||
+                uri.matches(".*(\\.js|\\.css|\\.png|\\.jpg|\\.jpeg|\\.gif|\\.svg|\\.ico)$")) {
+
             filterChain.doFilter(request, response);
             return;
         }

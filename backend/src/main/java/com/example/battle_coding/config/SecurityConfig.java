@@ -31,7 +31,17 @@ public class SecurityConfig {
                 .cors(Customizer.withDefaults())
                 .csrf(AbstractHttpConfigurer::disable) // CSRF 보호 비활성화
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/**").permitAll()
+                        .requestMatchers(
+                                "/auth/**",
+                                "/static/**",
+                                "/favicon.ico",
+                                "/manifest.json",
+                                "/logo192.png",
+                                "/logo512.png",
+                                "/",
+                                "/index.html",
+                                "/**"
+                        ).permitAll()
                         .anyRequest().authenticated() // 그 외의 모든 요청은 인증 필요
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
