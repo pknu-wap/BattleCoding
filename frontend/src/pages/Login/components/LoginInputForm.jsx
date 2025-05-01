@@ -53,8 +53,9 @@ const LoginInputForm = () => {
         };
 
         try {
-            const response = await axios.post("http://localhost:8080/auth/login", loginData);
-            
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/auth/login`, loginData);
+
+
             if (response.data.success) {
                 const token = response.data.token;
                 localStorage.setItem("token", token);

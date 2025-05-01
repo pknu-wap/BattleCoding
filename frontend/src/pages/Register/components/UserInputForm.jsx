@@ -47,7 +47,7 @@ const UserInputForm = () => {
         };
 
         try {
-            const response = await axios.post('http://localhost:8080/auth/signup', signupData);
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/auth/signup`, signupData);
 
             if (response.data.success) {
                 alert('회원가입이 완료되었습니다.');
