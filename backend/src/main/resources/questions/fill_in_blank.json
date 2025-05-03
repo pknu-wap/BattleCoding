@@ -2,330 +2,379 @@
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/1.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286605/1_dlexxs.png",
     "answers": ["s"],
     "difficulty": "EASY"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/2-2.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286605/2-2_u0rjgl.png",
     "answers": ["1"],
     "difficulty": "EASY"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/3.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286605/3_wvnkdc.png",
     "answers": ["1"],
     "difficulty": "EASY"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/4.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286605/4_vlhozc.png",
     "answers": ["_"],
     "difficulty": "EASY"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/5.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286605/5_qyu850.png",
     "answers": ["intersection"],
     "difficulty": "MEDIUM"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/6-1.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286606/6-1_hgncvo.png",
     "answers": ["score"],
     "difficulty": "MEDIUM"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/7.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286606/7_mc3lhd.png",
     "answers": ["prod"],
     "difficulty": "EASY"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/8.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286606/8_enber5.png",
     "answers": ["arr[0]"],
     "difficulty": "MEDIUM"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/9-1.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286606/9-1_sauz3w.png",
     "answers": ["tolower"],
     "difficulty": "MEDIUM"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/10.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286606/10_alosfr.png",
     "answers": ["power"],
     "difficulty": "EASY"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/-1.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286614/-1_pyfymx.png",
     "answers": ["-1"],
     "difficulty": "MEDIUM"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/10-2.PNG?raw=true",
-    "answers": ["10"],
-    "difficulty": "EASY"
-  },
-  {
-    "type": "FILL_IN_BLANK",
-    "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/2.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286614/2_aztbmf.png",
     "answers": ["2"],
     "difficulty": "EASY"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/False.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286614/10-2_zuoqft.png",
+    "answers": ["10"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286616/False_pknwlc.png",
     "answers": ["False", "false", "FALSE"],
     "difficulty": "EASY"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/String%5B%5D.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286622/String_acesgz.png",
     "answers": ["String[]"],
     "difficulty": "MEDIUM"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/System.out.printIn.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286623/System.out.printIn_ihqzgl.png",
     "answers": ["System.out.printIn"],
     "difficulty": "MEDIUM"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/True.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286624/True_wowicc.png",
     "answers": ["True", "true", "TRUE"],
     "difficulty": "EASY"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/append.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286615/append_llx8is.png",
     "answers": ["append"],
     "difficulty": "EASY"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/arr.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286614/arr_riqyrc.png",
     "answers": ["arr"],
     "difficulty": "MEDIUM"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/arr%5B0%5D.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286614/arr_0_hyyltx.png",
     "answers": ["arr[0]"],
     "difficulty": "MEDIUM"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/arr%5Bmid%5D.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286614/arr_mid_wfweph.png",
     "answers": ["arr[mid]"],
     "difficulty": "MEDIUM"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/count.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286615/count_twkhlv.png",
     "answers": ["count"],
     "difficulty": "EASY"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/cout.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286615/cout_kgmkti.png",
     "answers": ["cout"],
     "difficulty": "MEDIUM"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/currentSum.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286615/currentSum_ne9jeh.png",
     "answers": ["currentSum"],
     "difficulty": "EASY"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/discriminant.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286616/discriminant_olczxr.png",
     "answers": ["discriminant"],
     "difficulty": "MEDIUM"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/else.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286616/else_f2tbnk.png",
     "answers": ["else"],
     "difficulty": "EASY"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/fib.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286616/fib_b5w86y.png",
     "answers": ["fib"],
     "difficulty": "EASY"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/fib2.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286617/fib2_rugwpu.png",
     "answers": ["fib"],
     "difficulty": "EASY"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/fib%5Bi%5D.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286617/fib_i_npwrga.png",
     "answers": ["fib[i]"],
     "difficulty": "MEDIUM"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/gcd.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286618/gcd_jsb3jr.png",
     "answers": ["gcd"],
     "difficulty": "EASY"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/imaginaryPart.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286618/imaginaryPart_mxjggv.png",
     "answers": ["imaginaryPart"],
     "difficulty": "MEDIUM"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/isPrime.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286619/isPrime_vbax0w.png",
     "answers": ["isPrime"],
     "difficulty": "EASY"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/is_prime.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286618/is_prime_oatehn.png",
     "answers": ["is_prime"],
     "difficulty": "EASY"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/max_sum.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286619/max_sum_jeced4.png",
     "answers": ["max_sum"],
     "difficulty": "EASY"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/max_sum2.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286619/max_sum2_eeii2o.png",
     "answers": ["max_sum"],
     "difficulty": "EASY"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/pivot.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286620/pivot_q9uyt4.png",
     "answers": ["pivot"],
     "difficulty": "EASY"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/power.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286620/power_fkxhhd.png",
     "answers": ["power"],
     "difficulty": "EASY"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/prime.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286620/prime_qok9li.png",
     "answers": ["prime"],
     "difficulty": "EASY"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/prime%5Bi%5D.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286621/prime_i_gqfokh.png",
     "answers": ["prime[i]"],
     "difficulty": "MEDIUM"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/prime%5Bp%5D.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286621/prime_p_ychqge.png",
     "answers": ["prime[p]"],
     "difficulty": "MEDIUM"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/printIn.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286621/printIn_bvzhmu.png",
     "answers": ["printIn"],
     "difficulty": "EASY"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/quickSort.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286622/quickSort_ds39dw.png",
     "answers": ["quickSort"],
     "difficulty": "MEDIUM"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/return.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286622/return_p1r3jd.png",
     "answers": ["return"],
     "difficulty": "EASY"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/root.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286622/root_yti7rh.png",
     "answers": ["root"],
     "difficulty": "HARD"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/temp.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286623/temp_u01sev.png",
     "answers": ["temp"],
     "difficulty": "MEDIUM"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/vec%5B0%5D.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286624/vec_0_qjqjvd.png",
     "answers": ["vec[0]"],
     "difficulty": "MEDIUM"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/while.PNG?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286624/while_gvcmph.png",
     "answers": ["while"],
     "difficulty": "EASY"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746287209/5-2_e72hdb.png",
+    "answers": ["5"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746287210/flatten_putcdf.png",
+    "answers": ["flatten"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746287210/arr_n-1_skaffl.png",
+    "answers": ["arr[n-1]"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746287210/char_frequency_kanuai.png",
+    "answers": ["char_frequency"],
+    "difficulty": "EASY"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746287210/s_len-i-1_qrppwl.png",
+    "answers": ["s[len-i-1]"],
+    "difficulty": "HARD"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746287210/isPalindrome_ehisxq.png",
+    "answers": ["isPalindrome"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746287210/reverse_pkr054.png",
+    "answers": ["reverse"],
+    "difficulty": "MEDIUM"
   }
 ]
