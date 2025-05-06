@@ -19,7 +19,7 @@ import java.util.List;
 public class QuestionJsonLoader {
 
     private final QuestionRepository questionRepository;
-    private final ObjectMapper objectMapper = new ObjectMapper();
+    private final ObjectMapper objectMapper;
 
     @PostConstruct
     public void loadAllQuestions() {
