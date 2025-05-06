@@ -23,7 +23,6 @@ public class QuestionJsonLoader {
 
     @PostConstruct
     public void loadAllQuestions() {
-        questionRepository.deleteAll();  // 테스트 시, 매번 지우고 다시 삽입
         loadFromJson("questions/fill_in_blank.json");
         loadFromJson("questions/predict_output.json");
         loadFromJson("questions/cs_knowledge.json");
