@@ -25,6 +25,7 @@ public class AuthService {
     public SignupResponseDto signup(SignupRequestDto request) {
         validateEmailDuplicate(request.email());
         validateProviderIdDuplicate(request.providerId());
+        validateNicknameDuplicate(request.nickname());
 
         String encodedPassword = passwordEncoder.encode(request.password());
 
@@ -70,6 +71,12 @@ public class AuthService {
     private void validateEmailDuplicate(String email) {
         if (userRepository.existsByEmail(email)) {
             throw new IllegalArgumentException("이미 존재하는 이메일입니다.");
+        }
+    }
+
+    private void validateNicknameDuplicate(String nickname) {
+        if (userRepository.existsByNickname(nickname)) {
+            throw new IllegalArgumentException("이미 존재하는 닉네임입니다.");
         }
     }
 
