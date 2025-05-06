@@ -1,6 +1,7 @@
 package com.example.battle_coding.repository;
 
 import com.example.battle_coding.entity.Question;
+import com.example.battle_coding.entity.QuestionType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -22,6 +23,9 @@ public interface QuestionRepository extends JpaRepository<Question, Long> {
             @Param("difficulty") String difficulty,
             @Param("count") int count
     );
+
+    boolean existsByTypeAndQuestion(QuestionType type, String question);
+    boolean existsByTypeAndImageUrl(QuestionType type, String imageUrl);
 
 }
 

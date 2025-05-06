@@ -3,6 +3,8 @@ server:
   port: 8080
 
 spring:
+  profiles:
+    active: dev
   datasource:
     url: ${SPRING_DATASOURCE_URL}
     username: ${SPRING_DATASOURCE_USERNAME}
