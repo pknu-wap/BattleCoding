@@ -2,98 +2,93 @@
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C1.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522168/%EB%AC%B8%EC%A0%9C1_x6kzcz.png",
     "answers": ["[20, 30]"],
     "difficulty": "EASY"
   },
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C2.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522222/%EB%AC%B8%EC%A0%9C2_m3ya0j.png",
     "answers": ["BATTLECODING "],
     "difficulty": "EASY"
   },
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C3.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522223/%EB%AC%B8%EC%A0%9C3_rl4r8o.png",
     "answers": ["[10, 20, 100, 200]"],
     "difficulty": "MEDIUM"
   },
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C4.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522222/%EB%AC%B8%EC%A0%9C4_td5o6o.png",
     "answers": ["[6, 3, 18]"],
     "difficulty": "EASY"
   },
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C5.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522223/%EB%AC%B8%EC%A0%9C5_tjwwlh.png",
     "answers": ["wpawp"],
     "difficulty": "MEDIUM"
   },
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C6.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522223/%EB%AC%B8%EC%A0%9C6_spsk1o.png",
     "answers": ["Alice B Bob A"],
     "difficulty": "EASY"
   },
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C7.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522223/%EB%AC%B8%EC%A0%9C7_susdph.png",
     "answers": ["zero"],
     "difficulty": "EASY"
   },
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C8.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522223/%EB%AC%B8%EC%A0%9C8_x5xzj7.png",
     "answers": ["hi ok"],
     "difficulty": "EASY"
   },
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C9.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522223/%EB%AC%B8%EC%A0%9C9_cntmcu.png",
     "answers": ["2468"],
     "difficulty": "MEDIUM"
   },
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C10.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522224/%EB%AC%B8%EC%A0%9C10_smr6se.png",
     "answers": ["$10 $20 $30"],
     "difficulty": "MEDIUM"
   },
+
+
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C10.png?raw=true",
-    "answers": ["$10 $20 $30"],
-    "difficulty": "MEDIUM"
-  },
-  {
-    "type": "PREDICT_OUTPUT",
-    "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C11.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522225/%EB%AC%B8%EC%A0%9C11_rpqyih.png",
     "answers": ["A:80 | B:90 | C:100"],
     "difficulty": "EASY"
   },
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C12.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522226/%EB%AC%B8%EC%A0%9C12_tonvoo.png",
     "answers": ["0-red, 1-green, 2-blue"],
     "difficulty": "EASY"
   },
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C13.png?raw=true",
+    "imageUrl": "",
     "answers": ["1 2 3 4 5 6"],
     "difficulty": "MEDIUM"
   },
@@ -101,49 +96,49 @@
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C14.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522226/%EB%AC%B8%EC%A0%9C14_emvvty.png",
     "answers": ["1.2, 4.6, 7.9"],
     "difficulty": "MEDIUM"
   },
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C15.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522226/%EB%AC%B8%EC%A0%9C15_nchpkq.png",
     "answers": ["Lee -> Kim -> Park"],
     "difficulty": "MEDIUM"
   },
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C16.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522227/%EB%AC%B8%EC%A0%9C16_fbzt85.png",
     "answers": ["AHPLA ATEB AMMAG"],
     "difficulty": "MEDIUM"
   },
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C17.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522227/%EB%AC%B8%EC%A0%9C17_mi346f.png",
     "answers": ["1 2 3 5 6"],
     "difficulty": "EASY"
   },
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C18.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522227/%EB%AC%B8%EC%A0%9C18_p7xngz.png",
     "answers": ["a-c-e-g"],
     "difficulty": "EASY"
   },
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C19.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522228/%EB%AC%B8%EC%A0%9C19_srldbq.png",
     "answers": ["4 2 10"],
     "difficulty": "MEDIUM"
   },
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C20.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522229/%EB%AC%B8%EC%A0%9C20_v7tr4x.png",
     "answers": ["id=123 / name=Minsu / level=5"],
     "difficulty": "MEDIUM"
   },
@@ -152,105 +147,105 @@
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C21.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522270/%EB%AC%B8%EC%A0%9C21_cjgytk.png",
     "answers": ["01234"],
     "difficulty": "EASY"
   },
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C22.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522271/%EB%AC%B8%EC%A0%9C22_wdbwuy.png",
     "answers": ["ABC"],
     "difficulty": "EASY"
   },
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C23.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522271/%EB%AC%B8%EC%A0%9C23_kn5lip.png",
     "answers": ["Yes"],
     "difficulty": "EASY"
   },
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C24.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522278/%EB%AC%B8%EC%A0%9C24_u6wcsb.png",
     "answers": ["9"],
     "difficulty": "EASY"
   },
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C25.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522273/%EB%AC%B8%EC%A0%9C25_mqz5o9.png",
     "answers": ["Two"],
     "difficulty": "EASY"
   },
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C26.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522273/%EB%AC%B8%EC%A0%9C26_sm8y8u.png",
     "answers": ["20"],
     "difficulty": "EASY"
   },
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C27.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522275/%EB%AC%B8%EC%A0%9C27_vofote.png",
     "answers": ["16"],
     "difficulty": "MEDIUM"
   },
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C28.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522274/%EB%AC%B8%EC%A0%9C28_itkmcv.png",
     "answers": ["Hi!"],
     "difficulty": "EASY"
   },
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C29.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522274/%EB%AC%B8%EC%A0%9C29_dz5bi8.png",
     "answers": ["10"],
     "difficulty": "MEDIUM"
   },
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C30.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522275/%EB%AC%B8%EC%A0%9C30_pqklp4.png",
     "answers": ["7"],
     "difficulty": "EASY"
   },
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C31.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522274/%EB%AC%B8%EC%A0%9C31_fcxkwe.png",
     "answers": ["10 5"],
     "difficulty": "MEDIUM"
   },
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C32.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522275/%EB%AC%B8%EC%A0%9C32_kgbvkj.png",
     "answers": ["13"],
     "difficulty": "MEDIUM"
   },
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C33.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522276/%EB%AC%B8%EC%A0%9C33_eumdzc.png",
     "answers": ["W"],
     "difficulty": "EASY"
   },
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C34.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522276/%EB%AC%B8%EC%A0%9C34_sm0xzo.png",
     "answers": ["10"],
     "difficulty": "MEDIUM"
   },
   {
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C35.png?raw=true",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522276/%EB%AC%B8%EC%A0%9C35_ngx1nn.png",
     "answers": ["2"],
     "difficulty": "MEDIUM"
   }
