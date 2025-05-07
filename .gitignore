@@ -64,3 +64,4 @@ yarn.lock
 .DS_Store
 Thumbs.db
 deploy.sh
+deploy.sh
