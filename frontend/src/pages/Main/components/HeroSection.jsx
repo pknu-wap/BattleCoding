@@ -10,16 +10,7 @@ export default function HeroSection() {
     useEffect(() => {
         const token = localStorage.getItem('token');
         setIsLoggedIn(!token);
-    }, []);
-
-    const handleClick = () => {
-        if (isLoggedIn) {
-            navigate('/game/user');
-        }
-        else {
-            navigate('/game/guest');
-        }
-    }; */
+    }, []); */
 
     return (
         <section className='hero'>
@@ -35,7 +26,7 @@ export default function HeroSection() {
                 </p>
                 <div className='heroBtn'>
                     <button
-                        onClick={() => navigate('/game/user')}>지금 시작하기</button>
+                        onClick={() => navigate('/game')}>지금 시작하기</button>
                 </div>
             </div>
         </section>

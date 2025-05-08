@@ -3,6 +3,7 @@ import './Navbar.scss'
 
 export default function Navbar({ type = "main" }) {
     const navigate = useNavigate();
+    const isLoggedIn = localStorage.getItem("token") !== null;
     
     const handleLogout = () => {
         localStorage.removeItem("token");
@@ -26,22 +27,15 @@ export default function Navbar({ type = "main" }) {
             </div>
             
             <div className='navbarAuth'>
-                {type === "main" && (
-                    <>
-                        <button className='btnLogin' onClick={() => navigate('/auth/login')}>로그인</button>
-                        <button className='btnRegister' onClick={() => navigate('/register')}>회원가입</button>
-                    </>
-                )}
-                {type === "guest" && (
-                    <>
-                        <button className='btnLogin' onClick={() => navigate('/auth/login')}>로그인</button>
-                        <button className='btnRegister' onClick={() => navigate('/register')}>회원가입</button>
-                    </>
-                )}
-                {type === "user" && (
+                {isLoggedIn ? (
                     <>
                         <button className='btnMypage' onClick={() => navigate('/user/mypage')}>마이페이지</button>
                         <button className='btnLogout' onClick={handleLogout}>로그아웃</button>
+                    </>
+                ) : (
+                    <>
+                        <button className='btnLogin' onClick={() => navigate('/auth/login')}>로그인</button>
+                        <button className='btnRegister' onClick={() => navigate('/register')}>회원가입</button>
                     </>
                 )}
             </div>
