@@ -1,67 +1,73 @@
 .navbarGame {
-    background-color: #282534;
+  background-color: #282534;
 
+  width: 100%;
+  height: 56px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Pretendard", sans-serif;
+
+  .navbarGameInner {
     width: 100%;
-    height: 56px;
+    max-width: 1300px;
+    padding: 0 20px;
 
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+  }
 
-    font-family: 'Pretendard', sans-serif;
+  .navbarGameLeft {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
 
-    .navbarGameInner {
-        width: 100%;
-        max-width: 1300px;
-        padding: 0 20px;
+  .navbarGameLogo {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
 
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    cursor: pointer;
+  }
+
+  .navbarGameRight {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbarAuth {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  button {
+    background-color: transparent;
+
+    padding: 6px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: "Pretendard", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #00f0ff;
+
+    border-radius: 6px;
+    border: 1px solid #00f0ff;
+
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: #00f0ff;
+      color: #2a2d3a;
     }
-
-    .navbarGameLeft {
-        display: flex;
-        align-items: center;
-        gap: 40px;
-    }
-    
-    .navbarGameLogo {
-        font-size: 20px;
-        font-weight: 700;
-        color: #ffffff;
-
-        cursor: pointer;
-    }
-
-    .navbarGameRight {
-        display: flex;
-        align-items: center;
-    }
-
-    button {
-        background-color: transparent;
-
-        padding: 6px 20px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
-        font-family: 'Pretendard', sans-serif;
-        font-size: 14px;
-        font-weight: 600;
-        color: #00F0FF;
-
-        border-radius: 6px;
-        border: 1px solid #00F0FF;
-
-        cursor: pointer;
-        transition: all 0.2s;
-    
-        &:hover {
-            background-color: #00F0FF;
-            color: #2A2D3A;
-        }
-    }
+  }
 }
