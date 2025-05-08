@@ -4,6 +4,12 @@ import './Navbar.scss'
 export default function Navbar({ type = "main" }) {
     const navigate = useNavigate();
     
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        alert("로그아웃 되었습니다.");
+        navigate('/');
+    }
+
     return (
         <nav className='navbar'>
             <div className='navbarInner'>
@@ -35,7 +41,7 @@ export default function Navbar({ type = "main" }) {
                 {type === "user" && (
                     <>
                         <button className='btnMypage' onClick={() => navigate('/user/mypage')}>마이페이지</button>
-                        <button className='btnLogout' onClick={() => {/* 로그아웃 처리 */}}>로그아웃</button>
+                        <button className='btnLogout' onClick={handleLogout}>로그아웃</button>
                     </>
                 )}
             </div>
