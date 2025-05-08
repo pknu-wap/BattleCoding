@@ -1,11 +1,20 @@
 import "./GamePage_ready.scss";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import {useEffect} from "react";
 
 function GamePage_ready() {
   const navigate = useNavigate();
   const location = useLocation();
   const { image, title, description } = location.state || {};
+
+  // ✅ 로그인 안 된 경우 Login 화면으로 이동
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      navigate("/auth/login");
+    }
+  }, [navigate]);
 
   return (
     <>

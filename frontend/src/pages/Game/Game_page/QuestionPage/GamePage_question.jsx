@@ -1,11 +1,21 @@
 import { useEffect, useState } from "react";
 import { getRandomQuestionByType } from "../../../../api/questionApi";
 import "./GamePage_question.css";
+import {useNavigate} from "react-router-dom";
 
 function GamePage_question() {
   const [questions, setQuestions] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answer, setAnswer] = useState("");
+  const navigate = useNavigate(); // ✅ 추가
+
+  // ✅ [1] 로그인 여부 확인
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      navigate("/auth/login");
+    }
+  }, [navigate]);
 
   useEffect(() => {
     const fetchQuestions = async () => {
@@ -24,6 +34,9 @@ function GamePage_question() {
 
     fetchQuestions();
   }, []);
+
+
+
   console.log("questions 상태:", questions);
   if (questions.length === 0) {
     return <div className="Matter">문제를 불러오는 중...</div>;
