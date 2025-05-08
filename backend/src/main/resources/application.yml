@@ -3,11 +3,15 @@ server:
   port: 8080
 
 spring:
-  config:
-    import: application-secret.yml
+  profiles:
+    active: dev
   datasource:
-    url: jdbc:mysql://localhost:3307/battle_coding?authenticationPlugins=com.mysql.cj.protocol.a.authentication.MysqlNativePasswordPlugin&useSSL=false&allowPublicKeyRetrieval=true
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+  mvc:
+    path match:
+      matching-strategy: ant_path_matcher
 
   jpa:
     hibernate:
