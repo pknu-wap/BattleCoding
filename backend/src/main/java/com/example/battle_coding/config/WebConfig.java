@@ -21,20 +21,21 @@ public class WebConfig implements WebMvcConfigurer {
                 .allowCredentials(true);
     }
 
-    // 정적 자원 처리 (React SPA 라우팅 대응)
+    // 정적 자원 처리 (React build 결과물 포함)
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/static/**")
-                .addResourceLocations("classpath:/static/static/");
+        registry.addResourceHandler("/**")
+                .addResourceLocations("classpath:/static/");
     }
 
+    // 클라이언트 라우팅 지원 (SPA 경로 포워딩)
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/{spring:\\w+}")
                 .setViewName("forward:/");
         registry.addViewController("/**/{spring:\\w+}")
                 .setViewName("forward:/");
-        registry.addViewController("/{spring:\\w+}/**{spring:?!(\\.js|\\.css)$}")
+        registry.addViewController("/{spring:\\w+}/**{spring:?!(\\.js|\\.css|\\.png|\\.jpg|\\.svg)$}")
                 .setViewName("forward:/");
     }
 }

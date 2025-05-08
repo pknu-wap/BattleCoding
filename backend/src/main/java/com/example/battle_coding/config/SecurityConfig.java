@@ -31,19 +31,22 @@ public class SecurityConfig {
                 .cors(Customizer.withDefaults())
                 .csrf(AbstractHttpConfigurer::disable) // CSRF 보호 비활성화
                 .authorizeHttpRequests(auth -> auth
+                        // ✅ React 앱이 필요한 리소스만 허용 (index.html, 정적 리소스)
                         .requestMatchers(
-                                "/auth/**",
-                                "/static/**",
-                                "/favicon.ico",
-                                "/manifest.json",
-                                "/logo192.png",
-                                "/logo512.png",
-                                "/",
-                                "/index.html",
-                                "/**"
+                                "/", "/index.html",
+                                "/static/**", "/favicon.ico", "/manifest.json",
+                                "/logo192.png", "/logo512.png",
+                                "/auth/login", "/register"
                         ).permitAll()
-                        .anyRequest().authenticated() // 그 외의 모든 요청은 인증 필요
+
+                        // ✅ 모든 API와 SPA 경로에 인증 요구
+                        .requestMatchers(
+                                "/auth/**", "/user/**", "/questions/**", "/game/**", "/user/mypage"
+                        ).authenticated()
+
+                        .anyRequest().denyAll()
                 )
+
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .exceptionHandling(e -> e
                         .authenticationEntryPoint(customAuthenticationEntryPoint)
