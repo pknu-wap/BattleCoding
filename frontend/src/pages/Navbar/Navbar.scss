@@ -37,7 +37,10 @@
         display: flex;
         gap: 24px;
     
-        a {
+        button {
+            all: unset;
+            cursor: pointer;
+            
             font-size: 16px;
             font-weight: 500;
             text-decoration: none;

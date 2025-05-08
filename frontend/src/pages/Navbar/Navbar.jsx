@@ -21,8 +21,8 @@ export default function Navbar({ type = "main" }) {
 
           {(type === "main" || type === "user") && (
             <div className="navbarMenu">
-              <a onClick={() => navigate("/game/user")}>Quizzes</a>
-              <a onClick={() => navigate("/user/myrank")}>Ranking</a>
+              <button onClick={() => navigate("/game")}>Quizzes</button>
+              <button onClick={() => navigate("/ranking")}>Ranking</button>
             </div>
           )}
         </div>

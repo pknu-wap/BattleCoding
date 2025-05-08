@@ -10,7 +10,7 @@ import QuestionPage from "./pages/Game/Game_page/QuestionPage";
 import RightAnswerPage from "./pages/Game/Game_page/RightAnswerPage";
 import WrongAnswerPage from "./pages/Game/Game_page/WrongAnswerPage";
 import ResultPage from "./pages/Game/Game_page/ResultPage";
-//import MyRank from "./pages/Game/MyPage/MyRank";
+import My_Rank from "./pages/Game/ranking/MyRank";
 
 const Router = () => {
 
@@ -22,7 +22,7 @@ const Router = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/game" element={<GameMain />}/>
         <Route path="/mypage" element={<MyPage />} />
-        <Route path="/ranking" element{<MyRank />} />
+        <Route path="/ranking" element={<My_Rank />} />
         <Route path="/game/ready" element={<ReadyPage />} />
         <Route path="/game/question" element={<QuestionPage />} />
         <Route path="/game/answer/right" element={<RightAnswerPage />} />
