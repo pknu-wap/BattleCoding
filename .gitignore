@@ -1,3 +1,4 @@
+deploy.sh
 backend/HELP.md
 .gradle
 build/
@@ -54,7 +55,9 @@ yarn.lock
 .env.local
 .env.development.local
 .env.test.local
+.env.production
 .env.production.local
+frontend/.env.production
 
 # IDE 및 에디터 관련 파일
 .idea/
@@ -62,3 +65,5 @@ yarn.lock
 # OS 관련 파일
 .DS_Store
 Thumbs.db
+deploy.sh
+deploy.sh
