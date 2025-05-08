@@ -11,7 +11,7 @@ export default function Navbar({ type = "main" }) {
                     <div className='navbarGameLogo' onClick={() => navigate("/")}>Battle Coding</div>
                 </div>
                 <div className='navbarGameRight'>
-                    <button className='exitButton' onClick={() => navigate('/game/user')}>나가기</button>
+                    <button className='exitButton' onClick={() => navigate('/game')}>나가기</button>
                 </div>
             </div>
         </nav>

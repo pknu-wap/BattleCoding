@@ -3,6 +3,7 @@ import "./Navbar.scss";
 
 export default function Navbar({ type = "main" }) {
   const navigate = useNavigate();
+  const isLoggedIn = localStorage.getItem("token") !== null;
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -20,59 +21,33 @@ export default function Navbar({ type = "main" }) {
 
           {(type === "main" || type === "user") && (
             <div className="navbarMenu">
-              <a href="#">Quizzes</a>
-              <a href="#">Ranking</a>
+              <button onClick={() => navigate("/game")}>Quizzes</button>
+              <button onClick={() => navigate("/ranking")}>Ranking</button>
             </div>
           )}
         </div>
-      </div>
 
-      <div className="navbarAuth">
-        {type === "main" && (
-          <>
-            <button
-              className="btnLogin"
-              onClick={() => navigate("/auth/login")}
-            >
-              로그인
-            </button>
-            <button
-              className="btnRegister"
-              onClick={() => navigate("/register")}
-            >
-              회원가입
-            </button>
-          </>
-        )}
-        {type === "guest" && (
-          <>
-            <button
-              className="btnLogin"
-              onClick={() => navigate("/auth/login")}
-            >
-              로그인
-            </button>
-            <button
-              className="btnRegister"
-              onClick={() => navigate("/register")}
-            >
-              회원가입
-            </button>
-          </>
-        )}
-        {type === "user" && (
-          <>
-            <button
-              className="btnMypage"
-              onClick={() => navigate("/user/mypage")}
-            >
-              마이페이지
-            </button>
-            <button className="btnLogout" onClick={handleLogout}>
-              로그아웃
-            </button>
-          </>
-        )}
+        <div className="navbarAuth">
+          {isLoggedIn ? (
+            <>
+              <button className="btnMypage" onClick={() => navigate("/user/mypage")}>
+                마이페이지
+              </button>
+              <button className="btnLogout" onClick={handleLogout}>
+                로그아웃
+              </button>
+            </>
+          ) : (
+            <>
+              <button className="btnLogin" onClick={() => navigate("/auth/login")}>
+                로그인
+              </button>
+              <button className="btnRegister" onClick={() => navigate("/register")}>
+                회원가입
+              </button>
+            </>
+          )}
+        </div>
       </div>
     </nav>
   );
