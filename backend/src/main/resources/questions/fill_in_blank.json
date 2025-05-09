@@ -94,7 +94,7 @@
     "type": "FILL_IN_BLANK",
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286616/False_pknwlc.png",
-    "answers": ["False", "false", "FALSE"],
+    "answers": ["False"],
     "difficulty": "EASY"
   },
   {
@@ -108,14 +108,14 @@
     "type": "FILL_IN_BLANK",
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286623/System.out.printIn_ihqzgl.png",
-    "answers": ["System.out.printIn"],
+    "answers": ["System.out.println"],
     "difficulty": "MEDIUM"
   },
   {
     "type": "FILL_IN_BLANK",
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286624/True_wowicc.png",
-    "answers": ["True", "true", "TRUE"],
+    "answers": ["True"],
     "difficulty": "EASY"
   },
   {
@@ -283,7 +283,7 @@
     "type": "FILL_IN_BLANK",
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286621/printIn_bvzhmu.png",
-    "answers": ["printIn"],
+    "answers": ["println"],
     "difficulty": "EASY"
   },
   {
