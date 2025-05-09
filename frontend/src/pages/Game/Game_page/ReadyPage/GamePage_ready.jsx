@@ -5,7 +5,13 @@ import { useNavigate } from "react-router-dom";
 function GamePage_ready() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { image, title, description } = location.state || {};
+  const { image, title, description, type } = location.state || {};
+
+  const handleClick = (level) => {
+    navigate('/game/question', {
+        state: { type, level }
+      });
+  };
 
   return (
     <>
@@ -17,14 +23,15 @@ function GamePage_ready() {
             </div>
             <div className="problemDescription">
               <h2>{title}</h2>
-              <p>{description.replace(/<br\s*\/?>/g, " ")}</p>            </div>
+              <p>{description.replace(/<br\s*\/?>/g, " ")}</p>
+            </div>
           </div>
         </div>
 
         <div className="buttonSection">
-          <button className="readyButton" onClick={() => navigate("/game/question")}>초급</button>
-          <button className="readyButton" onClick={() => navigate("/game/question")}>중급</button>
-          <button className="readyButton" onClick={() => navigate("/game/question")}>고급</button>
+          <button className="readyButton" onClick={() => handleClick(1)}>초급</button>
+          <button className="readyButton" onClick={() => handleClick(2)}>중급</button>
+          <button className="readyButton" onClick={() => handleClick(3)}>고급</button>
         </div>
       </div>
     </>

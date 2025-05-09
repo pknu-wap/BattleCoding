@@ -1,10 +1,13 @@
 .GameCard {
+  width: 310px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   cursor: pointer;
 
   .cardHoverArea {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     transition: filter 0.3s ease;
 
     &:hover {
@@ -17,13 +20,13 @@
   }
 
   .gameCardCover {
-    width: 310px;
+    width: 100%;
     height: 330px;
     display: flex;
 
     .gameCardImage {
       width: 100%;
-      height: auto;
+      height: 100%;
       object-fit: cover;
       border-radius: 5px;
     }

@@ -1,12 +1,12 @@
 import "./GameCard.scss";
 import { useNavigate } from "react-router-dom";
 
-function GameCard({ image, title, description }) {
+function GameCard({ image, title, description, type }) {
   const navigate = useNavigate();
 
   const handleClick = () => {
     navigate("/game/ready", {
-      state: { image, title, description },
+      state: { image, title, description, type }, 
     });
   };
 
