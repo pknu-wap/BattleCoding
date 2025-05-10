@@ -99,7 +99,7 @@
     "id": 20013,
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "",
+    "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522226/%EB%AC%B8%EC%A0%9C13_tklcy3.png",
     "answers": ["1 2 3 4 5 6"],
     "difficulty": "MEDIUM"
   },
