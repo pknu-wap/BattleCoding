@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./UserRank.scss";
+import api from "../../../api";
 
 function User_Rank({ currentUsername }) {
     const [userData, setUserData] = useState([]);
 
     useEffect(() => {
-        axios.get("/api/user/rankings") // 실제 백엔드 랭킹 API 주소
+        api.get("/api/user/rankings") // 실제 백엔드 랭킹 API 주소
             .then((res) => setUserData(res.data))
             .catch((err) => console.error(err));
     }, []);
