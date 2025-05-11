@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 // import axios from "axios"; // 아직 API 없으므로 주석 처리
-import "./UserRank.scss";
+import "./UserRanking.scss";
 
-function UserRank({ currentUsername }) {
+function UserRanking({ currentUsername }) {
     const [userData, setUserData] = useState([]);
 
     useEffect(() => {
@@ -61,4 +61,4 @@ function UserRank({ currentUsername }) {
     );
 }
 
-export default UserRank;
+export default UserRanking;

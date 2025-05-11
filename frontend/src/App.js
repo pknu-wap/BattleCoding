@@ -7,7 +7,7 @@ import GameHeaderUser from "./pages/Game/GameHeader/GameHeader_User";
 import Game from "./pages/Game/Game";
 import ReadyPage from "./pages/Page/ReadyPage";
 import ResultPage from "./pages/Page/ResultPage";
-import MyRank from "./pages/ranking/MyRank";
+import MyRanking from "./pages/ranking/MyRanking";
 import "./App.scss";
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
                 <Route path="/game" element={<Game />} />
                 <Route path="/ready" element={<ReadyPage />} />
                 <Route path="/result" element={<ResultPage />} />
-                <Route path="/ranking" element={<MyRank />} />
+                <Route path="/ranking" element={<MyRanking />} />
             </Routes>
         </Router>
     );

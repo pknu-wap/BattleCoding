@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import "./MyRank.scss";
-import UserRank from "./UserRank";
+import "./MyRanking.scss";
+import UserRanking from "./UserRanking";
 // import axios from "axios"; // 일단 비활성화
 
-function MyRank() {
+function MyRanking() {
     const [myInfo, setMyInfo] = useState(null);
 
     useEffect(() => {
@@ -46,10 +46,10 @@ function MyRank() {
             </div>
 
             <div className="User_Ranking">
-                {myInfo && <UserRank currentUsername={myInfo.username} />}
+                {myInfo && <UserRanking currentUsername={myInfo.username} />}
             </div>
         </div>
     );
 }
 
-export default MyRank;
+export default MyRanking;
