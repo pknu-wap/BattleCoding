@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+import api from "../../../api";
 import './InputInfo.scss';
 
 const InputInfo = ({ onChange, OnChangeValidation }) => {
@@ -24,7 +24,7 @@ const InputInfo = ({ onChange, OnChangeValidation }) => {
 
     const checkNickname = async (nickname) => {
       try {
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/user/check-nickname?nickname=${nickname}`);
+        const res = await api.get(`/user/check-nickname`, { params: { nickname } });
         console.log("[닉네임 체크 응답]", nickname, "→", res.data);
         return res.data === true;
       } catch (err) {
@@ -35,7 +35,7 @@ const InputInfo = ({ onChange, OnChangeValidation }) => {
 
     const checkEmail = async (email) => {
       try {
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/user/check-email?email=${email}`);
+        const res = await api.get(`/user/check-email`, { params: { email } });
         console.log("[이메일 체크 응답]", email, "→", res.data);
         return res.data === true;
       } catch (err) {
@@ -49,9 +49,19 @@ const InputInfo = ({ onChange, OnChangeValidation }) => {
       setIsLengthValid(prev => ({ ...prev, passwordCheck: match }));
     }, [inputData.password, inputData.passwordCheck]);
 
+    useEffect(() => {
+      const nicknameValid = isLengthValid.nickname && isAvailable.nickname;
+      const emailValid = isLengthValid.email && isAvailable.email;
+
+      OnChangeValidation("isValidNickname", nicknameValid);
+      OnChangeValidation("isValidPwd", isLengthValid.password);
+      OnChangeValidation("isValidPwdChk", isLengthValid.passwordCheck);
+    },[isLengthValid, isAvailable, OnChangeValidation]);
+
     const inputHandler = async (e) => {
         const { name, value } = e.target;
         setInputData((prev) => ({ ...prev, [name]: value }));
+        onChange(name, value);
 
         if (name === "nickname") {
           const lengthValid = value.length >= 4 && value.length <= 12;
@@ -88,20 +98,8 @@ const InputInfo = ({ onChange, OnChangeValidation }) => {
           const match = inputData.password === value;
           setIsLengthValid(prev => ({ ...prev, passwordCheck: match }));
         }
-
-        const mapping = {
-          nickname: isLengthValid.nickname && isAvailable.nickname,
-          email: isLengthValid.email && isAvailable.email,
-          password: isLengthValid.password,
-          passwordCheck: isLengthValid.passwordCheck,
-        };
-    
-        onChange(name, value);
-        OnChangeValidation(`isValid${capitalize(name)}`, mapping[name]);
     };
-
-    const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
-
+    
     return (
         <>
           <div className="inputForm">

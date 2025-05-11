@@ -2,7 +2,6 @@ import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import InputInfo from './InputInfo';
 import './UserInputForm.scss';
-import axios from "axios";
 import api from "../../../api";
 
 const UserInputForm = () => {
@@ -64,6 +63,7 @@ const UserInputForm = () => {
     }
 
     useEffect(() => {
+        console.log("검증 상태", info);
         setIsValidButton(info.isValidNickname && info.isValidPwd && info.isValidPwdChk);
     }, [info.isValidNickname, info.isValidPwd, info.isValidPwdChk]);
 

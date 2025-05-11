@@ -1,4 +1,3 @@
-import axios from "axios";
 import api from "../api";
 
 export const getRandomQuestionByType = async ({ type, count = 10 }) => {
@@ -28,20 +27,16 @@ export const getRandomQuestionByType = async ({ type, count = 10 }) => {
 }
 
 export const getRandomQuestionByTypeAndDifficulty = async ({ type, difficulty, count = 10 }) => {
-    const token = localStorage.getItem("token");
     console.log("getRandomQuestionByTypeAndDifficulty 함수 진입");
-    if (!type || !difficulty || !token) {
-        throw new Error('문제 type, difficulty 또는 JWT 토큰이 누락되었습니다.');
+    if (!type || !difficulty) {
+        throw new Error('문제 type, difficulty가 누락되었습니다.');
     }
 
     try {
-        const response = await axios.get(
-            `${process.env.REACT_APP_API_URL}/questions/random/by-type-and-difficulty`,
+        const response = await api.get(
+            "/questions/random/by-type-and-difficulty",
             {
-                params: { type, difficulty, count },
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
+                params: { type, difficulty, count }
             }
         );
         console.log("API 응답:", response);

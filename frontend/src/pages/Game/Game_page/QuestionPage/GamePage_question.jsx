@@ -59,9 +59,15 @@ function GamePage_question() {
   useEffect(() => {
     if (questions.length > 0 && currentIndex >= questions.length) {
       alert("모든 문제를 다 풀었습니다! 🎉");
-      navigate('/game/result');
+      navigate('/game/result', {
+        state: {
+          image: location.state?.image,
+          title: location.state?.title,
+          description: location.state?.description
+        }
+      });
     }
-  }, [currentIndex, questions.length, navigate]);
+  }, [currentIndex, questions.length, navigate, location.state]);
 
   if (questions.length === 0 || currentIndex >= questions.length) {
     return null;
@@ -79,8 +85,11 @@ function GamePage_question() {
   return (
     <form className="questionWrapper" onSubmit={handleSubmit}>
       <div className="questionSection">
+        <div className="questionNumber">
+          {currentIndex + 1} / {questions.length}
+        </div>
         {currentQuestion.question ? (
-          <div className="questionText">{currentQuestion.question}</div>
+          <div className="questionCard">{currentQuestion.question}</div>
         ) : currentQuestion.imageUrl ? (
           <img 
             className="questionImage"

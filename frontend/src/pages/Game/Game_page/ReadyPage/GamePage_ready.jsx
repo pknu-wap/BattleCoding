@@ -1,15 +1,22 @@
 import "./GamePage_ready.scss";
-import { useLocation } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 function GamePage_ready() {
   const navigate = useNavigate();
   const location = useLocation();
   const { image, title, description, type } = location.state || {};
 
+  useEffect(() => {
+    if (!type) {
+      alert("유형 정보가 없습니다. 메인으로 이동합니다.");
+      navigate("/");
+    }
+  }, [type, navigate]);
+
   const handleClick = (level) => {
     navigate('/game/question', {
-        state: { type, level }
+        state: { type, level, image, title, description, level }
       });
   };
 
