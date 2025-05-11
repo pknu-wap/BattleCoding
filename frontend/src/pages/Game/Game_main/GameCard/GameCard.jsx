@@ -11,18 +11,16 @@ function GameCard({ image, title, description, type }) {
   };
 
   return (
-    <div className="GameCard" onClick={handleClick}>
-      <div className="cardHoverArea">
-        <div className="gameCardCover">
-          <img className="gameCardImage" src={image} alt={title} />
-        </div>
-        <div className="gameCardBody">
-          <div className="gameCardTitle">{title}</div>
-          <div
-            className="gameCardElaborate"
-            dangerouslySetInnerHTML={{ __html: description }}
-          />
-        </div>
+    <div className="gameCard" onClick={handleClick}>
+      <div className="gameCardCover">
+        <img className="gameCardImage" src={image} alt={title} />
+      </div>
+      <div className="gameCardBody">
+        <div className="gameCardTitle">{title}</div>
+        <div
+          className="gameCardElaborate"
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
       </div>
     </div>
   );

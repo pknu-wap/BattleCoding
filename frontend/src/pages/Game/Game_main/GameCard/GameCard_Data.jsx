@@ -1,6 +1,6 @@
-import imageFill from "./fill.png";
-import imageResult from "./output.png";
-import imageCS from "./cs.png";
+import imageFill from "./FillInTheBlank.png";
+import imageResult from "./PredictOutput.png";
+import imageCS from "./CsKnowledge.png";
 
 const gameData = [
   {
@@ -13,7 +13,7 @@ const gameData = [
     image: imageResult,
     title: "결과 예측",
     description:
-      "코드를 보고 고민하는 시간! <br/>어떤 출력이 나올지 생각하면서 결과를 예측해 보세요",
+      "코드를 보고 고민하는 시간! <br/>어떤 출력이 나올지 예측해 보세요",
     type: "PREDICT_OUTPUT",
   },
   {

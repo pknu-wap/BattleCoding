@@ -1,55 +1,94 @@
-.NicknameField, .EmailField, .PasswordField, .PasswordCheckField {
+.inputForm {
     width: 100%;
-    gap: 10px;
-    
+    max-width: 300px;
+    margin: 0 auto;
+    gap: 6px;
+
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 
-    font-family: 'Pretendard', sans-serif;
-
-    label {
-        margin-left: 4px;
-
-        font-size: 16px;
-        font-weight: 600;
-        color: #F7F7F7;
-        text-align: center;
-    }
-
-    input {
-        background-color: #F7F7F7;
-
+    .inputField {
         width: 100%;
-        max-width: 320px;
-        height: 40px;  
-        padding: 0 12px;
-        box-sizing: border-box;
+        padding: 2px;
+        gap: 8px;
 
-        font-size: 14px; 
-        font-weight: 500;
+        display: flex;
+        flex-direction: column;
 
-        border-radius: 8px;
-        border: 1px solid #CCCCCC;
-    }
+        font-family: 'Pretendard', sans-serif;
+        color: #222;
 
-    p {
-        width: auto;
-        max-width: 400px;
-        margin: 4px 0 0 4px;
+        label {
+            margin-left: 4px;
+            margin-bottom: 2px;
 
-        white-space: nowrap;
-        overflow: visible;
-        text-overflow: initial;
-
-        font-size: 12px;
-        font-weight: 500;
-
-        &.valid {
-            color: #00F0FF;
+            color: #f0f0f0;
+            font-size: 15px;
+            font-weight: 600;
         }
-        &.invalid {
-            color: #F7F7F7;
+        
+        .inputInfo {
+            width: 100%;
+            position: relative;
+
+            input {
+                background: #f0f0f0;
+
+                width: 100%;
+                height: 34px;
+                padding: 0 0px 0 34px;
+                box-sizing: border-box;
+    
+                border: none;
+                border-radius: 8px;
+                box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+                transition: all 0.2s ease;
+                
+                color: #222;
+                font-size: 14px;
+                font-weight: 500;
+
+                &:focus {
+                    box-shadow: 0 0 0 2px #00f0ff;
+                    outline: none;
+                }
+            }
+
+            .icon {
+                position: absolute;
+                top: 50%;
+                left: 10px;
+                transform: translateY(-50%);
+
+                color: #666;
+                font-size: 12px;
+            }
         }
+
+        p {
+            height: 16px;
+            margin: 4px;
+            white-space: nowrap;
+            overflow: visible;     
+            text-overflow: unset; 
+
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 1.2;
+
+            &.valid {
+                color: #00F0FF;
+            }
+          
+            &.invalid {
+                color: #f7f7f7;
+            }
+
+            &.empty {
+                color: transparent;
+                user-select: none;
+            }
+        } 
     }
 }

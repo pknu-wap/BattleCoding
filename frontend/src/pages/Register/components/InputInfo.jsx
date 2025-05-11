@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 import './InputInfo.scss';
 
 const InputInfo = ({ onChange, OnChangeValidation }) => {
@@ -9,109 +10,163 @@ const InputInfo = ({ onChange, OnChangeValidation }) => {
         passwordCheck: "",
     });
 
-    const [isValid, setIsValid] = useState({
+    const [isLengthValid, setIsLengthValid] = useState({
         nickname: false,
         email: false,
         password: false,
         passwordCheck: false,
     });
 
+    const [isAvailable, setIsAvailable] = useState({
+      nickname: false,
+      email: false,
+    });
+
+    const checkNickname = async (nickname) => {
+      try {
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/user/check-nickname?nickname=${nickname}`);
+        console.log("[닉네임 체크 응답]", nickname, "→", res.data);
+        return res.data === true;
+      } catch (err) {
+        console.error("[닉네임 체크 에러]", err);
+        return false;
+      }
+    };
+
+    const checkEmail = async (email) => {
+      try {
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/user/check-email?email=${email}`);
+        console.log("[이메일 체크 응답]", email, "→", res.data);
+        return res.data === true;
+      } catch (err) {
+        console.error("[이메일 체크 에러]", err);
+        return false;
+      }
+    };
+
     useEffect(() => {
-        setIsValid((prev) => ({
-            ...prev,
-            passwordCheck: inputData.passwordCheck.length > 0 && inputData.password === inputData.passwordCheck,
-        }));
+      const match = inputData.passwordCheck.length > 0 && inputData.password === inputData.passwordCheck;
+      setIsLengthValid(prev => ({ ...prev, passwordCheck: match }));
     }, [inputData.password, inputData.passwordCheck]);
 
-    const inputHandler = (event) => {
-        const { name, value } = event.target;
-
+    const inputHandler = async (e) => {
+        const { name, value } = e.target;
         setInputData((prev) => ({ ...prev, [name]: value }));
 
-        let isValidValue = false;
-
         if (name === "nickname") {
-            isValidValue = value.length >= 4 && value.length <= 12;
-            setIsValid((prev) => ({ ...prev, nickname: isValidValue }));
-        }
-        if (name === "email") {
-            isValidValue = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-            setIsValid((prev) => ({ ...prev, email: isValidValue }));
-        }
-        if (name === "password") {
-            isValidValue = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,16}$/.test(value);
-            setIsValid((prev) => ({
-                ...prev,
-                password: isValidValue,
-                passwordCheck: inputData.passwordCheck === value,
-            }));
-        }
-        if (name === "passwordCheck") {
-            isValidValue = inputData.password === value;
-            setIsValid((prev) => ({ ...prev, passwordCheck: isValidValue }));
+          const lengthValid = value.length >= 4 && value.length <= 12;
+          setIsLengthValid(prev => ({ ...prev, nickname: lengthValid }));
+          if (lengthValid) {
+            const available = await checkNickname(value);
+            setIsAvailable(prev => ({ ...prev, nickname: available }));
+          } else {
+            setIsAvailable(prev => ({ ...prev, nickname: false }));
+          }
         }
 
-        const validationMapping = {
-            nickname: "isValidNickname",
-            email: "isValidEmail",
-            password: "isValidPwd",
-            passwordCheck: "isValidPwdChk",
+        if (name === "email") {
+          const formatValid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value);
+          setIsLengthValid(prev => ({ ...prev, email: formatValid }));
+          if (formatValid) {
+            const available = await checkEmail(value);
+            setIsAvailable(prev => ({ ...prev, email: available }));
+          } else {
+            setIsAvailable(prev => ({ ...prev, email: false }));
+          }
+        }
+
+        if (name === "password") {
+          const pwdValid = /^(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*()_+=\-{}[\]:;"'<>,.?/\\|~`]).{8,20}$/.test(value);
+          setIsLengthValid(prev => ({
+            ...prev,
+            password: pwdValid,
+            passwordCheck: inputData.passwordCheck === value,
+          }));
+        }
+
+        if (name === "passwordCheck") {
+          const match = inputData.password === value;
+          setIsLengthValid(prev => ({ ...prev, passwordCheck: match }));
+        }
+
+        const mapping = {
+          nickname: isLengthValid.nickname && isAvailable.nickname,
+          email: isLengthValid.email && isAvailable.email,
+          password: isLengthValid.password,
+          passwordCheck: isLengthValid.passwordCheck,
         };
     
         onChange(name, value);
-        OnChangeValidation(validationMapping[name], isValidValue);
+        OnChangeValidation(`isValid${capitalize(name)}`, mapping[name]);
     };
+
+    const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
     return (
         <>
-          <div className="row">
-            <div className="halfWidth">
-              <div className="NicknameField">
-                <label htmlFor="nickname">닉네임</label>
+          <div className="inputForm">
+            <div className="inputField">
+              <label htmlFor="nickname">닉네임</label>
+              <div className="inputInfo">
+                <i className="fa-solid fa-user icon" />
                 <input {...INPUT_FIELDS[0]} value={inputData.nickname} onChange={inputHandler} />
-                {isValid.nickname && <p className="valid">사용 가능한 닉네임입니다.</p>}
-                {!isValid.nickname && inputData.nickname && (
-                    <p className="invalid">닉네임은 4~12자로 입력해 주세요.</p>
-                )}
               </div>
+              <p className={inputData.nickname ? (isLengthValid.nickname && isAvailable.nickname ? "valid" : "invalid") : "placeholder"}>
+                {inputData.nickname
+                  ? !isLengthValid.nickname
+                    ? "닉네임은 4~12자로 입력해 주세요."
+                    : !isAvailable.nickname
+                    ? "이미 사용 중인 닉네임입니다."
+                    : "사용 가능한 닉네임입니다."
+                  : " "}
+              </p>
             </div>
-            <div className="halfWidth">
-              <div className="EmailField">
-                <label htmlFor="email">이메일</label>
+
+            <div className="inputField">
+              <label htmlFor="email">이메일</label>
+              <div className="inputInfo">
+                <i className="fa-solid fa-envelope icon" />
                 <input {...INPUT_FIELDS[1]} value={inputData.email} onChange={inputHandler} />
-                {inputData.email && (
-                    isValid.email ? (
-                        <p className="valid">올바른 이메일 형식입니다.</p>
-                    ) : (
-                        <p className="invalid">올바른 이메일 주소를 입력해 주세요.</p>
-                    )
-                )}
               </div>
+              <p className={inputData.email ? (isLengthValid.email && isAvailable.email ? "valid" : "invalid") : "placeholder"}>
+                {inputData.email
+                  ? !isLengthValid.email
+                    ? "올바른 이메일 주소를 입력해 주세요."
+                    : !isAvailable.email
+                    ? "이미 사용 중인 이메일입니다."
+                    : "사용 가능한 이메일입니다."
+                  : " "}
+              </p>
             </div>
-          </div>
-      
-          <div className="row">
-            <div className="halfWidth">
-              <div className="PasswordField">
-                <label htmlFor="password">비밀번호</label>
+
+            <div className="inputField">
+              <label htmlFor="password">비밀번호</label>
+              <div className="inputInfo">
+                <i className="fa-solid fa-lock icon" />
                 <input {...INPUT_FIELDS[2]} value={inputData.password} onChange={inputHandler} />
-                {isValid.password && <p className="valid">사용 가능한 비밀번호입니다.</p>}
-                {!isValid.password && inputData.password && (
-                    <p className="invalid">비밀번호는 영문, 숫자, 특수문자를 포함해 8~16자로 입력해 주세요.</p>
-                )}
               </div>
+              <p className={inputData.password ? (isLengthValid.password ? "valid" : "invalid") : "placeholder"}>
+                {inputData.password
+                  ? isLengthValid.password
+                    ? "사용 가능한 비밀번호입니다."
+                    : "비밀번호는 소문자, 숫자, 특수문자 포함 8~20자여야 합니다."
+                  : " "}
+              </p>
             </div>
-            <div className="halfWidth">
-              <div className="PasswordCheckField">
-                <label htmlFor="passwordCheck">비밀번호 확인</label>
+
+            <div className="inputField">
+              <label htmlFor="passwordCheck">비밀번호 확인</label>
+              <div className="inputInfo">
+                <i className="fa-solid fa-lock icon" />
                 <input {...INPUT_FIELDS[3]} value={inputData.passwordCheck} onChange={inputHandler} />
-                {inputData.passwordCheck.length > 0 && isValid.passwordCheck && (
-                    <p className="valid">비밀번호가 일치합니다.</p>
-                )}
-                {!isValid.passwordCheck && inputData.passwordCheck && (
-                    <p className="invalid">비밀번호를 한 번 더 입력해 주세요.</p>
-                )}
               </div>
+              <p className={inputData.passwordCheck ? (isLengthValid.passwordCheck ? "valid" : "invalid") : "placeholder"}>
+                {inputData.passwordCheck
+                  ? isLengthValid.passwordCheck
+                    ? "비밀번호가 일치합니다."
+                    : "비밀번호를 한 번 더 입력해 주세요."
+                  : " "}
+              </p>
             </div>
           </div>
         </>
@@ -119,10 +174,10 @@ const InputInfo = ({ onChange, OnChangeValidation }) => {
 };
 
 const INPUT_FIELDS = [
-    { id: 1, name: "nickname", placeholder: "닉네임", type: "text" },
-    { id: 2, name: "email", placeholder: "이메일", type: "text" },
-    { id: 3, name: "password", placeholder: "비밀번호", type: "password" },
-    { id: 4, name: "passwordCheck", placeholder: "비밀번호 확인", type: "password" },
+  { id: 1, name: "nickname", placeholder: "닉네임", type: "text" },
+  { id: 2, name: "email", placeholder: "이메일", type: "text" },
+  { id: 3, name: "password", placeholder: "비밀번호", type: "password" },
+  { id: 4, name: "passwordCheck", placeholder: "비밀번호 확인", type: "password" },
 ];
 
 export default InputInfo;
