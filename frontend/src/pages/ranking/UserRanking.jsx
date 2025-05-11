@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import axios from "axios"; // 아직 API 없으므로 주석 처리
 import "./UserRanking.scss";
 
 function UserRanking({ currentUsername }) {
@@ -17,12 +16,8 @@ function UserRanking({ currentUsername }) {
             { username: "grace", attempts: 29, right: 24, wrong: 5, percent: 82.76 },
             { username: "hank", attempts: 22, right: 18, wrong: 4, percent: 81.82 },
             { username: "irene", attempts: 18, right: 14, wrong: 4, percent: 77.78 },
-            { username: "임시사용자", attempts: 31, right: 24, wrong: 7, percent: 77.42 }, // currentUser 포함
+            { username: "me", attempts: 31, right: 24, wrong: 7, percent: 77.42 }, // currentUser 포함
         ];
-
-        // axios.get("/api/user/rankings")
-        //     .then((res) => setUserData(res.data))
-        //     .catch((err) => console.error(err));
 
         setTimeout(() => {
             setUserData(dummyUsers);
@@ -39,10 +34,14 @@ function UserRanking({ currentUsername }) {
                     <div
                         className={`userRow ${user.username === currentUsername ? "currentUser" : ""}`}
                         key={user.username}
+                        id={`user-rank-${index + 1}`} // 각 유저마다 고유 ID 추가
                     >
                         <div className="placing">
                             <span className="rank">
-                                {index === 0 ? "🥇" : index === 1 ? "🥈" : index === 2 ? "🥉" : `${index + 1}등`}
+                                {index === 0 && "🥇"}
+                                {index === 1 && "🥈"}
+                                {index === 2 && "🥉"}
+                                {index > 2 && `${index + 1}등`}
                             </span>
                         </div>
                         <span className="username">{user.username}</span>

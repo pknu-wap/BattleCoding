@@ -23,12 +23,12 @@
     gap: 10px;
 
     .userRow {
-      background-color: #2a2d3a;  // 기존 배경색
-      padding: 10px;
+      background-color: #2a2d3a;
+      padding: 12px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-radius: 8px;
+      border-radius: 10px;
       flex-wrap: wrap;
       transition: all 0.3s ease;
       font-size: 16px;
@@ -36,7 +36,7 @@
 
       .placing {
         padding: 8px 20px;
-        font-size: 16px;
+        font-size: 18px;
         color: #ffffff;
         border-radius: 8px;
         display: flex;
@@ -44,7 +44,7 @@
         justify-content: center;
 
         .rank {
-          font-size: 20px;
+          font-size: 22px;
         }
       }
 
@@ -68,54 +68,33 @@
         color: #ffffff;
       }
 
-      // hover 효과
       &:hover {
         background-color: #333d51;
       }
     }
 
-    // 현재 사용자 강조 스타일
+    // 현재 사용자 강조
     .userRow.currentUser {
-      background-color: #3a4055;  // 강조된 배경 색상
-      border: 2px solid #ffd700;  // 황금색 테두리
-      box-shadow: 0 0 10px 2px rgba(255, 215, 0, 0.7);
-      animation: glow 1.5s ease-in-out infinite alternate;
-      font-weight: 700;  // 강조된 사용자 글씨체 굵게
+      background-color: #3b4160;
+      border: 2px solid #00f0ff;
+      box-shadow: 0 0 10px #00f0ff55;
+      font-weight: 700;
+      color: #ffffff;
     }
 
-    // glow 애니메이션
-    @keyframes glow {
-      from {
-        box-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
-      }
-      to {
-        box-shadow: 0 0 15px rgba(255, 215, 0, 1);
-      }
-    }
-
-    // 모바일 반응형 디자인
     @media (max-width: 768px) {
       .userRow {
         flex-direction: column;
         gap: 10px;
         align-items: flex-start;
-        padding: 15px;  // 모바일에서 패딩 증가
+        padding: 15px;
       }
 
-      .placing {
-        font-size: 14px;  // 모바일에서 글자 크기 줄이기
-      }
-
-      .username {
-        font-size: 14px;  // 모바일에서 글자 크기 줄이기
-      }
-
-      .scoreline {
-        font-size: 14px;  // 모바일에서 글자 크기 줄이기
-      }
-
+      .placing,
+      .username,
+      .scoreline,
       .percent {
-        font-size: 14px;  // 모바일에서 글자 크기 줄이기
+        font-size: 14px;
       }
     }
   }

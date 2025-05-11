@@ -1,29 +1,34 @@
 import React, { useEffect, useState } from "react";
 import "./MyRanking.scss";
 import UserRanking from "./UserRanking";
-// import axios from "axios"; // 일단 비활성화
 
 function MyRanking() {
     const [myInfo, setMyInfo] = useState(null);
 
     useEffect(() => {
-        // API 없을 경우 임시 데이터로 대체
         const dummyData = {
-            rank: 5,
-            username: "임시사용자",
+            rank: 10,
+            username: "me",
             percent: 87.65
         };
 
-
-
         setTimeout(() => {
             setMyInfo(dummyData);
-        }, 500); // 약간의 로딩 시간 흉내
+        }, 500);
     }, []);
+
+    const handleScrollToMyRank = () => {
+        if (myInfo && myInfo.rank) {
+            const target = document.getElementById(`user-rank-${myInfo.rank}`);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+    };
 
     return (
         <div className="MyRank">
-            <div className="MyRanking">
+            <div className="MyRanking" onClick={handleScrollToMyRank} style={{ cursor: 'pointer' }}>
                 <div className="Ranking">👑 My Ranking 👑</div>
 
                 {myInfo ? (

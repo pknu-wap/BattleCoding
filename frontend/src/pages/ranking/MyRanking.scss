@@ -56,3 +56,12 @@
     opacity: 1;
   }
 }
+.userRow.currentUser {
+  background-color: #2a2f4a;
+  border: 2px solid #00f0ff;
+  box-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+  border-radius: 8px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
