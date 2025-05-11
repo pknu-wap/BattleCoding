@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import "./MyRank.scss";
 import UserRank from "./UserRank";
 import axios from "axios";
+import api from "../../../api";
 
 function My_Rank() {
     const [myInfo, setMyInfo] = useState(null);
 
     useEffect(() => {
-        axios.get("/api/user/myrank")
+        api.get("/user/myrank")
             .then((res) => setMyInfo(res.data))
             .catch((err) => console.error("내 랭킹 불러오기 실패:", err));
     }, []);

@@ -53,7 +53,7 @@ const LoginInputForm = () => {
         };
 
         try {
-            const response = await axios.post(`${process.env.REACT_APP_API_URL}/auth/login`, loginData);
+            const response = await api.post("/auth/login", loginData);
 
             if (response.data.success) {
                 const token = response.data.token;

@@ -1,5 +1,6 @@
 [
   {
+    "id": 30001,
     "type": "CS_KNOWLEDGE",
     "question": "운영체제에서 하나의 프로세스 내에서 실행되는 작업 단위로, 스택을 별도로 가지고 CPU 스케줄링의 기본 단위가 되는 것은?",
     "imageUrl": null,
@@ -7,6 +8,7 @@
     "difficulty": "MEDIUM"
   },
   {
+    "id": 30002,
     "type": "CS_KNOWLEDGE",
     "question": "TCP/IP 4계층 모델에서 데이터의 종단 간 전송을 담당하고, 흐름 제어 및 혼잡 제어 기능을 제공하는 계층은?",
     "imageUrl": null,
@@ -14,6 +16,7 @@
     "difficulty": "EASY"
   },
   {
+    "id": 30003,
     "type": "CS_KNOWLEDGE",
     "question": "OSI 7계층 중에서 IP 주소를 기준으로 라우팅을 수행하며, 네트워크 간 통신을 담당하는 계층은?",
     "imageUrl": null,
@@ -21,6 +24,7 @@
     "difficulty": "EASY"
   },
   {
+    "id": 30004,
     "type": "CS_KNOWLEDGE",
     "question": "거리 벡터 라우팅 프로토콜이라고도 불리며, 최단 경로 탐색에 Bellman-Ford 알고리즘이 사용되는 프로토콜은?",
     "imageUrl": null,
@@ -28,6 +32,7 @@
     "difficulty": "HARD"
   },
   {
+    "id": 30005,
     "type": "CS_KNOWLEDGE",
     "question": "디스크 스케줄링 알고리즘 중에서 현재 헤드 위치를 기준으로 가까운 요청부터 처리하는 방식은?",
     "imageUrl": null,
@@ -35,6 +40,7 @@
     "difficulty": "HARD"
   },
   {
+    "id": 30006,
     "type": "CS_KNOWLEDGE",
     "question": "최단 경로 탐색에 Dijkstra 알고리즘을 사용하며, 링크 상태를 실시간으로 반영하여 최단 경로로 라우팅을 지원하는 프로토콜은?",
     "imageUrl": null,
@@ -42,6 +48,7 @@
     "difficulty": "HARD"
   },
   {
+    "id": 30007,
     "type": "CS_KNOWLEDGE",
     "question": "HTTP 상태 코드 중 요청이 성공적으로 처리되었음을 나타내는 상태 코드는 무엇인가?",
     "imageUrl": null,
@@ -49,13 +56,15 @@
     "difficulty": "EASY"
   },
   {
-  "type": "CS_KNOWLEDGE",
-  "question": "프로그램이 실행되는 동안 데이터가 저장되는 메모리 영역으로, 함수 호출과 지역 변수를 관리하는 영역은 무엇인가?",
-  "imageUrl": null,
-  "answers": ["스택", "Stack", "스택 영역"],
-  "difficulty": "MEDIUM"
+    "id": 30008,
+    "type": "CS_KNOWLEDGE",
+    "question": "프로그램이 실행되는 동안 데이터가 저장되는 메모리 영역으로, 함수 호출과 지역 변수를 관리하는 영역은 무엇인가?",
+    "imageUrl": null,
+    "answers": ["스택", "Stack", "스택 영역"],
+    "difficulty": "MEDIUM"
   },
   {
+    "id": 30009,
     "type": "CS_KNOWLEDGE",
     "question": "웹 페이지의 구조를 정의하는 데 사용되는 표준 마크업 언어는 무엇인가?",
     "imageUrl": null,
@@ -63,6 +72,7 @@
     "difficulty": "EASY"
   },
   {
+    "id": 30010,
     "type": "CS_KNOWLEDGE",
     "question": "운영체제에서 메모리의 일부만 미리 로드하고 나머지는 필요할 때 로드하여 메모리를 효율적으로 관리하는 방식은 무엇인가?",
     "imageUrl": null,
@@ -70,6 +80,7 @@
     "difficulty": "HARD"
   },
   {
+    "id": 30011,
     "type": "CS_KNOWLEDGE",
     "question": "데이터베이스 트랜잭션 특성 중, 트랜잭션이 완전히 실행되거나 전혀 실행되지 않아야 한다는 특성은 무엇인가?",
     "imageUrl": null,
@@ -77,6 +88,7 @@
     "difficulty": "MEDIUM"
   },
   {
+    "id": 30012,
     "type": "CS_KNOWLEDGE",
     "question": "데이터베이스 트랜잭션 특성 중, 트랜잭션의 실행 결과가 데이터베이스의 무결성을 보장해야 한다는 특성은 무엇인가?",
     "imageUrl": null,
@@ -84,6 +96,7 @@
     "difficulty": "MEDIUM"
   },
   {
+    "id": 30013,
     "type": "CS_KNOWLEDGE",
     "question": "데이터베이스 트랜잭션 특성 중, 동시에 실행되는 트랜잭션이 서로 영향을 미치지 않아야 한다는 특성은 무엇인가?",
     "imageUrl": null,
@@ -91,6 +104,7 @@
     "difficulty": "MEDIUM"
   },
   {
+    "id": 30014,
     "type": "CS_KNOWLEDGE",
     "question": "데이터베이스 트랜잭션 특성 중, 트랜잭션이 성공적으로 완료되면 그 결과가 영구적으로 유지되어야 한다는 특성은 무엇인가?",
     "imageUrl": null,
@@ -98,6 +112,7 @@
     "difficulty": "MEDIUM"
   },
   {
+    "id": 30015,
     "type": "CS_KNOWLEDGE",
     "question": "프로세스가 작업을 수행하는 도중 다른 프로세스의 요청을 기다리며 아무것도 하지 못하는 상태를 무엇이라 하는가?",
     "imageUrl": null,
@@ -105,6 +120,7 @@
     "difficulty": "MEDIUM"
   },
   {
+    "id": 30016,
     "type": "CS_KNOWLEDGE",
     "question": "프로그램이 실행 중에 동적으로 메모리를 할당할 때 사용하는 영역을 무엇이라 하는가?",
     "imageUrl": null,
@@ -112,6 +128,7 @@
     "difficulty": "MEDIUM"
   },
   {
+    "id": 30017,
     "type": "CS_KNOWLEDGE",
     "question": "인터넷에서 원격으로 다른 컴퓨터에 암호화된 안전한 연결을 통해 로그인하여 명령어를 실행할 수 있도록 지원하는 프로토콜은 무엇인가?",
     "imageUrl": null,
@@ -119,6 +136,7 @@
     "difficulty": "MEDIUM"
   },
   {
+    "id": 30018,
     "type": "CS_KNOWLEDGE",
     "question": "웹 서버와 웹 브라우저 간의 안전한 통신을 위한 프로토콜로 HTTP의 보안 확장 버전은 무엇인가?",
     "imageUrl": null,
@@ -126,6 +144,7 @@
     "difficulty": "EASY"
   },
   {
+    "id": 30019,
     "type": "CS_KNOWLEDGE",
     "question": "IP 또는 ICMP의 특성을 악용하여 특정 사이트에 집중적으로 데이터를 보내 네트워크 또는 시스템의 상태를 불능으로 만드는 공격 방법은?",
     "imageUrl": null,
@@ -133,6 +152,7 @@
     "difficulty": "HARD"
   },
   {
+    "id": 30020,
     "type": "CS_KNOWLEDGE",
     "question": "웹과 컴퓨터 프로그램에서 용량이 적은 데이터를 교환하기 위해 데이터 객체를 속성-값의 쌍 형태로 표현하는 형식의 자바스크립트(JavaScript)를 토대로 개발되어진 형식은?",
     "imageUrl": null,
@@ -140,6 +160,7 @@
     "difficulty": "MEDIUM"
   },
   {
+    "id": 30021,
     "type": "CS_KNOWLEDGE",
     "question": "IP 프로토콜의 취약점을 이용하여 비정상적으로 큰 크기의 패킷을 전송해 상대방 시스템을 마비시키는 공격 방법은 무엇인가?",
     "imageUrl": null,
@@ -147,6 +168,7 @@
     "difficulty": "HARD"
   },
   {
+    "id": 30022,
     "type": "CS_KNOWLEDGE",
     "question": "패킷을 전송할 때 송신 IP 주소와 수신 IP 주소를 모두 공격 대상의 IP 주소로 설정하여 공격 대상이 자기 자신에게 무한히 응답하게 만드는 공격 방법은 무엇인가?",
     "imageUrl": null,
@@ -154,6 +176,7 @@
     "difficulty": "HARD"
   },
   {
+    "id": 30023,
     "type": "CS_KNOWLEDGE",
     "question": "컴퓨터에서 중앙 처리 장치로, 데이터 처리와 명령 실행을 담당하는 장치는 무엇인가? (영어로 작성)",
     "imageUrl": null,
@@ -161,6 +184,7 @@
     "difficulty": "EASY"
   },
   {
+    "id": 30024,
     "type": "CS_KNOWLEDGE",
     "question": "웹 페이지의 스타일과 레이아웃을 정의하는 데 사용되는 언어는 무엇인가?",
     "imageUrl": null,
@@ -168,6 +192,7 @@
     "difficulty": "EASY"
   },
   {
+    "id": 30025,
     "type": "CS_KNOWLEDGE",
     "question": "컴퓨터가 현재 실행 중인 프로그램과 데이터를 빠르게 접근하여 임시로 저장하는 휘발성 메모리는 무엇인가?",
     "imageUrl": null,
@@ -175,6 +200,7 @@
     "difficulty": "EASY"
   },
   {
+    "id": 30026,
     "type": "CS_KNOWLEDGE",
     "question": "컴퓨터에서 데이터를 영구적으로 저장하며 전원을 끄더라도 데이터가 유지되는 메모리는 무엇인가?",
     "imageUrl": null,
@@ -182,6 +208,7 @@
     "difficulty": "EASY"
   },
   {
+    "id": 30027,
     "type": "CS_KNOWLEDGE",
     "question": "인터넷에서 웹 페이지를 요청할 때 사용하는 HTTP 메소드는 무엇인가?",
     "imageUrl": null,
@@ -189,6 +216,7 @@
     "difficulty": "EASY"
   },
   {
+    "id": 30028,
     "type": "CS_KNOWLEDGE",
     "question": "웹에서 클라이언트가 이전 요청 상태를 유지하기 위해 서버가 클라이언트에 저장하는 작은 데이터 파일은 무엇인가?",
     "imageUrl": null,
@@ -196,6 +224,7 @@
     "difficulty": "HARD"
   },
   {
+    "id": 30029,
     "type": "CS_KNOWLEDGE",
     "question": "하나의 IP 주소로 여러 내부 네트워크 장치가 인터넷을 사용할 수 있게 IP 주소를 변환해주는 기술은 무엇인가?",
     "imageUrl": null,
@@ -203,6 +232,7 @@
     "difficulty": "HARD"
   },
   {
+    "id": 30030,
     "type": "CS_KNOWLEDGE",
     "question": "멀티스레드 환경에서 두 개 이상의 스레드가 동시에 같은 자원에 접근하면서 실행 순서에 따라 결과가 달라지는 오류 상황은 무엇인가?",
     "imageUrl": null,
@@ -210,6 +240,7 @@
     "difficulty": "MEDIUM"
   },
   {
+    "id": 30031,
     "type": "CS_KNOWLEDGE",
     "question": "구현부에서 추상층을 분리하여, 서로가 독립적으로 확장할 수 있도록 구성한 패턴으로, 기능과 구현을 두 개의 별도 클래스로 구현하는 특징이 있는 디자인 패턴은?",
     "imageUrl": null,
@@ -217,6 +248,7 @@
     "difficulty": "HARD"
   },
   {
+    "id": 30032,
     "type": "CS_KNOWLEDGE",
     "question": "한 객체의 상태가 변화하면 객체에 상속된 다른 객체들에게 변화된 상태를 전달하는 패턴으로, 일대다의 의존성을 정의하는 디자인 패턴은?",
     "imageUrl": null,
@@ -224,6 +256,7 @@
     "difficulty": "HARD"
   },
   {
+    "id": 30033,
     "type": "CS_KNOWLEDGE",
     "question": "키트(Kit) 패턴이라고도 불리며, 구체적인 클래스에 의존하지 않고, 인터페이스를 통해 서로 연관, 의존하는 객체들의 그룹으로 생성하여 추상적으로 표현하는 디자인 패턴은?",
     "imageUrl": null,
@@ -231,6 +264,7 @@
     "difficulty": "HARD"
   },
   {
+    "id": 30034,
     "type": "CS_KNOWLEDGE",
     "question": "객체지향 설계 5대 원칙(SOLID) 중 하나로 모든 클래스(객체)는 단 하나의 책임만 가져야 한다는 원칙은? [영문 약어 작성 가능]",
     "imageUrl": null,
@@ -238,6 +272,7 @@
     "difficulty": "MEDIUM"
   },
   {
+    "id": 30035,
     "type": "CS_KNOWLEDGE",
     "question": "객체지향 설계 5대 원칙(SOLID) 중 하나로 클래스는 확장에 열려있어야 하며, 수정에는 닫혀있어야 한다는 원칙은? [영문 약어 작성 가능]",
     "imageUrl": null,
@@ -245,6 +280,7 @@
     "difficulty": "MEDIUM"
   },
   {
+    "id": 30036,
     "type": "CS_KNOWLEDGE",
     "question": "객체지향 설계 5대 원칙(SOLID) 중 하나로 클라이언트는 자신이 사용하지 않는 메서드에 의존하지 않아야 한다는 원칙은? [영문 약어 작성 가능]",
     "imageUrl": null,
@@ -252,6 +288,7 @@
     "difficulty": "MEDIUM"
   },
   {
+    "id": 30037,
     "type": "CS_KNOWLEDGE",
     "question": "객체지향 설계 5대 원칙(SOLID) 중 하나로 클라이언트는 자신이 사용하지 않는 메서드에 의존하지 않아야 한다는 원칙은? [영문 약어 작성 가능]",
     "imageUrl": null,
@@ -259,11 +296,11 @@
     "difficulty": "MEDIUM"
   },
   {
+    "id": 30038,
     "type": "CS_KNOWLEDGE",
     "question": "객체지향 설계 5대 원칙(SOLID) 중 하나로 고수준 모듈은 저수준 모듈에 의존하면 안 되며, 둘 다 추상화(인터페이스)에 의존해야 한다는 원칙은? [영문 약어 작성 가능]",
     "imageUrl": null,
     "answers": ["DIP","Dependency Inversion Principle", "의존성 역전 원칙", "의존 역전 원칙", "의존 역전의 원칙", "의존성 역전의 원칙", "의존 역전", "의존성 역전"],
     "difficulty": "MEDIUM"
   }
-
 ]
