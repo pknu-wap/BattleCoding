@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Main from "./pages/Main/Main";
 import Login from "./pages/Login/Login";
 import GameHeaderGuest from "./pages/Game/GameHeader/GameHeader_Guest";
@@ -7,8 +7,24 @@ import GameHeaderUser from "./pages/Game/GameHeader/GameHeader_User";
 import Game from "./pages/Game/Game";
 import ReadyPage from "./pages/Page/ReadyPage";
 import ResultPage from "./pages/Page/ResultPage";
+import MyRank from "./pages/ranking/MyRank";
 import "./App.scss";
 
-function App() {}
+function App() {
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<Main />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/game-header-guest" element={<GameHeaderGuest />} />
+                <Route path="/game-header-user" element={<GameHeaderUser />} />
+                <Route path="/game" element={<Game />} />
+                <Route path="/ready" element={<ReadyPage />} />
+                <Route path="/result" element={<ResultPage />} />
+                <Route path="/ranking" element={<MyRank />} />
+            </Routes>
+        </Router>
+    );
+}
 
 export default App;

@@ -1,0 +1,122 @@
+.UserRanking {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Pretendard', sans-serif;
+
+  .Readerboard {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 900;
+    color: #ffffff;
+  }
+
+  .userList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .userRow {
+      background-color: #2a2d3a;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 8px;
+      flex-wrap: wrap;
+      transition: all 0.3s ease;
+      font-size: 16px;
+      margin-bottom: 10px;  // 각 row 사이 간격을 추가해보기
+
+      .placing {
+        padding: 8px 20px;
+        font-size: 16px;
+        color: #ffffff;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .rank {
+          font-size: 20px;
+        }
+      }
+
+      .username {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        color: #cccccc;
+        font-weight: 500;
+      }
+
+      .scoreline {
+        display: flex;
+        gap: 4px;
+        font-size: 16px;
+        color: #aaaaaa;
+      }
+
+      .percent {
+        font-size: 16px;
+        color: #ffffff;
+      }
+
+      // hover 효과
+      &:hover {
+        background-color: #333d51;
+      }
+    }
+
+    // 현재 사용자 강조 스타일
+    .userRow.currentUser {
+      background-color: #3a4055;
+      border: 2px solid #ffd700;
+      box-shadow: 0 0 10px 2px rgba(255, 215, 0, 0.7);
+      animation: glow 1.5s ease-in-out infinite alternate;
+      font-weight: 700; // 강조된 사용자 글씨체 굵게
+    }
+
+    // glow 애니메이션
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+      }
+      to {
+        box-shadow: 0 0 15px rgba(255, 215, 0, 1);
+      }
+    }
+
+    // 모바일 반응형 디자인
+    @media (max-width: 768px) {
+      .userRow {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+        padding: 15px;  // 모바일에서 패딩 증가
+      }
+
+      .placing {
+        font-size: 14px;  // 모바일에서 글자 크기 줄이기
+      }
+
+      .username {
+        font-size: 14px;  // 모바일에서 글자 크기 줄이기
+      }
+
+      .scoreline {
+        font-size: 14px;  // 모바일에서 글자 크기 줄이기
+      }
+
+      .percent {
+        font-size: 14px;  // 모바일에서 글자 크기 줄이기
+      }
+    }
+  }
+}
