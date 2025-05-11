@@ -8,7 +8,7 @@ function My_Rank() {
     const [myInfo, setMyInfo] = useState(null);
 
     useEffect(() => {
-        api.get("/api/user/myrank")
+        api.get("/user/myrank")
             .then((res) => setMyInfo(res.data))
             .catch((err) => console.error("내 랭킹 불러오기 실패:", err));
     }, []);

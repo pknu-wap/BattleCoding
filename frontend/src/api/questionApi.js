@@ -10,7 +10,7 @@ export const getRandomQuestionByType = async ({ type, count = 10 }) => {
 
     try {
         const response = await api.get(
-            `${process.env.REACT_APP_API_URL}/questions/random/by-type`,
+            "questions/random/by-type",
             {
                 params: { type, count },
                 headers: {

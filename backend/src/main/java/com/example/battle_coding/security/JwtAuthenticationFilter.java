@@ -28,12 +28,16 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     ) throws ServletException, IOException {
         String uri = request.getRequestURI();
 
-        if (uri.startsWith("/auth/") ||
-                uri.startsWith("/static/") ||
-                uri.equals("/") ||
-                uri.startsWith("/favicon.ico") ||
-                uri.startsWith("/manifest.json") ||
-                uri.matches(".*(\\.js|\\.css|\\.png|\\.jpg|\\.jpeg|\\.gif|\\.svg|\\.ico)$")) {
+        // ✅ 오직 /api/ 경로만 JWT 인증 적용
+        if (!uri.startsWith("/api/")) {
+            filterChain.doFilter(request, response);
+            return;
+        }
+
+        // ✅ 인증 없이 허용할 경로들
+        if (uri.startsWith("/api/auth/") ||
+                uri.startsWith("/api/user/check-email") ||
+                uri.startsWith("/api/user/check-nickname")) {
 
             filterChain.doFilter(request, response);
             return;
