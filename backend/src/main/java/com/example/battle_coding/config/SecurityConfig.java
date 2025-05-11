@@ -31,7 +31,7 @@ public class SecurityConfig {
                 .cors(Customizer.withDefaults())
                 .csrf(AbstractHttpConfigurer::disable) // CSRF 보호 비활성화
                 .authorizeHttpRequests(auth -> auth
-                        // ✅ React 앱이 필요한 리소스만 허용 (index.html, 정적 리소스)
+                        // ✅ React 정적 리소스
                         .requestMatchers(
                                 "/", "/index.html",
                                 "/static/**", "/favicon.ico", "/manifest.json",
@@ -39,9 +39,15 @@ public class SecurityConfig {
                                 "/auth/login", "/register"
                         ).permitAll()
 
-                        // ✅ 모든 API와 SPA 경로에 인증 요구
+                        // ✅ 인증 없이 접근 가능한 API
                         .requestMatchers(
-                                "/auth/**", "/user/**", "/questions/**", "/game/**", "/user/mypage"
+                                "/auth/login", "/auth/signup",         // 로그인 & 회원가입
+                                "/user/check-email", "/user/check-nickname" // 중복 체크
+                        ).permitAll()
+
+                        // ✅ 그 외 API는 인증 필요
+                        .requestMatchers(
+                                "/user/**", "/questions/**", "/game/**"
                         ).authenticated()
 
                         .anyRequest().denyAll()
