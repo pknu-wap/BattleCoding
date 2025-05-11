@@ -7,17 +7,14 @@ function MyRanking() {
     const [myInfo, setMyInfo] = useState(null);
 
     useEffect(() => {
-        // ⚠ 백엔드 API 없을 경우 임시 데이터로 대체
+        // API 없을 경우 임시 데이터로 대체
         const dummyData = {
             rank: 5,
             username: "임시사용자",
             percent: 87.65
         };
 
-        // API가 준비되면 아래 코드로 교체
-        // axios.get("/api/user/myrank")
-        //     .then((res) => setMyInfo(res.data))
-        //     .catch((err) => console.error("내 랭킹 불러오기 실패:", err));
+
 
         setTimeout(() => {
             setMyInfo(dummyData);

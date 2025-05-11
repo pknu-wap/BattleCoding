@@ -11,6 +11,7 @@ import QuestionPage from "./pages/Game/Game_page/QuestionPage";
 import RightAnswerPage from "./pages/Game/Game_page/RightAnswerPage";
 import WrongAnswerPage from "./pages/Game/Game_page/WrongAnswerPage";
 import ResultPage from "./pages/Game/Game_page/ResultPage";
+import MyRanking from "./pages/ranking/MyRanking";
 
 const Router = () => {
   return (
@@ -27,6 +28,7 @@ const Router = () => {
         <Route path="/game/answer/right" element={<RightAnswerPage />} />
         <Route path="/game/answer/wrong" element={<WrongAnswerPage />} />
         <Route path="/game/result" element={<ResultPage />} />
+        <Route path="/ranking" element={<MyRanking />} />
       </Routes>
     </BrowserRouter>
   );
