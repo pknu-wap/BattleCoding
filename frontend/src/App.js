@@ -8,7 +8,11 @@ import Game from "./pages/Game/Game";
 import ReadyPage from "./pages/Page/ReadyPage";
 import ResultPage from "./pages/Page/ResultPage";
 import "./App.scss";
+import "./api";
 
 function App() {}
 
 export default App;
+
+
+
