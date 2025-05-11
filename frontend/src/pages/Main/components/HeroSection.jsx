@@ -1,9 +1,31 @@
 import { useNavigate } from "react-router-dom";
 import "./HeroSection.scss";
-import { useEffect, useState } from "react";
+import Typed from "typed.js";
+import developer from "../components/image1.png";
+import { useEffect, useRef, useState } from "react";
 
 export default function HeroSection() {
   const navigate = useNavigate();
+  const firstLineRef = useRef(null);
+  const secondLineRef = useRef(null);
+  useEffect(() => {
+    const firstTyped = new Typed(firstLineRef.current, {
+      strings: ["게임처럼 즐기며 실력을 키우는 코딩 플랫폼"],
+      typeSpeed: 50,
+      showCursor: false,
+      onComplete: () => {
+        new Typed(secondLineRef.current, {
+          strings: ["문제를 풀며 티어와 랭킹을 올려보세요!!!"],
+          typeSpeed: 50,
+          showCursor: false,
+        });
+      },
+    });
+
+    return () => {
+      firstTyped.destroy();
+    };
+  }, []);
   /*const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
@@ -14,20 +36,25 @@ export default function HeroSection() {
   return (
     <section className="hero">
       <div className="heroInner">
-        <h1 className="heroTitle">BATTLE CODING</h1>
-        <p className="heroSubtitle">
-          <span className="heroHighlight">
-            게임처럼 즐기며 실력을 키우는 코딩 플랫폼
-          </span>
-          <span className="heroSubtext">
-            문제를 풀며 티어와 랭킹을 올려보세요!
-          </span>
-        </p>
-        <div className="heroBtn">
-          <button onClick={() => navigate("/game")}>지금 시작하기</button>
+        <div className="heroTextBlock">
+          <h1 className="heroTitle">BATTLE CODING</h1>
+          <p className="heroSubtitle">
+            <span className="heroHighlight">
+              <span ref={firstLineRef}></span>
+            </span>
+            <span className="heroSubtext">
+              <span ref={secondLineRef}></span>
+            </span>
+          </p>
+
+          <div className="heroBtn">
+            <button onClick={() => navigate("/game")}>지금 시작하기</button>
+          </div>
+        </div>
+        <div className="heroImage">
+          <img className="herobackImage" alt="backimage" src={developer} />
         </div>
       </div>
     </section>
   );
 }
-
