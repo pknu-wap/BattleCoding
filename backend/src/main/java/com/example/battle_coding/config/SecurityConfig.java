@@ -31,19 +31,35 @@ public class SecurityConfig {
                 .cors(Customizer.withDefaults())
                 .csrf(AbstractHttpConfigurer::disable) // CSRF 보호 비활성화
                 .authorizeHttpRequests(auth -> auth
+                        // ✅ React 정적 리소스
                         .requestMatchers(
-                                "/auth/**",
-                                "/static/**",
-                                "/favicon.ico",
-                                "/manifest.json",
-                                "/logo192.png",
-                                "/logo512.png",
-                                "/",
-                                "/index.html",
-                                "/**"
+                                "/", "/index.html",
+                                "/static/**", "/favicon.ico", "/manifest.json",
+                                "/logo192.png", "/logo512.png",
+                                "/auth/login", "/register"
                         ).permitAll()
-                        .anyRequest().authenticated() // 그 외의 모든 요청은 인증 필요
+
+                        .requestMatchers(
+                                // ✅ React SPA 라우트 허용 (중요!)
+                                "/game", "/game/**",
+                                "/user", "/user/**",
+                                "/ranking", "/mypage"
+                        ).permitAll()
+
+                        // ✅ 인증 없이 접근 가능한 API
+                        .requestMatchers(
+                                "/api/auth/login", "/api/auth/signup",         // 로그인 & 회원가입
+                                "/api/user/check-email", "/api/user/check-nickname" // 중복 체크
+                        ).permitAll()
+
+                        // ✅ 그 외 API는 인증 필요
+                        .requestMatchers(
+                               "/api/**"
+                        ).authenticated()
+
+                        .anyRequest().denyAll()
                 )
+
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .exceptionHandling(e -> e
                         .authenticationEntryPoint(customAuthenticationEntryPoint)

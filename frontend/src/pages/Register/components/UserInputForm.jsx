@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import InputInfo from './InputInfo';
 import './UserInputForm.scss';
-import axios from "axios";
+import api from "../../../api";
 
 const UserInputForm = () => {
     const [info, setInfo] = useState({
@@ -47,7 +47,7 @@ const UserInputForm = () => {
         };
 
         try {
-            const response = await axios.post(`${process.env.REACT_APP_API_URL}/auth/signup`, signupData);
+            const response = await api.post("/auth/signup", signupData);
 
             if (response.data.success) {
                 alert('회원가입이 완료되었습니다.');
@@ -63,6 +63,7 @@ const UserInputForm = () => {
     }
 
     useEffect(() => {
+        console.log("검증 상태", info);
         setIsValidButton(info.isValidNickname && info.isValidPwd && info.isValidPwdChk);
     }, [info.isValidNickname, info.isValidPwd, info.isValidPwdChk]);
 
@@ -70,10 +71,13 @@ const UserInputForm = () => {
         <form className="regsiterSubmitForm" onSubmit={submitHandler}>
             <div className="inputArea">
                 <div className='formWrapper'>
-                    <InputInfo onChange={infoHandler} OnChangeValidation={validationHandler} />
+                    <div className='inputForm'>
+                        <InputInfo onChange={infoHandler} OnChangeValidation={validationHandler} />
+                    </div>
+                    <div className='formDivider' />
+                    <button disabled={!isValidButton}>회원가입</button>
                 </div>
             </div>
-            <button disabled={!isValidButton}>회원가입</button>
         </form>
     );
 };

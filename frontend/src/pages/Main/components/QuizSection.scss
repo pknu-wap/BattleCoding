@@ -1,6 +1,7 @@
 .quizsection {
-  background-color: #282534;
+  background-color: #161d28;
 
+  max-height: 270px;
   width: 100%;
   flex: 1;
 
@@ -9,7 +10,7 @@
   align-items: center;
   justify-content: center;
 
-  font-family: 'Pretendard', sans-serif;
+  font-family: "Pretendard", sans-serif;
 
   .quizCards {
     width: fit-content;
@@ -23,7 +24,7 @@
   }
 
   .quizCard {
-    background-color: #2A2D3A ;
+    background-color: #1b2430;
 
     width: 240px;
     height: 110px;
@@ -45,7 +46,7 @@
 
       font-size: 18px;
     }
-    
+
     .quizMain {
       margin-bottom: 10px;
 
@@ -56,7 +57,7 @@
     .quizSub {
       margin-top: 8px;
 
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 400;
       color: #cccccc;
     }

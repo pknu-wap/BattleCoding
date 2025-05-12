@@ -23,8 +23,13 @@ public class AuthService {
     private final JwtTokenProvider jwtTokenProvider;
 
     public SignupResponseDto signup(SignupRequestDto request) {
+        validateEmailFormat(request.email());
+        validatePasswordFormat(request.password());
+        validateNicknameLength(request.nickname());
+
         validateEmailDuplicate(request.email());
         validateProviderIdDuplicate(request.providerId());
+        validateNicknameDuplicate(request.nickname());
 
         String encodedPassword = passwordEncoder.encode(request.password());
 
@@ -70,6 +75,32 @@ public class AuthService {
     private void validateEmailDuplicate(String email) {
         if (userRepository.existsByEmail(email)) {
             throw new IllegalArgumentException("이미 존재하는 이메일입니다.");
+        }
+    }
+
+    private void validateNicknameDuplicate(String nickname) {
+        if (userRepository.existsByNickname(nickname)) {
+            throw new IllegalArgumentException("이미 존재하는 닉네임입니다.");
+        }
+    }
+
+    private void validateEmailFormat(String email) {
+        String regex = "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$";
+        if (email == null || !email.matches(regex)) {
+            throw new IllegalArgumentException("올바른 이메일 형식이 아닙니다.");
+        }
+    }
+
+    private void validatePasswordFormat(String password) {
+        String regex = "^(?=.*[a-zA-Z])(?=.*\\d)(?=.*[!@#$%^&*]).{8,16}$";
+        if (password == null || !password.matches(regex)) {
+            throw new IllegalArgumentException("비밀번호는 영문, 숫자, 특수문자를 포함해 8~16자여야 합니다.");
+        }
+    }
+
+    private void validateNicknameLength(String nickname) {
+        if (nickname == null || nickname.length() < 4 || nickname.length() > 12) {
+            throw new IllegalArgumentException("닉네임은 4~12자여야 합니다.");
         }
     }
 

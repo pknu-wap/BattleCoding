@@ -1,82 +1,66 @@
-.GameCard {
-  padding: 5px;
-  margin: 10px;
-  gap: 10px;
+.gameCard {
+  width: 100%;
+  max-width: 260px;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+
+  font-family: 'Pretendard', sans-serif;
 
   cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 
-  .GameCard_main {    
+  .gameCardCover {
+    width: 280px;
+    height: 280px;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .gameCardImage {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .gameCardBody {
+    background-color: #1b2430;
+    width: 250px;
+    height: 110px;
+    padding: 15px;
+
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 
-    &:hover {
-      filter: brightness(70%);
+    .gameCardTitle {
+      margin: 10px 0 12px 0;
+
+      font-weight: bold;
+      font-size: 18px;
+      color: #ffffff;
+      transition: color 0.3s;
     }
 
-    .game_card_cover {
-      display: flex;
-      width: 310px;
-      height: 330px;
-
-      .game_card_image {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-      }
+    .gameCardElaborate {
+      font-size: 15px;
+      color: #f0f0f0;
+      line-height: 1.6;
+      white-space: normal;
+      word-wrap: break-word;
     }
+  }
 
-    .game_card_body {
-      background-color: #2a2d3a;
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 240, 255, 0.2);
 
-      display: flex;
-      flex-direction: column;
-
-      width: 310px;
-      height: 120px;
-
-      overflow: hidden;
-      cursor: pointer;
-
-      .game_card_content {
-        display: flex;
-        flex-direction: column;
-
-        .game_card_text {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-
-          padding: 10px;
-          gap: 20px;
-
-
-          font-family: 'Pretendard', sans-serif;
-
-          .game_card_title {
-            font-weight: bold;
-            text-align: left;
-            color: white;
-            font-size: 20px;
-            width: 100%;
-          }
-
-          .game_card_elaborate {
-            font-size: 14px;
-            color: #f0f0f0;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            white-space: normal;
-            text-align: left;
-            line-height: 1.7;
-          }
-        }
-      }
-    }
+    .gameCardTitle {
+      color: #00f0ff;
+    }    
   }
 }

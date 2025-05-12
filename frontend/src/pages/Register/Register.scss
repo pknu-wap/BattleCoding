@@ -11,43 +11,125 @@ html, body {
   height: 100%;
 }
 
-.register {
-  background-color: #282534;
-
+.registerContainer {
+  background: linear-gradient(to bottom, #0d1a2d, #11293d, #183b4e);
+  
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  position: relative;
 
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
-  
+
   font-family: 'Pretendard', sans-serif;
-      
-  .registerTitle {
-    position: absolute;
-    top: 5vh;
 
-    font-size: 36px;
-    font-weight: 800;
-    color: #00f0ff;
-    text-align: center;
-  }
-
-  .formArea {
-    width: 100%;
-    max-width: 420px;
-    margin-top: 16vh;
-    padding: 60px 40px;
-    gap: 28px;
-    box-sizing: border-box;
-
+  .registerWrapper {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    position: relative;
+    gap: 0px;
+
+    .welcomeArea {
+      background-color: #1b2430;
+      
+      width: 280px;
+      height: 500px;
   
+      position: relative;;
+      z-index: 1;
+  
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      
+      .welcomeLogo {
+        width: 150px;
+        height: auto;
+        margin-bottom: 14px;
+        object-fit: contain;
+        cursor: pointer;
+      }
+
+      h2 {
+        margin-bottom: 2px;
+  
+        color: #00f0ff;
+        font-size: 28px;
+        font-weight: 800;
+      }
+    
+      p {
+        margin-bottom: 32px;
+  
+        color: #ffffff;
+        font-size: 14px;
+        opacity: 0.85;
+      }
+    
+      .welcomeBtn {
+        background-color: transparent;
+        padding: 8px 16px;
+  
+        border-radius: 8px;
+        border: 1px solid #00f0ff;
+    
+        font-size: 12px;
+        font-weight: 700;
+        color: #00f0ff;
+  
+        cursor: pointer;
+        transition: background-color 0.2s;
+    
+        &:hover {
+          background-color: #00f0ff;
+          color: #2A2D3A;
+        }
+      }
+    }
+  
+    .formArea {
+      background-color: #161d28;
+
+      width: 620px;
+      height: auto;
+      min-height: 520px;
+      padding: 16px;
+      margin-left: -20px;
+      z-index: 2;
+  
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      
+      border-radius: 12px;
+      border: 1px solid rgba(0, 240, 255, 0.15);
+      box-shadow: 0 0 24px rgba(0, 240, 255, 0.06);
+
+      h1 {
+        margin: 16px; 
+
+        font-size: 38px;
+        font-weight: 800;
+        letter-spacing: 3px;
+        color: #00e6f6;
+      }
+
+      .formDivider {
+        background: linear-gradient(to right, transparent, #00f0ff, transparent);
+        opacity: 0.3;
+        
+        width: 100%;
+        height: 1px;
+        margin: 12px 0;
+      }
+    }
   }
 }

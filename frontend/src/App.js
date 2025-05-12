@@ -1,30 +1,46 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Main from "./pages/Main/Main";
-import Login from "./pages/Login/Login";
-import GameHeaderGuest from "./pages/Game/GameHeader/GameHeader_Guest";
-import GameHeaderUser from "./pages/Game/GameHeader/GameHeader_User";
-import Game from "./pages/Game/Game";
-import ReadyPage from "./pages/Page/ReadyPage";
-import ResultPage from "./pages/Page/ResultPage";
-import MyRanking from "./pages/ranking/MyRanking";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Router from "./Router";
 import "./App.scss";
+import api from "./api";
 
 function App() {
-    return (
-        <Router>
-            <Routes>
-                <Route path="/" element={<Main />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/game-header-guest" element={<GameHeaderGuest />} />
-                <Route path="/game-header-user" element={<GameHeaderUser />} />
-                <Route path="/game" element={<Game />} />
-                <Route path="/ready" element={<ReadyPage />} />
-                <Route path="/result" element={<ResultPage />} />
-                <Route path="/ranking" element={<MyRanking />} />
-            </Routes>
-        </Router>
-    );
+    const [isCheckingAuth, setIsCheckingAuth] = useState(true);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const checkAuth = async () => {
+            const token = localStorage.getItem("token");
+            console.log("토큰 있음: ", token);
+            
+            if (!token) {
+                setIsCheckingAuth(false);
+                return;
+            }
+
+            try {
+                const res = await api.get("/user/me");
+                console.log("로그인 유저 정보: ", res.data);
+            } catch (err) {
+                console.error("토큰 만료 또는 유효하지 않음", err);
+                localStorage.removeItem("token");
+                navigate('/auth/login');
+            } finally {
+                setIsCheckingAuth(false);
+            }
+        };
+
+        checkAuth();
+    }, [navigate]);
+
+    if (isCheckingAuth) {
+        return <div>로딩 중...</div>
+    }
+
+    return <Router />;
 }
 
 export default App;
+
+
+

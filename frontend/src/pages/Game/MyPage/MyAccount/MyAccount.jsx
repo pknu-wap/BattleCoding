@@ -14,11 +14,10 @@ function MyAccount() {
       <div className="myInfo">
         <div className="myName">
           <span className="myNickname">NICKNAME</span>
-          <span className="myID">my ID</span>
+          <span className="myEmail">my email</span>
         </div>
         <div className="myBtn">
-          <button className="changeBtn">change Profile</button>
-          <button className="changeBtn">change Password</button>
+          <button className="changeBtn">Edit Profile</button>
         </div>
       </div>
     </div>
