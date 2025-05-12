@@ -18,6 +18,6 @@ public class RankingController {
 
     @GetMapping
     public List<RankingResponseDto> getRanking() {
-        return rankingService.getTopRanking();
+        return rankingService.getTopRanking(1, 10);
     }
 }
