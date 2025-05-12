@@ -35,7 +35,7 @@ public class Submission {
     @Column(nullable = false)
     private Boolean isCorrect;  // 정답 여부
 
-    @Column(nullable = false)
+    @Column(nullable = true)  // 연습모드일 경우 null
     private Integer timeTaken;  // 문제 풀이에 걸린 시간 (초 단위)
 
     // XP는 랭킹모드에서만 부여됨 (연습모드면 0)

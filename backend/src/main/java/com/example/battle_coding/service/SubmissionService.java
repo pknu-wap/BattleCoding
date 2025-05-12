@@ -27,15 +27,14 @@ public class SubmissionService {
         User user = getUserFromAuth(authentication);
         Question question = getQuestionById(request.questionId());
         boolean isCorrect = checkAnswer(question, request.userAnswer());
-
+        int timeTaken = request.timeTaken() != null ? request.timeTaken() : 0;
         int xpEarned = 0;
-        // 랭킹 모드라면 사용자의 경험치를 계산
-        if (isCorrect && request.isRanking()) {
-            xpEarned = calculateXp(question.getDifficulty().name(), request.timeTaken());
-        }
 
-        // 일반 모드라면 경험치는 0
+        // 답이 맞았고 랭킹 모드라면 xpEarned를 계산
         if (isCorrect) {
+            if (request.isRanking()) {
+                xpEarned = calculateXp(question.getDifficulty().name(), timeTaken);
+            }
             user.updateXpAndCorrect(xpEarned, true);
         }
 
@@ -44,7 +43,7 @@ public class SubmissionService {
                 .question(question)
                 .userAnswer(request.userAnswer())
                 .isCorrect(isCorrect)
-                .timeTaken(request.timeTaken())
+                .timeTaken(timeTaken)
                 .xpEarned(xpEarned)
                 .isRanking(request.isRanking())
                 .submittedAt(LocalDateTime.now())
@@ -59,8 +58,6 @@ public class SubmissionService {
                 user.getXp()
         );
     }
-
-
 
     private User getUserFromAuth(Authentication authentication) {
         if (authentication == null || !authentication.isAuthenticated()) {
