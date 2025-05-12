@@ -2,6 +2,12 @@ import { useState, useEffect } from "react";
 import api from "../../../api";
 import './InputInfo.scss';
 
+const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const pwdRegex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{8,20}$/;
+
+const allowedspecials = "!@#$%^&*";
+const forbiddenspecials = /[^a-zA-Z0-9!@#$%^&*]/;
+
 const InputInfo = ({ onChange, OnChangeValidation }) => {
     const [inputData, setInputData] = useState({
         nickname: "",
@@ -58,6 +64,8 @@ const InputInfo = ({ onChange, OnChangeValidation }) => {
       OnChangeValidation("isValidPwdChk", isLengthValid.passwordCheck);
     },[isLengthValid, isAvailable, OnChangeValidation]);
 
+    const [pwdErrMsg, setPwdErrMsg] = useState("");
+    
     const inputHandler = async (e) => {
         const { name, value } = e.target;
         setInputData((prev) => ({ ...prev, [name]: value }));
@@ -75,7 +83,7 @@ const InputInfo = ({ onChange, OnChangeValidation }) => {
         }
 
         if (name === "email") {
-          const formatValid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value);
+          const formatValid = emailRegex.test(value);
           setIsLengthValid(prev => ({ ...prev, email: formatValid }));
           if (formatValid) {
             const available = await checkEmail(value);
@@ -86,12 +94,33 @@ const InputInfo = ({ onChange, OnChangeValidation }) => {
         }
 
         if (name === "password") {
-          const pwdValid = /^(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*()_+=\-{}[\]:;"'<>,.?/\\|~`]).{8,20}$/.test(value);
-          setIsLengthValid(prev => ({
-            ...prev,
-            password: pwdValid,
-            passwordCheck: inputData.passwordCheck === value,
-          }));
+          const containsForbidden = forbiddenspecials.test(value);
+          const pwdValid = pwdRegex.test(value);
+
+          if (containsForbidden) {
+            setIsLengthValid(prev => ({
+              ...prev,
+              password: false,
+              passwordCheck: inputData.passwordCheck === value,
+            }));
+            setPwdErrMsg("사용할 수 없는 특수문자가 포함되어 있습니다.");
+          }
+          else if (!pwdValid) {
+            setIsLengthValid(prev => ({
+              ...prev,
+              password: false,
+              passwordCheck: inputData.passwordCheck === value,
+            }));
+            setPwdErrMsg("비밀번호는 영문, 숫자, 특수문자 조합 8~20자여야 합니다.\n(사용 가능한 특수문자: !@#$%^&*)");          
+          }
+          else {
+            setIsLengthValid(prev => ({
+              ...prev,
+              password: true,
+              passwordCheck: inputData.passwordCheck === value,
+            }));
+            setPwdErrMsg("사용 가능한 비밀번호입니다.");
+          }
         }
 
         if (name === "passwordCheck") {
@@ -144,11 +173,16 @@ const InputInfo = ({ onChange, OnChangeValidation }) => {
                 <input {...INPUT_FIELDS[2]} value={inputData.password} onChange={inputHandler} />
               </div>
               <p className={inputData.password ? (isLengthValid.password ? "valid" : "invalid") : "placeholder"}>
-                {inputData.password
-                  ? isLengthValid.password
-                    ? "사용 가능한 비밀번호입니다."
-                    : "비밀번호는 소문자, 숫자, 특수문자 포함 8~20자여야 합니다."
-                  : " "}
+                {inputData.password ? (
+                  <>
+                    {pwdErrMsg.split("\n").map((line, index) => (
+                      <span key={index}>
+                        {line}
+                        <br />
+                      </span>
+                    ))}
+                  </>
+                ) : " "}
               </p>
             </div>
 

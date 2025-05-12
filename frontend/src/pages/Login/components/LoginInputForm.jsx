@@ -1,11 +1,10 @@
 import { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LoginInputForm.scss';
-import axios from "axios";
 import api from '../../../api.js';
 
-let regExpForEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-let regExpForPwd = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/;
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const pwdRegex = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/;
 
 const LoginInputForm = () => {
     const navigate = useNavigate();
@@ -15,6 +14,9 @@ const LoginInputForm = () => {
         password: '',
     });
 
+    const [capsLockOn, setCapsLockOn] = useState(false);
+    const [isValidate, setIsValidate] = useState(false);
+
     const inputHandler = event => {
         const { name, value } = event.target;
         setInput(prevState => {
@@ -22,16 +24,22 @@ const LoginInputForm = () => {
         });
     };
 
-    const [isValidate, setIsValidate] = useState(false);
-
     const checkValidate = (email, pwd) => {
-        const validation = regExpForEmail.test(email) && regExpForPwd.test(pwd);
+        const validation = emailRegex.test(email) && pwdRegex.test(pwd);
         setIsValidate(validation);
-    }
+    };
 
     useEffect(() => {
         checkValidate(input.email, input.password);
     }, [input.email, input.password]);
+
+    const handlePasswordKeyEvent = (e) => {
+        setCapsLockOn(e.getModifierState("CapsLock"));
+    };
+
+    const handlePassWordBlur = () => {
+        setCapsLockOn(false);
+    };
 
     const getMyInfo = async () => {
         try {
@@ -81,15 +89,31 @@ const LoginInputForm = () => {
                     <label htmlFor="email">이메일</label>
                     <div className="inputInfo">
                         <i className="fa-solid fa-envelope icon" />
-                        <input type="email" name="email" value={input.email} onChange={inputHandler} placeholder="이메일" />
+                        <input
+                            type="email"
+                            name="email"
+                            value={input.email}
+                            onChange={inputHandler}
+                            placeholder="이메일" />
                     </div>
                 </div>
                 <div className="inputField">
                     <label htmlFor="password">비밀번호</label>
                     <div className="inputInfo">
                         <i className="fa-solid fa-lock icon" />
-                        <input type="password" name="password" value={input.password} onChange={inputHandler} placeholder="비밀번호" />
+                        <input 
+                            type="password" 
+                            name="password" 
+                            value={input.password} 
+                            onChange={inputHandler} 
+                            onKeyDown={handlePasswordKeyEvent}
+                            onKeyUp={handlePasswordKeyEvent}
+                            onBlur={handlePassWordBlur}
+                            placeholder="비밀번호" />
                     </div>
+                    <p className={capsLockOn ? "invalid" : "placeholder"}>
+                        {capsLockOn ? "CapsLock이 켜져 있습니다." : " "}
+                    </p>
                 </div>
             </div>
             
