@@ -31,12 +31,18 @@ public class SubmissionService {
         int xpEarned = 0;
 
         // 답이 맞았고 랭킹 모드라면 xpEarned를 계산
-        if (isCorrect) {
-            if (request.isRanking()) {
+        // 랭킹 모드인데 오답 제출 시 xp 감정
+        if (request.isRanking()) {
+            if (isCorrect) {
                 xpEarned = calculateXp(question.getDifficulty().name(), timeTaken);
+            } else {
+                xpEarned = -getPenaltyXp(question.getDifficulty().name());
             }
-            user.updateXpAndCorrect(xpEarned, true);
         }
+
+        // ✅ 랭킹 여부와 무관하게 정답/제출 기록 반영
+        user.updateXpAndCorrect(xpEarned, isCorrect);
+
 
         Submission submission = Submission.builder()
                 .user(user)
@@ -55,7 +61,9 @@ public class SubmissionService {
                 isCorrect,
                 xpEarned,
                 generateMessage(isCorrect),
-                user.getXp()
+                user.getXp(),
+                user.getTotalCorrect(),
+                user.getTotalSubmitted()
         );
     }
 
@@ -108,4 +116,14 @@ public class SubmissionService {
 
         return base;
     }
+
+    private int getPenaltyXp(String difficulty) {
+        return switch (difficulty) {
+            case "EASY" -> 5;
+            case "MEDIUM" -> 10;
+            case "HARD" -> 15;
+            default -> 0;
+        };
+    }
+
 }

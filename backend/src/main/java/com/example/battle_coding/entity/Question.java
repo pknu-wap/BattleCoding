@@ -19,22 +19,27 @@ public class Question {
     @Id
     private Integer id;
 
+    @Setter
     @Enumerated(EnumType.STRING)
     @Column(length = 50, nullable = false)
     private QuestionType type;  // 예: FILL_IN_BLANK, PREDICT_OUTPUT, CS_KNOWLEDGE
 
+    @Setter
     @Column(columnDefinition = "TEXT", nullable = true)
     private String question;  // 텍스트 문제 (코딩 상식 퀴즈용)
 
+    @Setter
     @Column(length = 500, nullable = true)
     private String imageUrl;  // 코드 관련 문제는 이미지로 저장
 
     // 다중 정답 허용
+    @Setter
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name="question_answers", joinColumns = @JoinColumn(name="question_id"))
     @Column(name="answer", nullable = false)
     private List<String> answers = new ArrayList<>();
 
+    @Setter
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Difficulty difficulty;  // EASY, MEDIUM, HARD
