@@ -39,6 +39,9 @@ public class User {
     private int totalCorrect = 0;  // 맞춘 문제 개수
 
     @Column(nullable = false, columnDefinition = "INT DEFAULT 0")
+    private int totalAttempts = 0;  // 총 시도한 문제 수
+
+    @Column(nullable = false, columnDefinition = "INT DEFAULT 0")
     private int xp = 0;  // 경험치, 랭킹 계산에 사용
 
     @Column(length = 500)
@@ -50,6 +53,14 @@ public class User {
 
     public void updateXpAndCorrect(int xp, boolean correct) {
         this.xp += xp;
-        if (correct) this.totalCorrect += 1;
+        this.totalAttempts += 1;  // 시도 횟수 증가
+        if (correct) {
+            this.totalCorrect += 1;  // 맞춘 문제 수 증가
+        }
+    }
+
+    // 정확도 기준 상위 10명 사용자 조회에 필요한 메서드
+    public double getAccuracy() {
+        return (this.totalAttempts > 0) ? (double) this.totalCorrect / this.totalAttempts * 100 : 0;
     }
 }
