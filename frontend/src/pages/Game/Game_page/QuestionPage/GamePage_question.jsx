@@ -106,6 +106,7 @@ function GamePage_question() {
           placeholder="정답을 입력해주세요."
           value={answer}
           onChange={(e) => setAnswer(e.target.value)}
+          autoFocus
         />
         <button className="enterBtn" type="submit">🕹️</button>
       </div>
