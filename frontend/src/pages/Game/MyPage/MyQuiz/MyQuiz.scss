@@ -1,6 +1,6 @@
 .myQuiz {
   padding: 10px 20px;
-
+  gap: 20px;
   display: block;
 
   .myStats {
@@ -31,8 +31,9 @@
 
     font-family: 'Pretendard', sans-serif;
 
-    .myAll, .myRight, .myWrong {
+    .myAll, .myRight, .myWrong, .myPercent {
       gap: 10px;
+      padding: 10px;
 
       display: flex;
       align-items: center;
