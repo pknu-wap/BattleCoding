@@ -10,8 +10,8 @@
 
     .inputField {
         width: 100%;
-        padding: 2px;
-        gap: 8px;
+        padding: 4px;
+        gap: 6px;
 
         display: flex;
         flex-direction: column;
@@ -67,7 +67,6 @@
         }
 
         p {
-            height: 16px;
             margin: 4px;
             white-space: nowrap;
             overflow: visible;     
@@ -83,6 +82,7 @@
           
             &.invalid {
                 color: #f7f7f7;
+                line-height: 1.8;
             }
 
             &.empty {
