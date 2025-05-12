@@ -7,7 +7,7 @@ function My_Rank() {
       <div className="MyRanking">
         <div className="Ranking">나의 랭킹</div>
         <div className="Rank">
-          <div className="MyPlacing"><b>?</b>등</div>
+          <div className="MyPlacing"><b>?</b> 등</div>
           <div className="Ranker">NICKNAME</div>
           <div className="myXp">XX.xx</div>
         </div>
