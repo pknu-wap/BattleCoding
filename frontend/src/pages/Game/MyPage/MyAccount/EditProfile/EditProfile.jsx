@@ -64,7 +64,6 @@ function EditProfile() {
             value={nickname}
             onChange={(e) => setNickname(e.target.value)}
             placeholder="새 닉네임"
-            required
           />
         </div>
 
