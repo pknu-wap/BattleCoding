@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  background-color: #282534;
 
   .title {
     font-size: 32px;
@@ -11,6 +12,36 @@
     color: #ffffff;
     text-align: center;
     font-family: 'Pretendard', sans-serif;
+  }
+
+  label {
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .nickname-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 490px;
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      font-size: 16px;
+      font-family: 'Pretendard', sans-serif;
+      background-color: #1e1e2f;
+      color: #fff;
+      outline: none;
+
+      &::placeholder {
+        color: #aaa;
+      }
+    }
   }
 
   .image-selection {
@@ -41,6 +72,27 @@
       &.selected {
         border-color: #00f0ff;
         box-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
+      }
+    }
+  }
+
+  .password-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 490px;
+
+    input {
+      margin-top: 6px;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      font-size: 16px;
+      background-color: #1e1e2f;
+      color: #fff;
+
+      & + input {
+        margin-top: 10px;
       }
     }
   }
