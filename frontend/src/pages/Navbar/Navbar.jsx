@@ -30,7 +30,7 @@ export default function Navbar({ type = "main" }) {
         <div className="navbarAuth">
           {isLoggedIn ? (
             <>
-              <button className="btnMypage" onClick={() => navigate("/user/mypage")}>
+              <button className="btnMypage" onClick={() => navigate("/mypage")}>
                 마이페이지
               </button>
               <button className="btnLogout" onClick={handleLogout}>

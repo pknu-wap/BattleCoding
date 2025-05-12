@@ -1,99 +1,119 @@
 .loginSubmitForm {
-    width: 100vw;
-    padding: 20px 0 40px 0;
-    gap: 40px;
-    
+    width: 100%;
+    padding: 40px 0 20px 0;
+    gap: 32px;
+  
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-
-    .inputArea {
-        background: linear-gradient(to bottom, #141E30, #243B55);
-
-        width: 100vw;
-        min-height: 300px;
-        padding: 50px 20px;
-
+  
+    .inputForm {
+        width: 300px;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 40px 0 50px 0;
+        gap: 32px;
+    
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-
-        .formWrapper {
+  
+        .inputField {
             width: 100%;
-            max-width: 500px;
-            padding: 0 20px;
-            gap: 50px;
-      
             display: flex;
             flex-direction: column;
-            align-items: center;
+            padding: 10px;
+            gap: 8px;
 
-            .EmailField, .PasswordField {
+            font-family: 'Pretendard', sans-serif;
+            color: #222;
+  
+            label {
+                margin-left: 4px;
+                margin-bottom: 2px;
+
+                font-size: 15px;
+                font-weight: 600;
+                color: #f0f0f0;
+            }
+  
+            .inputInfo {
                 width: 100%;
-                max-width: 320px;
-                gap: 10px;
-
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-
-                font-family: 'Pretendard', sans-serif;
-
-                label {
-                    margin-left: 4px;
-
-                    font-size: 16px;
-                    font-weight: 600;
-                    color: #F7F7F7;
-                }
-
+                position: relative;
+        
                 input {
-                    background-color: #F7F7F7;
+                    background: #f0f0f0;
 
                     width: 100%;
-                    max-width: 320px;
-                    height: 40px;
-                    padding: 0 12px;
+                    height: 34px;
+                    padding: 0 0px 0 34px;
                     box-sizing: border-box;
-
+                    
+                    border: none;
+                    border-radius: 8px;
+                    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+                    transition: all 0.2s ease;
+        
                     font-size: 14px;
                     font-weight: 500;
+                    color: #222;
+        
+                    &:focus {
+                    box-shadow: 0 0 0 2px #00f0ff;
+                    outline: none;
+                    }
+                }
+    
+                .icon {
+                    position: absolute;
+                    top: 50%;
+                    left: 10px;
+                    transform: translateY(-50%);
 
-                    border-radius: 8px;
-                    border: 1px solid #cccccc;
+                    color: #666;
+                    font-size: 12px;
                 }
             }
         }
     }
+    
+    .formDivider {
+        background: linear-gradient(to right, transparent, #00f0ff, transparent);
+        opacity: 0.4;
+        
+        height: 1px;
+    }
 
     button {
-        background-color: transparent;
-
-        width: 260px;
-        height: 50px;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        border-radius: 8px;
-        border: 1px solid #00f0ff;
-    
-        font-size: 18px;
-        font-weight: 700;
-        color: #00f0ff;
-
-        cursor: pointer;
-        transition: background-color 0.2s;
-
-        &:hover {
-            background-color: #00f0ff;
-            color: #2A2D3A;
-        }
+      background-color: transparent;
+      width: 100%;
+      max-width: 300px;
+      height: 48px;
+  
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      border-radius: 8px;
+      border: 1px solid #00f0ff;
+  
+      font-size: 18px;
+      font-weight: 800;
+      color: #00f0ff;
+  
+      cursor: pointer;
+      transition: all 0.25s ease;
+  
+      &:hover {
+        background-color: #00f0ff;
+        color: #2a2d3a;
+        box-shadow: 0 4px 12px rgba(0, 240, 255, 0.3);
+      }
+  
+      &:disabled {
+        pointer-events: none;
+        cursor: default;
+        opacity: 0.4;
+      }
     }
-}
-
-
-    
+  }

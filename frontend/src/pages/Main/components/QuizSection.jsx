@@ -12,7 +12,7 @@ export default function QuizSection() {
 
                 <div className="quizCard">
                     <div className="quizEmoji">🔍</div>
-                    <div className="quizMain">출력 예측</div>
+                    <div className="quizMain">결과 예측</div>
                     <div className="quizSub">코드 실행 결과를 예상해보세요!</div>
                 </div>
 
