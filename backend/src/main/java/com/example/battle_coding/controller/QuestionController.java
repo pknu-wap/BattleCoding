@@ -33,7 +33,7 @@ public class QuestionController {
         return ResponseEntity.ok(questionService.getRandomQuestionsByDifficulty(difficulty, count));
     }
 
-    @GetMapping("/random/by-filter")
+    @GetMapping("/random/by-type-and-difficulty")
     public ResponseEntity<List<QuestionResponseDto>> getRandomByTypeAndDifficulty(
             @RequestParam QuestionType type,
             @RequestParam Difficulty difficulty,
