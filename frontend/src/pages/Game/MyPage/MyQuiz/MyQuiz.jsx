@@ -18,7 +18,7 @@ function MyQuiz() {
             <span>오답 개수</span>
             <span><b className="Number">??</b>개</span>
           </span>
-          <span className="myPercentage">
+          <span className="myPercent">
             <span>정답률</span>
             <span><b className="Number">??</b>%</span>
           </span>          
