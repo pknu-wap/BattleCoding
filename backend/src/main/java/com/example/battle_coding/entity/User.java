@@ -36,6 +36,9 @@ public class User {
     private String providerId;
 
     @Column(nullable = false, columnDefinition = "INT DEFAULT 0")
+    private int totalSubmitted = 0;  // 총 푼 문제 개수
+
+    @Column(nullable = false, columnDefinition = "INT DEFAULT 0")
     private int totalCorrect = 0;  // 맞춘 문제 개수
 
     @Column(nullable = false, columnDefinition = "INT DEFAULT 0")
@@ -48,8 +51,11 @@ public class User {
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
 
-    public void updateXpAndCorrect(int xp, boolean correct) {
-        this.xp += xp;
-        if (correct) this.totalCorrect += 1;
+    public void updateXpAndCorrect(int deltaXp, boolean isCorrect) {
+        this.xp = Math.max(0, this.xp + deltaXp);
+        this.totalSubmitted += 1;
+        if (isCorrect) {
+            this.totalCorrect += 1;
+        }
     }
 }

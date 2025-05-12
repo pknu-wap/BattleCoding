@@ -4,5 +4,7 @@ public record SubmissionResponseDto(
         boolean isCorrect,
         int xpEarned,
         String message,
-        int updatedXp
+        int updatedXp,
+        int totalCorrect,
+        int totalSubmitted
 ) {}

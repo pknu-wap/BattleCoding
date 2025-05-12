@@ -21,11 +21,8 @@ public class QuestionJsonLoader {
 
     @PostConstruct
     public void loadAllQuestions() {
-        // 기존 문제 전체 삭제
-        questionRepository.deleteAll();
-        System.out.println("[초기화] 기존 문제 삭제 완료");
+        System.out.println("[초기화] 문제 삽입 또는 업데이트 시작");
 
-        // JSON 파일 목록
         List<String> files = List.of(
                 "questions/fill_in_blank.json",
                 "questions/predict_output.json",
@@ -35,44 +32,54 @@ public class QuestionJsonLoader {
                 "questions/predict_ranking_only.json"
         );
 
-        // 중복 체크용 ID 저장소
         Set<Integer> seenIds = new HashSet<>();
-
-        int totalSaved = 0;
+        int totalProcessed = 0;
 
         for (String filePath : files) {
-            try {
-                InputStream is = getClass().getClassLoader().getResourceAsStream(filePath);
+            try (InputStream is = getClass().getClassLoader().getResourceAsStream(filePath)) {
                 if (is == null) {
                     System.err.println("[문제 로딩 실패] 파일을 찾을 수 없습니다: " + filePath);
                     continue;
                 }
 
                 List<Question> questions = Arrays.asList(objectMapper.readValue(is, Question[].class));
-                int savedCount = 0;
+                int processed = 0;
 
-                for (Question q : questions) {
-                    Integer id = q.getId();
+                for (Question newQ : questions) {
+                    Integer id = newQ.getId();
                     if (id == null) {
-                        throw new IllegalArgumentException("❌ 문제에 ID가 없습니다. 파일: " + filePath + ", 내용: " + q);
+                        throw new IllegalArgumentException("❌ 문제에 ID가 없습니다. 파일: " + filePath + ", 내용: " + newQ);
                     }
 
                     if (!seenIds.add(id)) {
                         throw new IllegalStateException("❌ 중복된 문제 ID 감지됨: " + id + " (파일: " + filePath + ")");
                     }
 
-                    questionRepository.save(q);
-                    savedCount++;
+                    questionRepository.findById(Long.valueOf(id))
+                            .ifPresentOrElse(
+                                    existing -> update(existing, newQ),
+                                    () -> questionRepository.save(newQ)
+                            );
+                    processed++;
                 }
 
-                totalSaved += savedCount;
-                System.out.println("[문제 추가 완료] " + filePath + " → " + savedCount + "개 저장됨");
+                totalProcessed += processed;
+                System.out.println("[문제 처리 완료] " + filePath + " → " + processed + "개");
 
             } catch (Exception e) {
                 System.err.println("[문제 로딩 에러] " + filePath + " → " + e.getMessage());
             }
         }
 
-        System.out.println("[총 완료] 전체 문제 수: " + totalSaved + "개");
+        System.out.println("[총 완료] 전체 문제 수: " + totalProcessed + "개");
+    }
+
+    private void update(Question existing, Question incoming) {
+        existing.setType(incoming.getType());
+        existing.setQuestion(incoming.getQuestion());
+        existing.setImageUrl(incoming.getImageUrl());
+        existing.setAnswers(incoming.getAnswers());
+        existing.setDifficulty(incoming.getDifficulty());
+        questionRepository.save(existing);
     }
 }
