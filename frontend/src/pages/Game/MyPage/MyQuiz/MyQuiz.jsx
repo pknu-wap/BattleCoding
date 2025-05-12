@@ -8,19 +8,19 @@ function MyQuiz() {
         <div className="myQuestion">
           <span className="myAll">
             <span>풀이 개수</span>
-            <span><b className="Number">??</b>개</span>
+            <span><b className="Number">??</b> 개</span>
           </span>
           <span className="myRight">
             <span>정답 개수</span>
-            <span><b className="Number">??</b>개</span>
+            <span><b className="Number">??</b> 개</span>
           </span>
           <span className="myWrong">
             <span>오답 개수</span>
-            <span><b className="Number">??</b>개</span>
+            <span><b className="Number">??</b> 개</span>
           </span>
           <span className="myPercent">
-            <span>정답률</span>
-            <span><b className="Number">??</b>%</span>
+            <span>정 답 률</span>
+            <span><b className="Number">??</b> %</span>
           </span>          
         </div>
     </div>
