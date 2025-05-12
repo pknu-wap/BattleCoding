@@ -16,7 +16,7 @@ function GamePage_ready() {
 
   const handleClick = (level) => {
     navigate('/game/question', {
-        state: { type, level, image, title, description, level }
+        state: { type, level, image, title, description }
       });
   };
 
