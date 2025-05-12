@@ -14,7 +14,7 @@ html, body {
 }
 
 .gameMain {
-  background: linear-gradient(to bottom, #141E30, #243B55);
+  background: linear-gradient(to bottom, #0d1a2d, #11293d, #183b4e);
   width: 100vw;
   height: calc(100vh - 56px);
 
@@ -59,7 +59,7 @@ html, body {
     .gameCards {
       width: 100%;
       min-height: 300px;
-      gap: 16px;
+      gap: 65px;
 
       display: flex;
       flex-wrap: wrap;

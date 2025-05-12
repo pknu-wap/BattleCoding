@@ -1,5 +1,5 @@
 .navbar {
-    background-color: #282534;
+    background-color: #161d28;
 
     width: 100%;
     height: 56px;
@@ -47,7 +47,7 @@
             color: #ffffff;
         
             &:hover {
-                text-decoration: underline;
+                color: #00F0FF;
             }
         }
     }
@@ -73,7 +73,7 @@
 
             &.btnLogin, &.btnMypage {
                 background-color: #00F0FF;
-                color: #2A2D3A;
+                color: #161d28;
                 border: none;
             
                 &:hover {
@@ -88,7 +88,7 @@
     
                 &:hover {
                     background-color: #00F0FF;
-                    color: #2A2D3A;
+                    color: #161d28;
                 }
             }
         }

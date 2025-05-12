@@ -38,6 +38,7 @@ function GameMain() {
                   image={data.image}
                   title={data.title}
                   description={data.description}
+                  type={data.type}
                 />
               ))
             )}

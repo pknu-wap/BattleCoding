@@ -66,4 +66,4 @@ frontend/.env.production
 .DS_Store
 Thumbs.db
 deploy.sh
-deploy.sh
+docker-compose.yml

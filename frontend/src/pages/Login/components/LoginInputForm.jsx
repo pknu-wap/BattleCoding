@@ -76,33 +76,25 @@ const LoginInputForm = () => {
 
     return (
         <form className='loginSubmitForm' onSubmit={loginHandler}>
-            <div className='inputArea'>
-                <div className='formWrapper'>
-                    <div className='EmailField'>
-                        <label htmlFor='email'>이메일</label>
-                        <input 
-                            placeholder='이메일' 
-                            name='email'
-                            type='email'
-                            onChange={inputHandler} 
-                            value={input.email}
-                        />
+            <div className="inputForm">
+                <div className="inputField">
+                    <label htmlFor="email">이메일</label>
+                    <div className="inputInfo">
+                        <i className="fa-solid fa-envelope icon" />
+                        <input type="email" name="email" value={input.email} onChange={inputHandler} placeholder="이메일" />
                     </div>
-                    
-                    <div className='PasswordField'>
-                        <label htmlFor='password'>비밀번호</label>
-                        <input
-                            placeholder='비밀번호'
-                            name='password'
-                            type='password'
-                            onChange={inputHandler}
-                            value={input.password}
-                        />
+                </div>
+                <div className="inputField">
+                    <label htmlFor="password">비밀번호</label>
+                    <div className="inputInfo">
+                        <i className="fa-solid fa-lock icon" />
+                        <input type="password" name="password" value={input.password} onChange={inputHandler} placeholder="비밀번호" />
                     </div>
                 </div>
             </div>
             
-            <button disabled={!isValidate}>로그인</button>
+            <div className='formDivider' />
+            <button type="submit" disabled={!isValidate}>로그인</button>
         </form>
     );
 };
