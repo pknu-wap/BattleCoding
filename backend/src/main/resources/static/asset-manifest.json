@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.d92b91ee.css",
-    "main.js": "/static/js/main.a367db60.js",
-    "static/media/output.png": "/static/media/output.5bc481de7ab0549506e0.png",
-    "static/media/cs.png": "/static/media/cs.40ca9bd44e8d4aa0c915.png",
-    "static/media/fill.png": "/static/media/fill.9f6a5961817e7cae1d4a.png",
+    "main.css": "/static/css/main.2eda1888.css",
+    "main.js": "/static/js/main.210194d7.js",
+    "static/media/logo_BattleCoding.png": "/static/media/logo_BattleCoding.4b9ee871b3ff8cbc99a6.png",
+    "static/media/CsKnowledge.png": "/static/media/CsKnowledge.7e8b61cf18f91bd04631.png",
+    "static/media/PredictOutput.png": "/static/media/PredictOutput.342813b564a89a9121c6.png",
+    "static/media/FillInTheBlank.png": "/static/media/FillInTheBlank.70967538fd62c2644e38.png",
     "index.html": "/index.html",
-    "main.d92b91ee.css.map": "/static/css/main.d92b91ee.css.map",
-    "main.a367db60.js.map": "/static/js/main.a367db60.js.map"
+    "main.2eda1888.css.map": "/static/css/main.2eda1888.css.map",
+    "main.210194d7.js.map": "/static/js/main.210194d7.js.map"
   },
   "entrypoints": [
-    "static/css/main.d92b91ee.css",
-    "static/js/main.a367db60.js"
+    "static/css/main.2eda1888.css",
+    "static/js/main.210194d7.js"
   ]
 }
