@@ -1,0 +1,101 @@
+.UserRanking {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Pretendard', sans-serif;
+
+  .Readerboard {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 900;
+    color: #ffffff;
+  }
+
+  .userList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .userRow {
+      background-color: #2a2d3a;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 10px;
+      flex-wrap: wrap;
+      transition: all 0.3s ease;
+      font-size: 16px;
+      margin-bottom: 10px;
+
+      .placing {
+        padding: 8px 20px;
+        font-size: 18px;
+        color: #ffffff;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .rank {
+          font-size: 22px;
+        }
+      }
+
+      .username {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        color: #cccccc;
+        font-weight: 500;
+      }
+
+      .scoreline {
+        display: flex;
+        gap: 4px;
+        font-size: 16px;
+        color: #aaaaaa;
+      }
+
+      .percent {
+        font-size: 16px;
+        color: #ffffff;
+      }
+
+      &:hover {
+        background-color: #333d51;
+      }
+    }
+
+    // 현재 사용자 강조
+    .userRow.currentUser {
+      background-color: #3b4160;
+      border: 2px solid #00f0ff;
+      box-shadow: 0 0 10px #00f0ff55;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    @media (max-width: 768px) {
+      .userRow {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+        padding: 15px;
+      }
+
+      .placing,
+      .username,
+      .scoreline,
+      .percent {
+        font-size: 14px;
+      }
+    }
+  }
+}
