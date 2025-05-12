@@ -1,12 +1,13 @@
 .edit-profile {
-  padding: 10px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  min-height: 100vh;
   background-color: #282534;
 
   .title {
+    margin-top: 20px;
     font-size: 32px;
     font-weight: 900;
     color: #ffffff;
