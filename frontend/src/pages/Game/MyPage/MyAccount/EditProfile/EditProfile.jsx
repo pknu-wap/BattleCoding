@@ -7,6 +7,11 @@ const profileImages = [
   'https://cdn.pixabay.com/photo/2025/05/04/17/47/dog-9578735_1280.jpg',
   'https://cdn.pixabay.com/photo/2025/03/25/15/57/flowers-9492798_1280.jpg',
   'https://cdn.pixabay.com/photo/2025/03/23/22/04/bluejay-9489628_1280.jpg',
+  'https://cdn.pixabay.com/photo/2024/05/15/20/57/developer-8764521_1280.jpg',
+  'https://cdn.pixabay.com/photo/2021/08/04/13/06/software-developer-6521720_1280.jpg',
+  'https://cdn.pixabay.com/photo/2024/04/09/03/04/ai-generated-8684869_1280.jpg',
+  'https://cdn.pixabay.com/photo/2024/01/24/21/41/woman-8530607_1280.png',
+  'https://cdn.pixabay.com/photo/2019/09/16/20/21/cat-cat-4481997_1280.jpg'
 ];
 
 function EditProfile() {
