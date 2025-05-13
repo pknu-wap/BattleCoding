@@ -4,29 +4,38 @@
   font-family: "Cascadia Code", monospace;
 
   position: absolute;
+
   top: 60;
   left: 0;
   width: 100%;
   max-height: 400px;
   height: 100%;
-  padding: 20px;
+
+  padding: 0 50px;
 
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
 
-  color: rgba(255, 255, 255, 0.2);
-  font-size: 15px;
+  color: rgba(0, 225, 127, 0.2);
+  font-size: 11px;
 
   z-index: 1;
+  overflow: hidden;
 }
 
 .code {
   font-family: "Cascadia Code", monospace;
-  color: white;
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.2);
+  font-size: 11px;
+
+  color: rgba(0, 225, 127, 0.2);
+
   white-space: pre-wrap;
+
   line-height: 1.5;
+  overflow: hidden;
+  user-select: none;
+  position: relative;
+
   margin: 0;
 }
