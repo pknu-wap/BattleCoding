@@ -38,8 +38,10 @@ public class UserController {
         UserInfoDto response = new UserInfoDto(
                 user.getEmail(),
                 user.getNickname(),
-                user.getXp(),
                 user.getTotalCorrect(),
+                user.getTotalAttempts(),
+                user.getTotalSubmitted(), // 추가된 필드
+                user.getXp(),
                 user.getCreatedAt()
         );
 

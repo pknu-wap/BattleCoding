@@ -5,7 +5,10 @@ import java.time.LocalDateTime;
 public record UserInfoDto(
         String email,
         String nickname,
-        int xp,
         int totalCorrect,
+        int totalAttempts,
+        int totalSubmitted,
+        int xp,
         LocalDateTime createdAt
 ) {}
+

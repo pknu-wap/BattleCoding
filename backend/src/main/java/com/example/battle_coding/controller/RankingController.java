@@ -1,6 +1,6 @@
 package com.example.battle_coding.controller;
 
-import com.example.battle_coding.dto.response.RankingResponseDto;  // 여기서 경로 확인
+import com.example.battle_coding.dto.response.RankingResponseDto;
 import com.example.battle_coding.service.RankingService;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,6 +18,6 @@ public class RankingController {
 
     @GetMapping
     public List<RankingResponseDto> getRanking() {
-        return rankingService.getTopRanking(1, 10);
+        return rankingService.getTopRanking();
     }
 }
