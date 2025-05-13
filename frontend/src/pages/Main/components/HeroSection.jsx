@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import "./HeroSection.scss";
 import Typed from "typed.js";
 import developer from "../components/image1.png";
+import HeroBack from "../components/HeroBack";
 import { useEffect, useRef, useState } from "react";
 
 export default function HeroSection() {
@@ -13,14 +14,14 @@ export default function HeroSection() {
       strings: ["게임처럼 즐기며 실력을 키우는 코딩 플랫폼"],
       typeSpeed: 70,
       showCursor: true,
-      cursorChar: "|",
+      cursorChar: "_",
       onComplete: () => {
         setTimeout(() => {
           new Typed(secondLineRef.current, {
             strings: ["문제를 풀며 티어와 랭킹을 올려보세요!!!"],
             typeSpeed: 55,
             showCursor: true,
-            cursorChar: "|",
+            cursorChar: "_",
             onComplete: () => {
               setTimeout(() => {
                 const cursors = document.querySelectorAll(".typed-cursor");
@@ -45,6 +46,7 @@ export default function HeroSection() {
 
   return (
     <section className="hero">
+      <HeroBack />
       <div className="heroInner">
         <div className="heroTextBlock">
           <h1 className="heroTitle">BATTLE CODING</h1>

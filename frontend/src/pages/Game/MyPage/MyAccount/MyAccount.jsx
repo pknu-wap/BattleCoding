@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./MyAccount.scss";
 
 function MyAccount() {
+  const navigate = useNavigate();
+
   return (
     <div className="myAccount">
       <div className="myImage">
@@ -17,7 +20,7 @@ function MyAccount() {
           <span className="myEmail">my email</span>
         </div>
         <div className="myBtn">
-          <button className="changeBtn">Edit Profile</button>
+          <button className="changeBtn" onClick={() => navigate('/mypage/edit')}>Edit Profile</button>
         </div>
       </div>
     </div>

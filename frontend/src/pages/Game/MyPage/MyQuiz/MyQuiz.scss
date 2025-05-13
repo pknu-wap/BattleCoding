@@ -1,7 +1,8 @@
 .myQuiz {
-  padding: 10px 20px;
+  padding: 10px 0px;
   gap: 20px;
-  display: block;
+  display: flex;
+  flex-direction: column;
 
   .myStats {
       color: #ffffff;
@@ -12,7 +13,7 @@
 
   .myQuestion {
     width: 100%;
-    gap: 10px;
+    gap: 0px;
     box-sizing: border-box;
 
     background-color: #2a2d3a;
@@ -21,13 +22,12 @@
     max-width: 490px;
     padding: 10px;
 
+    display: flex;
+    flex-direction: column;
+
     border-radius: 8px;
     color: #ffffff;
     font-weight: 600;
-    
-    display: block;
-    align-items: center;
-    justify-content: space-between;
 
     font-family: 'Pretendard', sans-serif;
 

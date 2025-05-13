@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Jersey+20&family=Pixelify+Sans:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@550&family=Jersey+20&display=swap");
 
 .hero {
   background: linear-gradient(to bottom, #0d1a2d, #11293d, #183b4e);
@@ -10,8 +10,9 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  z-index: 0;
 
-  font-family: "Jersey 20", "Pretendard", sans-serif;
+  font-family: "Jersey 20", "Cascadia Code", "Pretendard", sans-serif;
 
   .heroInner {
     width: 100%;
@@ -23,6 +24,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    z-index: 2;
   }
 
   .heroTextBlock {

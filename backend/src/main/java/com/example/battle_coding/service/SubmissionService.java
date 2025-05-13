@@ -27,24 +27,29 @@ public class SubmissionService {
         User user = getUserFromAuth(authentication);
         Question question = getQuestionById(request.questionId());
         boolean isCorrect = checkAnswer(question, request.userAnswer());
-
+        int timeTaken = request.timeTaken() != null ? request.timeTaken() : 0;
         int xpEarned = 0;
-        // 랭킹 모드라면 사용자의 경험치를 계산
-        if (isCorrect && request.isRanking()) {
-            xpEarned = calculateXp(question.getDifficulty().name(), request.timeTaken());
+
+        // 답이 맞았고 랭킹 모드라면 xpEarned를 계산
+        // 랭킹 모드인데 오답 제출 시 xp 감정
+        if (request.isRanking()) {
+            if (isCorrect) {
+                xpEarned = calculateXp(question.getDifficulty().name(), timeTaken);
+            } else {
+                xpEarned = -getPenaltyXp(question.getDifficulty().name());
+            }
         }
 
-        // 일반 모드라면 경험치는 0
-        if (isCorrect) {
-            user.updateXpAndCorrect(xpEarned, true);
-        }
+        // ✅ 랭킹 여부와 무관하게 정답/제출 기록 반영
+        user.updateXpAndCorrect(xpEarned, isCorrect);
+
 
         Submission submission = Submission.builder()
                 .user(user)
                 .question(question)
                 .userAnswer(request.userAnswer())
                 .isCorrect(isCorrect)
-                .timeTaken(request.timeTaken())
+                .timeTaken(timeTaken)
                 .xpEarned(xpEarned)
                 .isRanking(request.isRanking())
                 .submittedAt(LocalDateTime.now())
@@ -56,11 +61,11 @@ public class SubmissionService {
                 isCorrect,
                 xpEarned,
                 generateMessage(isCorrect),
-                user.getXp()
+                user.getXp(),
+                user.getTotalCorrect(),
+                user.getTotalSubmitted()
         );
     }
-
-
 
     private User getUserFromAuth(Authentication authentication) {
         if (authentication == null || !authentication.isAuthenticated()) {
@@ -111,4 +116,14 @@ public class SubmissionService {
 
         return base;
     }
+
+    private int getPenaltyXp(String difficulty) {
+        return switch (difficulty) {
+            case "EASY" -> 5;
+            case "MEDIUM" -> 10;
+            case "HARD" -> 15;
+            default -> 0;
+        };
+    }
+
 }

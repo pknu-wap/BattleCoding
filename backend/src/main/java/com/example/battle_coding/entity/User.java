@@ -36,10 +36,10 @@ public class User {
     private String providerId;
 
     @Column(nullable = false, columnDefinition = "INT DEFAULT 0")
-    private int totalCorrect = 0;  // 맞춘 문제 개수
+    private int totalSubmitted = 0;  // 총 푼 문제 개수
 
     @Column(nullable = false, columnDefinition = "INT DEFAULT 0")
-    private int totalAttempts = 0;  // 총 시도한 문제 수
+    private int totalCorrect = 0;  // 맞춘 문제 개수
 
     @Column(nullable = false, columnDefinition = "INT DEFAULT 0")
     private int xp = 0;  // 경험치, 랭킹 계산에 사용
@@ -51,16 +51,11 @@ public class User {
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
 
-    public void updateXpAndCorrect(int xp, boolean correct) {
-        this.xp += xp;
-        this.totalAttempts += 1;  // 시도 횟수 증가
-        if (correct) {
-            this.totalCorrect += 1;  // 맞춘 문제 수 증가
+    public void updateXpAndCorrect(int deltaXp, boolean isCorrect) {
+        this.xp = Math.max(0, this.xp + deltaXp);
+        this.totalSubmitted += 1;
+        if (isCorrect) {
+            this.totalCorrect += 1;
         }
-    }
-
-    // 정확도 기준 상위 10명 사용자 조회에 필요한 메서드
-    public double getAccuracy() {
-        return (this.totalAttempts > 0) ? (double) this.totalCorrect / this.totalAttempts * 100 : 0;
     }
 }

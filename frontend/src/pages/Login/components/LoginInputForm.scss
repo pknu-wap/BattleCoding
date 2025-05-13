@@ -74,6 +74,31 @@
                     font-size: 12px;
                 }
             }
+
+            p {
+                height: 16px;
+                margin: 4px;
+                white-space: nowrap;
+                overflow: visible;     
+                text-overflow: unset; 
+    
+                font-size: 12px;
+                font-weight: 500;
+                line-height: 1.2;
+    
+                &.valid {
+                    color: #00F0FF;
+                }
+              
+                &.invalid {
+                    color: #f7f7f7;
+                }
+    
+                &.empty {
+                    color: transparent;
+                    user-select: none;
+                }
+            } 
         }
     }
     

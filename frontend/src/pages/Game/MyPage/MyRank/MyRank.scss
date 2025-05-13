@@ -1,4 +1,4 @@
-.MyRank {
+.My_Rank {
   width: 100%;
   box-sizing: border-box;
   padding: 30px 20px;
@@ -19,7 +19,7 @@
     gap: 20px;
 
     .Ranking {
-      color: #ffffff;
+      color: #ffffff; 
       font-size: 32px;
       font-weight: 900;
       text-align: center;
@@ -30,7 +30,8 @@
 
       width: 100%;
       max-width: 490px;
-      padding: 10px;
+      padding: 20px 20px;
+      gap: 10px;
 
       display: flex;
       justify-content: space-between;
@@ -38,38 +39,18 @@
       flex-wrap: wrap;
 
       border-radius: 8px;
-      color: #ffffff;
-      font-weight: 600;
 
-      .Placing {
-        color: white;
-        padding: 8px 20px;
-        border-radius: 8px;
-        font-size: 16px;
-
-        .MyPlacing {
-          font-size: 20px;
-          font-weight: 700;
-          color: #00f0ff;
-        }
-      }
-
-      .Ranker {
-        color: #00f0ff;
+      .MyPlacing {
+        color: #ffffff;
         font-size: 20px;
         font-weight: 700;
       }
 
-      .r {
+      .Ranker, .myXp {
         color: #00f0ff;
         font-size: 20px;
         font-weight: 700;
       }
     }
-  }
-
-  .User_Ranking {
-    width: 100%;
-    max-width: 1100px;
   }
 }

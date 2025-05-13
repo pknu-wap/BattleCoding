@@ -19,16 +19,16 @@ function GamePage_question() {
   const [answer, setAnswer] = useState("");
 
   useEffect(() => {
-    if (!type || !level) {
-      alert("문제 유형과 난이도 정보가 없습니다.");
-      navigate('/game');
-
-      return;
-    }
-
     const fetchQuestions = async () => {
+      const difficulty = levelToDifficulty[level];
+
+      if (!type || !level) {
+        alert("문제 유형과 난이도 정보가 없습니다.");
+        navigate('/game');
+        return;
+      }
+
       try {
-        const difficulty = levelToDifficulty[level];
         const data = await getRandomQuestionByTypeAndDifficulty({
           type,
           difficulty,
@@ -38,8 +38,14 @@ function GamePage_question() {
         setQuestions(data);
       } catch (err) {
         console.error("에러:", err);
-        alert("로그인이 필요합니다.");
-        navigate('/auth/login');
+
+        if (err?.response?.status === 401) {
+          alert("로그인이 필요합니다.");
+          navigate("/auth/login");
+        } else {
+          alert("문제를 불러오는 중 오류가 발생했습니다.");
+          navigate("/game");
+        }
       }
     };
 
@@ -63,7 +69,8 @@ function GamePage_question() {
         state: {
           image: location.state?.image,
           title: location.state?.title,
-          description: location.state?.description
+          description: location.state?.description,
+          type: location.state?.type,
         }
       });
     }
@@ -106,6 +113,7 @@ function GamePage_question() {
           placeholder="정답을 입력해주세요."
           value={answer}
           onChange={(e) => setAnswer(e.target.value)}
+          autoFocus
         />
         <button className="enterBtn" type="submit">🕹️</button>
       </div>
