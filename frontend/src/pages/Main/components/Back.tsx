@@ -58,3 +58,6 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         sys.exit(0)
 `;
+
+/* import { highlightPythonCode } from "../components/Hljs.tsx";
+export const Code = highlightPythonCode(BCode); */

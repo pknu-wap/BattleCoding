@@ -8,7 +8,7 @@ export const CodeC = `class Player:
         self.number = number
 
     def __str__(self):
-        return (f"Name: {self.name}, Position: {self.position}, Number: {self.number} \n"
+        return (f"Name: {self.name}, Position: {self.position}, Number: {self.number}"
                 f"Total number of players: {self.number_of_player}")
 
 players = []

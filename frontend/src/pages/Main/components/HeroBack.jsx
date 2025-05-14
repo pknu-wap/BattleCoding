@@ -26,8 +26,10 @@ export default function HeroBack() {
         typeSpeed: 30,
         backSpeed: 0,
         showCursor: false,
+        // cursorChar: "_",
         loop: false,
         smartBackspace: false,
+        contentType: "html",
         onComplete: () => {
           setTimeout(() => {
             if (typedRef.current) {
@@ -52,23 +54,23 @@ export default function HeroBack() {
     };
   }, [currentIndex]);
 
-  // useEffect(() => {
+  /*   useEffect(() => {
 
-  //   const BackCode = Code || "";
-  //   const typed = new Typed(codeRef.current, {
-  //     strings: [BackCode],
-  //     typeSpeed: 50,
-  //     backSpeed: 0,
-  //     loop: true,
-  //     showCursor: false,
-  //     cursorChar: "_",
-  //     smartBackspace: false,
-  //   });
+    const BackCode = Code || "";
+    const typed = new Typed(codeRef.current, {
+      strings: [BackCode],
+      typeSpeed: 50,
+      backSpeed: 0,
+      loop: true,
+      showCursor: false,
+      cursorChar: "_",
+      smartBackspace: false,
+    });
 
-  //   return () => {
-  //     typed.destroy();
-  //   };
-  // }, []);
+    return () => {
+      typed.destroy();
+    };
+  }, []); */
 
   return (
     <section className="herobackground">
