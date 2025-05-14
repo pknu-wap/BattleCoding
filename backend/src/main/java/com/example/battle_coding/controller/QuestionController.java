@@ -43,4 +43,10 @@ public class QuestionController {
                 questionService.getRandomByTypeAndDifficulty(type, difficulty, count)
         );
     }
+
+    @GetMapping("/ranking")
+    public ResponseEntity<List<QuestionResponseDto>> getRankingQuestions() {
+        List<QuestionResponseDto> questions = questionService.getRankingModeQuestions();
+        return ResponseEntity.ok(questions);
+    }
 }
