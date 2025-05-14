@@ -62,4 +62,9 @@ public class Question {
         }
     }
 
+    // JPA 작명 규칙에 따른 getter 작성
+    public boolean getIsRankingOnly() {
+        return isRankingOnly;
+    }
+
 }

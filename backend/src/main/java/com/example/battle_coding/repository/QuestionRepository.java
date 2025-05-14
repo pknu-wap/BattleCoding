@@ -24,6 +24,8 @@ public interface QuestionRepository extends JpaRepository<Question, Long> {
             @Param("count") int count
     );
 
+    List<Question> findAllByIsRankingOnly(boolean isRankingOnly);
+
     boolean existsByTypeAndQuestion(QuestionType type, String question);
     boolean existsByTypeAndImageUrl(QuestionType type, String imageUrl);
 
