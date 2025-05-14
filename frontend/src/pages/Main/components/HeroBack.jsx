@@ -12,45 +12,25 @@ const codeSnippets = [Code, CodeA, CodeB, CodeC];
 
 export default function HeroBack() {
   const codeRef = useRef(null);
-  const typedRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    const typeCode = (index: number) => {
-      if (typedRef.current) {
-        typedRef.current.destroy();
-      }
-
-      typedRef.current = new Typed(codeRef.current, {
-        strings: [codeSnippets[index] || ""],
-        typeSpeed: 30,
-        backSpeed: 0,
-        showCursor: false,
-        // cursorChar: "_",
-        loop: false,
-        smartBackspace: false,
-        contentType: "html",
-        onComplete: () => {
-          setTimeout(() => {
-            if (typedRef.current) {
-              typedRef.current.destroy();
-              if (codeRef.current) {
-                codeRef.current.innerHTML = "";
-              }
-            }
-            const nextIndex = (index + 1) % codeSnippets.length;
-            setCurrentIndex(nextIndex);
-          }, 500);
-        },
-      });
-    };
-
-    typeCode(currentIndex);
+    const typed = new Typed(codeRef.current, {
+      strings: [codeSnippets[currentIndex] || ""],
+      typeSpeed: 20,
+      backSpeed: 0,
+      showCursor: false,
+      loop: false,
+      smartBackspace: false,
+      onComplete: () => {
+        setTimeout(() => {
+          setCurrentIndex((prev) => (prev + 1) % codeSnippets.length);
+        }, 500);
+      },
+    });
 
     return () => {
-      if (typedRef.current) {
-        typedRef.current.destroy();
-      }
+      typed.destroy();
     };
   }, [currentIndex]);
 

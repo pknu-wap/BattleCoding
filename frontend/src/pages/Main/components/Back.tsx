@@ -1,10 +1,4 @@
-export const Code = `import sys
-import asyncio
-import random
-from datetime import datetime
-from collections import defaultdict
-
-class QuantumPacket:
+export const Code = `class QuantumPacket:
     def __init__(self, id, entropy_level):
         self.id = id
         self.entropy_level = entropy_level
