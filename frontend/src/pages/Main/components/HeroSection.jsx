@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "./HeroSection.scss";
 import Typed from "typed.js";
-import developer from "../components/image1.png";
 import HeroBack from "../components/HeroBack";
 import { useEffect, useRef, useState } from "react";
 
@@ -64,7 +63,7 @@ export default function HeroSection() {
           </div>
         </div>
         <div className="heroImage">
-          <img className="herobackImage" alt="backimage" src={developer} />
+          <img className="herobackImage" alt="backimage" src="https://res.cloudinary.com/dmby7fmvo/image/upload/v1747308372/mainpagelogo_r91300.png" />
         </div>
       </div>
     </section>
