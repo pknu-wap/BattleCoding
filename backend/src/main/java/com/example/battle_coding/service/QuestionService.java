@@ -26,21 +26,21 @@ public class QuestionService {
     }
 
     public List<QuestionResponseDto> getRandomQuestionsByType(QuestionType type, int count) {
-        List<Question> questions = questionRepository.findRandomByType(type.name(), count);
+        List<Question> questions = questionRepository.findRandomGeneralQuestionsByType(type.name(), count);
         return questions.stream()
                 .map(QuestionResponseDto::from)
                 .toList();
     }
 
     public List<QuestionResponseDto> getRandomQuestionsByDifficulty(Difficulty difficulty, int count) {
-        List<Question> questions = questionRepository.findRandomByDifficulty(difficulty.name(), count);
+        List<Question> questions = questionRepository.findRandomGeneralQuestionsByDifficulty(difficulty.name(), count);
         return questions.stream()
                 .map(QuestionResponseDto::from)
                 .toList();
     }
 
     public List<QuestionResponseDto> getRandomByTypeAndDifficulty(QuestionType type, Difficulty difficulty, int count) {
-        List<Question> questions = questionRepository.findRandomByTypeAndDifficulty(type.name(), difficulty.name(), count);
+        List<Question> questions = questionRepository.findRandomGeneralQuestionsByTypeAndDifficulty(type.name(), difficulty.name(), count);
         return questions.stream()
                 .map(QuestionResponseDto::from)
                 .toList();
