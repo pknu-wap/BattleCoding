@@ -1,6 +1,6 @@
-import "./GamePage_ready.scss";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import "./GamePage_ready.scss";
 
 function GamePage_ready() {
   const navigate = useNavigate();
@@ -14,10 +14,10 @@ function GamePage_ready() {
     }
   }, [type, navigate]);
 
-  const handleClick = (level) => {
+  const handleClick = (difficulty) => {
     navigate('/game/question', {
-        state: { type, level, image, title, description }
-      });
+      state: { type, difficulty, image, title, description }
+    });
   };
 
   return (
@@ -32,10 +32,11 @@ function GamePage_ready() {
             </div>
           </div>
         </div>
+
         <div className="buttonSection">
-          <button className="readyBtn" onClick={() => handleClick(1)}>초급</button>
-          <button className="readyBtn" onClick={() => handleClick(2)}>중급</button>
-          <button className="readyBtn" onClick={() => handleClick(3)}>고급</button>
+          <button className="readyBtn" onClick={() => handleClick("EASY")}>초급</button>
+          <button className="readyBtn" onClick={() => handleClick("MEDIUM")}>중급</button>
+          <button className="readyBtn" onClick={() => handleClick("HARD")}>고급</button>
         </div>
       </div>
     </>
