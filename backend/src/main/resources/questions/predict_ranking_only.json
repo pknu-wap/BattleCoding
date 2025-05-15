@@ -3,8 +3,89 @@
     "id": 21001,
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/kyc_img/%EB%AC%B8%EC%A0%9C10.png?raw=true",
-    "answers": ["$10 $20 $30"],
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747301820/CP6_lseyuw.png",
+    "answers": ["3"],
+    "difficulty": "MEDIUM",
+    "isRankingOnly": true
+  },
+  {
+    "id": 21002,
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747301820/C7_zexjkn.png",
+    "answers": ["copy"],
+    "difficulty": "HARD",
+    "isRankingOnly": true
+  },
+  {
+    "id": 21003,
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747301820/C8_feqtg3.png",
+    "answers": ["10"],
+    "difficulty": "HARD",
+    "isRankingOnly": true
+  },
+  {
+    "id": 21004,
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747301820/C11_ssoerr.png",
+    "answers": ["10"],
+    "difficulty": "HARD",
+    "isRankingOnly": true
+  },
+  {
+    "id": 21005,
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747301821/C14_pc584f.png",
+    "answers": ["20"],
+    "difficulty": "MEDIUM",
+    "isRankingOnly": true
+  },
+  {
+    "id": 21006,
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747301821/CP2_i5gjfd.png",
+    "answers": ["++C"],
+    "difficulty": "EASY",
+    "isRankingOnly": true
+  },
+  {
+    "id": 21007,
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747301822/CP5_siqtix.png",
+    "answers": ["7"],
+    "difficulty": "MEDIUM",
+    "isRankingOnly": true
+  },
+  {
+    "id": 21008,
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747303053/J8_w6jsll.png",
+    "answers": ["8.0"],
+    "difficulty": "MEDIUM",
+    "isRankingOnly": true
+  },
+  {
+    "id": 21009,
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747303053/J10_vglivl.png",
+    "answers": ["apple"],
+    "difficulty": "HARD",
+    "isRankingOnly": true
+  },
+  {
+    "id": 21010,
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747306106/J6_rntgya.png",
+    "answers": ["Kia"],
     "difficulty": "MEDIUM",
     "isRankingOnly": true
   }

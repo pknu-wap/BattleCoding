@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "./HeroSection.scss";
 import Typed from "typed.js";
-import developer from "../components/image1.png";
 import HeroBack from "../components/HeroBack";
 import { useEffect, useRef, useState } from "react";
 
@@ -12,14 +11,14 @@ export default function HeroSection() {
   useEffect(() => {
     const firstTyped = new Typed(firstLineRef.current, {
       strings: ["게임처럼 즐기며 실력을 키우는 코딩 플랫폼"],
-      typeSpeed: 70,
+      typeSpeed: 80,
       showCursor: true,
       cursorChar: "_",
       onComplete: () => {
         setTimeout(() => {
           new Typed(secondLineRef.current, {
             strings: ["문제를 풀며 티어와 랭킹을 올려보세요!!!"],
-            typeSpeed: 55,
+            typeSpeed: 60,
             showCursor: true,
             cursorChar: "_",
             onComplete: () => {
@@ -64,7 +63,7 @@ export default function HeroSection() {
           </div>
         </div>
         <div className="heroImage">
-          <img className="herobackImage" alt="backimage" src={developer} />
+          <img className="herobackImage" alt="backimage" src="https://res.cloudinary.com/dmby7fmvo/image/upload/v1747308372/mainpagelogo_r91300.png" />
         </div>
       </div>
     </section>
