@@ -23,6 +23,18 @@ public class SubmissionService {
     private final QuestionRepository questionRepository;
     private final SubmissionRepository submissionRepository;
 
+    private static final int XP_EASY = 10;
+    private static final int XP_MEDIUM = 20;
+    private static final int XP_HARD = 30;
+
+    private static final int PENALTY_EASY = 5;
+    private static final int PENALTY_MEDIUM = 10;
+    private static final int PENALTY_HARD = 15;
+
+    private static final int MAX_TIME = 15; // 한 문제 제한 시간 (초)
+    private static final int BONUS_TIME_LIMIT = 10; // 보너스 적용 가능한 최대 시간 (초)
+    private static final double MAX_BONUS_RATIO = 0.5; // 최대 보너스 비율
+
     public SubmissionResponseDto submit(SubmissionRequestDto request, Authentication authentication) {
         User user = getUserFromAuth(authentication);
         Question question = getQuestionById(request.questionId());
@@ -31,7 +43,7 @@ public class SubmissionService {
         int xpEarned = 0;
 
         // 답이 맞았고 랭킹 모드라면 xpEarned를 계산
-        // 랭킹 모드인데 오답 제출 시 xp 감정
+        // 랭킹 모드인데 오답 제출 시 xp 감점
         if (request.isRanking()) {
             if (isCorrect) {
                 xpEarned = calculateXp(question.getDifficulty().name(), timeTaken);
@@ -41,6 +53,7 @@ public class SubmissionService {
         }
 
         // ✅ 랭킹 여부와 무관하게 정답/제출 기록 반영
+        // 일반 모드는 xpEarned = 0
         user.updateXpAndCorrect(xpEarned, isCorrect);
 
 
@@ -102,26 +115,28 @@ public class SubmissionService {
 
     private int calculateXp(String difficulty, int timeTaken) {
         int base = switch (difficulty) {
-            case "EASY" -> 10;
-            case "MEDIUM" -> 20;
-            case "HARD" -> 30;
+            case "EASY" -> XP_EASY;
+            case "MEDIUM" -> XP_MEDIUM;
+            case "HARD" -> XP_HARD;
             default -> 0;
         };
 
-        // 5초 이내에 맞출 경우, 최대 50% 까지 보너스 비율 증가
-        if (timeTaken <= 5) {
-            double bonusRatio = (6 - timeTaken) * 0.1; // 1초: 0.5, 5초: 0.1
-            base = (int) Math.round(base * (1 + bonusRatio));
-        }
+        base += calculateBonus(base, timeTaken);
 
         return base;
     }
 
+    private int calculateBonus(int baseXp, int timeTaken) {
+        if (timeTaken > BONUS_TIME_LIMIT) return 0;
+        double bonusRatio = (BONUS_TIME_LIMIT - timeTaken) * (MAX_BONUS_RATIO / BONUS_TIME_LIMIT);
+        return (int) Math.round(baseXp * bonusRatio);
+    }
+
     private int getPenaltyXp(String difficulty) {
         return switch (difficulty) {
-            case "EASY" -> 5;
-            case "MEDIUM" -> 10;
-            case "HARD" -> 15;
+            case "EASY" -> PENALTY_EASY;
+            case "MEDIUM" -> PENALTY_MEDIUM;
+            case "HARD" -> PENALTY_HARD;
             default -> 0;
         };
     }
