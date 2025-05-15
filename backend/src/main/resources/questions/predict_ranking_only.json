@@ -84,9 +84,9 @@
     "id": 21010,
     "type": "PREDICT_OUTPUT",
     "question": null,
-    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747303053/CP7_ocblqw.png",
-    "answers": ["4 5 6"],
-    "difficulty": "HARD",
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747306106/J6_rntgya.png",
+    "answers": ["Kia"],
+    "difficulty": "MEDIUM",
     "isRankingOnly": true
   }
 ]

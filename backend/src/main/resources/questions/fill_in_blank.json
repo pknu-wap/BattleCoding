@@ -431,9 +431,6 @@
     "answers": ["reverse"],
     "difficulty": "MEDIUM"
   },
-
-
-
   {
     "id": 10055,
     "type": "FILL_IN_BLANK",
