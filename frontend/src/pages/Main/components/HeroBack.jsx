@@ -8,7 +8,47 @@ import Typed from "typed.js";
 // import "highlight.js/styles/github.css";
 import React, { useEffect, useRef, useState } from "react";
 
+/* 한 줄 한 줄 타이핑 */
 const codeSnippets = [Code, CodeA, CodeB, CodeC];
+const maxVisibleLines = 24;
+const typingSpeed = 200;
+
+export default function HeroBack() {
+  const codeRef = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const currentCode = codeSnippets[currentIndex];
+    const lines = currentCode.split("\n");
+    let currentLineIndex = 0;
+    let visibleLines = [];
+
+    const interval = setInterval(() => {
+      if (currentLineIndex < lines.length) {
+        visibleLines.push(lines[currentLineIndex]);
+
+        if (visibleLines.length > maxVisibleLines) {
+          visibleLines.shift();
+        }
+
+        if (codeRef.current) {
+          codeRef.current.textContent = visibleLines.join("\n");
+        }
+
+        currentLineIndex++;
+      } else {
+        clearInterval(interval);
+        setTimeout(() => {
+          setCurrentIndex((prev) => (prev + 1) % codeSnippets.length);
+        }, 500);
+      }
+    }, typingSpeed);
+
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
+  /* 스펠링 타이핑
+  const codeSnippets = [Code, CodeA, CodeB, CodeC];
 
 export default function HeroBack() {
   const codeRef = useRef(null);
@@ -32,7 +72,8 @@ export default function HeroBack() {
     return () => {
       typed.destroy();
     };
-  }, [currentIndex]);
+  }, [currentIndex]); 
+  */
 
   /*   useEffect(() => {
 
