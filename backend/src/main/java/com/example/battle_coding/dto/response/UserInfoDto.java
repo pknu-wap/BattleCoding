@@ -6,7 +6,7 @@ public record UserInfoDto(
         String email,
         String nickname,
         int totalCorrect,
-        int totalAttempts,
+//        int totalAttempts,
         int totalSubmitted,
         int xp,
         LocalDateTime createdAt

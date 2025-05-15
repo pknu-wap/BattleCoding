@@ -25,9 +25,9 @@ public class RankingService {
                 .map(user -> new RankingResponseDto(
                         user.getNickname(),
                         user.getXp(),
-                        user.getTotalAttempts(),
+                        user.getTotalSubmitted(),
                         user.getTotalCorrect(),
-                        user.getTotalAttempts() - user.getTotalCorrect() // wrong 계산
+                        user.getTotalSubmitted() - user.getTotalCorrect() // wrong 계산
                 ))
                 .collect(Collectors.toList());
     }
@@ -39,9 +39,9 @@ public class RankingService {
         return new RankingResponseDto(
                 user.getNickname(),
                 user.getXp(),
-                user.getTotalAttempts(),
+                user.getTotalSubmitted(),
                 user.getTotalCorrect(),
-                user.getTotalAttempts() - user.getTotalCorrect()
+                user.getTotalSubmitted() - user.getTotalCorrect()
         );
     }
 }

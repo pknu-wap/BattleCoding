@@ -10,7 +10,7 @@ function UserRanking({ currentUsername }) {
         const fetchRankingData = async () => {
             try {
                 // 실제 배포된 API 서버에서 랭킹 데이터를 가져옵니다.
-                const response = await api.get("/user/my-ranking");
+                const response = await api.get("http://43.200.131.23:8080/");
                 setUserData([response.data]); // 단일 유저 정보라 배열로 감쌈
             } catch (error) {
                 console.error("랭킹 데이터를 불러오는 데 실패했습니다:", error);
@@ -52,7 +52,7 @@ function UserRanking({ currentUsername }) {
                             </div>
                             <span className="username">{user.nickname}</span>
                             <span className="scoreline">
-                                <b className="aNumber">{user.totalAttempts}</b>/
+                                <b className="aNumber">{user.totalSubmitted}</b>/
                                 <b className="rNumber">{user.totalCorrect}</b>/
                                 <b className="wNumber">{user.wrong}</b>
                             </span>

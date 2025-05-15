@@ -38,8 +38,8 @@ public class User {
     @Column(nullable = false, columnDefinition = "INT DEFAULT 0")
     private int totalCorrect = 0;
 
-    @Column(nullable = false, columnDefinition = "INT DEFAULT 0")
-    private int totalAttempts = 0;
+//    @Column(nullable = false, columnDefinition = "INT DEFAULT 0")
+//    private int totalAttempts = 0;
 
     @Column(nullable = false, columnDefinition = "INT DEFAULT 0")
     private int totalSubmitted = 0;  // totalSubmitted 필드 추가
@@ -57,7 +57,7 @@ public class User {
     // XP와 정답 수를 업데이트하는 메서드
     public void updateXpAndCorrect(int xp, boolean correct) {
         this.xp += xp;
-        this.totalAttempts += 1;
+//        this.totalAttempts += 1;
         this.totalSubmitted += 1;  // 문제를 제출할 때마다 totalSubmitted 증가
         if (correct) this.totalCorrect += 1;
     }
