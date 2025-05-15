@@ -1,60 +1,67 @@
 import React, { useEffect, useState } from "react";
+import api from "../../api";  // 수정된 API 경로를 사용
+
 import "./UserRanking.scss";
 
 function UserRanking({ currentUsername }) {
     const [userData, setUserData] = useState([]);
 
     useEffect(() => {
-        // ⚠️ 백엔드 API 대신 더미 데이터 사용
-        const dummyUsers = [
-            { username: "alice", attempts: 20, right: 18, wrong: 2, percent: 90 },
-            { username: "bob", attempts: 30, right: 27, wrong: 3, percent: 90 },
-            { username: "charlie", attempts: 25, right: 22, wrong: 3, percent: 88 },
-            { username: "david", attempts: 40, right: 35, wrong: 5, percent: 87.5 },
-            { username: "erin", attempts: 50, right: 43, wrong: 7, percent: 86 },
-            { username: "frank", attempts: 33, right: 28, wrong: 5, percent: 84.85 },
-            { username: "grace", attempts: 29, right: 24, wrong: 5, percent: 82.76 },
-            { username: "hank", attempts: 22, right: 18, wrong: 4, percent: 81.82 },
-            { username: "irene", attempts: 18, right: 14, wrong: 4, percent: 77.78 },
-            { username: "me", attempts: 31, right: 24, wrong: 7, percent: 77.42 }, // currentUser 포함
-        ];
+        const fetchRankingData = async () => {
+            try {
+                // 실제 배포된 API 서버에서 랭킹 데이터를 가져옵니다.
+                const response = await api.get("http://43.200.131.23:8080/");
+                setUserData([response.data]); // 단일 유저 정보라 배열로 감쌈
+            } catch (error) {
+                console.error("랭킹 데이터를 불러오는 데 실패했습니다:", error);
+            }
+        };
 
-        setTimeout(() => {
-            setUserData(dummyUsers);
-        }, 500); // 로딩 효과
-
+        fetchRankingData();
     }, []);
 
     return (
         <div className="UserRanking">
-            <div className="Readerboard">🎖️ ReaderBoard 🎖️</div>
-
+            <div className="Leaderboard">🎖️ LeaderBoard 🎖️</div>
+            <div className="userHeader">
+                <span className="placing">순위</span>
+                <span className="username">사용자명</span>
+                <span className="scoreline">문제수 / 정답 / 오답</span>
+                <span className="percent">XP</span>
+            </div>
             <div className="userList">
-                {userData.slice(0, 10).map((user, index) => (
-                    <div
-                        className={`userRow ${user.username === currentUsername ? "currentUser" : ""}`}
-                        key={user.username}
-                        id={`user-rank-${index + 1}`} // 각 유저마다 고유 ID 추가
-                    >
-                        <div className="placing">
-                            <span className="rank">
-                                {index === 0 && "🥇"}
-                                {index === 1 && "🥈"}
-                                {index === 2 && "🥉"}
-                                {index > 2 && `${index + 1}등`}
+                {userData.slice(0, 10).map((user, index) => {
+                    let rankClass = "";
+                    if (index === 0) rankClass = "first";
+                    else if (index === 1) rankClass = "second";
+                    else if (index === 2) rankClass = "third";
+
+                    return (
+                        <div
+                            className={`userRow ${rankClass} ${user.nickname === currentUsername ? "currentUser" : ""}`}
+                            key={user.nickname}
+                            id={`user-rank-${index + 1}`}
+                        >
+                            <div className="placing">
+                                <span className="rank">
+                                    {index === 0 && "🥇"}
+                                    {index === 1 && "🥈"}
+                                    {index === 2 && "🥉"}
+                                    {index > 2 && `${index + 1}등`}
+                                </span>
+                            </div>
+                            <span className="username">{user.nickname}</span>
+                            <span className="scoreline">
+                                <b className="aNumber">{user.totalSubmitted}</b>/
+                                <b className="rNumber">{user.totalCorrect}</b>/
+                                <b className="wNumber">{user.wrong}</b>
+                            </span>
+                            <span className="percent">
+                                <b className="r">{user.xp}</b> XP
                             </span>
                         </div>
-                        <span className="username">{user.username}</span>
-                        <span className="scoreline">
-                            <b className="aNumber">{user.attempts}</b>/
-                            <b className="rNumber">{user.right}</b>/
-                            <b className="wNumber">{user.wrong}</b>
-                        </span>
-                        <span className="percent">
-                            <b className="r">{user.percent.toFixed(2)}</b> %
-                        </span>
-                    </div>
-                ))}
+                    );
+                })}
             </div>
         </div>
     );

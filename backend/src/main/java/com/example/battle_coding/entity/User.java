@@ -20,42 +20,45 @@ public class User {
     private Long id;
 
     @Column(unique = true, nullable = true)
-    private String email;  // 소셜 로그인 사용자는 이메일이 없을 수도 있음
+    private String email;
 
     @Column(nullable = true)
-    private String password;  // 소셜 로그인 사용자는 비밀번호가 없을 수도 있음
+    private String password;
 
     @Column(unique = true, nullable = false, length = 25)
     private String nickname;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 10)
-    private LoginProvider provider = LoginProvider.LOCAL;  // 기본값 LOCAL
+    private LoginProvider provider = LoginProvider.LOCAL;
 
     @Column(unique = true, nullable = false)
     private String providerId;
 
     @Column(nullable = false, columnDefinition = "INT DEFAULT 0")
-    private int totalSubmitted = 0;  // 총 푼 문제 개수
+    private int totalCorrect = 0;
+
+//    @Column(nullable = false, columnDefinition = "INT DEFAULT 0")
+//    private int totalAttempts = 0;
 
     @Column(nullable = false, columnDefinition = "INT DEFAULT 0")
-    private int totalCorrect = 0;  // 맞춘 문제 개수
+    private int totalSubmitted = 0;  // totalSubmitted 필드 추가
 
     @Column(nullable = false, columnDefinition = "INT DEFAULT 0")
-    private int xp = 0;  // 경험치, 랭킹 계산에 사용
+    private int xp = 0;
 
     @Column(length = 500)
-    private String refreshToken;  // JWT Refresh Token 저장
+    private String refreshToken;
 
     @CreatedDate
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
 
-    public void updateXpAndCorrect(int deltaXp, boolean isCorrect) {
-        this.xp = Math.max(0, this.xp + deltaXp);
-        this.totalSubmitted += 1;
-        if (isCorrect) {
-            this.totalCorrect += 1;
-        }
+    // XP와 정답 수를 업데이트하는 메서드
+    public void updateXpAndCorrect(int xp, boolean correct) {
+        this.xp += xp;
+//        this.totalAttempts += 1;
+        this.totalSubmitted += 1;  // 문제를 제출할 때마다 totalSubmitted 증가
+        if (correct) this.totalCorrect += 1;
     }
 }
