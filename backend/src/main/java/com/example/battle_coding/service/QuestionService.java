@@ -64,18 +64,18 @@ public class QuestionService {
 
     // 랭킹 문제 4개 선택: EASY 2, MEDIUM 1, HARD 1 + 유형 (2,1,1), (1,2,1), (1,1,2) 중 랜덤
     private List<Question> selectRankingQuestions(List<Question> pool) {
-        List<QuestionType[]> typePatterns = List.of(
+        List<QuestionType[]> typePatterns = new ArrayList<>(List.of(
                 new QuestionType[]{QuestionType.FILL_IN_BLANK, QuestionType.FILL_IN_BLANK, QuestionType.PREDICT_OUTPUT, QuestionType.CS_KNOWLEDGE},
                 new QuestionType[]{QuestionType.FILL_IN_BLANK, QuestionType.PREDICT_OUTPUT, QuestionType.PREDICT_OUTPUT, QuestionType.CS_KNOWLEDGE},
                 new QuestionType[]{QuestionType.FILL_IN_BLANK, QuestionType.PREDICT_OUTPUT, QuestionType.CS_KNOWLEDGE, QuestionType.CS_KNOWLEDGE}
-        );
+        ));
         Collections.shuffle(typePatterns);
         QuestionType[] selectedTypes = typePatterns.getFirst();
 
-        List<Difficulty> rankingDifficulties = List.of(
+        List<Difficulty> rankingDifficulties = new ArrayList<>(List.of(
                 Difficulty.EASY, Difficulty.EASY,
                 Difficulty.MEDIUM, Difficulty.HARD
-        );
+        ));
 
         return assignQuestions(pool, selectedTypes, rankingDifficulties);
     }
