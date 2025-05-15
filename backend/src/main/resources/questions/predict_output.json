@@ -278,6 +278,55 @@
     "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522276/%EB%AC%B8%EC%A0%9C35_ngx1nn.png",
     "answers": ["2"],
     "difficulty": "MEDIUM"
-  }
+  },
+  
 
+  {
+    "id": 20036,
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747306104/C1_rczucz.png",
+    "answers": ["three"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 20037,
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747306104/C9_ariysq.png",
+    "answers": ["2"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 20038,
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747306105/J2_ffwvmy.png",
+    "answers": ["다름"],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 20039,
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747306105/CP8_jzovdt.png",
+    "answers": ["7"],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 20040,
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747303053/CP7_ocblqw.png",
+    "answers": ["4 5 6"],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 20041,
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747306107/J7_ozstx9.png",
+    "answers": ["5"],
+    "difficulty": "EASY"
+  }
 ]
