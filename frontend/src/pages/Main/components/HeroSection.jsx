@@ -12,14 +12,14 @@ export default function HeroSection() {
   useEffect(() => {
     const firstTyped = new Typed(firstLineRef.current, {
       strings: ["게임처럼 즐기며 실력을 키우는 코딩 플랫폼"],
-      typeSpeed: 70,
+      typeSpeed: 80,
       showCursor: true,
       cursorChar: "_",
       onComplete: () => {
         setTimeout(() => {
           new Typed(secondLineRef.current, {
             strings: ["문제를 풀며 티어와 랭킹을 올려보세요!!!"],
-            typeSpeed: 55,
+            typeSpeed: 60,
             showCursor: true,
             cursorChar: "_",
             onComplete: () => {
