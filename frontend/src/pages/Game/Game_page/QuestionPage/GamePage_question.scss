@@ -3,36 +3,31 @@
 
   width: 100%;
   min-height: calc(100vh - 56px);
-  gap: 70px;
-
-  overflow: hidden;
   box-sizing: border-box;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+
+  font-family: 'Pretendard', sans-serif;
 
   .questionSection {
     background: linear-gradient(to bottom, #0d1a2d, #11293d, #183b4e);    
 
     width: 100%;
-    gap: 24px;
-    padding: 20px 0 60px;
+    padding: 0 0 20px;
     box-sizing: border-box;
 
-    flex-grow: 1;
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
     flex-direction: column;
 
     .questionNumber {
       background-color: rgba(0, 240, 255, 0.1);
 
       padding: 6px 14px;
-      margin-bottom: -8px;
+      margin-bottom: 16px;
 
       border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0, 240, 255, 0.2);
@@ -86,7 +81,7 @@
       height: auto;
       min-width: 600px;
       min-height: 300px;
-      padding-top: 6px;
+      padding: 8px;
 
       object-fit: contain;
       display: block;
@@ -94,49 +89,161 @@
   }
 
   .answerSection {
+    flex: 1;
     display: flex;
     justify-content: center;
-    padding-bottom: 60px;
-    gap: 10px;
+    align-items: center;
 
-    input {
-      background-color: #1b2430;
+    &.feedbackMode {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
 
-      width: 296px;
-      height: 56px;
-      padding: 0 20px;
-
-      border: 2px solid #00f0ff;
-      border-radius: 10px;
-
-      font-size: 16px;
-      color: white;
+      .feedbackText {
+        margin: 0;
+        font-size: 28px;
+        font-weight: 800;
+        color: #00f0ff;
+      }
+  
+      .correctAnswer {
+        font-size: 20px;
+        font-weight: 600;
+        color: #ffffff;
+        opacity: 0.8;
+        margin: 8px;
+      }
+  
+      .nextBtn {
+        background-color: #00f0ff;
+        padding: 14px 32px;
+        border: none;
+        border-radius: 10px;
+  
+        font-size: 18px;
+        font-weight: 700;
+        color: #1b2430;
+  
+        cursor: pointer;
+        transition: all 0.2s ease;
+  
+        &:hover {
+          background-color: #00d6e6;
+          transform: translateY(-2px);
+          box-shadow: 0 6px 16px rgba(0, 240, 255, 0.3);
+        }
+      }
     }
 
-    button {
-      background-color: #00f0ff;
-
-      width: 80px;
-      height: 60px;
-
-      border: none;
-      border-radius: 10px;
-
-      color: #1b2430;
-      font-size: 24px;
-      font-weight: 700;
-      cursor: pointer;
-
+    &.inputMode {
       display: flex;
+      justify-content: center;
+      flex-direction: row;
       align-items: center;
+      gap: 10px;
+
+      input {
+        background-color: #1b2430;
+  
+        width: 296px;
+        height: 56px;
+        padding: 0 20px;
+        display: block;
+  
+        border: 2px solid #00f0ff;
+        border-radius: 10px;
+  
+        font-size: 16px;
+        color: white;
+      }
+  
+      .enterBtn {
+        background-color: #00f0ff;
+  
+        width: 80px;
+        height: 60px;
+  
+        border: none;
+        border-radius: 10px;
+  
+        color: #1b2430;
+        font-size: 24px;
+        font-weight: 700;
+        cursor: pointer;
+  
+        display: flex;
+        align-items: center;
+        justify-content: center;
+  
+        transition: all 0.2s ease;
+  
+        &:hover {
+          background-color: #00d6e6;
+          transform: translateY(-2px);
+          box-shadow: 0 6px 16px rgba(0, 240, 255, 0.2);
+        }
+      }
+    }
+  }
+}
+
+.modeOverlay {
+  background: linear-gradient(to bottom, #0d1a2d, #11293d, #183b4e);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+
+  .modePopup {
+    background-color: #161d28;
+
+    padding: 48px 60px;
+    text-align: center;
+    
+    border-radius: 12px;
+    border: 1px solid rgba(0, 240, 255, 0.15);
+    box-shadow: 0 0 24px rgba(0, 240, 255, 0.06);
+
+    h2 {
+      margin-bottom: 24px;
+      color: #00f0ff;
+      font-size: 24px;
+    }
+
+    .modeBtns {
+      display: flex;
+      gap: 20px;
       justify-content: center;
 
-      transition: all 0.2s ease;
+      button {
+        background-color: #1b2430;
 
-      &:hover {
-        background-color: #00d6e6;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 16px rgba(0, 240, 255, 0.2);
+        padding: 12px 24px;
+        border: 2px solid #00f0ff;
+        border-radius: 8px;
+
+        color: #00f0ff;
+        font-size: 18px;
+        font-weight: 700;
+
+        cursor: pointer;
+        transition: all 0.2s;
+
+        &:hover {
+          background-color: #00f0ff;
+          color: #0d1a2d;
+          transform: translateY(-2px);
+          box-shadow: 0 6px 12px rbga(0, 240, 255, 0.3);
+        }
       }
     }
   }

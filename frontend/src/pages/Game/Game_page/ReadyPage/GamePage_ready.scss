@@ -13,7 +13,7 @@
     background:linear-gradient(to bottom, #0d1a2d, #11293d, #183b4e);
 
     width: 100%;
-    padding: 40px 30px; 
+    padding: 0; 
     box-sizing: border-box;
 
     display: flex;
@@ -31,7 +31,6 @@
       align-items: flex-start;
       justify-content: center;
       flex-wrap: wrap;
-      box-sizing: border-box;  
 
       font-family: 'Pretendard', sans-serif;
 
@@ -46,20 +45,20 @@
         border-radius: 8px;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
       }
-    
+
       .quizContent {
         width: fit-content;
         min-height: 280px;
 
         display: flex;
         flex-direction: column;
-        align-items: flex-start;  
+        justify-content: flex-start;
     
         h2 {
-          font-size: 34px;
+          margin-bottom: 10px;
+          font-size: 36px;
           font-weight: 800;
           color: #00f0ff;
-          margin-bottom: 10px;
         }
     
         p {
@@ -73,9 +72,9 @@
 
   .buttonSection {
     background-color: #161d28;
-
-    padding: 50px;
-    gap: 50px;  
+    
+    padding: 40px;
+    gap: 24px;  
     box-sizing: border-box;
 
     display: flex;
