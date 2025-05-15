@@ -1,6 +1,7 @@
 package com.example.battle_coding.service;
 
 import com.example.battle_coding.dto.request.SubmissionRequestDto;
+import com.example.battle_coding.dto.response.CorrectAnswerResponseDto;
 import com.example.battle_coding.dto.response.SubmissionResponseDto;
 import com.example.battle_coding.entity.Question;
 import com.example.battle_coding.entity.QuestionType;
@@ -139,6 +140,28 @@ public class SubmissionService {
             case "HARD" -> PENALTY_HARD;
             default -> 0;
         };
+    }
+
+    public CorrectAnswerResponseDto getCorrectAnswersForWrongAttempt(String email, Long questionId) {
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new IllegalArgumentException("사용자를 찾을 수 없습니다."));
+
+        Question question = questionRepository.findById(questionId)
+                .orElseThrow(() -> new IllegalArgumentException("해당 문제를 찾을 수 없습니다."));
+
+        // 랭킹 전용 문제인 경우 차단
+        if (question.isRankingOnly()) {
+            return CorrectAnswerResponseDto.fail("연습 모드 문제에만 정답을 제공할 수 있습니다.");
+        }
+
+        // 오답 제출 여부 확인
+        boolean hasWrongAttempt = submissionRepository.existsByUserAndQuestionAndIsCorrectFalse(user, question);
+
+        if (!hasWrongAttempt) {
+            return CorrectAnswerResponseDto.fail("해당 문제에 대한 오답 제출 이력이 없습니다.");
+        }
+
+        return CorrectAnswerResponseDto.success(question.getAnswers());
     }
 
 }

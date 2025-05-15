@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.f96bcf7c.css",
-    "main.js": "/static/js/main.48a5a91b.js",
+    "main.css": "/static/css/main.b2cc161e.css",
+    "main.js": "/static/js/main.2165baaf.js",
     "static/media/logo_BattleCoding.png": "/static/media/logo_BattleCoding.4b9ee871b3ff8cbc99a6.png",
     "static/media/CsKnowledge.png": "/static/media/CsKnowledge.7e8b61cf18f91bd04631.png",
     "static/media/PredictOutput.png": "/static/media/PredictOutput.342813b564a89a9121c6.png",
     "static/media/FillInTheBlank.png": "/static/media/FillInTheBlank.70967538fd62c2644e38.png",
     "static/media/image1.png": "/static/media/image1.63cc5bf1b62eb5866254.png",
     "index.html": "/index.html",
-    "main.f96bcf7c.css.map": "/static/css/main.f96bcf7c.css.map",
-    "main.48a5a91b.js.map": "/static/js/main.48a5a91b.js.map"
+    "main.b2cc161e.css.map": "/static/css/main.b2cc161e.css.map",
+    "main.2165baaf.js.map": "/static/js/main.2165baaf.js.map"
   },
   "entrypoints": [
-    "static/css/main.f96bcf7c.css",
-    "static/js/main.48a5a91b.js"
+    "static/css/main.b2cc161e.css",
+    "static/js/main.2165baaf.js"
   ]
 }

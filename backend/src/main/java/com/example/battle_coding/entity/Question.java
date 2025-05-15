@@ -45,7 +45,7 @@ public class Question {
     private Difficulty difficulty;  // EASY, MEDIUM, HARD
 
     // 연습모드 출제 여부 설정
-    @Column(nullable = false)
+    @Column(name = "is_ranking_only", nullable = false)
     @JsonProperty("isRankingOnly")
     private boolean isRankingOnly = false;
 
@@ -60,11 +60,6 @@ public class Question {
         if ((question == null || question.trim().isEmpty()) && (imageUrl == null || imageUrl.trim().isEmpty())) {
             throw new IllegalStateException("문제는 텍스트 또는 이미지 중 하나는 반드시 포함해야 합니다.");
         }
-    }
-
-    // JPA 작명 규칙에 따른 getter 작성
-    public boolean getIsRankingOnly() {
-        return isRankingOnly;
     }
 
 }
