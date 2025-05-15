@@ -1,6 +1,6 @@
-import imageFill from "./FillInTheBlank.png";
-import imageResult from "./PredictOutput.png";
-import imageCS from "./CsKnowledge.png";
+const imageFill = "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747307367/FillInTheBlank_qgl1a8.png";
+const imageResult = "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747307368/PredictOutput_kyq9vx.png";
+const imageCS = "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747307367/CsKnowledge_q15va1.png";
 
 const gameData = [
   {
