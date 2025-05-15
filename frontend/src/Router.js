@@ -12,6 +12,7 @@ import WrongAnswerPage from "./pages/Game/Game_page/WrongAnswerPage";
 import ResultPage from "./pages/Game/Game_page/ResultPage";
 import MyRanking from "./pages/ranking/MyRanking";
 import EditProfile from "./pages/Game/MyPage/MyAccount/EditProfile/EditProfile";
+import ModeSelect from "./pages/Game/Mode_Select/Mode_Select";
 
 const Router = () => {
 
@@ -29,6 +30,7 @@ const Router = () => {
       <Route path="/game/answer/wrong" element={<WrongAnswerPage />} />
       <Route path="/game/result" element={<ResultPage />} />
       <Route path="/ranking" element={<MyRanking />} />
+      <Route path="/game/mode" element={<ModeSelect />} />
     </Routes>
   );
 };
