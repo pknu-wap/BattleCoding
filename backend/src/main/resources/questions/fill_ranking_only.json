@@ -3,9 +3,108 @@
     "id": 11001,
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://github.com/Seol-Munhyeok/battlecoding-problems/blob/main/jyj_img/10.PNG?raw=true",
-    "answers": ["power"],
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747301820/C4_o4wcpn.png",
+    "answers": ["ptr->y", "ptr -> y"],
+    "difficulty": "HARD",
+    "isRankingOnly": true
+  },
+  {
+    "id": 11002,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747301820/CP9_weyn6m.png",
+    "answers": ["throw runtime_error"],
+    "difficulty": "HARD",
+    "isRankingOnly": true
+  },
+  {
+    "id": 11003,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747301819/C3_fqarrf.png",
+    "answers": ["factorial(n - 1)", "factorial(n-1)"],
     "difficulty": "MEDIUM",
+    "isRankingOnly": true
+  },
+  {
+    "id": 11004,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747301819/C2_nsn1xw.png",
+    "answers": ["*(p + 2)", "*(p+2)"],
+    "difficulty": "MEDIUM",
+    "isRankingOnly": true
+  },
+  {
+    "id": 11005,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747301820/J1_amwkl6.png",
+    "answers": ["add(2, 3)", "add(2,3)"],
+    "difficulty": "MEDIUM",
+    "isRankingOnly": true
+  },
+  {
+    "id": 11006,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747301821/J5_qc8o60.png",
+    "answers": ["int x"],
+    "difficulty": "MEDIUM",
+    "isRankingOnly": true
+  },
+  {
+    "id": 11007,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747301821/C5_vikyyx.png",
+    "answers": ["func(3, 4)", "func(3,4)"],
+    "difficulty": "MEDIUM",
+    "isRankingOnly": true
+  },
+  {
+    "id": 11008,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747301821/J4_qclquj.png",
+    "answers": ["a.equals(b)"],
+    "difficulty": "MEDIUM",
+    "isRankingOnly": true
+  },
+  {
+    "id": 11009,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747301820/J3_sbp5xi.png",
+    "answers": ["int n : nums", "int n:nums"],
+    "difficulty": "HARD",
+    "isRankingOnly": true
+  },
+  {
+    "id": 11010,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747301821/CP1_khxddy.png",
+    "answers": ["v[1]"],
+    "difficulty": "MEDIUM",
+    "isRankingOnly": true
+  },
+  {
+    "id": 11011,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747301822/CP4_racrjo.png",
+    "answers": ["obj.value"],
+    "difficulty": "HARD",
+    "isRankingOnly": true
+  },
+  {
+    "id": 11012,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747301822/CP3_fr3fde.png",
+    "answers": ["int &ref"],
+    "difficulty": "HARD",
     "isRankingOnly": true
   }
 ]
