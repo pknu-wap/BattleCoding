@@ -6,8 +6,8 @@ public record RankingResponseDto(
         String nickname,
         int xp,
 
-        @JsonProperty("totalAttempts")
-        int attempts,
+        @JsonProperty("totalSubmitted")
+        int submitted,
 
         @JsonProperty("totalCorrect")
         int correct,

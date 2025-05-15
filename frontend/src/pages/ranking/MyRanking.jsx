@@ -10,7 +10,7 @@ function MyRanking() {
     useEffect(() => {
         const fetchMyRanking = async () => {
             try {
-                const response = await api.get("/user/my-ranking");  // 자동으로 http://43.200.131.23:8080/api/user/my-ranking로 호출됨
+                const response = await api.get("http://43.200.131.23:8080/");  // 자동으로 http://43.200.131.23:8080/api/user/my-ranking로 호출됨
                 setMyInfo(response.data);
             } catch (error) {
                 console.error("내 랭킹 정보를 불러오는 데 실패했습니다:", error);
