@@ -60,7 +60,7 @@ export default function HeroSection() {
           </p>
 
           <div className="heroBtn">
-            <button onClick={() => navigate("/game")}>지금 시작하기</button>
+            <button onClick={() => navigate("/game/mode")}>지금 시작하기</button>
           </div>
         </div>
         <div className="heroImage">
