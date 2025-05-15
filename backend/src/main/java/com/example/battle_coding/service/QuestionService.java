@@ -46,90 +46,75 @@ public class QuestionService {
                 .toList();
     }
 
+    // 랭킹전 문제 4개 + 일반 문제 6개를 유형과 난이도 기준으로 균형 있게 조합하여 반환
     public List<QuestionResponseDto> getRankingModeQuestions() {
-        // 전용 / 일반 문제 분리
         List<Question> rankingOnlyQuestions = questionRepository.findAllByIsRankingOnly(true);
         List<Question> normalQuestions = questionRepository.findAllByIsRankingOnly(false);
 
-        // 난이도별 그룹화
-        Map<Difficulty, List<Question>> groupedRanking = groupByDifficulty(rankingOnlyQuestions);
-        Map<Difficulty, List<Question>> groupedNormal = groupByDifficulty(normalQuestions);
+        List<Question> rankingSelected = selectRankingQuestions(rankingOnlyQuestions);
+        List<Question> generalSelected = selectGeneralQuestions(normalQuestions);
 
-        // 출제 개수 정의
-        Map<Difficulty, Integer> rankingCounts = Map.of(
-                Difficulty.EASY, 2,
-                Difficulty.MEDIUM, 1,
-                Difficulty.HARD, 1
-        );
-
-        Map<Difficulty, Integer> generalCounts = Map.of(
-                Difficulty.EASY, 2,
-                Difficulty.MEDIUM, 2,
-                Difficulty.HARD, 2
-        );
-
-        // 유형 중복 방지용
-        Set<QuestionType> rankingUsedTypes = new HashSet<>();
-        Set<QuestionType> generalUsedTypes = new HashSet<>();
-
-        // 문제 선택
-        List<Question> rankingSelected = selectQuestionsByDifficulty(groupedRanking, rankingCounts, rankingUsedTypes);
-        List<Question> generalSelected = selectQuestionsByDifficulty(groupedNormal, generalCounts, generalUsedTypes);
-
-        // 결합 및 섞기
         List<Question> combined = new ArrayList<>();
         combined.addAll(rankingSelected);
         combined.addAll(generalSelected);
         Collections.shuffle(combined);
 
-        return combined.stream()
-                .map(QuestionResponseDto::from)
-                .toList();
+        return combined.stream().map(QuestionResponseDto::from).toList();
     }
 
-    private Map<Difficulty, List<Question>> groupByDifficulty(List<Question> questions) {
-        if (questions == null || questions.isEmpty()) return Map.of();
-        return questions.stream()
-                .collect(Collectors.groupingBy(Question::getDifficulty));
+    // 랭킹 문제 4개 선택: EASY 2, MEDIUM 1, HARD 1 + 유형 (2,1,1), (1,2,1), (1,1,2) 중 랜덤
+    private List<Question> selectRankingQuestions(List<Question> pool) {
+        List<QuestionType[]> typePatterns = List.of(
+                new QuestionType[]{QuestionType.FILL_IN_BLANK, QuestionType.FILL_IN_BLANK, QuestionType.PREDICT_OUTPUT, QuestionType.CS_KNOWLEDGE},
+                new QuestionType[]{QuestionType.FILL_IN_BLANK, QuestionType.PREDICT_OUTPUT, QuestionType.PREDICT_OUTPUT, QuestionType.CS_KNOWLEDGE},
+                new QuestionType[]{QuestionType.FILL_IN_BLANK, QuestionType.PREDICT_OUTPUT, QuestionType.CS_KNOWLEDGE, QuestionType.CS_KNOWLEDGE}
+        );
+        Collections.shuffle(typePatterns);
+        QuestionType[] selectedTypes = typePatterns.getFirst();
+
+        List<Difficulty> rankingDifficulties = List.of(
+                Difficulty.EASY, Difficulty.EASY,
+                Difficulty.MEDIUM, Difficulty.HARD
+        );
+
+        return assignQuestions(pool, selectedTypes, rankingDifficulties);
     }
 
-    private List<Question> selectQuestionsByDifficulty(
-            Map<Difficulty, List<Question>> grouped,
-            Map<Difficulty, Integer> countPerDifficulty,
-            Set<QuestionType> usedTypes
-    ) {
+    // 일반 문제 6개 선택: EASY/MEDIUM/HARD 각 2개, 유형별로 2개씩
+    private List<Question> selectGeneralQuestions(List<Question> pool) {
+        List<QuestionType> generalTypes = new ArrayList<>(
+                List.of(QuestionType.FILL_IN_BLANK, QuestionType.FILL_IN_BLANK,
+                        QuestionType.PREDICT_OUTPUT, QuestionType.PREDICT_OUTPUT,
+                        QuestionType.CS_KNOWLEDGE, QuestionType.CS_KNOWLEDGE)
+        );
+        Collections.shuffle(generalTypes);
+
+        List<Difficulty> generalDifficulties = new ArrayList<>(
+                List.of(Difficulty.EASY, Difficulty.EASY,
+                        Difficulty.MEDIUM, Difficulty.MEDIUM,
+                        Difficulty.HARD, Difficulty.HARD)
+        );
+        Collections.shuffle(generalDifficulties);
+
+        return assignQuestions(pool, generalTypes.toArray(new QuestionType[0]), generalDifficulties);
+    }
+
+    // 주어진 문제 풀(pool)에서 각 유형-난이도 조합에 맞게 문제를 하나씩 선택 (중복 방지)
+    private List<Question> assignQuestions(List<Question> pool, QuestionType[] types, List<Difficulty> difficulties) {
         List<Question> result = new ArrayList<>();
-        for (Map.Entry<Difficulty, Integer> entry : countPerDifficulty.entrySet()) {
-            Difficulty difficulty = entry.getKey();
-            int count = entry.getValue();
-            result.addAll(pickQuestions(grouped.get(difficulty), count, usedTypes));
+        Set<Integer> usedIds = new HashSet<>();
+
+        for (int i = 0; i < types.length; i++) {
+            QuestionType type = types[i];
+            Difficulty difficulty = difficulties.get(i);
+            pool.stream()
+                    .filter(q -> q.getType() == type && q.getDifficulty() == difficulty && !usedIds.contains(q.getId()))
+                    .findFirst()
+                    .ifPresent(q -> {
+                        result.add(q);
+                        usedIds.add(q.getId());
+                    });
         }
-        return result;
-    }
-
-    // 난이도 별로 분류된 문제 리스트에서 유형 중복을 최소화하여 문제를 count개 뽑는다.
-    private List<Question> pickQuestions(List<Question> source, int count, Set<QuestionType> usedTypes) {
-        if (source == null || source.isEmpty()) return List.of();
-
-        Collections.shuffle(source);
-        List<Question> result = new ArrayList<>();
-
-        // 우선 유형 중복 없이 선택
-        for (Question q : source) {
-            if (usedTypes.add(q.getType())) {
-                result.add(q);
-                if (result.size() == count) return result;
-            }
-        }
-
-        // 부족하면 유형 중복을 허용하여 추가
-        for (Question q : source) {
-            if (!result.contains(q)) {
-                result.add(q);
-                if (result.size() == count) break;
-            }
-        }
-
         return result;
     }
 }
