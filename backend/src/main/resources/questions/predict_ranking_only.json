@@ -14,7 +14,7 @@
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747301820/C7_zexjkn.png",
     "answers": ["copy"],
-    "difficulty": "MEDIUM",
+    "difficulty": "HARD",
     "isRankingOnly": true
   },
   {
@@ -23,7 +23,7 @@
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747301820/C8_feqtg3.png",
     "answers": ["10"],
-    "difficulty": "MEDIUM",
+    "difficulty": "HARD",
     "isRankingOnly": true
   },
   {
@@ -32,7 +32,7 @@
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747301820/C11_ssoerr.png",
     "answers": ["10"],
-    "difficulty": "MEDIUM",
+    "difficulty": "HARD",
     "isRankingOnly": true
   },
   {
@@ -50,7 +50,7 @@
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747301821/CP2_i5gjfd.png",
     "answers": ["++C"],
-    "difficulty": "MEDIUM",
+    "difficulty": "EASY",
     "isRankingOnly": true
   },
   {
@@ -77,7 +77,7 @@
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747303053/J10_vglivl.png",
     "answers": ["apple"],
-    "difficulty": "MEDIUM",
+    "difficulty": "HARD",
     "isRankingOnly": true
   },
   {
@@ -86,7 +86,7 @@
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747303053/CP7_ocblqw.png",
     "answers": ["4 5 6"],
-    "difficulty": "MEDIUM",
+    "difficulty": "HARD",
     "isRankingOnly": true
   }
 ]
