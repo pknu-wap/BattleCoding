@@ -11,14 +11,25 @@ import java.util.List;
 
 @Repository
 public interface QuestionRepository extends JpaRepository<Question, Long> {
-    @Query(value = "SELECT * FROM questions WHERE type = :type ORDER BY RAND() LIMIT :count", nativeQuery = true)
-    List<Question> findRandomByType(@Param("type") String type, @Param("count") int count);
+    // 일반 문제 - 유형 기반
+    @Query(value = "SELECT * FROM questions WHERE is_ranking_only = false AND type = :type ORDER BY RAND() LIMIT :count", nativeQuery = true)
+    List<Question> findRandomGeneralQuestionsByType(@Param("type") String type, @Param("count") int count);
 
-    @Query(value = "SELECT * FROM questions WHERE difficulty = :difficulty ORDER BY RAND() LIMIT :count", nativeQuery = true)
-    List<Question> findRandomByDifficulty(@Param("difficulty") String difficulty, @Param("count") int count);
+    // 일반 문제 - 난이도 기반
+    @Query(value = "SELECT * FROM questions WHERE is_ranking_only = false AND difficulty = :difficulty ORDER BY RAND() LIMIT :count", nativeQuery = true)
+    List<Question> findRandomGeneralQuestionsByDifficulty(@Param("difficulty") String difficulty, @Param("count") int count);
 
-    @Query(value = "SELECT * FROM questions WHERE type = :type AND difficulty = :difficulty ORDER BY RAND() LIMIT :count", nativeQuery = true)
-    List<Question> findRandomByTypeAndDifficulty(
+    // 일반 문제 - 유형 + 난이도 필터
+    @Query(value = "SELECT * FROM questions WHERE is_ranking_only = false AND type = :type AND difficulty = :difficulty ORDER BY RAND() LIMIT :count", nativeQuery = true)
+    List<Question> findRandomGeneralQuestionsByTypeAndDifficulty(
+            @Param("type") String type,
+            @Param("difficulty") String difficulty,
+            @Param("count") int count
+    );
+
+    // 랭킹 전용 문제 - 유형 + 난이도
+    @Query(value = "SELECT * FROM questions WHERE is_ranking_only = true AND type = :type AND difficulty = :difficulty ORDER BY RAND() LIMIT :count", nativeQuery = true)
+    List<Question> findRandomRankingQuestionsByTypeAndDifficulty(
             @Param("type") String type,
             @Param("difficulty") String difficulty,
             @Param("count") int count
