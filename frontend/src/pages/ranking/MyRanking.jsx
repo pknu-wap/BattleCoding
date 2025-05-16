@@ -1,20 +1,23 @@
+// src/pages/ranking/MyRanking.jsx
 import React, { useEffect, useState } from "react";
-import "./MyRanking.scss";
+import api from "../../api";  // 수정된 API 경로를 사용
 import UserRanking from "./UserRanking";
+import "./MyRanking.scss";
 
 function MyRanking() {
     const [myInfo, setMyInfo] = useState(null);
 
     useEffect(() => {
-        const dummyData = {
-            rank: 10,
-            username: "me",
-            percent: 87.65
+        const fetchMyRanking = async () => {
+            try {
+                const response = await api.get("http://43.200.131.23:8080/");  // 자동으로 http://43.200.131.23:8080/api/user/my-ranking로 호출됨
+                setMyInfo(response.data);
+            } catch (error) {
+                console.error("내 랭킹 정보를 불러오는 데 실패했습니다:", error);
+            }
         };
 
-        setTimeout(() => {
-            setMyInfo(dummyData);
-        }, 500);
+        fetchMyRanking();
     }, []);
 
     const handleScrollToMyRank = () => {
@@ -39,7 +42,7 @@ function MyRanking() {
                         </div>
                         <div className="Ranker">{myInfo.username}</div>
                         <div className="Percent">
-                            정확도: <b className="r">{myInfo.percent.toFixed(2)}</b>%
+                            XP: <b className="r">{myInfo.xp}</b> XP
                         </div>
                     </div>
                 ) : (

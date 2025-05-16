@@ -1,101 +1,175 @@
-.UserRanking {
+.userHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #bbbbbb;
+  background-color: #1e1f2b;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.userHeader span {
+  flex: 1;
+  text-align: center;
+}
+
+.userHeader .placing {
+  flex: 0.5;
+}
+
+.userHeader .username {
+  flex: 1.5;
+}
+
+.userHeader .scoreline {
+  flex: 2;
+}
+
+.userHeader .percent {
+  flex: 1;
+}
+
+.Leaderboard {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.userList {
   width: 100%;
   display: flex;
   flex-direction: column;
+  gap: 12px;
+  padding: 0 12px; /* 좌우 여백 추가 */
+  box-sizing: border-box;
+}
+
+.userList .userRow {
+  background-color: #2a2d3a;
+  padding: 14px;
+  display: flex;
   align-items: center;
-  font-family: 'Pretendard', sans-serif;
+  justify-content: space-between;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  margin-bottom: 10px;
+  margin-left: 4px;
+  margin-right: 4px;
+  position: relative;
+  box-sizing: border-box;
+}
 
-  .Readerboard {
-    width: 100%;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 32px;
-    font-weight: 900;
-    color: #ffffff;
-  }
+.userList .userRow:hover {
+  background-color: #333d51;
+  transform: scale(1.02);
+  z-index: 2;
+}
 
-  .userList {
-    width: 100%;
-    display: flex;
+.userRow .placing {
+  padding: 8px 20px;
+  font-size: 18px;
+  color: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userRow .placing .rank {
+  font-size: 22px;
+}
+
+.userRow .username {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #cccccc;
+  font-weight: 500;
+}
+
+.userRow .scoreline {
+  display: flex;
+  gap: 4px;
+  font-size: 16px;
+  color: #aaaaaa;
+}
+
+.userRow .percent {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+/* Top 3 Styling */
+.userRow.first {
+  border: 3px solid #ffd700;
+  background: linear-gradient(135deg, #fff9c4, #ffe082);
+  box-shadow: 0 0 12px #ffd700aa;
+  font-weight: 800;
+}
+
+.userRow.first .placing .rank {
+  font-size: 32px;
+  color: #ffd700;
+  text-shadow: 0 0 5px #fff176;
+}
+
+.userRow.second {
+  border: 3px solid #c0c0c0;
+  background: linear-gradient(135deg, #eeeeee, #cfcfcf);
+  box-shadow: 0 0 12px #c0c0c0aa;
+  font-weight: 800;
+}
+
+.userRow.second .placing .rank {
+  font-size: 32px;
+  color: #c0c0c0;
+  text-shadow: 0 0 5px #e0e0e0;
+}
+
+.userRow.third {
+  border: 3px solid #cd7f32;
+  background: linear-gradient(135deg, #f0c290, #d2a679);
+  box-shadow: 0 0 12px #cd7f32aa;
+  font-weight: 800;
+}
+
+.userRow.third .placing .rank {
+  font-size: 32px;
+  color: #cd7f32;
+  text-shadow: 0 0 5px #f5deb3;
+}
+
+.userRow.currentUser {
+  background-color: #3b4160;
+  border: 2px solid #00f0ff;
+  box-shadow: 0 0 10px #00f0ff55;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+  .userRow {
     flex-direction: column;
     gap: 10px;
+    align-items: flex-start;
+    padding: 15px;
+  }
 
-    .userRow {
-      background-color: #2a2d3a;
-      padding: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-radius: 10px;
-      flex-wrap: wrap;
-      transition: all 0.3s ease;
-      font-size: 16px;
-      margin-bottom: 10px;
-
-      .placing {
-        padding: 8px 20px;
-        font-size: 18px;
-        color: #ffffff;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        .rank {
-          font-size: 22px;
-        }
-      }
-
-      .username {
-        display: flex;
-        align-items: center;
-        font-size: 16px;
-        color: #cccccc;
-        font-weight: 500;
-      }
-
-      .scoreline {
-        display: flex;
-        gap: 4px;
-        font-size: 16px;
-        color: #aaaaaa;
-      }
-
-      .percent {
-        font-size: 16px;
-        color: #ffffff;
-      }
-
-      &:hover {
-        background-color: #333d51;
-      }
-    }
-
-    // 현재 사용자 강조
-    .userRow.currentUser {
-      background-color: #3b4160;
-      border: 2px solid #00f0ff;
-      box-shadow: 0 0 10px #00f0ff55;
-      font-weight: 700;
-      color: #ffffff;
-    }
-
-    @media (max-width: 768px) {
-      .userRow {
-        flex-direction: column;
-        gap: 10px;
-        align-items: flex-start;
-        padding: 15px;
-      }
-
-      .placing,
-      .username,
-      .scoreline,
-      .percent {
-        font-size: 14px;
-      }
-    }
+  .placing,
+  .username,
+  .scoreline,
+  .percent {
+    font-size: 14px;
   }
 }
