@@ -23,7 +23,83 @@
     "question": "릴레이션을 구성하는 용어로, 튜플의 개수를 의미하는 용어는?",
     "imageUrl": null,
     "answers": ["카디널리티", "cardinality"],
+    "difficulty": "MEDIUM",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31004,
+    "type": "CS_KNOWLEDGE",
+    "question": "비트 연산자 중, 한 비트라도 1이면 1이 되는 연산자는?",
+    "imageUrl": null,
+    "answers": ["|", "OR", "or", "OR 연산자", "or 연산자", "논리합", "비트 OR", "비트 OR 연산자", "논리합 연산자"],
     "difficulty": "EASY",
     "isRankingOnly": true
+  },
+  {
+    "id": 31005,
+    "type": "CS_KNOWLEDGE",
+    "question": "메모리 주소를 저장하는 변수로, 다른 변수의 위치를 가리킬 수 있는 것은?",
+    "imageUrl": null,
+    "answers": ["포인터", "pointer"],
+    "difficulty": "EASY",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31006,
+    "type": "CS_KNOWLEDGE",
+    "question": "웹 브라우저에서 실행되며, 사용자와의 상호작용이나 페이지 동작을 제어하기 위해 사용하는 표준 클라이언트 스크립트 언어는?",
+    "imageUrl": null,
+    "answers": ["javascript", "자바스크립트", "JS"],
+    "difficulty": "EASY",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31007,
+    "type": "CS_KNOWLEDGE",
+    "question": "Java 기반으로 개발되었으며, 전자정부 표준 프레임워크의 핵심 기술로 사용되는 오픈소스 웹 애플리케이션 프레임워크는?",
+    "imageUrl": null,
+    "answers": ["Spring", "스프링", "Spring Framework", "스프링 프레임워크"],
+    "difficulty": "MEDIUM",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31008,
+    "type": "CS_KNOWLEDGE",
+    "question": "보안 3대 요소 중 하나로 시스템 내의 정보는 오직 인가된 사용자만 수정할 수 있다는 성질은?",
+    "imageUrl": null,
+    "answers": ["무결성", "Integrity"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 31009,
+    "type": "CS_KNOWLEDGE",
+    "question": "보안 3대 요소 중 하나로 인가받은 사용자는 언제라도 사용할 수 있다는 성질은?",
+    "imageUrl": null,
+    "answers": ["가용성", "Availability"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 31010,
+    "type": "CS_KNOWLEDGE",
+    "question": "'세션을 가로채다.' 라는 의미로 다른 사람의 세션 상태를 훔치거나 도용하여 액세스하는 해킹 기법은?",
+    "imageUrl": null,
+    "answers": ["세션 하이재킹", "Session Hijacking"],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 31011,
+    "type": "CS_KNOWLEDGE",
+    "question": "전송 데이터에 특정 다항식을 기반으로 계산된 값을 덧붙이고, 수신 측에서 동일한 연산으로 오류를 확인하는 방식의 오류 검출 코드는?",
+    "imageUrl": null,
+    "answers": ["CRC", "CRC 코드", "Cyclic Redundancy Check"],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 31012,
+    "type": "CS_KNOWLEDGE",
+    "question": "사용자가 정상적인 웹사이트로 접속했다고 믿게 만든 뒤, 악성코드나 DNS 변조 등을 통해 가짜 사이트로 유도해 개인정보를 탈취하는 공격 기법은?",
+    "imageUrl": null,
+    "answers": ["파밍", "Pharming"],
+    "difficulty": "HARD"
   }
 ]
