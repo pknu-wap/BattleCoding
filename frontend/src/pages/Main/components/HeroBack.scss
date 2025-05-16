@@ -40,28 +40,19 @@
   margin: 0;
 }
 
-/* .string {
-  color: #ff0000;
-} -> 문자열
-.number {
-  color: #adff2f;
-} -> 숫자
-.blue {
-  color: #0000ff;
-} -> 클래스명, 특수메서드
-.green {
-  color: #008000;
-} -> import, def 등 키워드
-.navy {
-  color: #000080;
-} -> .
-.purple {
-  color: #ff00ff;
-} -> 연산자
-.deeppink {
-  color: #800080;
+/* .cursor {
+  display: inline-block;
+  animation: blink 1s steps(2, start) infinite;
+  color: rgba(0, 225, 127, 0.2);
 }
-.gray {
-  color: #808080;
-} -> {}, [] 등
- */
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+} */
