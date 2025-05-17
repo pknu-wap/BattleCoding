@@ -7,13 +7,12 @@ import "./GamePage_question.scss";
 function GamePage_question() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { type, difficulty, image, title, description } = location.state || {};
+  const { type, difficulty, image, title, description, isRanking } = location.state || {};
 
   const [questions, setQuestions] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answer, setAnswer] = useState("");
   const [score, setScore] = useState(0);
-  const [isRanking, setIsRanking] = useState(null);
 
   const [showFeedback, setShowFeedback] = useState(false);
   const [isCorrect, setIsCorrect] = useState("");
@@ -25,21 +24,25 @@ function GamePage_question() {
 
   useEffect(() => {
     if (!type || !difficulty) {
-      alert("문제 유형과 난이도 정보가 없습니다.");
+      alert("문제 유형, 난이도 또는 모드 정보가 없습니다.");
       navigate('/game');
     }
-  }, [type, difficulty, navigate]);
+  }, [type, difficulty, isRanking, navigate]);
 
   useEffect(() => {
-    if (isRanking === null) return;
-
     const fetchQuestions = async () => {
       try {
-        const data = await getRandomQuestionByTypeAndDifficulty({
-          type,
-          difficulty,
-          count: 10,
-        });
+        let data;
+        if (isRanking) {
+          const res = await api.get("/questions/ranking");
+          data = res.data;
+        } else {
+          data = await getRandomQuestionByTypeAndDifficulty({
+            type,
+            difficulty,
+            count: 10,
+          });
+        }
         console.log("받아온 데이터:", data);
         setQuestions(data);
       } catch (err) {
@@ -68,11 +71,11 @@ function GamePage_question() {
       });
     }
   }, [currentIndex, questions.length, navigate, image, title, description, type, difficulty, score, isRanking]);
-  
+
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Enter" && !isRanking && showFeedback) {
-        e.preventDefault(); 
+        e.preventDefault();
         handleNext();
       }
     };
@@ -80,7 +83,7 @@ function GamePage_question() {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isRanking, showFeedback]);
-  
+
   const submitAnswer = async (questionId, userAnswer) => {
     const endTime = Date.now();
     const timeTaken = isRanking ? Math.floor((endTime - startTime) / 1000) : null;
@@ -94,6 +97,17 @@ function GamePage_question() {
     return response.data;
   };
 
+  const fetchCorrectAnswer = async (questionId) => {
+    try {
+      const res = await api.get(`/questions/${questionId}/correct-answer`);
+      console.log("정답 응답: ", res.data);
+      return res.data.answers?.[0];
+    } catch (err) {
+      console.error("정답 조회 실패", err);
+      return "정답 불러오기 실패";
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const question = questions[currentIndex];
@@ -101,10 +115,11 @@ function GamePage_question() {
     try {
       const result = await submitAnswer(question.id, answer);
       setIsCorrect(result.isCorrect);
-      setCorrectAnswer(question.answers?.[0] || "");
-      
+
       if (result.isCorrect) {
         setScore(prev => prev + 1);
+        setShowFeedback(true);
+        return;
       }
 
       if (isRanking) {
@@ -120,7 +135,9 @@ function GamePage_question() {
         setCurrentIndex((prev) => prev + 1);
         return;
       }
-      
+
+      const correct = await fetchCorrectAnswer(question.id);
+      setCorrectAnswer(correct);
       setShowFeedback(true);
     } catch (err) {
       console.error("제출 오류:", err);
@@ -138,19 +155,7 @@ function GamePage_question() {
 
   return (
     <form className="questionWrapper" onSubmit={handleSubmit}>
-      {isRanking === null && (
-        <div className="modeOverlay">
-          <div className="modePopup">
-            <h2>모드를 선택해 주세요</h2>
-            <div className="modeBtns">
-              <button onClick={() => setIsRanking(false)}>연습 모드</button>
-              <button onClick={() => setIsRanking(true)}>랭킹 모드</button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {isRanking !== null && currentQuestion && (
+      {currentQuestion && (
         <>
           <div className="questionSection">
             <div className="questionNumber">{currentIndex + 1} / {questions.length}</div>
@@ -174,10 +179,16 @@ function GamePage_question() {
                 />
                 <button className="enterBtn" type="submit">🕹️</button>
               </>
-            ): (
+            ) : (
               <>
-                <p className="feedbackText">{isCorrect ? "정답!" : "오답!"}</p>
-                <p className="correctAnswer">{correctAnswer}</p>
+                <p
+                  className="feedbackText"
+                  style={{ color: isCorrect ? "#00f0ff" : "#ff4d4f" }}>
+                  {isCorrect ? "정답!" : "오답!"}
+                </p>
+                {!isCorrect && (
+                  <p className="correctAnswer">{correctAnswer}</p>
+                )}
                 <button type="button" className="nextBtn" onClick={handleNext}>다음 문제</button>
               </>
             )}
