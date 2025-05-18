@@ -25,9 +25,9 @@ function GamePage_ready() {
       <div className="readyContainer">
         <div className="quizSection">
           <div className="quizCard">
-            <img className="quizImg" src={image} alt={title} />
             <div className="quizContent">
               <h2>{title}</h2>
+              <img className="quizImg" src={image} alt={title} />
               <p dangerouslySetInnerHTML={{ __html: description }} />
             </div>
           </div>
