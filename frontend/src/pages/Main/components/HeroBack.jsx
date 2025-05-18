@@ -11,7 +11,7 @@ import React, { useEffect, useRef, useState } from "react";
 const codeSnippets = [Code, CodeA, CodeB, CodeC];
 const maxVisibleLines = 24;
 const typingSpeed = 80;
-const lineDelay = 100;
+const lineDelay = 300;
 
 export default function HeroBack() {
   const codeRef = useRef(null);
