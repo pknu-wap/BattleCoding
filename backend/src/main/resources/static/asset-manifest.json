@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.7653e388.css",
-    "main.js": "/static/js/main.790c646f.js",
+    "main.css": "/static/css/main.25a4c4ac.css",
+    "main.js": "/static/js/main.afc2bae4.js",
     "static/media/logo_BattleCoding.png": "/static/media/logo_BattleCoding.4b9ee871b3ff8cbc99a6.png",
     "index.html": "/index.html",
-    "main.7653e388.css.map": "/static/css/main.7653e388.css.map",
-    "main.790c646f.js.map": "/static/js/main.790c646f.js.map"
+    "main.25a4c4ac.css.map": "/static/css/main.25a4c4ac.css.map",
+    "main.afc2bae4.js.map": "/static/js/main.afc2bae4.js.map"
   },
   "entrypoints": [
-    "static/css/main.7653e388.css",
-    "static/js/main.790c646f.js"
+    "static/css/main.25a4c4ac.css",
+    "static/js/main.afc2bae4.js"
   ]
 }
