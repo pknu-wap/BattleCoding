@@ -13,5 +13,8 @@ public record RankingResponseDto(
         int correct,
 
         @JsonProperty("totalWrong")
-        int wrong
+        int wrong,
+
+        @JsonProperty("rank")
+        int rank
 ) {}
