@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import api from "../../../../api";
+import api from "../../../../api/api";
 import "./GamePage_result.scss";
 
 function GamePage_result() {

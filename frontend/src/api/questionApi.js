@@ -1,4 +1,4 @@
-import api from "../api";
+import api from "./api";
 
 export const getRandomQuestionByType = async ({ type, count = 10 }) => {
     const token = localStorage.getItem("token");

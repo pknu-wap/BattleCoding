@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LoginInputForm.scss';
-import api from '../../../api.js';
+import api from '../../../api/api';
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const pwdRegex = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/;
