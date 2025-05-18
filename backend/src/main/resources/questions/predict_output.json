@@ -12,7 +12,7 @@
     "type": "PREDICT_OUTPUT",
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dfswpappv/image/upload/v1746522222/%EB%AC%B8%EC%A0%9C2_m3ya0j.png",
-    "answers": ["BATTLECODING "],
+    "answers": ["BATTLECODING"],
     "difficulty": "EASY"
   },
   {
@@ -302,7 +302,7 @@
     "type": "PREDICT_OUTPUT",
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747306105/J2_ffwvmy.png",
-    "answers": ["다름"],
+    "answers": ["Jerry"],
     "difficulty": "EASY"
   },
   {
