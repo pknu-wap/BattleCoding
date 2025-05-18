@@ -41,6 +41,14 @@
     color: #e0e0e0;
     text-align: left;
 
+    user-select: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    }
+
     .quizEmoji {
       margin-bottom: 8px;
 

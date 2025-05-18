@@ -15,8 +15,8 @@ function GamePage_ready() {
   }, [type, navigate]);
 
   const handleClick = (difficulty) => {
-    navigate('/game/question', {
-      state: { type, difficulty, image, title, description }
+    navigate("/game/question", {
+      state: { type, difficulty, image, title, description },
     });
   };
 
@@ -28,15 +28,21 @@ function GamePage_ready() {
             <img className="quizImg" src={image} alt={title} />
             <div className="quizContent">
               <h2>{title}</h2>
-              <p dangerouslySetInnerHTML={{ __html: description }}/>
+              <p dangerouslySetInnerHTML={{ __html: description }} />
             </div>
           </div>
         </div>
 
         <div className="buttonSection">
-          <button className="readyBtn" onClick={() => handleClick("EASY")}>초급</button>
-          <button className="readyBtn" onClick={() => handleClick("MEDIUM")}>중급</button>
-          <button className="readyBtn" onClick={() => handleClick("HARD")}>고급</button>
+          <button className="readyBtn" onClick={() => handleClick("EASY")}>
+            초급
+          </button>
+          <button className="readyBtn" onClick={() => handleClick("MEDIUM")}>
+            중급
+          </button>
+          <button className="readyBtn" onClick={() => handleClick("HARD")}>
+            고급
+          </button>
         </div>
       </div>
     </>
