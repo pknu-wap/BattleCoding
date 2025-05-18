@@ -1,9 +1,30 @@
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import api from "../../api";
 import "./Navbar.scss";
+
 
 export default function Navbar({ type = "main" }) {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const [nickname, setNickname] = useState("");
+
   const isLoggedIn = localStorage.getItem("token") !== null;
+  const isMainPage = location.pathname === "/";
+
+  useEffect(() => {
+    const fetchNickname = async () => {
+      if (!isLoggedIn) return;
+      try {
+        const res = await api.get("/user/me");
+        setNickname(res.data.nickname || "사용자");
+      } catch (err) {
+        console.error("닉네임 가져오기 실패", err);
+      }
+    };
+    fetchNickname();
+  }, [isLoggedIn]);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -28,6 +49,9 @@ export default function Navbar({ type = "main" }) {
         </div>
 
         <div className="navbarAuth">
+          {isLoggedIn && isMainPage && (
+            <div className="greetingText">{nickname}님, 반갑습니다!</div>
+          )}
           {isLoggedIn ? (
             <>
               <button className="btnMypage" onClick={() => navigate("/mypage")}>
