@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import UserInputForm from "./components/UserInputForm";
-import logoImg from "../../../src/logo_BattleCoding.png";
+import logoImg from "../../assets/logo/logo-transparent.png";
 import "./Register.scss";
 
 const Register = () => {

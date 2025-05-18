@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import api from "../../api";  // 수정된 API 경로를 사용
+import api from "../../api/api";
 
 import "./UserRanking.scss";
 
