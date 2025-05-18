@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.25a4c4ac.css",
-    "main.js": "/static/js/main.afc2bae4.js",
+    "main.js": "/static/js/main.cfe12c83.js",
     "static/media/logo_BattleCoding.png": "/static/media/logo_BattleCoding.4b9ee871b3ff8cbc99a6.png",
     "index.html": "/index.html",
     "main.25a4c4ac.css.map": "/static/css/main.25a4c4ac.css.map",
-    "main.afc2bae4.js.map": "/static/js/main.afc2bae4.js.map"
+    "main.cfe12c83.js.map": "/static/js/main.cfe12c83.js.map"
   },
   "entrypoints": [
     "static/css/main.25a4c4ac.css",
-    "static/js/main.afc2bae4.js"
+    "static/js/main.cfe12c83.js"
   ]
 }

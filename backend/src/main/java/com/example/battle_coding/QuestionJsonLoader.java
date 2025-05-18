@@ -24,12 +24,12 @@ public class QuestionJsonLoader {
         System.out.println("[초기화] 문제 삽입 또는 업데이트 시작");
 
         List<String> files = List.of(
-                "questions/fill_in_blank.json",
-                "questions/predict_output.json",
-                "questions/cs_knowledge.json",
-                "questions/cs_ranking_only.json",
-                "questions/fill_ranking_only.json",
-                "questions/predict_ranking_only.json"
+                "questions/normal/fill_in_blank.json",
+                "questions/normal/predict_output.json",
+                "questions/normal/cs_knowledge.json",
+                "questions/ranking/cs_ranking_only.json",
+                "questions/ranking/fill_ranking_only.json",
+                "questions/ranking/predict_ranking_only.json"
         );
 
         Set<Integer> seenIds = new HashSet<>();
