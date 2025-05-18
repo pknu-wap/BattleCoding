@@ -68,7 +68,8 @@
     "question": "보안 3대 요소 중 하나로 시스템 내의 정보는 오직 인가된 사용자만 수정할 수 있다는 성질은?",
     "imageUrl": null,
     "answers": ["무결성", "Integrity"],
-    "difficulty": "MEDIUM"
+    "difficulty": "MEDIUM",
+    "isRankingOnly": true
   },
   {
     "id": 31009,
@@ -76,7 +77,8 @@
     "question": "보안 3대 요소 중 하나로 인가받은 사용자는 언제라도 사용할 수 있다는 성질은?",
     "imageUrl": null,
     "answers": ["가용성", "Availability"],
-    "difficulty": "MEDIUM"
+    "difficulty": "MEDIUM",
+    "isRankingOnly": true
   },
   {
     "id": 31010,
@@ -84,7 +86,8 @@
     "question": "'세션을 가로채다.' 라는 의미로 다른 사람의 세션 상태를 훔치거나 도용하여 액세스하는 해킹 기법은?",
     "imageUrl": null,
     "answers": ["세션 하이재킹", "Session Hijacking"],
-    "difficulty": "HARD"
+    "difficulty": "HARD",
+    "isRankingOnly": true
   },
   {
     "id": 31011,
@@ -92,7 +95,8 @@
     "question": "전송 데이터에 특정 다항식을 기반으로 계산된 값을 덧붙이고, 수신 측에서 동일한 연산으로 오류를 확인하는 방식의 오류 검출 코드는?",
     "imageUrl": null,
     "answers": ["CRC", "CRC 코드", "Cyclic Redundancy Check"],
-    "difficulty": "HARD"
+    "difficulty": "HARD",
+    "isRankingOnly": true
   },
   {
     "id": 31012,
@@ -100,6 +104,16 @@
     "question": "사용자가 정상적인 웹사이트로 접속했다고 믿게 만든 뒤, 악성코드나 DNS 변조 등을 통해 가짜 사이트로 유도해 개인정보를 탈취하는 공격 기법은?",
     "imageUrl": null,
     "answers": ["파밍", "Pharming"],
-    "difficulty": "HARD"
+    "difficulty": "HARD",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31013,
+    "type": "CS_KNOWLEDGE",
+    "question": "사용자가 정상적인 웹사이트로 접속했다고 믿게 만든 뒤, 악성코드나 DNS 변조 등을 통해 가짜 사이트로 유도해 개인정보를 탈취하는 공격 기법은?",
+    "imageUrl": null,
+    "answers": ["파밍", "Pharming"],
+    "difficulty": "HARD",
+    "isRankingOnly": true
   }
 ]

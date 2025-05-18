@@ -80,6 +80,7 @@ public class QuestionJsonLoader {
         existing.setImageUrl(incoming.getImageUrl());
         existing.setAnswers(incoming.getAnswers());
         existing.setDifficulty(incoming.getDifficulty());
+        existing.setRankingOnly(incoming.isRankingOnly());
         questionRepository.save(existing);
     }
 }

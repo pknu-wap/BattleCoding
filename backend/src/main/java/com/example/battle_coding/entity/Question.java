@@ -44,6 +44,7 @@ public class Question {
     @Column(nullable = false)
     private Difficulty difficulty;  // EASY, MEDIUM, HARD
 
+    @Setter
     // 연습모드 출제 여부 설정
     @Column(name = "is_ranking_only", nullable = false)
     @JsonProperty("isRankingOnly")
