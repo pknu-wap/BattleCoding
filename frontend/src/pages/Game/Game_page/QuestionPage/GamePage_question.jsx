@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import api from "../../../../api";
+import api from "../../../../api/api";
 import { getRandomQuestionByTypeAndDifficulty } from "../../../../api/questionApi";
+import { getBonusRatio, calculateFinalScore } from "../../../../utils/scoring";
 import "./GamePage_question.scss";
 
 function GamePage_question() {
@@ -67,7 +68,10 @@ function GamePage_question() {
   useEffect(() => {
     if (questions.length > 0 && currentIndex >= questions.length) {
       navigate('/game/result', {
-        state: { image, title, description, type, difficulty, score, isRanking }
+        state: {
+          image, title, description, type, difficulty, isRanking,
+          score: Math.round(score),
+         }
       });
     }
   }, [currentIndex, questions.length, navigate, image, title, description, type, difficulty, score, isRanking]);
@@ -111,13 +115,21 @@ function GamePage_question() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const question = questions[currentIndex];
+    const endTime = Date.now();
+    const timeTaken = Math.floor((endTime - startTime) / 1000);
 
     try {
       const result = await submitAnswer(question.id, answer);
       setIsCorrect(result.isCorrect);
 
       if (result.isCorrect) {
-        setScore(prev => prev + 1);
+        if (isRanking) {
+          const finalScore = calculateFinalScore(1, timeTaken);
+          setScore((prev) => prev + finalScore);
+        } else {
+          setScore((prev) => prev + 1);
+        }
+
         setShowFeedback(true);
         return;
       }
@@ -125,12 +137,6 @@ function GamePage_question() {
       if (isRanking) {
         setXpEarned(result.xpEarned || 0);
         setUpdatedXp(result.updatedXp || 0);
-      } else {
-        setXpEarned(0);
-        setUpdatedXp(0);
-      }
-
-      if (isRanking) {
         setAnswer("");
         setCurrentIndex((prev) => prev + 1);
         return;
