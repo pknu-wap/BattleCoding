@@ -22,7 +22,7 @@ const Router = () => {
       <Route path="/auth/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/game" element={<GameMain />}/>
-
+      <Route path="/mypage" element={<MyPage />} />
       <Route path="/mypage/edit" element={<EditProfile />} />
       <Route path="/game/ready" element={<ReadyPage />} />
       <Route path="/game/question" element={<QuestionPage />} />
