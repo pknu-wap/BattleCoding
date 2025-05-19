@@ -62,6 +62,7 @@ function UserRanking({ currentUsername }) {
                                 <b className="aNumber">{user.totalSubmitted}</b>/
                                 <b className="rNumber">{user.totalCorrect}</b>/
                                 <b className="wNumber">{user.totalWrong}</b>
+
                             </span>
                             <span className="percent">
                                 <b className="r">{user.xp}</b> XP
