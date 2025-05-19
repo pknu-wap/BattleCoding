@@ -166,6 +166,34 @@
   z-index: 1;
 }
 
+/* 내 랭킹 박스 강조 */
+.my-highlight {
+  background-color: #3b4160;
+  border: 2px solid #00f0ff;
+  box-shadow: 0 0 10px #00f0ff55;
+  font-weight: 700;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 14px;
+  margin: 10px 4px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+/* 스크롤 후 깜빡임 애니메이션 */
+@keyframes highlightFlash {
+  0%, 100% {
+    background-color: #3b4160;
+  }
+  50% {
+    background-color: #00f0ff44;
+  }
+}
+
+.my-highlight.flash {
+  animation: highlightFlash 1.5s ease;
+}
+
 /* 모바일 대응 */
 @media (max-width: 768px) {
   .userRow {
@@ -179,6 +207,11 @@
   .username,
   .scoreline,
   .percent {
+    font-size: 14px;
+  }
+
+  .my-highlight {
+    padding: 10px;
     font-size: 14px;
   }
 }
