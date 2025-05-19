@@ -9,7 +9,14 @@ function UserRanking({ currentUsername }) {
         const fetchRankingData = async () => {
             try {
                 const response = await api.get("/rankings");
-                setUserData(response.data);
+                const data = response.data;
+                
+                if (Array.isArray(data)) {
+                    setUserData(data);
+                } else {
+                    console.error("랭킹 데이터는 배열이어야 합니다.", data);
+                    setUserData([]);
+                }
             } catch (error) {
                 console.error("랭킹 데이터를 불러오는 데 실패했습니다:", error);
             }
