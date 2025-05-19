@@ -106,5 +106,14 @@
     "answers": ["int &ref"],
     "difficulty": "HARD",
     "isRankingOnly": true
+  },
+  {
+    "id": 11013,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/drg2mizpe/image/upload/v1747648450/q01_lwug5e.png",
+    "answers": ["%d"],
+    "difficulty": "EASY",
+    "isRankingOnly": true
   }
 ]

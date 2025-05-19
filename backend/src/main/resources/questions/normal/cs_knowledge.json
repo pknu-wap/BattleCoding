@@ -221,7 +221,7 @@
     "question": "웹에서 클라이언트가 이전 요청 상태를 유지하기 위해 서버가 클라이언트에 저장하는 작은 데이터 파일은 무엇인가?",
     "imageUrl": null,
     "answers": ["쿠키", "Cookie"],
-    "difficulty": "HARD"
+    "difficulty": "MEDIUM"
   },
   {
     "id": 30029,
@@ -301,6 +301,62 @@
     "question": "객체지향 설계 5대 원칙(SOLID) 중 하나로 고수준 모듈은 저수준 모듈에 의존하면 안 되며, 둘 다 추상화(인터페이스)에 의존해야 한다는 원칙은? [영문 약어 작성 가능]",
     "imageUrl": null,
     "answers": ["DIP","Dependency Inversion Principle", "의존성 역전 원칙", "의존 역전 원칙", "의존 역전의 원칙", "의존성 역전의 원칙", "의존 역전", "의존성 역전"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 30039,
+    "type": "CS_KNOWLEDGE",
+    "question": "HTML에서 문서의 제목을 설정하는 데 사용되는 태그는 무엇인가?",
+    "imageUrl": null,
+    "answers": ["<title>", "title"],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30040,
+    "type": "CS_KNOWLEDGE",
+    "question": "브라우저 주소창에 입력하는 문자열로, 웹 페이지의 위치를 나타내는 것은?",
+    "imageUrl": null,
+    "answers": ["URL", "url", "Uniform Resource Locator"],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30041,
+    "type": "CS_KNOWLEDGE",
+    "question": "비트 연산자 중, 두 비트가 모두 1일 때만 결과가 1이 되는 연산자는?",
+    "imageUrl": null,
+    "answers": ["&", "AND", "and 연산자", "비트 AND", "비트 AND 연산자"],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30042,
+    "type": "CS_KNOWLEDGE",
+    "question": "비트 연산자 중, 두 비트가 같으면 0, 하나라도 다르면 1이 되는 연산자는?",
+    "imageUrl": null,
+    "answers": ["^", "XOR", "xor", "배타적 논리합", "배타적 OR", "배타적 or"],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30043,
+    "type": "CS_KNOWLEDGE",
+    "question": "보안 3대 요소 중 하나로 시스템 내의 정보와 자원은 인가된 사용자에게만 접근이 허용되며, 정보가 전송 중에 노출되더라도 데이터를 읽을 수 없음을 의미하는 성질은?",
+    "imageUrl": null,
+    "answers": ["기밀성", "Confidentiality"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 30044,
+    "type": "CS_KNOWLEDGE",
+    "question": "인증 절차를 우회하여 시스템에 몰래 접근할 수 있도록 만든 비인가 접근 통로로, 악성코드나 해킹 도구로 사용되는 것은?",
+    "imageUrl": null,
+    "answers": ["백도어", "Backdoor"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 30045,
+    "type": "CS_KNOWLEDGE",
+    "question": "인터넷 상에서 암호화된 통신을 통해 사용자의 위치를 숨기고, 안전한 네트워크 환경을 제공하는 가상 사설망 기술은?",
+    "imageUrl": null,
+    "answers": ["VPN", "Virtual Private Network"],
     "difficulty": "MEDIUM"
   }
 ]
