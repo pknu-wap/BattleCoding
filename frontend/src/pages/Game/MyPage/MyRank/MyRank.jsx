@@ -35,7 +35,7 @@ function My_Rank() {
         <div className="Rank">
           <div className="MyPlacing"><b>{rank}</b> 등</div>
           <div className="Ranker">{nickname}</div>
-          <div className="myXp">{xp}</div>
+          <div className="myXp"><b>{xp}</b> XP</div>
         </div>
       </div>
     </div>

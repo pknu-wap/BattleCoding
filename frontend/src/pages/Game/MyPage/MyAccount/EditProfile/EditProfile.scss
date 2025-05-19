@@ -4,7 +4,7 @@
   align-items: center;
   gap: 20px;
   min-height: 100vh;
-  background-color: #282534;
+  background: linear-gradient(to bottom, #0d1a2d, #11293d, #183b4e);
 
   .title {
     margin-top: 20px;
@@ -23,6 +23,7 @@
   }
 
   .nickname-section {
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -50,7 +51,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 16px;
+    gap: 5px;
     padding: 10px;
     background-color: #2a2d3a;
     border-radius: 8px;
@@ -79,19 +80,22 @@
   }
 
   .password-section {
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     width: 100%;
     max-width: 490px;
 
     input {
-      margin-top: 6px;
+      width: 100%;
       padding: 10px;
       border-radius: 6px;
       border: none;
       font-size: 16px;
+      font-family: 'Pretendard', sans-serif;
       background-color: #1e1e2f;
       color: #fff;
+      outline: none;
 
       & + input {
         margin-top: 10px;
@@ -100,14 +104,15 @@
   }
 
   .buttons {
+    margin-top: 30px;
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 30px;
     width: 100%;
     max-width: 490px;
 
     button {
-      flex: 1;
+      width: 200px;
       padding: 10px;
       border-radius: 8px;
       font-size: 18px;
@@ -127,7 +132,7 @@
       }
     }
 
-    button[type='button'] {
+    button[type='cancel'] {
       background-color: #444;
       color: #fff;
 
