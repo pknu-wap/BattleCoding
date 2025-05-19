@@ -1,5 +1,6 @@
 package com.example.battle_coding.service;
 
+import com.example.battle_coding.dto.response.RankingPageResponseDto;
 import com.example.battle_coding.dto.response.RankingResponseDto;
 import com.example.battle_coding.entity.User;
 import com.example.battle_coding.repository.UserRepository;
@@ -16,17 +17,31 @@ public class RankingService {
 
     private final UserRepository userRepository;
 
-    public List<RankingResponseDto> getTopRankings() {
-        List<User> users = userRepository.findAll();
-
-        return users.stream()
+    public RankingPageResponseDto getRankingsPaged(int page, int size) {
+        List<User> allUsers = userRepository.findAll()
+                .stream()
                 .sorted(Comparator.comparingInt(User::getXp).reversed())
-                .limit(10)
-                .map((user) -> {
-                    int rank = getUserRank(users, user); // XP 기준으로 rank 계산
+                .collect(Collectors.toList());
+
+        int totalUsers = allUsers.size();
+        int totalPages = (int) Math.ceil((double) totalUsers / size);
+
+        int start = page * size;
+        int end = Math.min(start + size, totalUsers);
+
+        if (start >= totalUsers) {
+            return new RankingPageResponseDto(List.of(), totalPages); // 빈 리스트 + 총 페이지 수
+        }
+
+        List<RankingResponseDto> paged = allUsers.subList(start, end)
+                .stream()
+                .map(user -> {
+                    int rank = getUserRank(allUsers, user);
                     return user.toRankingResponseDto(rank);
                 })
                 .collect(Collectors.toList());
+
+        return new RankingPageResponseDto(paged, totalPages);
     }
 
     public RankingResponseDto getMyRanking(String email) {
@@ -45,13 +60,12 @@ public class RankingService {
         return me.toRankingResponseDto(myRank);
     }
 
-    // 유저 순위를 계산하는 헬퍼 메서드
     private int getUserRank(List<User> sortedUsers, User targetUser) {
         for (int i = 0; i < sortedUsers.size(); i++) {
             if (sortedUsers.get(i).getId().equals(targetUser.getId())) {
-                return i + 1; // 0-based index → 1-based rank
+                return i + 1;
             }
         }
-        return -1; // 못 찾으면 -1
+        return -1;
     }
 }

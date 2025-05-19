@@ -13,18 +13,20 @@ function PracticeGameMain() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) {
-      alert("로그인이 필요합니다.")
-      navigate('/auth/login');
+      alert("로그인이 필요합니다.");
+      navigate("/auth/login");
     }
   }, [navigate]);
-  
+
   return (
     <>
       <Navbar type="user" />
       <div className="gameMain">
         <div className="gameContent">
           <div className="quizIntro">
-            <p className="quizHeading"><span className="highlight">어떤 유형의 문제</span>를 풀어볼까요?</p>
+            <p className="quizHeading">
+              <span className="highlight">어떤 유형의 문제</span>를 풀어볼까요?
+            </p>
             <p className="quizSubText">
               다양한 유형의 문제를 풀며 <br />
               실력을 키우고 재미있게 코딩 실력을 높여보세요!
@@ -42,6 +44,8 @@ function PracticeGameMain() {
                   description={data.description}
                   type={data.type}
                   isRanking={isRanking}
+                  typing={data.typing}
+                  typingPosition={data.typingPosition}
                 />
               ))
             )}
