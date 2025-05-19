@@ -8,7 +8,7 @@ function UserRanking({ currentUsername }) {
     useEffect(() => {
         const fetchRankingData = async () => {
             try {
-                const response = await api.get("/rankings");
+                const response = await api.get("/user/rankings");
                 const data = response.data;
                 
                 if (Array.isArray(data)) {
