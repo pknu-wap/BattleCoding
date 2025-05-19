@@ -2,7 +2,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import "./GamePage_ready.scss";
 
-function GamePage_ready() {
+function PracticeReady() {
   const navigate = useNavigate();
   const location = useLocation();
   const { image, title, description, type, isRanking } = location.state || {};
@@ -49,4 +49,4 @@ function GamePage_ready() {
   );
 }
 
-export default GamePage_ready;
+export default PracticeReady;

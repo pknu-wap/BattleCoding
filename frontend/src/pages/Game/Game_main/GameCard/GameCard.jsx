@@ -1,4 +1,4 @@
-import "./GameCard.scss";
+/* import "./GameCard.scss";
 import { useNavigate } from "react-router-dom";
 
 function GameCard({ image, title, description, type, isRanking }) {
@@ -21,6 +21,91 @@ function GameCard({ image, title, description, type, isRanking }) {
           className="gameCardElaborate"
           dangerouslySetInnerHTML={{ __html: description }}
         />
+      </div>
+    </div>
+  );
+}
+
+export default GameCard;
+ */
+
+import "./GameCard.scss";
+import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect, useRef } from "react";
+
+function GameCard({
+  image,
+  title,
+  description,
+  type,
+  isRanking,
+  typing = "",
+  typingPosition = { top: "20%", left: "15%" },
+}) {
+  const navigate = useNavigate();
+  const [displayText, setDisplayText] = useState("");
+  const [isHovered, setIsHovered] = useState(false);
+  const indexRef = useRef(0);
+  const timerRef = useRef(null);
+
+  useEffect(() => {
+    if (!typing) {
+      setDisplayText("");
+      return;
+    }
+
+    if (isHovered) {
+      setDisplayText("");
+      indexRef.current = 0;
+
+      timerRef.current = setInterval(() => {
+        setDisplayText((prev) => {
+          const nextChar = typing.charAt(indexRef.current);
+          indexRef.current += 1;
+
+          if (indexRef.current >= typing.length) {
+            clearInterval(timerRef.current);
+          }
+
+          return prev + nextChar;
+        });
+      }, 100);
+    } else {
+      setDisplayText("");
+      clearInterval(timerRef.current);
+    }
+
+    return () => clearInterval(timerRef.current);
+  }, [isHovered, typing]);
+
+  const handleClick = () => {
+    navigate("/game/ready", {
+      state: { image, title, description, type, isRanking },
+    });
+  };
+
+  return (
+    <div
+      className="gameCard"
+      onClick={handleClick}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="gameCardCover" style={{ position: "relative" }}>
+        <img className="gameCardImage" src={image} alt={title} />
+        <div
+          className="typingOverlay"
+          style={{
+            top: typingPosition.top,
+            left: typingPosition.left,
+          }}
+        >
+          {displayText}
+        </div>
+      </div>
+      <div className="gameCardBody">
+        <div className="gameCardTitle">{title}</div>
+        <div className="gameCardElaborate" dangerouslySetInnerHTML={{ __html: description }} />
       </div>
     </div>
   );

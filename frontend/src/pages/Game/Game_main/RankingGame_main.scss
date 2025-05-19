@@ -1,0 +1,88 @@
+.gameMain {
+    background: linear-gradient(to bottom, #0d1a2d, #11293d, #183b4e);
+
+    width: 100vw;
+    min-height: calc(100vh - 56px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .quizIntro {
+        margin: 40px 0 20px;
+        text-align: center;
+
+        .quizHeading {
+            font-size: 28px;
+            font-weight: 800;
+            color: #ffffff;
+
+            .highlight {
+                color: #00f0ff;
+            }
+        }
+
+        .quizSubText {
+            font-size: 16px;
+            color: #cccccc;
+            margin-top: 8px;
+            line-height: 1.5;
+        }
+    }
+
+    .userSummary {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        padding: 20px 30px;
+        margin-top: 20px;
+        font-family: 'Pretendard', sans-serif;
+
+        .profileImg {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #00f0ff;
+        }
+
+        .userInfo {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+        .nickname {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .xp, .rank {
+            font-size: 14px;
+            color: #cccccc;
+        }
+    }
+  }
+
+    .btnSection {
+        margin-top: 40px;
+
+        .startBtn {
+            background-color: #00f0ff;
+            color: #000;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: #00c2d3;
+            }
+        }
+    }
+}
