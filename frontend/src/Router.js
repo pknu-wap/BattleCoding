@@ -29,7 +29,6 @@ const Router = () => {
       <Route path="/" element={<Main />} />
       <Route path="/auth/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/game" element={<GameMain />}/>
 
       <Route path="/game" element={<ProtectedRoute element={<GameMain />} />} />
       <Route path="/mypage" element={<ProtectedRoute element={<MyPage />} />} />
@@ -41,6 +40,7 @@ const Router = () => {
       <Route path="/game/result" element={<ProtectedRoute element={<ResultPage />} />} />
       <Route path="/ranking" element={<ProtectedRoute element={<MyRanking />} />} />
       <Route path="/game/mode" element={<ProtectedRoute element={<ModeSelect />} />} />    </Routes>
+
   );
 };
 
