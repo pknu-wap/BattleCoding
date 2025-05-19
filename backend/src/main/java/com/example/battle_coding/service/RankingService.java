@@ -17,20 +17,20 @@ public class RankingService {
 
     private final UserRepository userRepository;
 
-    // ✅ 수정된 부분: 페이징 처리
     public RankingPageResponseDto getRankingsPaged(int page, int size) {
         List<User> allUsers = userRepository.findAll()
                 .stream()
                 .sorted(Comparator.comparingInt(User::getXp).reversed())
                 .collect(Collectors.toList());
 
-        int total = allUsers.size();
+        int totalUsers = allUsers.size();
+        int totalPages = (int) Math.ceil((double) totalUsers / size);
 
         int start = page * size;
-        int end = Math.min(start + size, total);
+        int end = Math.min(start + size, totalUsers);
 
-        if (start >= total) {
-            return new RankingPageResponseDto(List.of(), total); // 요청 범위 벗어나면 빈 리스트
+        if (start >= totalUsers) {
+            return new RankingPageResponseDto(List.of(), totalPages); // 빈 리스트 + 총 페이지 수
         }
 
         List<RankingResponseDto> paged = allUsers.subList(start, end)
@@ -41,10 +41,9 @@ public class RankingService {
                 })
                 .collect(Collectors.toList());
 
-        return new RankingPageResponseDto(paged, total);
+        return new RankingPageResponseDto(paged, totalPages);
     }
 
-    // 기존 내 랭킹 조회는 그대로 유지
     public RankingResponseDto getMyRanking(String email) {
         List<User> users = userRepository.findAll()
                 .stream()
@@ -61,11 +60,10 @@ public class RankingService {
         return me.toRankingResponseDto(myRank);
     }
 
-    // 유저 순위를 계산하는 헬퍼 메서드
     private int getUserRank(List<User> sortedUsers, User targetUser) {
         for (int i = 0; i < sortedUsers.size(); i++) {
             if (sortedUsers.get(i).getId().equals(targetUser.getId())) {
-                return i + 1; // 1부터 시작하는 순위
+                return i + 1;
             }
         }
         return -1;
