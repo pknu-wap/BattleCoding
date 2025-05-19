@@ -1,5 +1,6 @@
 package com.example.battle_coding.entity;
 
+import com.example.battle_coding.dto.response.RankingResponseDto;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
@@ -15,6 +16,7 @@ import java.time.LocalDateTime;
 @Builder
 @Table(name = "users")
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -38,11 +40,8 @@ public class User {
     @Column(nullable = false, columnDefinition = "INT DEFAULT 0")
     private int totalCorrect = 0;
 
-//    @Column(nullable = false, columnDefinition = "INT DEFAULT 0")
-//    private int totalAttempts = 0;
-
     @Column(nullable = false, columnDefinition = "INT DEFAULT 0")
-    private int totalSubmitted = 0;  // totalSubmitted 필드 추가
+    private int totalSubmitted = 0;
 
     @Column(nullable = false, columnDefinition = "INT DEFAULT 0")
     private int xp = 0;
@@ -57,8 +56,19 @@ public class User {
     // XP와 정답 수를 업데이트하는 메서드
     public void updateXpAndCorrect(int xp, boolean correct) {
         this.xp += xp;
-//        this.totalAttempts += 1;
-        this.totalSubmitted += 1;  // 문제를 제출할 때마다 totalSubmitted 증가
+        this.totalSubmitted += 1;
         if (correct) this.totalCorrect += 1;
+    }
+
+    // 랭킹 DTO로 변환하는 메서드 (순위 포함)
+    public RankingResponseDto toRankingResponseDto(int rank) {
+        return new RankingResponseDto(
+                this.nickname,
+                this.xp,
+                this.totalSubmitted,
+                this.totalCorrect,
+                this.totalSubmitted - this.totalCorrect, // wrong 계산
+                rank
+        );
     }
 }
