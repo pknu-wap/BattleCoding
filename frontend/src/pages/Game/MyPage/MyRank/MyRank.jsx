@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./MyRank.scss";
-import api from "../../../../api";
+import api from "../../../../api/api";
 
 function My_Rank() {
   const [rankInfo, setRankInfo] = useState({
