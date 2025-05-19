@@ -25,18 +25,24 @@ function GamePage_ready() {
       <div className="readyContainer">
         <div className="quizSection">
           <div className="quizCard">
-            <img className="quizImg" src={image} alt={title} />
             <div className="quizContent">
               <h2>{title}</h2>
-              <p dangerouslySetInnerHTML={{ __html: description }}/>
+              <img className="quizImg" src={image} alt={title} />
+              <p dangerouslySetInnerHTML={{ __html: description }} />
             </div>
           </div>
         </div>
 
         <div className="buttonSection">
-          <button className="readyBtn" onClick={() => handleClick("EASY")}>초급</button>
-          <button className="readyBtn" onClick={() => handleClick("MEDIUM")}>중급</button>
-          <button className="readyBtn" onClick={() => handleClick("HARD")}>고급</button>
+          <button className="readyBtn" onClick={() => handleClick("EASY")}>
+            초급
+          </button>
+          <button className="readyBtn" onClick={() => handleClick("MEDIUM")}>
+            중급
+          </button>
+          <button className="readyBtn" onClick={() => handleClick("HARD")}>
+            고급
+          </button>
         </div>
       </div>
     </>

@@ -16,7 +16,6 @@ import java.time.LocalDateTime;
 @Builder
 @Table(name = "users")
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -56,6 +55,7 @@ public class User {
     // XP와 정답 수를 업데이트하는 메서드
     public void updateXpAndCorrect(int xp, boolean correct) {
         this.xp += xp;
+        if (this.xp < 0) this.xp = 0;
         this.totalSubmitted += 1;
         if (correct) this.totalCorrect += 1;
     }
