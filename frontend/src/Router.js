@@ -11,6 +11,7 @@ import RightAnswerPage from "./pages/Game/Game_page/RightAnswerPage";
 import WrongAnswerPage from "./pages/Game/Game_page/WrongAnswerPage";
 import ResultPage from "./pages/Game/Game_page/ResultPage";
 import MyRanking from "./pages/ranking/MyRanking";
+import UserRanking from "./pages/ranking/UserRanking";
 import EditProfile from "./pages/Game/MyPage/MyAccount/EditProfile/EditProfile";
 import ModeSelect from "./pages/Game/Mode_Select/Mode_Select";
 
@@ -39,6 +40,7 @@ const Router = () => {
       <Route path="/game/answer/wrong" element={<ProtectedRoute element={<WrongAnswerPage />} />} />
       <Route path="/game/result" element={<ProtectedRoute element={<ResultPage />} />} />
       <Route path="/ranking" element={<ProtectedRoute element={<MyRanking />} />} />
+        <Route path="/ranking" element={<ProtectedRoute element={<UserRanking />} />} />
       <Route path="/game/mode" element={<ProtectedRoute element={<ModeSelect />} />} />    </Routes>
 
   );
