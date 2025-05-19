@@ -9,27 +9,43 @@ export default function Navbar({ type = "main" }) {
   const location = useLocation();
 
   const [nickname, setNickname] = useState("");
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const isLoggedIn = localStorage.getItem("token") !== null;
   const isMainPage = location.pathname === "/";
 
   useEffect(() => {
-    const fetchNickname = async () => {
-      if (!isLoggedIn) return;
+    const fetchUserInfo = async () => {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        setIsAuthenticated(false);
+        return;
+      }
+
       try {
-        const res = await api.get("/user/me");
+        const res = await api.get("/user/me", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
         setNickname(res.data.nickname || "사용자");
+        setIsAuthenticated(true);
       } catch (err) {
         console.error("닉네임 가져오기 실패", err);
+        setIsAuthenticated(false);
+        localStorage.removeItem("token");
       }
     };
-    fetchNickname();
-  }, [isLoggedIn]);
+    fetchUserInfo();
+  }, []);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
+    setIsAuthenticated(false);
+    setNickname("");
     alert("로그아웃 되었습니다.");
     navigate("/");
+    console.log("토큰 제거 완료, 로그아웃 됨");
   };
 
   return (
@@ -49,10 +65,10 @@ export default function Navbar({ type = "main" }) {
         </div>
 
         <div className="navbarAuth">
-          {isLoggedIn && isMainPage && (
+          {isAuthenticated && isMainPage && (
             <div className="greetingText">{nickname}님, 반갑습니다!</div>
           )}
-          {isLoggedIn ? (
+          {isAuthenticated ? (
             <>
               <button className="btnMypage" onClick={() => navigate("/mypage")}>
                 마이페이지
