@@ -1,14 +1,14 @@
 import React from "react";
 import Navbar_game from "../../Navbar/Navbar_game";
-import GameReady from "./ReadyPage/GamePage_ready";
+import PracticeReady from "./ReadyPage/GamePage_ready";
 
-function PageReady() {
+function PageReadyPage() {
   return (
     <div className="Game_Page">
       <Navbar_game />
-      <GameReady />
+      <PracticeReady />
     </div>
   );
 }
 
-export default PageReady;
+export default PageReadyPage;

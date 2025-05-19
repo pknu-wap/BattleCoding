@@ -120,25 +120,22 @@ function GamePage_question() {
 
     try {
       const result = await submitAnswer(question.id, answer);
-      setIsCorrect(result.isCorrect);
 
-      if (result.isCorrect) {
-        if (isRanking) {
-          const finalScore = calculateFinalScore(1, timeTaken);
+      if (isRanking) {
+        if (result.isCorrect) {
+          const finalScore = calculateFinalScore(1,timeTaken);
           setScore((prev) => prev + finalScore);
-        } else {
-          setScore((prev) => prev + 1);
         }
 
-        setShowFeedback(true);
+        setAnswer("");
+        setCurrentIndex((prev) => prev + 1);
         return;
       }
 
-      if (isRanking) {
-        setXpEarned(result.xpEarned || 0);
-        setUpdatedXp(result.updatedXp || 0);
-        setAnswer("");
-        setCurrentIndex((prev) => prev + 1);
+      setIsCorrect(result.isCorrect);
+      if (result.isCorrect) {
+        setScore((prev) => prev + 1);
+        setShowFeedback(true);
         return;
       }
 
@@ -187,14 +184,18 @@ function GamePage_question() {
               </>
             ) : (
               <>
-                <p
-                  className="feedbackText"
-                  style={{ color: isCorrect ? "#00f0ff" : "#ff4d4f" }}>
-                  {isCorrect ? "정답!" : "오답!"}
-                </p>
-                {!isCorrect && (
+                {!isRanking && (
+                  <p
+                    className="feedbackText"
+                    style={{ color: isCorrect ? "#00f0ff" : "#ff4d4f" }}>
+                    {isCorrect ? "정답!" : "오답!"}
+                  </p>
+                )}
+
+                {!isCorrect && !isRanking && (
                   <p className="correctAnswer">{correctAnswer}</p>
                 )}
+
                 <button type="button" className="nextBtn" onClick={handleNext}>다음 문제</button>
               </>
             )}

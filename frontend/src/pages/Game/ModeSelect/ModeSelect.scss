@@ -1,60 +1,69 @@
-.mode-select-container {
+.modeSelectContainer {
+  background: linear-gradient(to bottom, #0d1a2d, #11293d, #183b4e);
+  
+  width: 100%;
+  min-height: calc(100vh - 56px);
+  overflow-y: auto;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-sizing: border-box;
-  background-color: #2a2d3a;
-  height: 100vh;
-}
 
-.mode-title {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: #ffffff;
-}
+  .modeSelectWrapper {
+    width: 100%;
+    gap: 20px;
+    
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 
-.mode-card-wrapper {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
+    .modeCard {
+      background-color: #1b2430;
 
-.mode-card {
-  width: 300px;
-  height: 500px;
-  background-color: white;
-  border-radius: 5px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  overflow: hidden;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+      width: 300px;
+      height: 500px;
 
-  &:hover {
-    transform: scale(1.08);
-    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
-  }
-}
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 240, 255, 0.1); 
+      
+      text-align: center;
+      font-family: 'Pretendard', sans-serif;
 
-.mode-image {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-}
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
 
-.mode-info {
-  padding: 20px;
+      &:hover {
+        transform: scale(1.08);
+        box-shadow: 0 8px 20px rgba(0, 240, 255, 0.3);
+        border-color: #00f0ff;
 
-  h2 {
-    margin-bottom: 10px;
-    font-size: 1.4rem;
-    color: #333;
-  }
+        .modeInfo h2 {
+          color: #00f0ff;
+        }
+      }
 
-  p {
-    font-size: 0.95rem;
-    color: #666;
+      .modeImg {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+
+      .modeInfo {
+        padding: 20px;
+
+        h2 {
+          margin-bottom: 10px;
+          font-size: 24px;
+          color: #ffffff;
+        }
+
+        p {
+          font-size: 14px;
+          color: #cccccc;
+        }
+      }
+    }
   }
 }

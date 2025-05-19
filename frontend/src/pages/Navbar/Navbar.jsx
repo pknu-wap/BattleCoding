@@ -13,14 +13,15 @@ export default function Navbar({ type = "main" }) {
 
   const isMainPage = location.pathname === "/";
 
-  useEffect(() => {
-    const fetchUserInfo = async () => {
-      const token = localStorage.getItem("token");
-      if (!token) {
-        setIsAuthenticated(false);
-        return;
-      }
+  const token = localStorage.getItem("token");
 
+  useEffect(() => {
+    if (!token) {
+      setIsAuthenticated(false);
+      return;
+    }
+
+    const fetchUserInfo = async () => {
       try {
         const res = await api.get("/user/me", {
           headers: {
@@ -36,13 +37,16 @@ export default function Navbar({ type = "main" }) {
         setNickname("");
 
         if (err?.response?.status === 401) {
-          alert("로그인 세션이 만료되었습니다. 다시 로그인해 주세요.");
-          navigate("/auth/login");
+          setTimeout(() => {
+            alert("로그인 세션이 만료되었습니다. 다시 로그인해 주세요.");
+            navigate("/auth/login");
+          }, 300);
         }
       }
     };
+
     fetchUserInfo();
-  }, []);
+  }, [token]);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -50,7 +54,6 @@ export default function Navbar({ type = "main" }) {
     setNickname("");
     alert("로그아웃 되었습니다.");
     navigate("/");
-    console.log("토큰 제거 완료, 로그아웃 됨");
   };
 
   return (
