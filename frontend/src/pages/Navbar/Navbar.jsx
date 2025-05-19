@@ -33,7 +33,12 @@ export default function Navbar({ type = "main" }) {
       } catch (err) {
         console.error("닉네임 가져오기 실패", err);
         setIsAuthenticated(false);
-        localStorage.removeItem("token");
+        setNickname("");
+
+        if (err?.response?.status === 401) {
+          alert("로그인 세션이 만료되었습니다. 다시 로그인해 주세요.");
+          navigate("/auth/login");
+        }
       }
     };
     fetchUserInfo();
