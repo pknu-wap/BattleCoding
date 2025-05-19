@@ -1,5 +1,5 @@
-const imageFill = "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747307367/FillInTheBlank_qgl1a8.png";
-const imageResult = "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747307368/PredictOutput_kyq9vx.png";
+const imageFill = "https://res.cloudinary.com/drg2mizpe/image/upload/v1747408988/FILLINBLANK_hlrckr.png";
+const imageResult = "https://res.cloudinary.com/drg2mizpe/image/upload/v1747409612/PREDICTOUTPUT_t4afyw.png";
 const imageCS = "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747307367/CsKnowledge_q15va1.png";
 
 const gameData = [

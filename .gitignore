@@ -47,6 +47,7 @@ package-lock.json
 yarn.lock
 
 # 빌드 결과물
+/frontend/build
 /build
 /dist
 
@@ -67,3 +68,4 @@ frontend/.env.production
 Thumbs.db
 deploy.sh
 docker-compose.yml
+
