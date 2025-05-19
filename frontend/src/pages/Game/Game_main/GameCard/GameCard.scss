@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
+
 .gameCard {
   width: 100%;
   max-width: 260px;
@@ -6,7 +8,7 @@
   flex-direction: column;
   align-items: center;
 
-  font-family: 'Pretendard', sans-serif;
+  font-family: "Pretendard", sans-serif;
 
   cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -25,6 +27,22 @@
       height: 100%;
       object-fit: contain;
     }
+  }
+
+  .typingOverlay {
+    position: absolute;
+    top: 20%;
+    left: 15%;
+
+    color: rgba(0, 240, 255, 0.7);
+
+    font-family: "Fira Code", monospace;
+    font-size: 15px;
+
+    pointer-events: none;
+    white-space: pre;
+
+    z-index: 10;
   }
 
   .gameCardBody {
@@ -50,7 +68,8 @@
       font-size: 15px;
       color: #f0f0f0;
       line-height: 1.6;
-      white-space: normal;
+      // white-space: normal;
+      white-space: pre-wrap;
       word-wrap: break-word;
     }
   }
@@ -61,6 +80,6 @@
 
     .gameCardTitle {
       color: #00f0ff;
-    }    
+    }
   }
 }
