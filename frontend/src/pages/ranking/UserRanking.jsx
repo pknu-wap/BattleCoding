@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import api from "../../api";  // axios 설정된 파일
-
+import api from "../../api/api";
 import "./UserRanking.scss";
 
 function UserRanking({ currentUsername }) {

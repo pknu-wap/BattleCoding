@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import api from "../../api";  // api.js를 통해 호출
-import UserRanking from "./UserRanking"; // UserRanking 컴포넌트 import (경로 맞춰서 수정)
+import api from "../../api/api";
+import UserRanking from "./UserRanking";
+import "./MyRanking.scss";
 
 function MyRanking() {
     const [myInfo, setMyInfo] = useState(null);

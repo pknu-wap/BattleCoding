@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import api from "../../../api";
+import api from "../../../api/api";
 import './InputInfo.scss';
 
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;

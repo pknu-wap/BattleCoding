@@ -1,9 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import api from "../../../../api";
 import "./MyAccount.scss";
 
 function MyAccount() {
   const navigate = useNavigate();
+
+  const [user, setUser] = useState({
+    nickname: "",
+    email: ""
+  });
+
+  useEffect(() => {
+    const fetchUserInfo = async () => {
+      try {
+        const res = await api.get("/user/me");
+
+        setUser({
+          nickname: res.data.nickname,
+          email: res.data.email
+        });
+      } catch (err) {
+        console.error("사용자 정보 요청 실패:", err);
+
+        if (err.response?.status === 401) {
+          alert("로그인이 필요합니다.");
+          navigate("/login");
+        }
+      }
+    };
+
+    fetchUserInfo(); 
+  }, [navigate]);
 
   return (
     <div className="myAccount">
@@ -16,8 +44,8 @@ function MyAccount() {
       </div>
       <div className="myInfo">
         <div className="myName">
-          <span className="myNickname">NICKNAME</span>
-          <span className="myEmail">my email</span>
+          <span className="myNickname">{user.nickname}</span>
+          <span className="myEmail">{user.email}</span>
         </div>
         <div className="myBtn">
           <button className="changeBtn" onClick={() => navigate('/mypage/edit')}>Edit Profile</button>
