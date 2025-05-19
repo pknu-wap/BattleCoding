@@ -3,6 +3,7 @@ package com.example.battle_coding.entity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.Where;
 import org.springframework.data.annotation.CreatedDate;
 
 import java.time.LocalDateTime;
@@ -49,6 +50,10 @@ public class Question {
     @Column(name = "is_ranking_only", nullable = false)
     @JsonProperty("isRankingOnly")
     private boolean isRankingOnly = false;
+
+    @Column(name = "is_deleted", nullable = false)
+    @JsonProperty("isDeleted")
+    private boolean isDeleted = false;
 
     @CreatedDate
     @Column(nullable = false, updatable = false)

@@ -279,8 +279,6 @@
     "answers": ["2"],
     "difficulty": "MEDIUM"
   },
-  
-
   {
     "id": 20036,
     "type": "PREDICT_OUTPUT",
