@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./Game_main.scss";
 import Navbar from "../../Navbar/Navbar";
 import GameCard from "./GameCard/GameCard";
@@ -7,6 +7,8 @@ import GameCard_Data from "./GameCard/GameCard_Data";
 
 function GameMain() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const { isRanking } = location.state || {};
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -14,7 +16,7 @@ function GameMain() {
       alert("로그인이 필요합니다.")
       navigate('/auth/login');
     }
-  }, []);
+  }, [navigate]);
   
   return (
     <>
@@ -39,6 +41,7 @@ function GameMain() {
                   title={data.title}
                   description={data.description}
                   type={data.type}
+                  isRanking={isRanking}
                 />
               ))
             )}

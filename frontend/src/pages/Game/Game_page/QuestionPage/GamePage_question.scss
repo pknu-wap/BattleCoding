@@ -14,10 +14,11 @@
     background: linear-gradient(to bottom, #0d1a2d, #11293d, #183b4e);    
 
     width: 100%;
-    padding: 0 0 20px;
+    min-height: 520px;
+    padding: 16px 0;
     box-sizing: border-box;
 
-    flex: 1;
+    flex: 0 0 auto; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,7 +28,7 @@
       background-color: rgba(0, 240, 255, 0.1);
 
       padding: 6px 14px;
-      margin-bottom: 16px;
+      margin-bottom: 10px;
 
       border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0, 240, 255, 0.2);
@@ -75,12 +76,10 @@
     }
 
     .questionImage {
-      max-width: 800px;
-      max-height: 440px;
-      width: auto;
-      height: auto;
+      max-width: 80vw;
+      max-height: 55vh;
       min-width: 600px;
-      min-height: 300px;
+      min-height: 430px;
       padding: 8px;
 
       object-fit: contain;
@@ -99,6 +98,7 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      padding: 20px;
       gap: 20px;
 
       .feedbackText {
@@ -142,6 +142,7 @@
       justify-content: center;
       flex-direction: row;
       align-items: center;
+      padding: 20px;
       gap: 10px;
 
       input {
@@ -183,66 +184,6 @@
           background-color: #00d6e6;
           transform: translateY(-2px);
           box-shadow: 0 6px 16px rgba(0, 240, 255, 0.2);
-        }
-      }
-    }
-  }
-}
-
-.modeOverlay {
-  background: linear-gradient(to bottom, #0d1a2d, #11293d, #183b4e);
-
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
-
-  .modePopup {
-    background-color: #161d28;
-
-    padding: 48px 60px;
-    text-align: center;
-    
-    border-radius: 12px;
-    border: 1px solid rgba(0, 240, 255, 0.15);
-    box-shadow: 0 0 24px rgba(0, 240, 255, 0.06);
-
-    h2 {
-      margin-bottom: 24px;
-      color: #00f0ff;
-      font-size: 24px;
-    }
-
-    .modeBtns {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-
-      button {
-        background-color: #1b2430;
-
-        padding: 12px 24px;
-        border: 2px solid #00f0ff;
-        border-radius: 8px;
-
-        color: #00f0ff;
-        font-size: 18px;
-        font-weight: 700;
-
-        cursor: pointer;
-        transition: all 0.2s;
-
-        &:hover {
-          background-color: #00f0ff;
-          color: #0d1a2d;
-          transform: translateY(-2px);
-          box-shadow: 0 6px 12px rbga(0, 240, 255, 0.3);
         }
       }
     }

@@ -1,6 +1,5 @@
-import React from "react";
 import Navbar_game from "../../Navbar/Navbar_game";
-import Result from "./ResultPage/GamPage_result";
+import Result from "./ResultPage/GamePage_result";
 
 function PageResult() {
   return (

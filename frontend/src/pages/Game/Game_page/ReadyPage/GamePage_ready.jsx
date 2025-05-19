@@ -1,11 +1,11 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "./GamePage_ready.scss";
 
 function GamePage_ready() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { image, title, description, type } = location.state || {};
+  const { image, title, description, type, isRanking } = location.state || {};
 
   useEffect(() => {
     if (!type) {
@@ -16,7 +16,7 @@ function GamePage_ready() {
 
   const handleClick = (difficulty) => {
     navigate('/game/question', {
-      state: { type, difficulty, image, title, description }
+      state: { type, difficulty, image, title, description, isRanking: location.state?.isRanking }
     });
   };
 
