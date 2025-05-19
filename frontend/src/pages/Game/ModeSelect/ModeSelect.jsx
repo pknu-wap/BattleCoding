@@ -1,5 +1,5 @@
 import React from 'react';
-import './Mode_Select.scss';
+import './ModeSelect.scss';
 import { useNavigate } from 'react-router-dom';
 
 const ModeSelect = () => {

@@ -12,7 +12,7 @@ import WrongAnswerPage from "./pages/Game/Game_page/WrongAnswerPage";
 import ResultPage from "./pages/Game/Game_page/ResultPage";
 import MyRanking from "./pages/ranking/MyRanking";
 import EditProfile from "./pages/Game/MyPage/MyAccount/EditProfile/EditProfile";
-import ModeSelect from "./pages/Game/Mode_Select/Mode_Select";
+import ModeSelect from "./pages/Game/ModeSelect/ModeSelect";
 
 const isAuthenticated = () => {
   return !!localStorage.getItem("token");
