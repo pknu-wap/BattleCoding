@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import "./Game_main.scss";
 import Navbar from "../../Navbar/Navbar";
 import GameCard from "./GameCard/GameCard";
 import GameCard_Data from "./GameCard/GameCard_Data";
+import "./PracticeGame_main.scss";
 
-function GameMain() {
+function PracticeGameMain() {
   const navigate = useNavigate();
   const location = useLocation();
   const { isRanking } = location.state || {};
@@ -56,4 +56,4 @@ function GameMain() {
   );
 }
 
-export default GameMain;
+export default PracticeGameMain;

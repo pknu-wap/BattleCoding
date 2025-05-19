@@ -1,0 +1,69 @@
+.modeSelectContainer {
+  background: linear-gradient(to bottom, #0d1a2d, #11293d, #183b4e);
+  
+  width: 100%;
+  min-height: calc(100vh - 56px);
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .modeSelectWrapper {
+    width: 100%;
+    gap: 20px;
+    
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .modeCard {
+      background-color: #1b2430;
+
+      width: 300px;
+      height: 500px;
+
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 240, 255, 0.1); 
+      
+      text-align: center;
+      font-family: 'Pretendard', sans-serif;
+
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.08);
+        box-shadow: 0 8px 20px rgba(0, 240, 255, 0.3);
+        border-color: #00f0ff;
+
+        .modeInfo h2 {
+          color: #00f0ff;
+        }
+      }
+
+      .modeImg {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+
+      .modeInfo {
+        padding: 20px;
+
+        h2 {
+          margin-bottom: 10px;
+          font-size: 24px;
+          color: #ffffff;
+        }
+
+        p {
+          font-size: 14px;
+          color: #cccccc;
+        }
+      }
+    }
+  }
+}
