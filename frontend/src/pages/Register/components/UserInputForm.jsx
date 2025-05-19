@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import InputInfo from './InputInfo';
 import './UserInputForm.scss';
-import api from "../../../api";
+import api from "../../../api/api";
 
 const UserInputForm = () => {
     const [info, setInfo] = useState({

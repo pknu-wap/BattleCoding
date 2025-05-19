@@ -25,10 +25,11 @@
         align-items: center;
         gap: 40px;
     }
+
     .navbarLogo {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 700;
-        color: #ffffff;
+        color: #dddddd;
 
         cursor: pointer;
     }
@@ -41,7 +42,7 @@
             all: unset;
             cursor: pointer;
             
-            font-size: 16px;
+            font-size: 17px;
             font-weight: 500;
             text-decoration: none;
             color: #ffffff;
@@ -54,7 +55,17 @@
 
     .navbarAuth {
         display: flex;
+        align-items: center;
         gap: 10px;
+
+        .greetingText {
+            margin-right: 20px;
+            color: #f0f0f0;
+            font-size: 16px;
+            font-weight: 600;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+            animation: slideInLeft 0.6s ease both;
+        }
     
         button {
             padding: 6px 16px;
@@ -93,4 +104,15 @@
             }
         }
     }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
