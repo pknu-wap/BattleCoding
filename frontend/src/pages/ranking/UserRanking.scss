@@ -49,7 +49,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding: 0 12px; /* 좌우 여백 추가 */
+  padding: 0 12px;
   box-sizing: border-box;
 }
 
@@ -83,6 +83,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 0.5;
 }
 
 .userRow .placing .rank {
@@ -95,6 +96,7 @@
   font-size: 16px;
   color: #cccccc;
   font-weight: 500;
+  flex: 1.5;
 }
 
 .userRow .scoreline {
@@ -102,11 +104,13 @@
   gap: 4px;
   font-size: 16px;
   color: #aaaaaa;
+  flex: 2;
 }
 
 .userRow .percent {
   font-size: 16px;
   color: #ffffff;
+  flex: 1;
 }
 
 /* Top 3 Styling */
@@ -115,6 +119,7 @@
   background: linear-gradient(135deg, #fff9c4, #ffe082);
   box-shadow: 0 0 12px #ffd700aa;
   font-weight: 800;
+  color: #000000;
 }
 
 .userRow.first .placing .rank {
@@ -128,6 +133,7 @@
   background: linear-gradient(135deg, #eeeeee, #cfcfcf);
   box-shadow: 0 0 12px #c0c0c0aa;
   font-weight: 800;
+  color: #000000;
 }
 
 .userRow.second .placing .rank {
@@ -141,6 +147,7 @@
   background: linear-gradient(135deg, #f0c290, #d2a679);
   box-shadow: 0 0 12px #cd7f32aa;
   font-weight: 800;
+  color: #000000;
 }
 
 .userRow.third .placing .rank {
@@ -149,12 +156,14 @@
   text-shadow: 0 0 5px #f5deb3;
 }
 
+/* 현재 사용자 강조 */
 .userRow.currentUser {
-  background-color: #3b4160;
+  background-color: #3b4160 !important;
   border: 2px solid #00f0ff;
   box-shadow: 0 0 10px #00f0ff55;
   font-weight: 700;
   color: #ffffff;
+  z-index: 1;
 }
 
 /* 모바일 대응 */

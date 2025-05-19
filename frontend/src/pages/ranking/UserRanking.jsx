@@ -10,7 +10,7 @@ function UserRanking({ currentUsername }) {
             try {
                 const response = await api.get("/user/rankings");
                 const data = response.data;
-                
+
                 if (Array.isArray(data)) {
                     setUserData(data);
                 } else {
@@ -36,7 +36,7 @@ function UserRanking({ currentUsername }) {
             </div>
             <div className="userList">
                 {userData.slice(0, 10).map((user, index) => {
-                    const rank = user.rank ?? index + 1;
+                    const rank = index + 1;
 
                     let rankClass = "";
                     if (rank === 1) rankClass = "first";
@@ -62,7 +62,6 @@ function UserRanking({ currentUsername }) {
                                 <b className="aNumber">{user.totalSubmitted}</b>/
                                 <b className="rNumber">{user.totalCorrect}</b>/
                                 <b className="wNumber">{user.totalWrong}</b>
-
                             </span>
                             <span className="percent">
                                 <b className="r">{user.xp}</b> XP
