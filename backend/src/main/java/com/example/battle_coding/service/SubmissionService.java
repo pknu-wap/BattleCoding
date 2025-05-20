@@ -45,7 +45,7 @@ public class SubmissionService {
 
         // 답이 맞았고 랭킹 모드라면 xpEarned를 계산
         // 랭킹 모드인데 오답 제출 시 xp 감점
-        if (request.isRanking()) {
+        if (Boolean.TRUE.equals(request.isRanking())) {
             if (isCorrect) {
                 xpEarned = calculateXp(question.getDifficulty().name(), timeTaken);
             } else {
@@ -65,7 +65,7 @@ public class SubmissionService {
                 .isCorrect(isCorrect)
                 .timeTaken(timeTaken)
                 .xpEarned(xpEarned)
-                .isRanking(request.isRanking())
+                .isRanking(Boolean.TRUE.equals(request.isRanking()))
                 .submittedAt(LocalDateTime.now())
                 .build();
 
