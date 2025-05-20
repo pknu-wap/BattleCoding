@@ -52,7 +52,7 @@ yarn.lock
 /dist
 
 # 환경 변수 파일
-.env
+frontend/.env.production
 .env.local
 .env.development.local
 .env.test.local
