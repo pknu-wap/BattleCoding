@@ -77,8 +77,14 @@ public class SubmissionService {
                 generateMessage(isCorrect),
                 user.getXp(),
                 user.getTotalCorrect(),
-                user.getTotalSubmitted()
+                user.getTotalSubmitted(),
+                question.getId(),
+                question.getDifficulty().name(),
+                question.getType().name(),
+                question.isRankingOnly(),
+                request.userAnswer()
         );
+
     }
 
     private User getUserFromAuth(Authentication authentication) {
