@@ -29,6 +29,12 @@ public class User {
     @Column(unique = true, nullable = false, length = 25)
     private String nickname;
 
+    @Column(length = 500)
+    private String profileImage;
+
+    @Column(nullable = false)
+    private boolean nicknameChanged = false;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 10)
     private LoginProvider provider = LoginProvider.LOCAL;
