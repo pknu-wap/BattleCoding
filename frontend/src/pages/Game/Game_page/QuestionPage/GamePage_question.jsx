@@ -68,6 +68,14 @@ function GamePage_question() {
   }, [currentIndex]);
 
   useEffect(() => {
+    if (!isRanking) {
+      setIsCountingDown(false);
+      setHasShownCountdown(true);
+      setStartTime(Date.now());
+    }
+  }, [isRanking]);
+
+  useEffect(() => {
     if (!isRanking || !isCountingDown || hasShownCountdown) return;
 
     let steps = ["3", "2", "1", "문제 시작!"];

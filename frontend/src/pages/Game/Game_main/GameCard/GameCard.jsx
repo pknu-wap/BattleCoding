@@ -38,6 +38,7 @@ function GameCard({
   title,
   description,
   type,
+  difficulty,
   isRanking,
   typing = "",
   typingPosition = { top: "20%", left: "15%" },
@@ -80,7 +81,7 @@ function GameCard({
 
   const handleClick = () => {
     navigate("/game/ready", {
-      state: { image, title, description, type, isRanking },
+      state: { image, title, description, type, difficulty, isRanking },
     });
   };
 
