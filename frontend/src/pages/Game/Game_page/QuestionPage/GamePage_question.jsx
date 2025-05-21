@@ -130,7 +130,7 @@ function GamePage_question() {
       questionId,
       userAnswer,
       timeTaken,
-      isRanking,
+      isRanking: Boolean(isRanking),
     });
     return response.data;
   };
