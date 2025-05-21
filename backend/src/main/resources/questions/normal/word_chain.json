@@ -45,7 +45,7 @@
     "question": "신속",
     "imageUrl": null,
     "answers": [
-      "정확"
+      "정확", "배달"
     ],
     "difficulty": "EASY"
   },
@@ -1675,7 +1675,7 @@
     "question": "카페",
     "imageUrl": null,
     "answers": [
-      "베네"
+      "베네", "라떼"
     ],
     "difficulty": "EASY"
   },
