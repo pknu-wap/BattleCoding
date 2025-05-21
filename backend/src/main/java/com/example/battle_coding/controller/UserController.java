@@ -41,10 +41,10 @@ public class UserController {
                 user.getEmail(),
                 user.getNickname(),
                 user.getTotalCorrect(),
-//                user.getTotalAttempts(),
-                user.getTotalSubmitted(), // 추가된 필드
+                user.getTotalSubmitted(),
                 user.getXp(),
-                user.getCreatedAt()
+                user.getCreatedAt(),
+                user.getProfileImage()
         );
 
         return ResponseEntity.ok(response);

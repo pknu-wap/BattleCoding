@@ -39,6 +39,7 @@ public class AuthService {
                 .nickname(request.nickname())
                 .provider(request.provider())
                 .providerId(request.providerId())
+                .profileImage("https://res.cloudinary.com/dmby7fmvo/image/upload/v1747656353/%EA%B8%B0%EB%B3%B8_%ED%94%84%EB%A1%9C%ED%95%84_o4xxyn.png")
                 .createdAt(LocalDateTime.now())
                 .build();
 
