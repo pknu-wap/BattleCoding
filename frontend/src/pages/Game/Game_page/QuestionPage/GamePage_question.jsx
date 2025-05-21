@@ -8,7 +8,7 @@ import "./GamePage_question.scss";
 function GamePage_question() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { type, difficulty, image, title, description, isRanking } = location.state || {};
+  const { type = null, difficulty = null, image, title, description, isRanking } = location.state || {};
 
   const [questions, setQuestions] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -18,14 +18,16 @@ function GamePage_question() {
   const [showFeedback, setShowFeedback] = useState(false);
   const [isCorrect, setIsCorrect] = useState("");
   const [correctAnswer, setCorrectAnswer] = useState("");
+  const [submissionResults, setSubmissionResults] = useState([]);
   const [startTime, setStartTime] = useState(Date.now());
 
-  const [xpEarned, setXpEarned] = useState(0);
-  const [updatedXp, setUpdatedXp] = useState(0);
+  const [countdownText, setCountdownText] = useState("");
+  const [isCountingDown, setIsCountingDown] = useState(true);
+  const [hasShownCountdown, setHasShownCountdown] = useState(false);
 
   useEffect(() => {
-    if (!type || !difficulty) {
-      alert("문제 유형, 난이도 또는 모드 정보가 없습니다.");
+    if (!isRanking && ((!type || !difficulty))) {
+      alert("문제 유형이나 난이도 정보가 없습니다.");
       navigate('/game');
     }
   }, [type, difficulty, isRanking, navigate]);
@@ -62,8 +64,31 @@ function GamePage_question() {
   }, [type, difficulty, navigate, isRanking]);
 
   useEffect(() => {
-    setStartTime(Date.now());
+    if(!isRanking) setStartTime(Date.now());
   }, [currentIndex]);
+
+  useEffect(() => {
+    if (!isRanking || !isCountingDown || hasShownCountdown) return;
+
+    let steps = ["3", "2", "1", "문제 시작!"];
+    let idx = 0;
+
+    const interval = setInterval(() => {
+      setCountdownText(steps[idx]);
+      idx++;
+
+      if (idx === steps.length) {
+        clearInterval(interval);
+        setTimeout(() => {
+          setIsCountingDown(false);
+          setHasShownCountdown(true);
+          setStartTime(Date.now());
+        }, 800)
+      }
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [isCountingDown, isRanking, hasShownCountdown]);
 
   useEffect(() => {
     if (questions.length > 0 && currentIndex >= questions.length) {
@@ -71,10 +96,11 @@ function GamePage_question() {
         state: {
           image, title, description, type, difficulty, isRanking,
           score: Math.round(score),
+          submissionResults
          }
       });
     }
-  }, [currentIndex, questions.length, navigate, image, title, description, type, difficulty, score, isRanking]);
+  }, [questions.length, currentIndex, navigate, image, title, description, type, difficulty, isRanking, score, submissionResults]);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -122,6 +148,12 @@ function GamePage_question() {
       const result = await submitAnswer(question.id, answer);
 
       if (isRanking) {
+        setSubmissionResults(prev => [...prev, {
+          ...result,
+          questionText: question.question || '',
+          imageUrl: question.imageUrl || '',
+        }]);
+
         if (result.isCorrect) {
           const finalScore = calculateFinalScore(1,timeTaken);
           setScore((prev) => prev + finalScore);
@@ -129,6 +161,7 @@ function GamePage_question() {
 
         setAnswer("");
         setCurrentIndex((prev) => prev + 1);
+
         return;
       }
 
@@ -158,7 +191,13 @@ function GamePage_question() {
 
   return (
     <form className="questionWrapper" onSubmit={handleSubmit}>
-      {currentQuestion && (
+      {isRanking && isCountingDown && (
+        <div className="countdownBox">
+          <div className="countdownText">{countdownText}</div>
+        </div>
+      )}
+
+      {!isCountingDown && currentQuestion && (
         <>
           <div className="questionSection">
             <div className="questionNumber">{currentIndex + 1} / {questions.length}</div>
