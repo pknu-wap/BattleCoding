@@ -6,5 +6,11 @@ public record SubmissionResponseDto(
         String message,
         int updatedXp,
         int totalCorrect,
-        int totalSubmitted
+        int totalSubmitted,
+        int questionId,
+        String difficulty,
+        String type,
+        boolean isRankingOnly,
+        String userAnswer
 ) {}
+
