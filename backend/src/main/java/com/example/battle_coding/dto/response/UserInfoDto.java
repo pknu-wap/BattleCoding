@@ -9,6 +9,7 @@ public record UserInfoDto(
         int totalSubmitted,
         int xp,
         LocalDateTime createdAt,
-        String profileImage
+        String profileImage,
+        boolean nicknameChanged
 ) {}
 

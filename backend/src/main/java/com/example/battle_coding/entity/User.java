@@ -26,9 +26,11 @@ public class User {
     @Column(unique = true, nullable = true)
     private String email;
 
+    @Setter
     @Column(nullable = true)
     private String password;
 
+    @Setter
     @Column(unique = true, nullable = false, length = 25)
     private String nickname;
 
@@ -37,6 +39,7 @@ public class User {
     @Column(name = "profile_image", length = 500)
     private String profileImage = DEFAULT_IMAGE;
 
+    @Setter
     @Column(nullable = false)
     private boolean nicknameChanged = false;
 

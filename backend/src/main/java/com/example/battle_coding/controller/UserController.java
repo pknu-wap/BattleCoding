@@ -1,5 +1,7 @@
 package com.example.battle_coding.controller;
 
+import com.example.battle_coding.dto.request.NicknameUpdateRequestDto;
+import com.example.battle_coding.dto.request.PasswordUpdateRequestDto;
 import com.example.battle_coding.dto.request.UpdateProfileImageRequestDto;
 import com.example.battle_coding.dto.response.CommonResponseDto;
 import com.example.battle_coding.dto.response.UserInfoDto;
@@ -44,7 +46,8 @@ public class UserController {
                 user.getTotalSubmitted(),
                 user.getXp(),
                 user.getCreatedAt(),
-                user.getProfileImage()
+                user.getProfileImage(),
+                user.isNicknameChanged()
         );
 
         return ResponseEntity.ok(response);
@@ -60,4 +63,26 @@ public class UserController {
 
         return ResponseEntity.ok(new CommonResponseDto(true, "프로필 이미지가 변경되었습니다."));
     }
+
+    @PutMapping("/profile/nickname")
+    public ResponseEntity<CommonResponseDto> updateNickname(
+            @RequestBody NicknameUpdateRequestDto request,
+            Authentication authentication
+    ) {
+        String email = (String) authentication.getPrincipal();
+        userService.updateNickname(email, request.newNickname());
+        return ResponseEntity.ok(new CommonResponseDto(true, "닉네임이 성공적으로 변경되었습니다."));
+    }
+
+    @PutMapping("/profile/password")
+    public ResponseEntity<CommonResponseDto> updatePassword(
+            @RequestBody PasswordUpdateRequestDto request,
+            Authentication authentication
+    ) {
+        String email = (String) authentication.getPrincipal();
+        userService.updatePassword(email, request.currentPassword(), request.newPassword());
+        return ResponseEntity.ok(new CommonResponseDto(true, "비밀번호가 성공적으로 변경되었습니다."));
+    }
+
+
 }
