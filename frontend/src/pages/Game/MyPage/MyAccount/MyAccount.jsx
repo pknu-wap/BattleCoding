@@ -8,7 +8,8 @@ function MyAccount() {
 
   const [user, setUser] = useState({
     nickname: "",
-    email: ""
+    email: "",
+    profileImage: "",
   });
 
   useEffect(() => {
@@ -16,10 +17,29 @@ function MyAccount() {
       try {
         const res = await api.get("/user/me");
 
-        setUser({
-          nickname: res.data.nickname,
-          email: res.data.email
-        });
+        const { nickname, email, profileImage } = res.data;
+
+        if (!profileImage) {
+          const imageRes = await api.get("/user/profile/images");
+          const imageList = imageRes.data;
+          const defaultImage = imageList[0];
+
+          await api.put("/user/profile/image", {
+            profileImage: defaultImage,
+          });
+
+          const updated = await api.get("/user/me");
+
+          setUser({
+            nickname: updated.data.nickname,
+            email: updated.data.email,
+            profileImage: updated.data.profileImage,
+          });
+          
+        } else {
+          setUser({ nickname, email, profileImage });
+        }
+
       } catch (err) {
         console.error("사용자 정보 요청 실패:", err);
 
@@ -39,7 +59,7 @@ function MyAccount() {
         <img
           className="profileImage"
           alt="프로필 사진"
-          src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fyt3.googleusercontent.com%2Fytc%2FAIdro_lID9IEcsQjGr44894Ha1y2gjAmMzAl9Cp1mQKNDfbJmg%3Ds900-c-k-c0x00ffffff-no-rj&type=sc960_832"
+          src={user.profileImage}
         />
       </div>
       <div className="myInfo">

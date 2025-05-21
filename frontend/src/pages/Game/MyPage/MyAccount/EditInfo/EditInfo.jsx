@@ -60,7 +60,8 @@ function EditProfile() {
 
         <div className="buttons">
           <button type="submit">저장</button>
-          <button type="cancel" onClick={() => navigate('/mypage')}>
+          <button type="button" onClick={(e) => {
+            e.preventDefault(); navigate('/mypage')}}>
             취소
           </button>
         </div>
