@@ -117,6 +117,17 @@
     }
   }
 
+  .rankingTimer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 8px;
+      
+    font-size: 24px;
+    font-weight: 700;
+    color: #00f0ff;
+  }
+
   .answerSection {
     flex: 1;
     display: flex;
@@ -172,7 +183,7 @@
       justify-content: center;
       flex-direction: row;
       align-items: center;
-      padding: 20px;
+      padding: 0;
       gap: 10px;
 
       input {

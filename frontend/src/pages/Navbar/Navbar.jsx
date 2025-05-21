@@ -60,13 +60,12 @@ export default function Navbar({ type = "main" }) {
     <nav className="navbar">
       <div className="navbarInner">
         <div className="navbarLeft">
-          <div className="navbarLogo" onClick={() => navigate("/")}>
-            Battle Coding
-          </div>
+          <div className="navbarLogo" onClick={() => navigate("/")}>Battle Coding</div>
 
           {(type === "main" || type === "user") && (
             <div className="navbarMenu">
-              <button onClick={() => navigate("/game")}>Quizzes</button>
+              <button onClick={() => navigate("/game/practice")}>Practice Game</button>
+              <button onClick={() => navigate("/game/ranking")}>Ranking Game</button>
               <button onClick={() => navigate("/ranking")}>Ranking</button>
             </div>
           )}

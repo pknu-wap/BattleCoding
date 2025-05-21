@@ -18,37 +18,43 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-    }
 
-    .navbarLeft {
-        display: flex;
-        align-items: center;
-        gap: 40px;
-    }
+        .navbarLeft {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            margin-left: -120px;
 
-    .navbarLogo {
-        font-size: 18px;
-        font-weight: 700;
-        color: #dddddd;
+            .navbarLogo {
+                display: flex;
+                align-items: center;
+                gap: 4px;
 
-        cursor: pointer;
-    }
+                font-size: 21px;
+                font-weight: 700;
+                color: #ffffff;
 
-    .navbarMenu {
-        display: flex;
-        gap: 24px;
-    
-        button {
-            all: unset;
-            cursor: pointer;
+                cursor: pointer;
+            }
+
+            .navbarMenu {
+                display: flex;
+                align-items: center;
+                gap: 20px;
             
-            font-size: 17px;
-            font-weight: 500;
-            text-decoration: none;
-            color: #ffffff;
-        
-            &:hover {
-                color: #00F0FF;
+                button {
+                    all: unset;
+                    cursor: pointer;
+                    
+                    font-size: 18px;
+                    font-weight: 600;
+                    line-height: 1;  
+                    color: #ffffff;
+                
+                    &:hover {
+                        color: #00F0FF;
+                    }
+                }
             }
         }
     }

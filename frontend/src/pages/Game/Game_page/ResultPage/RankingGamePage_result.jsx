@@ -49,7 +49,7 @@ function RankingResult() {
                 <h1>랭킹 모드 결과</h1>
                 <div className="resultSumarry">
                     <div className="summaryInfo">총 정답<span>{correctCount} / 10</span></div>
-                    <div className="summaryInfo">획득 XP <span>{totalXp >= 0 ? `+${totalXp}` : totalXp}</span></div>
+                    <div className="summaryInfo">획득 XP <span>{totalXp > 0 ? `+${totalXp}` : totalXp < 0 ? totalXp : "0"}</span></div>
                     <div className="summaryInfo">순위 <span>{rank}등</span></div>
                 </div>
 

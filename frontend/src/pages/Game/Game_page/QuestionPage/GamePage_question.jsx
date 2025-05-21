@@ -25,6 +25,9 @@ function GamePage_question() {
   const [isCountingDown, setIsCountingDown] = useState(true);
   const [hasShownCountdown, setHasShownCountdown] = useState(false);
 
+  const [remainingTime, setRemainingTime] = useState(15);
+  const [timerId, setTimerId] = useState(null);
+
   useEffect(() => {
     if (!isRanking && ((!type || !difficulty))) {
       alert("문제 유형이나 난이도 정보가 없습니다.");
@@ -99,6 +102,25 @@ function GamePage_question() {
   }, [isCountingDown, isRanking, hasShownCountdown]);
 
   useEffect(() => {
+    if (!isRanking || isCountingDown || !hasShownCountdown) return;
+
+    setRemainingTime(15);
+    const id = setInterval(() => {
+      setRemainingTime(prev => {
+        if (prev <= 1) {
+          clearInterval(id);
+          document.querySelector("form").requestSubmit();
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+    setTimerId(id);
+
+    return () => clearInterval(id);
+  }, [currentIndex, isRanking, isCountingDown, hasShownCountdown]);
+
+  useEffect(() => {
     if (questions.length > 0 && currentIndex >= questions.length) {
       navigate('/game/result', {
         state: {
@@ -148,6 +170,9 @@ function GamePage_question() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (timerId) clearInterval(timerId);
+
     const question = questions[currentIndex];
     const endTime = Date.now();
     const timeTaken = Math.floor((endTime - startTime) / 1000);
@@ -217,7 +242,11 @@ function GamePage_question() {
               <p style={{ color: "white" }}>문제가 없습니다.</p>
             )}
           </div>
-
+          
+          {isRanking && !isCountingDown && (
+            <div className="rankingTimer">⏱ {remainingTime}초</div>
+          )}
+          
           <div className={`answerSection ${showFeedback ? "feedbackMode" : "inputMode"}`}>
             {!showFeedback ? (
               <>
