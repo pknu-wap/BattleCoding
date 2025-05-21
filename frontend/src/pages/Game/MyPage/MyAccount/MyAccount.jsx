@@ -48,7 +48,8 @@ function MyAccount() {
           <span className="myEmail">{user.email}</span>
         </div>
         <div className="myBtn">
-          <button className="changeBtn" onClick={() => navigate('/mypage/edit')}>Edit Profile</button>
+          <button className="changeBtn" onClick={() => navigate('/mypage/edit')}>사진 선택</button>
+          <button className="changeBtn" onClick={() => navigate('/mypage/edit-info')}>정보 수정</button>
         </div>
       </div>
     </div>

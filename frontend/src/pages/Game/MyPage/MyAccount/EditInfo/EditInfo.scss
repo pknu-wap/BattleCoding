@@ -22,34 +22,51 @@
     font-size: 20px;
   }
 
-  .image-selection {
+  .nickname-section {
+    margin-top: 30px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 5px;
-    padding: 10px;
-    background-color: #2a2d3a;
-    border-radius: 8px;
-    max-width: 490px;
+    flex-direction: column;
+    align-items: flex-start;
     width: 100%;
+    max-width: 490px;
 
-    img {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      object-fit: cover;
-      cursor: pointer;
-      border: 2px solid transparent;
-      transition: all 0.2s ease;
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      font-size: 16px;
+      font-family: 'Pretendard', sans-serif;
+      background-color: #1e1e2f;
+      color: #fff;
+      outline: none;
 
-      &:hover {
-        transform: scale(1.05);
-        border-color: #00f0ff;
+      &::placeholder {
+        color: #aaa;
       }
+    }
+  }
 
-      &.selected {
-        border-color: #00f0ff;
-        box-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
+  .password-section {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 490px;
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      font-size: 16px;
+      font-family: 'Pretendard', sans-serif;
+      background-color: #1e1e2f;
+      color: #fff;
+      outline: none;
+
+      & + input {
+        margin-top: 10px;
       }
     }
   }
