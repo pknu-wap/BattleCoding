@@ -6,5 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ProfileImageRepository extends JpaRepository<ProfileImage, Long> {
+    boolean existsByImageUrl(String imageUrl);
 }
 
