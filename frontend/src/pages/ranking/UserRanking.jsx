@@ -7,7 +7,22 @@ function UserRanking({ currentUsername }) {
     const [page, setPage] = useState(0);
     const [totalPages, setTotalPages] = useState(0);
     const [loading, setLoading] = useState(false);
+    const [myRank, setMyRank] = useState(null);
 
+    // 내 랭킹 조회
+    useEffect(() => {
+        const fetchMyRank = async () => {
+            try {
+                const response = await api.get("/user/my-ranking");
+                setMyRank(response.data.rank); // rank 필드명 맞게 조정
+            } catch (error) {
+                console.error("내 랭킹 불러오기 실패:", error);
+            }
+        };
+        fetchMyRank();
+    }, []);
+
+    // 랭킹 데이터 조회
     useEffect(() => {
         const fetchRankingData = async () => {
             setLoading(true);
@@ -15,7 +30,6 @@ function UserRanking({ currentUsername }) {
                 const response = await api.get("/user/rankings", { params: { page } });
                 const data = response.data;
 
-                // 페이징 응답 구조에 맞게 데이터 처리
                 if (data && Array.isArray(data.content)) {
                     setUserData(data.content);
                     setTotalPages(data.totalPages);
@@ -37,11 +51,12 @@ function UserRanking({ currentUsername }) {
     }, [page]);
 
     const handlePrevPage = () => {
-        if (page > 0) setPage(page - 1);
+        // 내 랭킹이 30 이내일 때만 페이지 이동 가능
+        if (page > 0 && myRank !== null && myRank <= 30) setPage(page - 1);
     };
 
     const handleNextPage = () => {
-        if (page < totalPages - 1) setPage(page + 1);
+        if (page < totalPages - 1 && myRank !== null && myRank <= 30) setPage(page + 1);
     };
 
     return (
@@ -59,7 +74,6 @@ function UserRanking({ currentUsername }) {
             ) : (
                 <div className="userList">
                     {userData.map((user, index) => {
-                        // 페이지에 따라 실제 랭킹 계산 (page * size + index + 1)
                         const rank = page * 10 + index + 1;
 
                         let rankClass = "";
@@ -74,22 +88,22 @@ function UserRanking({ currentUsername }) {
                                 id={`user-rank-${rank}`}
                             >
                                 <div className="placing">
-                                    <span className="rank">
-                                        {rank === 1 && "🥇"}
-                                        {rank === 2 && "🥈"}
-                                        {rank === 3 && "🥉"}
-                                        {rank > 3 && `${rank}등`}
-                                    </span>
+                  <span className="rank">
+                    {rank === 1 && "🥇"}
+                      {rank === 2 && "🥈"}
+                      {rank === 3 && "🥉"}
+                      {rank > 3 && `${rank}등`}
+                  </span>
                                 </div>
                                 <span className="username">{user.nickname}</span>
                                 <span className="scoreline">
-                                    <b className="aNumber">{user.totalSubmitted}</b>/
-                                    <b className="rNumber">{user.totalCorrect}</b>/
-                                    <b className="wNumber">{user.totalWrong}</b>
-                                </span>
+                  <b className="aNumber">{user.totalSubmitted}</b>/
+                  <b className="rNumber">{user.totalCorrect}</b>/
+                  <b className="wNumber">{user.totalWrong}</b>
+                </span>
                                 <span className="percent">
-                                    <b className="r">{user.xp}</b> XP
-                                </span>
+                  <b className="r">{user.xp}</b> XP
+                </span>
                             </div>
                         );
                     })}
@@ -98,9 +112,23 @@ function UserRanking({ currentUsername }) {
 
             {/* 페이징 버튼 */}
             <div className="pagination">
-                <button onClick={handlePrevPage} disabled={page === 0}>이전</button>
-                <span>{page + 1} / {totalPages}</span>
-                <button onClick={handleNextPage} disabled={page >= totalPages - 1}>다음</button>
+                <button
+                    onClick={handlePrevPage}
+                    disabled={page === 0 || (myRank !== null && myRank > 30)}
+                    className="pageBtn"
+                >
+                    이전
+                </button>
+                <span className="pageInfo">
+          {page + 1} / {totalPages}
+        </span>
+                <button
+                    onClick={handleNextPage}
+                    disabled={page >= totalPages - 1 || (myRank !== null && myRank > 30)}
+                    className="pageBtn"
+                >
+                    다음
+                </button>
             </div>
         </div>
     );

@@ -215,3 +215,46 @@
     font-size: 14px;
   }
 }
+
+/* ----------- pagination 추가 스타일 ----------- */
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;  /* 중앙 정렬 */
+  align-items: center;
+  gap: 16px;
+  font-size: 16px;
+  color: #bbbbbb;
+  user-select: none;
+  padding-bottom: 12px;
+  /* 버튼 스타일도 자연스럽게 둥글고 부드럽게 */
+}
+
+.pagination button {
+  background-color: #44475a;
+  color: #f8f8f2;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #6272a4;
+}
+
+.pagination button:disabled {
+  background-color: #2f3136;
+  cursor: default;
+  color: #666666;
+}
+
+.pagination span {
+  min-width: 60px;
+  text-align: center;
+  font-weight: 700;
+  color: #f8f8f2;
+  user-select: none;
+}

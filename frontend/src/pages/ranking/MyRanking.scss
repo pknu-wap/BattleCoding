@@ -92,3 +92,17 @@
     max-height: 300px;
   }
 }
+
+/* 깜빡임 애니메이션 효과 */
+@keyframes highlightFlash {
+  0%, 100% {
+    background-color: #3b4160;
+  }
+  50% {
+    background-color: #00f0ff44;
+  }
+}
+
+.my-highlight.flash {
+  animation: highlightFlash 1.5s ease;
+}
