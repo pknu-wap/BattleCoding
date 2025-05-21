@@ -1,12 +1,11 @@
 package com.example.battle_coding.controller;
 
+import com.example.battle_coding.entity.ProfileImage;
 import com.example.battle_coding.repository.ProfileImageRepository;
+import com.example.battle_coding.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import com.example.battle_coding.entity.ProfileImage;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,6 +15,7 @@ import java.util.List;
 public class ProfileImageController {
 
     private final ProfileImageRepository profileImageRepository;
+    private final UserService userService;
 
     @GetMapping("/images")
     public ResponseEntity<List<String>> getAllProfileImages() {
@@ -25,4 +25,5 @@ public class ProfileImageController {
                 .toList();
         return ResponseEntity.ok(imageUrls);
     }
+
 }

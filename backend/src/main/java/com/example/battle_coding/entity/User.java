@@ -29,6 +29,7 @@ public class User {
     @Column(unique = true, nullable = false, length = 25)
     private String nickname;
 
+    @Setter
     @Column(length = 500)
     private String profileImage;
 

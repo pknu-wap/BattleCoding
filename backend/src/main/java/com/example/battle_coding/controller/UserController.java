@@ -1,21 +1,23 @@
 package com.example.battle_coding.controller;
 
+import com.example.battle_coding.dto.request.UpdateProfileImageRequestDto;
+import com.example.battle_coding.dto.response.CommonResponseDto;
 import com.example.battle_coding.dto.response.UserInfoDto;
 import com.example.battle_coding.entity.User;
 import com.example.battle_coding.repository.UserRepository;
+import com.example.battle_coding.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/user")
 @RequiredArgsConstructor
 public class UserController {
     private final UserRepository userRepository;
+    private final UserService userService;
+
 
     @GetMapping("/check-nickname")
     public ResponseEntity<Boolean> checkNickname(@RequestParam String nickname) {
@@ -46,5 +48,16 @@ public class UserController {
         );
 
         return ResponseEntity.ok(response);
+    }
+
+    @PutMapping("/profile/image")
+    public ResponseEntity<CommonResponseDto> updateProfileImage(
+            @RequestBody UpdateProfileImageRequestDto request,
+            Authentication authentication
+    ) {
+        String email = (String) authentication.getPrincipal();
+        userService.updateProfileImage(email, request.profileImage());
+
+        return ResponseEntity.ok(new CommonResponseDto(true, "프로필 이미지가 변경되었습니다."));
     }
 }
