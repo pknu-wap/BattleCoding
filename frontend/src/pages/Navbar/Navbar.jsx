@@ -53,7 +53,13 @@ export default function Navbar({ type = "main" }) {
     fetchUserInfo();
   }, [navigate, sessionExpired]);
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
+    try {
+      await api.post("/auth/logout"); // ✅ 쿠키 삭제 요청
+    } catch (err) {
+      console.warn("logout API 실패 (무시 가능):", err);
+    }
+
     localStorage.removeItem("token");
     setIsAuthenticated(false);
     setNickname("");

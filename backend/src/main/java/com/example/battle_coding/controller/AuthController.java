@@ -8,6 +8,7 @@ import com.example.battle_coding.repository.UserRepository;
 import com.example.battle_coding.service.AuthService;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
@@ -38,7 +39,7 @@ public class AuthController {
                 .secure(false)  // https 도입시 true로 변경해야 함
                 .path("/")
                 .maxAge(30 * 24 * 60 * 60) // 30일
-                .sameSite("Strict")
+                .sameSite("Lax")
                 .build();
 
         response.addHeader("Set-Cookie", responseCookie.toString());
@@ -58,4 +59,20 @@ public class AuthController {
 
         return ResponseEntity.ok(authService.reissueAccessToken(refreshToken));
     }
+
+    @PostMapping("/logout")
+    public ResponseEntity<Void> logout(HttpServletResponse response) {
+        ResponseCookie deleteCookie = ResponseCookie.from("refreshToken", "")
+                .httpOnly(true)
+                .secure(false) // 배포 서버면 true, 로컬 테스트면 false
+                .path("/")
+                .maxAge(0)     // ✅ 즉시 만료
+                .sameSite("Lax") // 실제 쿠키 설정과 동일하게 맞춰야 함
+                .build();
+
+        response.addHeader(HttpHeaders.SET_COOKIE, deleteCookie.toString());
+
+        return ResponseEntity.ok().build();
+    }
+
 }
