@@ -9,12 +9,11 @@ function UserRanking({ currentUsername }) {
     const [loading, setLoading] = useState(false);
     const [myRank, setMyRank] = useState(null);
 
-    // 내 랭킹 조회
     useEffect(() => {
         const fetchMyRank = async () => {
             try {
                 const response = await api.get("/user/my-ranking");
-                setMyRank(response.data.rank); // rank 필드명 맞게 조정
+                setMyRank(response.data.rank);
             } catch (error) {
                 console.error("내 랭킹 불러오기 실패:", error);
             }
@@ -22,7 +21,6 @@ function UserRanking({ currentUsername }) {
         fetchMyRank();
     }, []);
 
-    // 랭킹 데이터 조회
     useEffect(() => {
         const fetchRankingData = async () => {
             setLoading(true);
@@ -51,12 +49,15 @@ function UserRanking({ currentUsername }) {
     }, [page]);
 
     const handlePrevPage = () => {
-        // 내 랭킹이 30 이내일 때만 페이지 이동 가능
         if (page > 0 && myRank !== null && myRank <= 30) setPage(page - 1);
     };
 
     const handleNextPage = () => {
-        if (page < totalPages - 1 && myRank !== null && myRank <= 30) setPage(page + 1);
+        if (page < 2 && myRank !== null && myRank <= 30) setPage(page + 1);
+    };
+
+    const handleNumberClick = (pageNumber) => {
+        if (myRank !== null && myRank <= 30) setPage(pageNumber);
     };
 
     return (
@@ -75,7 +76,6 @@ function UserRanking({ currentUsername }) {
                 <div className="userList">
                     {userData.map((user, index) => {
                         const rank = page * 10 + index + 1;
-
                         let rankClass = "";
                         if (rank === 1) rankClass = "first";
                         else if (rank === 2) rankClass = "second";
@@ -88,22 +88,22 @@ function UserRanking({ currentUsername }) {
                                 id={`user-rank-${rank}`}
                             >
                                 <div className="placing">
-                  <span className="rank">
-                    {rank === 1 && "🥇"}
-                      {rank === 2 && "🥈"}
-                      {rank === 3 && "🥉"}
-                      {rank > 3 && `${rank}등`}
-                  </span>
+                                    <span className="rank">
+                                        {rank === 1 && "🥇"}
+                                        {rank === 2 && "🥈"}
+                                        {rank === 3 && "🥉"}
+                                        {rank > 3 && `${rank}등`}
+                                    </span>
                                 </div>
                                 <span className="username">{user.nickname}</span>
                                 <span className="scoreline">
-                  <b className="aNumber">{user.totalSubmitted}</b>/
-                  <b className="rNumber">{user.totalCorrect}</b>/
-                  <b className="wNumber">{user.totalWrong}</b>
-                </span>
+                                    <b className="aNumber">{user.totalSubmitted}</b>/
+                                    <b className="rNumber">{user.totalCorrect}</b>/
+                                    <b className="wNumber">{user.totalWrong}</b>
+                                </span>
                                 <span className="percent">
-                  <b className="r">{user.xp}</b> XP
-                </span>
+                                    <b className="r">{user.xp}</b> XP
+                                </span>
                             </div>
                         );
                     })}
@@ -119,12 +119,20 @@ function UserRanking({ currentUsername }) {
                 >
                     이전
                 </button>
-                <span className="pageInfo">
-          {page + 1} / {totalPages}
-        </span>
+
+                {[0, 1, 2].map((p) => (
+                    <span
+                        key={p}
+                        className={`page-number ${page === p ? "active" : ""}`}
+                        onClick={() => handleNumberClick(p)}
+                    >
+                        {p + 1}
+                    </span>
+                ))}
+
                 <button
                     onClick={handleNextPage}
-                    disabled={page >= totalPages - 1 || (myRank !== null && myRank > 30)}
+                    disabled={page === 2 || (myRank !== null && myRank > 30)}
                     className="pageBtn"
                 >
                     다음
