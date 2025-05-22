@@ -1,3 +1,13 @@
+.rankingmodebackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
 .gameMain {
   background: linear-gradient(to bottom, #0d1a2d, #11293d, #183b4e);
 
@@ -13,6 +23,8 @@
   .quizIntro {
     margin: 40px 0 20px;
     text-align: center;
+
+    z-index: 5;
 
     .quizHeading {
       font-size: 28px;
@@ -41,6 +53,7 @@
     padding: 20px 30px;
     margin-top: 20px;
     font-family: "Pretendard", sans-serif;
+    z-index: 5;
 
     .profileImg {
       width: 80px;
@@ -71,6 +84,7 @@
 
   .btnSection {
     margin-top: 40px;
+    z-index: 5;
 
     .startBtn {
       background-color: #00f0ff;

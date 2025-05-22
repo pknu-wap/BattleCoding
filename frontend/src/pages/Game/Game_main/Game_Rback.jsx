@@ -4,7 +4,7 @@ import "./Game_Rback.scss";
 export default function RBack() {
   const canvasRef = useRef(null);
 
-  /*   useEffect(() => {
+  useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
 
@@ -16,24 +16,55 @@ export default function RBack() {
     window.addEventListener("resize", resizeCanvas);
 
     const particles = [];
-    const particleCount = 1500;
+    const particleCount = 1200;
+
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
+
+    const angularSpeedMin = 0.003;
+    const angularSpeedMax = 0.005;
+
+    const radiusSpeedMin = -0.05;
+    const radiusSpeedMax = 0.05;
+
+    const minRadius = 50;
+    const maxRadius = Math.min(canvas.width, canvas.height) / 1.2;
+
+    //    const maxRadius = canvas.width / 1.5;
+    //    const minRadius = 10;
 
     for (let i = 0; i < particleCount; i++) {
+      const radius = Math.random() * (maxRadius - minRadius) + minRadius;
+      const angle = Math.random() * 2 * Math.PI;
       particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: Math.random() * 0.7 + 0.3,
+        size: Math.random() * 1.5 + 0.4,
+        opacity: Math.random() * 0.5 + 0.3,
+
         speedX: Math.random() * 3 + 2,
         speedY: Math.random() * 1 - 0.5,
-        opacity: Math.random() * 0.3 + 0.05,
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+
+        angle: angle,
+        radius: radius,
+        radiusSpeed: (Math.random() - 0.5) * 1.5,
+        angularSpeed: Math.random() * 0.008 + 0.003,
+
+        // radiusSpeed: Math.random() * (radiusSpeedMax - radiusSpeedMin) + radiusSpeedMin,
+        // angularSpeed: Math.random() * (angularSpeedMax - angularSpeedMin) + angularSpeedMin,
       });
     }
 
+    /* 오른쪽 -> 왼쪽
     function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.globalCompositeOperation = "destination-out";
+      ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.globalCompositeOperation = "multiply";
+
       particles.forEach((p) => {
         ctx.beginPath();
-        ctx.fillStyle = `rgba(210, 180, 140, ${p.opacity})`;
+        ctx.fillStyle = `rgba(120, 100, 80, ${p.opacity})`;
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fill();
 
@@ -44,41 +75,16 @@ export default function RBack() {
           p.x = canvas.width + Math.random() * 50;
           p.y = Math.random() * canvas.height;
         }
-      });
+      }); */
 
-      소용돌이
-
-    const centerX = canvas.width / 2;
-    const centerY = canvas.height / 2;
-
-    const particleCount = 1000;
-
-    const maxRadius = canvas.width / 1.5;
-    const minRadius = 10;
-
-    const angularSpeedMin = 0.01;
-    const angularSpeedMax = 0.03;
-
-    const radiusSpeedMin = -0.05;
-    const radiusSpeedMax = 0.05;
-
-    const particles = [];
-
-    for (let i = 0; i < particleCount; i++) {
-      const angle = Math.random() * 2 * Math.PI;
-      const radius = Math.random() * (maxRadius - minRadius) + minRadius;
-      particles.push({
-        angle: angle,
-        radius: radius,
-        radiusSpeed: Math.random() * (radiusSpeedMax - radiusSpeedMin) + radiusSpeedMin,
-        angularSpeed: Math.random() * (angularSpeedMax - angularSpeedMin) + angularSpeedMin,
-        size: Math.random() * 1 + 0.5,
-        opacity: Math.random() * 0.3 + 0.2,
-      });
-    }
-
+    /* 소용돌이
     function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.globalCompositeOperation = "destination-out";
+      ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      // ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      ctx.globalCompositeOperation = "multiply";
 
       particles.forEach((p) => {
         const speedFactor = (maxRadius - p.radius) / maxRadius;
@@ -94,61 +100,18 @@ export default function RBack() {
         const y = centerY + Math.sin(p.angle) * p.radius;
 
         ctx.beginPath();
-        ctx.fillStyle = `rgba(194, 158, 109, ${p.opacity})`;
+        ctx.fillStyle = `rgba(120, 100, 80, ${p.opacity})`;
         ctx.arc(x, y, p.size, 0, Math.PI * 2);
         ctx.fill();
-      });
+      }); */
 
-      requestAnimationFrame(animate);
-    }
-
-    animate();
-
-    return () => {
-      window.removeEventListener("resize", resizeCanvas);
-    };
-  }, []); */
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext("2d");
-
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    resizeCanvas();
-    window.addEventListener("resize", resizeCanvas);
-
-    const centerX = canvas.width / 2;
-    const centerY = canvas.height / 2;
-
-    const particles = [];
-    const particleCount = 1000;
-
-    const angularSpeedMin = 0.001;
-    const angularSpeedMax = 0.003;
-
-    const minRadius = 50;
-    const maxRadius = Math.min(canvas.width, canvas.height) / 1.2;
-
-    for (let i = 0; i < particleCount; i++) {
-      const radius = Math.random() * (maxRadius - minRadius) + minRadius;
-
-      particles.push({
-        angle: Math.random() * Math.PI * 2,
-        radius,
-        radiusSpeed: 0,
-        // Math.random() * 0.5 - 0.25,
-        angularSpeed: 0.002,
-        // Math.random() * (angularSpeedMax - angularSpeedMin) + angularSpeedMin,
-        size: Math.random() * 1 + 0.5,
-        opacity: Math.random() * 0.5 + 0.3,
-      });
-    }
-
+    /* 파형
     function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.globalCompositeOperation = "destination-out";
+      ctx.fillStyle = "rgba(0, 0, 0, 0.2)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.globalCompositeOperation = "darken";
+
       particles.forEach((p) => {
         const speedFactor = (maxRadius - p.radius) / maxRadius;
         const adjustedAngularSpeed = p.angularSpeed * (0.4 + 0.6 * speedFactor);
@@ -165,7 +128,35 @@ export default function RBack() {
         const y = centerY + Math.sin(p.angle * 1.1) * p.radius * 0.6;
 
         ctx.beginPath();
-        ctx.fillStyle = `rgba(210, 180, 140, ${p.opacity})`;
+        ctx.fillStyle = `rgba(120, 100, 80, ${p.opacity})`;
+        ctx.arc(x, y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+      }); */
+
+    /* 무한대모양 */
+    function animate() {
+      ctx.globalCompositeOperation = "destination-out";
+      ctx.fillStyle = "rgba(0, 0, 0, 0.3)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.globalCompositeOperation = "darken";
+
+      particles.forEach((p) => {
+        const speedFactor = (p.radius - minRadius) / (maxRadius - minRadius);
+        const adjustedAngularSpeed = p.angularSpeed * (0.5 + 1.5 * speedFactor);
+
+        p.angle += adjustedAngularSpeed;
+        p.radius += p.radiusSpeed;
+
+        if (p.radius > maxRadius || p.radius < minRadius) {
+          p.radiusSpeed *= -1;
+        }
+
+        const x = centerX + Math.cos(p.angle) * p.radius;
+        const y = centerY + Math.sin(p.angle * 1.3) * p.radius * 0.9;
+
+        ctx.beginPath();
+        ctx.fillStyle = `rgba(120, 100, 80, ${p.opacity})`;
         ctx.arc(x, y, p.size, 0, Math.PI * 2);
         ctx.fill();
       });
