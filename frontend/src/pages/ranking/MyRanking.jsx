@@ -6,6 +6,7 @@ import "./MyRanking.scss";
 function MyRanking() {
     const [myInfo, setMyInfo] = useState(null);
     const [error, setError] = useState(null);
+    const [page, setPage] = useState(0); // 현재 페이지 상태 추가
 
     useEffect(() => {
         const fetchMyRanking = async () => {
@@ -22,20 +23,37 @@ function MyRanking() {
         fetchMyRanking();
     }, []);
 
-    const handleScrollToMyRank = () => {
-        if (myInfo && myInfo.rank) {
-            const target = document.getElementById(`user-rank-${myInfo.rank}`);
-            if (target) {
-                target.scrollIntoView({ behavior: "smooth", block: "center" });
+    // 스크롤 함수 분리
+    const scrollToRank = (rank) => {
+        const target = document.getElementById(`user-rank-${rank}`);
+        if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "center" });
 
-                // 깜빡임 애니메이션 효과
-                target.classList.add("flash");
-                setTimeout(() => target.classList.remove("flash"), 1500);
-            }
+            // 깜빡임 애니메이션 효과
+            target.classList.add("flash");
+            setTimeout(() => target.classList.remove("flash"), 1500);
         }
     };
 
-    // 접근성 위해 div 대신 button 사용하고 키보드 이벤트 추가
+    const handleScrollToMyRank = () => {
+        if (!myInfo?.rank) return;
+
+        const myPage = Math.floor((myInfo.rank - 1) / 10); // 한 페이지에 10명씩 보여준다고 가정
+        if (myPage !== page) {
+            setPage(myPage);  // 페이지가 다르면 페이지 이동 요청
+        } else {
+            // 이미 현재 페이지라면 바로 스크롤
+            scrollToRank(myInfo.rank);
+        }
+    };
+
+    // page 또는 myInfo.rank 변경 시, 내 랭킹이 해당 페이지에 있다면 스크롤 실행
+    useEffect(() => {
+        if (myInfo?.rank && Math.floor((myInfo.rank - 1) / 10) === page) {
+            scrollToRank(myInfo.rank);
+        }
+    }, [page, myInfo]);
+
     return (
         <div className="MyRank">
             <button
@@ -74,7 +92,14 @@ function MyRanking() {
             </button>
 
             <div className="User_Ranking">
-                {myInfo && <UserRanking currentUsername={myInfo.nickname} />}
+                {/* UserRanking 컴포넌트에 페이지 상태와 변경 함수 전달 */}
+                {myInfo && (
+                    <UserRanking
+                        currentUsername={myInfo.nickname}
+                        page={page}
+                        setPage={setPage}
+                    />
+                )}
             </div>
         </div>
     );

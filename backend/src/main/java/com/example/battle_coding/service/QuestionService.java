@@ -46,13 +46,13 @@ public class QuestionService {
                 .toList();
     }
 
-    // 랭킹전 문제 4개 + 일반 문제 6개를 유형과 난이도 기준으로 균형 있게 조합하여 반환
+    // 랭킹전 문제 4개 + 일반 문제 6개를 난이도 균형만 고려하여 랜덤으로 조합
     public List<QuestionResponseDto> getRankingModeQuestions() {
         List<Question> rankingOnlyQuestions = questionRepository.findAllByIsRankingOnly(true);
         List<Question> normalQuestions = questionRepository.findAllByIsRankingOnly(false);
 
-        List<Question> rankingSelected = selectRankingQuestions(rankingOnlyQuestions);
-        List<Question> generalSelected = selectGeneralQuestions(normalQuestions);
+        List<Question> rankingSelected = assignByDifficultyOnly(rankingOnlyQuestions, 2, 1, 1); // 총 4
+        List<Question> generalSelected = assignByDifficultyOnly(normalQuestions, 2, 2, 2);     // 총 6
 
         List<Question> combined = new ArrayList<>();
         combined.addAll(rankingSelected);
@@ -62,59 +62,35 @@ public class QuestionService {
         return combined.stream().map(QuestionResponseDto::from).toList();
     }
 
-    // 랭킹 문제 4개 선택: EASY 2, MEDIUM 1, HARD 1 + 유형 (2,1,1), (1,2,1), (1,1,2) 중 랜덤
-    private List<Question> selectRankingQuestions(List<Question> pool) {
-        List<QuestionType[]> typePatterns = new ArrayList<>(List.of(
-                new QuestionType[]{QuestionType.FILL_IN_BLANK, QuestionType.FILL_IN_BLANK, QuestionType.PREDICT_OUTPUT, QuestionType.CS_KNOWLEDGE},
-                new QuestionType[]{QuestionType.FILL_IN_BLANK, QuestionType.PREDICT_OUTPUT, QuestionType.PREDICT_OUTPUT, QuestionType.CS_KNOWLEDGE},
-                new QuestionType[]{QuestionType.FILL_IN_BLANK, QuestionType.PREDICT_OUTPUT, QuestionType.CS_KNOWLEDGE, QuestionType.CS_KNOWLEDGE}
-        ));
-        Collections.shuffle(typePatterns);
-        QuestionType[] selectedTypes = typePatterns.getFirst();
+    // 난이도만 고려해서 문제를 랜덤하게 뽑음 (type은 고려하지 않음)
+    private List<Question> assignByDifficultyOnly(List<Question> pool, int easyCount, int mediumCount, int hardCount) {
+        Collections.shuffle(pool);
 
-        List<Difficulty> rankingDifficulties = new ArrayList<>(List.of(
-                Difficulty.EASY, Difficulty.EASY,
-                Difficulty.MEDIUM, Difficulty.HARD
-        ));
-
-        return assignQuestions(pool, selectedTypes, rankingDifficulties);
-    }
-
-    // 일반 문제 6개 선택: EASY/MEDIUM/HARD 각 2개, 유형별로 2개씩
-    private List<Question> selectGeneralQuestions(List<Question> pool) {
-        List<QuestionType> generalTypes = new ArrayList<>(
-                List.of(QuestionType.FILL_IN_BLANK, QuestionType.FILL_IN_BLANK,
-                        QuestionType.PREDICT_OUTPUT, QuestionType.PREDICT_OUTPUT,
-                        QuestionType.CS_KNOWLEDGE, QuestionType.CS_KNOWLEDGE)
-        );
-        Collections.shuffle(generalTypes);
-
-        List<Difficulty> generalDifficulties = new ArrayList<>(
-                List.of(Difficulty.EASY, Difficulty.EASY,
-                        Difficulty.MEDIUM, Difficulty.MEDIUM,
-                        Difficulty.HARD, Difficulty.HARD)
-        );
-        Collections.shuffle(generalDifficulties);
-
-        return assignQuestions(pool, generalTypes.toArray(new QuestionType[0]), generalDifficulties);
-    }
-
-    // 주어진 문제 풀(pool)에서 각 유형-난이도 조합에 맞게 문제를 하나씩 선택 (중복 방지)
-    private List<Question> assignQuestions(List<Question> pool, QuestionType[] types, List<Difficulty> difficulties) {
         List<Question> result = new ArrayList<>();
         Set<Integer> usedIds = new HashSet<>();
 
-        for (int i = 0; i < types.length; i++) {
-            QuestionType type = types[i];
-            Difficulty difficulty = difficulties.get(i);
-            pool.stream()
-                    .filter(q -> q.getType() == type && q.getDifficulty() == difficulty && !usedIds.contains(q.getId()))
-                    .findFirst()
-                    .ifPresent(q -> {
-                        result.add(q);
-                        usedIds.add(q.getId());
-                    });
+        Map<Difficulty, Integer> target = Map.of(
+                Difficulty.EASY, easyCount,
+                Difficulty.MEDIUM, mediumCount,
+                Difficulty.HARD, hardCount
+        );
+
+        Map<Difficulty, Integer> current = new EnumMap<>(Difficulty.class);
+        for (Difficulty d : Difficulty.values()) current.put(d, 0);
+
+        for (Question q : pool) {
+            // ✅ WORD_CHAIN 유형은 건너뜀
+            if (q.getType() == QuestionType.WORD_CHAIN) continue;
+
+            Difficulty diff = q.getDifficulty();
+            if (!usedIds.contains(q.getId()) && current.get(diff) < target.getOrDefault(diff, 0)) {
+                result.add(q);
+                usedIds.add(q.getId());
+                current.put(diff, current.get(diff) + 1);
+            }
+            if (result.size() >= easyCount + mediumCount + hardCount) break;
         }
+
         return result;
     }
 
