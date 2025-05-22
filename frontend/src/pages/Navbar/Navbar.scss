@@ -11,26 +11,26 @@
     font-family: 'Pretendard', sans-serif;
 
     .navbarInner {
-        width: 100%;
-        max-width: 1100px;
-        padding: 0 20px;
+        width: 100vw;
+        padding: 0 50px;
+        box-sizing: border-box;
 
         display: flex;
         justify-content: space-between;
         align-items: center;
+        text-align: center;
 
         .navbarLeft {
             display: flex;
             align-items: center;
-            gap: 32px;
-            margin-left: -120px;
+            gap: 40px;
 
             .navbarLogo {
                 display: flex;
                 align-items: center;
                 gap: 4px;
 
-                font-size: 21px;
+                font-size: 22px;
                 font-weight: 700;
                 color: #ffffff;
 
@@ -40,13 +40,14 @@
             .navbarMenu {
                 display: flex;
                 align-items: center;
-                gap: 20px;
+                margin-top: 2px;
+                gap: 25px;
             
                 button {
                     all: unset;
                     cursor: pointer;
                     
-                    font-size: 18px;
+                    font-size: 19px;
                     font-weight: 600;
                     line-height: 1;  
                     color: #ffffff;
