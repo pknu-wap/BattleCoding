@@ -160,5 +160,32 @@
     "answers": ["11"],
     "difficulty": "HARD",
     "isRankingOnly": true
+  },
+      {
+    "id": 21019,
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747908919/L_ysoces.png",
+    "answers": ["L"],
+    "difficulty": "HARD",
+    "isRankingOnly": true
+  },
+      {
+    "id": 21020,
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747908918/B_hwc9v8.png",
+    "answers": ["B"],
+    "difficulty": "HARD",
+    "isRankingOnly": true
+  },
+    {
+    "id": 21021,
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747908919/Hi_jrx4xp.png",
+    "answers": ["Hi"],
+    "difficulty": "MEDIUM",
+    "isRankingOnly": true
   }
 ]
