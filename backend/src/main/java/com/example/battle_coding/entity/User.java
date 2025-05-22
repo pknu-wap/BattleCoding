@@ -85,4 +85,9 @@ public class User {
                 rank
         );
     }
+
+    public void updateRefreshToken(String refreshToken) {
+        this.refreshToken = refreshToken;
+    }
+
 }

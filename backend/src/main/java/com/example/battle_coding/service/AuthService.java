@@ -52,6 +52,10 @@ public class AuthService {
         User user = validateUserCredentials(request.email(), request.password());
         String token = jwtTokenProvider.createAccessToken(user.getEmail());
 
+        String refreshToken = jwtTokenProvider.createRefreshToken();
+        user.updateRefreshToken(refreshToken);
+        userRepository.save(user);
+
         return new LoginResponseDto(
                 true,
                 "로그인 성공!",
@@ -109,5 +113,28 @@ public class AuthService {
         if (userRepository.findByProviderId(providerId).isPresent()) {
             throw new IllegalArgumentException("이미 가입된 소셜 로그인 계정입니다.");
         }
+    }
+
+    public LoginResponseDto reissueAccessToken(String refreshToken) {
+        if (!jwtTokenProvider.validateToken(refreshToken)) {
+            throw new IllegalArgumentException("유효하지 않은 Refresh Token입니다.");
+        }
+
+        String email = jwtTokenProvider.getEmailFromToken(refreshToken);
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(()->new IllegalArgumentException("사용자를 찾을 수 없습니다."));
+
+        if (!refreshToken.equals(user.getRefreshToken())) {
+            throw new IllegalArgumentException("토큰 정보가 일치하지 않습니다.");
+        }
+
+        String newAccessToken = jwtTokenProvider.createAccessToken(user.getEmail());
+
+        return new LoginResponseDto(
+                true,
+                "Access Token 재발급 성공",
+                newAccessToken,
+                user.getNickname()
+        );
     }
 }
