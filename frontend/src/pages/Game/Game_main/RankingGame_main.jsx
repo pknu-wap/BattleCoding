@@ -51,6 +51,9 @@ function RankingGameMain() {
     <>
       <Navbar type="user" />
       <div className="gameMain">
+        <section className="rankingmodebackground">
+          <Rback />
+        </section>
         <div className="quizIntro">
           <h1 className="quizHeading">
             <span className="highlight">랭킹 모드</span>, 당신의 실력을 증명할 시간입니다!
