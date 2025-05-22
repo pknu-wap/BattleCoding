@@ -73,12 +73,23 @@ const LoginInputForm = () => {
                 navigate("/");
             }      
             else {
-                alert(response.data.message);
+                alert(response.data.message || "로그인에 실패했습니다.");
             } 
         }
         catch (error) {
-            console.error(error)
-            alert('로그인 중 오류가 발생하였습니다.');
+            console.error("로그인 오류: ", error)
+
+            if (error.response) {
+                const status = error.response.status;
+
+                if (status === 401 || status === 400) {
+                    alert("아이디 또는 비밀번호가 일치하지 않습니다.\n다시 확인해 주세요.");
+                } else {
+                    alert("서버 오류가 발생하였습니다. \n잠시 후 다시 시도해 주세요.");
+                }
+            } else {
+                alert("네트워크 오류가 발생하였습니다.\n인터넷 연결을 확인해 주세요.");
+            }
         }
     };
 

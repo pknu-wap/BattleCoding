@@ -43,6 +43,7 @@ function PracticeGameMain() {
                   title={data.title}
                   description={data.description}
                   type={data.type}
+                  difficulty={data.difficulty}
                   isRanking={isRanking}
                   typing={data.typing}
                   typingPosition={data.typingPosition}

@@ -8,12 +8,12 @@
     flex-direction: column;
     align-items: center;
 
-    .quizIntro {
-        margin: 40px 0 20px;
-        text-align: center;
+    font-family: 'Pretendard', sans-serif;
+    text-align: center;
 
+    .quizIntro {
         .quizHeading {
-            font-size: 28px;
+            font-size: 30px;
             font-weight: 800;
             color: #ffffff;
 
@@ -23,65 +23,115 @@
         }
 
         .quizSubText {
-            font-size: 16px;
+            font-size: 18px;
             color: #cccccc;
-            margin-top: 8px;
-            line-height: 1.5;
+            margin: 12px 0 0 0;
+
+            p {
+                margin: 10px;
+            }
         }
     }
 
-    .userSummary {
+    .profileSection {
+        background-color: #1b2430;
+
         display: flex;
         align-items: center;
-        gap: 20px;
-        background-color: rgba(255, 255, 255, 0.05);
+
+        min-height: 120px;
+        padding: 25px 50px;
+        margin: 20px 0 30px;
+        gap: 50px;
+        
         border-radius: 12px;
-        padding: 20px 30px;
-        margin-top: 20px;
-        font-family: 'Pretendard', sans-serif;
+        box-shadow: 0 0 12px rgba(0, 240, 255, 0.15);
 
         .profileImg {
-            width: 80px;
-            height: 80px;
+            width: 110px;
+            height: 110px;
+
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid #00f0ff;
         }
 
         .userInfo {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            align-items: flex-start;
 
-        .nickname {
-            font-size: 20px;
-            font-weight: 700;
-            color: #ffffff;
+            .nickname {
+                margin-bottom: 12px;
+                font-size: 26px;
+                font-weight: 700;
+                color: #00f0ff;
+            }
+
+            .stats {
+                width: 100%;
+                gap: 8px;
+
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                font-size: 18px;
+                color: #cccccc;
+
+                .xp, .rank {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+
+    .ruleSection {
+        background-color: rgba(255, 255, 255, 0.05);
+
+        width: 100%;
+        max-width: 650px;
+        padding: 25px 30px;
+        margin: 20px auto;
+
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0, 240, 255, 0.12);
+
+        text-align: left;
+        color: #ffffff;
+
+        h3 {
+            margin: 0 0 25px 0;
+            font-size: 26px;
+            color: #00f0ff;
         }
 
-        .xp, .rank {
-            font-size: 14px;
+        p {
+            margin: 16px 0 0 0;
+            font-size: 16px;
             color: #cccccc;
         }
     }
-  }
 
     .btnSection {
-        margin-top: 40px;
+        margin-top: 20px;
 
         .startBtn {
             background-color: #00f0ff;
             color: #000;
-            font-weight: bold;
-            font-size: 16px;
-            padding: 14px 28px;
-            border: none;
-            border-radius: 8px;
+            font-weight: 700;
+            font-size: 18px;
+            padding: 14px 30px;
+
+            border: 2px solid #00f0ff;
+            border-radius: 12px;
+
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s;
 
             &:hover {
-                background-color: #00c2d3;
+                background-color: #00f0ff;
+                color: #1b2430;
+                transform: translateY(-2px);
+                box-shadow: 0 8px 20px rgba(0, 240, 255, 0.2);
             }
         }
     }

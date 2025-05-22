@@ -1,17 +1,19 @@
-.resultWrapper {
+.practiceResultWrapper {
   background-color: #161d28;
 
   width: 100%;
   min-height: calc(100vh - 56px);
   overflow-y: auto;
+  padding: 0;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between; 
   position: relative;
 
-  .resultSection {
+  .practiceResultSection {
     background: linear-gradient(to bottom, #0d1a2d, #11293d, #183b4e);
+
     width: 100%;
     padding: 20px; 
     box-sizing: border-box;

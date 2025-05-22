@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import api from "../../../../api/api";
-import "./GamePage_result.scss";
+import "./PracticeGamePage_result.scss";
 
-function GamePage_result() {
+function PracticeResult() {
   const navigate = useNavigate();
   const location = useLocation();
   const { image, title, description, type, difficulty, score = 0, isRanking = false } = location.state || {};
@@ -32,8 +32,8 @@ function GamePage_result() {
   }, [isRanking]);
 
   return (
-    <div className="resultWrapper">
-      <div className="resultSection">
+    <div className="practiceResultWrapper">
+      <div className="practiceResultSection">
         <div className="resultCard">
           <div className="resultText">
             <div className="resultInfo">
@@ -44,12 +44,6 @@ function GamePage_result() {
               </div>
 
               <div className="rightSection">
-                {isRanking && (
-                  <div className="xpBox">
-                    <p>획득 XP : <span>{xpEarned}</span> XP</p>
-                    <p>누적 XP : <span>{updatedXp}</span> XP</p>
-                  </div>
-                )}
                 <div className="summaryBox">
                   <p>문제 수 : {totalQuestions}</p>
                   <p>정답 수 : {score}</p>
@@ -66,7 +60,7 @@ function GamePage_result() {
         <button
           onClick={() =>
             navigate("/game/ready", {
-              state: { image, title, description, type, difficulty, isRanking }
+              state: { image, title, description, type, difficulty }
             })
           }
         >다시</button>
@@ -76,4 +70,4 @@ function GamePage_result() {
   );
 }
 
-export default GamePage_result;
+export default PracticeResult;

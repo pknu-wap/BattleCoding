@@ -49,7 +49,8 @@ public class SecurityConfig {
                         // ✅ 인증 없이 접근 가능한 API
                         .requestMatchers(
                                 "/api/auth/login", "/api/auth/signup",         // 로그인 & 회원가입
-                                "/api/user/check-email", "/api/user/check-nickname" // 중복 체크
+                                "/api/user/check-email", "/api/user/check-nickname", // 중복 체크
+                                "/api/auth/refresh", "/api/auth/logout"
                         ).permitAll()
 
                         // ✅ 그 외 API는 인증 필요
