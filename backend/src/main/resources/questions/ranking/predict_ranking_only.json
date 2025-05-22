@@ -187,5 +187,41 @@
     "answers": ["Hi"],
     "difficulty": "MEDIUM",
     "isRankingOnly": true
+  },
+      {
+    "id": 21022,
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747908919/true_b5ak1n.png",
+    "answers": ["true, True"],
+    "difficulty": "HARD",
+    "isRankingOnly": true
+  },
+      {
+    "id": 21023,
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747908919/hello_world_ry0peb.png",
+    "answers": ["hello world"],
+    "difficulty": "MEDIUM",
+    "isRankingOnly": true
+  },
+      {
+    "id": 21024,
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747908918/check_check_yes_uivzby.png",
+    "answers": ["check check yes"],
+    "difficulty": "HARD",
+    "isRankingOnly": true
+  },
+    {
+    "id": 21025,
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747908918/10_qapq1j.png",
+    "answers": ["10"],
+    "difficulty": "MEDIUM",
+    "isRankingOnly": true
   }
 ]
