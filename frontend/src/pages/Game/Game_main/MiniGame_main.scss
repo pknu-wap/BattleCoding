@@ -1,0 +1,38 @@
+.gameMain {
+  background: linear-gradient(to bottom, #0d1a2d, #11293d, #183b4e);
+
+  width: 100vw;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+
+  font-family: "Pretendard", sans-serif;
+  text-align: center;
+
+  .quizIntro {
+    z-index: 5;
+
+    .quizHeading {
+      font-size: 30px;
+      font-weight: 800;
+      color: #ffffff;
+
+      .highlight {
+        color: #00f0ff;
+      }
+    }
+
+    .quizSubText {
+      font-size: 18px;
+      color: #cccccc;
+      margin: 12px 0 0 0;
+
+      p {
+        margin: 10px;
+      }
+    }
+  }
+}
