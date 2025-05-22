@@ -89,7 +89,7 @@
     "difficulty": "MEDIUM",
     "isRankingOnly": true
   },
-    {
+  {
     "id": 21011,
     "type": "PREDICT_OUTPUT",
     "question": null,
@@ -98,7 +98,7 @@
     "difficulty": "MEDIUM",
     "isRankingOnly": true
   },
-    {
+  {
     "id": 21012,
     "type": "PREDICT_OUTPUT",
     "question": null,
@@ -107,7 +107,7 @@
     "difficulty": "HARD",
     "isRankingOnly": true
   },
-    {
+  {
     "id": 21013,
     "type": "PREDICT_OUTPUT",
     "question": null,
@@ -116,7 +116,7 @@
     "difficulty": "MEDIUM",
     "isRankingOnly": true
   },
-    {
+  {
     "id": 21014,
     "type": "PREDICT_OUTPUT",
     "question": null,
@@ -125,7 +125,7 @@
     "difficulty": "HARD",
     "isRankingOnly": true
   },
-    {
+  {
     "id": 21015,
     "type": "PREDICT_OUTPUT",
     "question": null,
@@ -134,7 +134,7 @@
     "difficulty": "MEDIUM",
     "isRankingOnly": true
   },
-    {
+  {
     "id": 21016,
     "type": "PREDICT_OUTPUT",
     "question": null,
@@ -143,7 +143,7 @@
     "difficulty": "MEDIUM",
     "isRankingOnly": true
   },
-      {
+  {
     "id": 21017,
     "type": "PREDICT_OUTPUT",
     "question": null,
@@ -152,7 +152,7 @@
     "difficulty": "HARD",
     "isRankingOnly": true
   },
-    {
+  {
     "id": 21018,
     "type": "PREDICT_OUTPUT",
     "question": null,
@@ -161,7 +161,7 @@
     "difficulty": "HARD",
     "isRankingOnly": true
   },
-      {
+  {
     "id": 21019,
     "type": "PREDICT_OUTPUT",
     "question": null,
@@ -170,7 +170,7 @@
     "difficulty": "HARD",
     "isRankingOnly": true
   },
-      {
+  {
     "id": 21020,
     "type": "PREDICT_OUTPUT",
     "question": null,
@@ -179,7 +179,7 @@
     "difficulty": "HARD",
     "isRankingOnly": true
   },
-    {
+  {
     "id": 21021,
     "type": "PREDICT_OUTPUT",
     "question": null,
@@ -188,7 +188,7 @@
     "difficulty": "MEDIUM",
     "isRankingOnly": true
   },
-      {
+  {
     "id": 21022,
     "type": "PREDICT_OUTPUT",
     "question": null,
@@ -197,7 +197,7 @@
     "difficulty": "HARD",
     "isRankingOnly": true
   },
-      {
+  {
     "id": 21023,
     "type": "PREDICT_OUTPUT",
     "question": null,
@@ -206,7 +206,7 @@
     "difficulty": "MEDIUM",
     "isRankingOnly": true
   },
-      {
+  {
     "id": 21024,
     "type": "PREDICT_OUTPUT",
     "question": null,
@@ -215,13 +215,58 @@
     "difficulty": "HARD",
     "isRankingOnly": true
   },
-    {
+  {
     "id": 21025,
     "type": "PREDICT_OUTPUT",
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747908918/10_qapq1j.png",
     "answers": ["10"],
     "difficulty": "MEDIUM",
+    "isRankingOnly": true
+  },
+  {
+    "id": 21026,
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747911064/1_j8taoc.png",
+    "answers": ["1"],
+    "difficulty": "EASY",
+    "isRankingOnly": true
+  },
+  {
+    "id": 21027,
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747911064/30_2_e98gd1.png",
+    "answers": ["30"],
+    "difficulty": "MEDIUM",
+    "isRankingOnly": true
+  },
+  {
+    "id": 21028,
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747911064/hallo_eemxor.png",
+    "answers": ["hallo"],
+    "difficulty": "EASY",
+    "isRankingOnly": true
+  },
+  {
+    "id": 21029,
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747911064/30_f2tqej.png",
+    "answers": ["30"],
+    "difficulty": "MEDIUM",
+    "isRankingOnly": true
+  },
+  {
+    "id": 21030,
+    "type": "PREDICT_OUTPUT",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747911064/True_1_2_fjgrxk.png",
+    "answers": ["True [1,2]", "True [1, 2]"],
+    "difficulty": "HARD",
     "isRankingOnly": true
   }
 ]
