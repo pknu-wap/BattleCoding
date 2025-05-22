@@ -17,16 +17,15 @@ public class RankingService {
 
     private final UserRepository userRepository;
 
-    // ✅ 상위 30명만 페이징하여 반환
+    // ✅ 모든 유저를 페이징하여 반환 (30명 제한 없음)
     public RankingPageResponseDto getRankingsPaged(int page, int size) {
-        // XP 기준 내림차순 정렬 후 상위 30명 추출
-        List<User> topUsers = userRepository.findAll()
+        // XP 기준 내림차순 정렬, 제한 없음
+        List<User> allUsers = userRepository.findAll()
                 .stream()
                 .sorted(Comparator.comparingInt(User::getXp).reversed())
-                .limit(30) // 🎯 여기서 상위 30명만 필터링
                 .collect(Collectors.toList());
 
-        int totalUsers = topUsers.size(); // 최대 30
+        int totalUsers = allUsers.size(); // 모든 유저 수
         int totalPages = (int) Math.ceil((double) totalUsers / size);
 
         int start = page * size;
@@ -37,16 +36,17 @@ public class RankingService {
             return new RankingPageResponseDto(List.of(), totalPages);
         }
 
-        List<RankingResponseDto> paged = topUsers.subList(start, end)
+        List<RankingResponseDto> paged = allUsers.subList(start, end)
                 .stream()
                 .map(user -> {
-                    int rank = getUserRank(topUsers, user);
+                    int rank = getUserRank(allUsers, user);
                     return user.toRankingResponseDto(rank);
                 })
                 .collect(Collectors.toList());
 
         return new RankingPageResponseDto(paged, totalPages);
     }
+
 
     // ✅ 특정 유저의 랭킹을 조회 (모든 유저 중에서)
     public RankingResponseDto getMyRanking(String email) {
