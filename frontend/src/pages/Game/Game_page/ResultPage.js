@@ -1,11 +1,17 @@
+import { useLocation } from "react-router-dom";
 import Navbar_game from "../../Navbar/Navbar_game";
-import Result from "./ResultPage/GamePage_result";
+import RankingResult from "./ResultPage/RankingGamePage_result";
+import PracticeResult from "./ResultPage/PracticeGamePage_result";
 
 function PageResult() {
+
+  const location = useLocation();
+  const { isRanking } = location.state || {};
+
   return (
     <div className="Game_Page">
       <Navbar_game />
-      <Result />
+      {isRanking ? <RankingResult /> : <PracticeResult />}
     </div>
   );
 }

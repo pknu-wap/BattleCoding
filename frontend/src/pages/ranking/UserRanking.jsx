@@ -7,6 +7,19 @@ function UserRanking({ currentUsername }) {
     const [page, setPage] = useState(0);
     const [totalPages, setTotalPages] = useState(0);
     const [loading, setLoading] = useState(false);
+    const [myRank, setMyRank] = useState(null);
+
+    useEffect(() => {
+        const fetchMyRank = async () => {
+            try {
+                const response = await api.get("/user/my-ranking");
+                setMyRank(response.data.rank);
+            } catch (error) {
+                console.error("내 랭킹 불러오기 실패:", error);
+            }
+        };
+        fetchMyRank();
+    }, []);
 
     useEffect(() => {
         const fetchRankingData = async () => {
@@ -15,7 +28,6 @@ function UserRanking({ currentUsername }) {
                 const response = await api.get("/user/rankings", { params: { page } });
                 const data = response.data;
 
-                // 페이징 응답 구조에 맞게 데이터 처리
                 if (data && Array.isArray(data.content)) {
                     setUserData(data.content);
                     setTotalPages(data.totalPages);
@@ -37,11 +49,15 @@ function UserRanking({ currentUsername }) {
     }, [page]);
 
     const handlePrevPage = () => {
-        if (page > 0) setPage(page - 1);
+        if (page > 0 && myRank !== null && myRank <= 30) setPage(page - 1);
     };
 
     const handleNextPage = () => {
-        if (page < totalPages - 1) setPage(page + 1);
+        if (page < 2 && myRank !== null && myRank <= 30) setPage(page + 1);
+    };
+
+    const handleNumberClick = (pageNumber) => {
+        if (myRank !== null && myRank <= 30) setPage(pageNumber);
     };
 
     return (
@@ -59,9 +75,7 @@ function UserRanking({ currentUsername }) {
             ) : (
                 <div className="userList">
                     {userData.map((user, index) => {
-                        // 페이지에 따라 실제 랭킹 계산 (page * size + index + 1)
                         const rank = page * 10 + index + 1;
-
                         let rankClass = "";
                         if (rank === 1) rankClass = "first";
                         else if (rank === 2) rankClass = "second";
@@ -98,9 +112,31 @@ function UserRanking({ currentUsername }) {
 
             {/* 페이징 버튼 */}
             <div className="pagination">
-                <button onClick={handlePrevPage} disabled={page === 0}>이전</button>
-                <span>{page + 1} / {totalPages}</span>
-                <button onClick={handleNextPage} disabled={page >= totalPages - 1}>다음</button>
+                <button
+                    onClick={handlePrevPage}
+                    disabled={page === 0 || (myRank !== null && myRank > 30)}
+                    className="pageBtn"
+                >
+                    이전
+                </button>
+
+                {[0, 1, 2].map((p) => (
+                    <span
+                        key={p}
+                        className={`page-number ${page === p ? "active" : ""}`}
+                        onClick={() => handleNumberClick(p)}
+                    >
+                        {p + 1}
+                    </span>
+                ))}
+
+                <button
+                    onClick={handleNextPage}
+                    disabled={page === 2 || (myRank !== null && myRank > 30)}
+                    className="pageBtn"
+                >
+                    다음
+                </button>
             </div>
         </div>
     );

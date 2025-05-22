@@ -11,44 +11,51 @@
     font-family: 'Pretendard', sans-serif;
 
     .navbarInner {
-        width: 100%;
-        max-width: 1100px;
-        padding: 0 20px;
+        width: 100vw;
+        padding: 0 50px;
+        box-sizing: border-box;
 
         display: flex;
         justify-content: space-between;
         align-items: center;
-    }
+        text-align: center;
 
-    .navbarLeft {
-        display: flex;
-        align-items: center;
-        gap: 40px;
-    }
+        .navbarLeft {
+            display: flex;
+            align-items: center;
+            gap: 40px;
 
-    .navbarLogo {
-        font-size: 18px;
-        font-weight: 700;
-        color: #dddddd;
+            .navbarLogo {
+                display: flex;
+                align-items: center;
+                gap: 4px;
 
-        cursor: pointer;
-    }
+                font-size: 22px;
+                font-weight: 700;
+                color: #ffffff;
 
-    .navbarMenu {
-        display: flex;
-        gap: 24px;
-    
-        button {
-            all: unset;
-            cursor: pointer;
+                cursor: pointer;
+            }
+
+            .navbarMenu {
+                display: flex;
+                align-items: center;
+                margin-top: 2px;
+                gap: 25px;
             
-            font-size: 17px;
-            font-weight: 500;
-            text-decoration: none;
-            color: #ffffff;
-        
-            &:hover {
-                color: #00F0FF;
+                button {
+                    all: unset;
+                    cursor: pointer;
+                    
+                    font-size: 19px;
+                    font-weight: 600;
+                    line-height: 1;  
+                    color: #ffffff;
+                
+                    &:hover {
+                        color: #00F0FF;
+                    }
+                }
             }
         }
     }

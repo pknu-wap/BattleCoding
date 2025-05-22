@@ -39,6 +39,7 @@ public class AuthService {
                 .nickname(request.nickname())
                 .provider(request.provider())
                 .providerId(request.providerId())
+                .profileImage("https://res.cloudinary.com/dmby7fmvo/image/upload/v1747656353/%EA%B8%B0%EB%B3%B8_%ED%94%84%EB%A1%9C%ED%95%84_o4xxyn.png")
                 .createdAt(LocalDateTime.now())
                 .build();
 
@@ -50,6 +51,10 @@ public class AuthService {
     public LoginResponseDto login(LoginRequestDto request) {
         User user = validateUserCredentials(request.email(), request.password());
         String token = jwtTokenProvider.createAccessToken(user.getEmail());
+
+        String refreshToken = jwtTokenProvider.createRefreshToken(user.getEmail());
+        user.updateRefreshToken(refreshToken);
+        userRepository.save(user);
 
         return new LoginResponseDto(
                 true,
@@ -108,5 +113,30 @@ public class AuthService {
         if (userRepository.findByProviderId(providerId).isPresent()) {
             throw new IllegalArgumentException("이미 가입된 소셜 로그인 계정입니다.");
         }
+    }
+
+    public LoginResponseDto reissueAccessToken(String refreshToken) {
+        if (!jwtTokenProvider.validateToken(refreshToken)) {
+            throw new IllegalArgumentException("유효하지 않은 Refresh Token입니다.");
+        }
+
+        String email = jwtTokenProvider.getEmailFromToken(refreshToken);
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(()->new IllegalArgumentException("사용자를 찾을 수 없습니다."));
+
+        // (임시) refreshToken 일치 검증 생략
+
+//        if (!refreshToken.equals(user.getRefreshToken())) {
+//            throw new IllegalArgumentException("토큰 정보가 일치하지 않습니다.");
+//        }
+
+        String newAccessToken = jwtTokenProvider.createAccessToken(user.getEmail());
+
+        return new LoginResponseDto(
+                true,
+                "Access Token 재발급 성공",
+                newAccessToken,
+                user.getNickname()
+        );
     }
 }

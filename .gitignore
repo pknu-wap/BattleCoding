@@ -69,3 +69,4 @@ Thumbs.db
 deploy.sh
 docker-compose.yml
 
+frontend/.env
