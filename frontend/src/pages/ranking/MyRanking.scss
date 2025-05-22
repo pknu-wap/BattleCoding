@@ -1,59 +1,64 @@
 .MyRank {
   background-color: #0f1225;
-  padding: 20px;
+  padding: 40px 20px;
   min-height: 100vh;
 
-  /* 중앙 정렬 및 컨텐츠 최대 너비 지정 */
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 40px;
 }
 
+/* 마이랭킹 내부 컨테이너 */
 .MyRanking {
   width: 100%;
-  max-width: 600px; /* 적당한 최대 너비 지정 */
-  background-color: transparent; /* 배경 없애거나 필요 시 조절 */
+  max-width: 700px;
+  background-color: rgba(15, 18, 37, 0.8);
   cursor: pointer;
+  border-radius: 12px;
+  padding: 20px;
 
-  /* 내부 내용 가운데 정렬 */
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
 }
 
+/* 타이틀 */
 .Ranking {
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 28px;
+  font-weight: 800;
   color: #00f0ff;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   user-select: none;
+  text-shadow: 0 0 8px #00f0ff88;
 }
 
+/* 개별 랭킹 아이템 하이라이트 */
 .Rank.my-highlight {
   background-color: #3b4160;
   border: 2px solid #00f0ff;
-  box-shadow: 0 0 10px #00f0ff55;
-  border-radius: 10px;
-  padding: 15px 20px;
+  box-shadow: 0 0 14px #00f0ff88;
+  border-radius: 12px;
+  padding: 18px 24px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 24px;
   width: 100%;
 
   .Placing,
   .Ranker,
   .Percent {
     color: #ffffff;
-    font-weight: 600;
-    font-size: 18px;
+    font-weight: 700;
+    font-size: 20px;
   }
 
   .rank-icon {
-    margin-right: 8px;
-    font-size: 22px;
+    margin-right: 10px;
+    font-size: 26px;
     color: #00f0ff;
   }
 
@@ -64,36 +69,37 @@
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 14px;
   }
 }
 
+/* 로딩 상태 */
 .Rank.loading {
-  color: #888888;
+  color: #bbbbbb;
   font-style: italic;
-  padding: 10px;
-  font-size: 16px;
+  padding: 14px;
+  font-size: 18px;
   text-align: center;
   width: 100%;
-  max-width: 600px;
+  max-width: 700px;
 }
 
+/* 유저랭킹 영역 스타일 (MyRank 안에서 사용) */
 .User_Ranking {
   width: 100%;
-  max-width: 600px;
-  overflow-y: auto;
-  max-height: 500px;
-  padding: 10px;
-  border-radius: 10px;
+  max-width: 700px;
+  padding: 14px;
+  border-radius: 12px;
   background-color: #1a1e3a;
-  box-shadow: 0 0 10px #00f0ff55;
+  box-shadow: 0 0 14px #00f0ff33;
 
   @media (max-width: 768px) {
-    max-height: 300px;
+    max-height: 80vh;
+    overflow-y: auto;
   }
 }
 
-/* 깜빡임 애니메이션 효과 */
+/* 하이라이트 깜빡임 애니메이션 */
 @keyframes highlightFlash {
   0%, 100% {
     background-color: #3b4160;
