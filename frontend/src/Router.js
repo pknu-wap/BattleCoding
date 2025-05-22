@@ -14,6 +14,7 @@ import ResultPage from "./pages/Game/Game_page/ResultPage";
 import MyRanking from "./pages/ranking/MyRanking";
 import UserRanking from "./pages/ranking/UserRanking";
 import EditProfile from "./pages/Game/MyPage/MyAccount/EditProfile/EditProfile";
+import EditInfo from "./pages/Game/MyPage/MyAccount/EditInfo/EditInfo";
 import ModeSelect from "./pages/Game/ModeSelect/ModeSelect";
 
 const isAuthenticated = () => {
@@ -36,6 +37,7 @@ const Router = () => {
       <Route path="/game/ranking" element={<ProtectedRoute element={<RankingGameMain />} />} />
       <Route path="/mypage" element={<ProtectedRoute element={<MyPage />} />} />
       <Route path="/mypage/edit" element={<ProtectedRoute element={<EditProfile />} />} />
+      <Route path="/mypage/edit-info" element={<ProtectedRoute element={<EditInfo />} />} />
       <Route path="game/mode" element={<ProtectedRoute element={<ModeSelect />} />} />
       <Route path="/game/ready" element={<ProtectedRoute element={<ReadyPage />} />} />
       <Route path="/game/question" element={<ProtectedRoute element={<QuestionPage />} />} />
