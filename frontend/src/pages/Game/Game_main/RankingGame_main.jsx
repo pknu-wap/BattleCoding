@@ -8,19 +8,30 @@ import Rback from "../Game_main/Game_Rback";
 function RankingGameMain() {
   const navigate = useNavigate();
 
-  const [userInfo, setUserInfo] = useState({
-    nickname: "",
-    xp: 0,
-    rank: 0,
-    profileImg: "https://cdn.pixabay.com/photo/2025/04/30/03/22/popsicle-9568309_1280.jpg",
-  });
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        if (!token) {
+            alert("로그인이 필요합니다.");
+            navigate("/auth/login");
+        }
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      alert("로그인이 필요합니다.");
-      navigate("/auth/login");
-    }
+        const fetchUserInfo = async () => {
+            try {
+                const [userRes, rankRes] = await Promise.all([
+                    api.get("/user/me"),
+                    api.get("/user/my-ranking"),
+                ]);
+                
+                setUserInfo({
+                    nickname: userRes.data.nickname,
+                    xp: userRes.data.xp,
+                    rank: rankRes.data.rank,
+                    profileImg: userRes.data.profileImage || "https://cdn.pixabay.com/photo/2025/04/30/03/22/popsicle-9568309_1280.jpg"
+                });
+            } catch (err) {
+                console.error("유저 정보 오류", err);
+            }
+        };
 
     const fetchUserInfo = async () => {
       try {

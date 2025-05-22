@@ -29,7 +29,7 @@ function GamePage_question() {
   const [timerId, setTimerId] = useState(null);
 
   useEffect(() => {
-    if (!isRanking && ((!type || !difficulty))) {
+    if (!isRanking && !type) {
       alert("문제 유형이나 난이도 정보가 없습니다.");
       navigate('/game');
     }
@@ -42,6 +42,11 @@ function GamePage_question() {
         if (isRanking) {
           const res = await api.get("/questions/ranking");
           data = res.data;
+        } else if (type === "WORD_CHAIN" || type === "GUESS_WHO") {
+            const res = await api.get("/questions/random/by-type", {
+              params: { type, count: 10 }
+            });
+            data = res.data;
         } else {
           data = await getRandomQuestionByTypeAndDifficulty({
             type,
@@ -90,10 +95,12 @@ function GamePage_question() {
 
       if (idx === steps.length) {
         clearInterval(interval);
+
+        setStartTime(Date.now());
+
         setTimeout(() => {
           setIsCountingDown(false);
           setHasShownCountdown(true);
-          setStartTime(Date.now());
         }, 800)
       }
     }, 1000);
@@ -145,15 +152,16 @@ function GamePage_question() {
   }, [isRanking, showFeedback]);
 
   const submitAnswer = async (questionId, userAnswer) => {
-    const endTime = Date.now();
-    const timeTaken = isRanking ? Math.floor((endTime - startTime) / 1000) : null;
-
-    const response = await api.post("/submissions", {
+    const timeTaken = isRanking ? (15 - remainingTime) : null;
+    const payload = {
       questionId,
       userAnswer,
       timeTaken,
       isRanking: Boolean(isRanking),
-    });
+    };
+
+    console.log("제출 요청: ", payload)
+    const response = await api.post("/submissions", payload)
     return response.data;
   };
 
@@ -174,17 +182,18 @@ function GamePage_question() {
     if (timerId) clearInterval(timerId);
 
     const question = questions[currentIndex];
-    const endTime = Date.now();
-    const timeTaken = Math.floor((endTime - startTime) / 1000);
 
     try {
       const result = await submitAnswer(question.id, answer);
-
+      
       if (isRanking) {
+        const timeTaken = 15 - remainingTime;
         setSubmissionResults(prev => [...prev, {
           ...result,
           questionText: question.question || '',
           imageUrl: question.imageUrl || '',
+          timeTaken,
+          userAnswer: answer,
         }]);
 
         if (result.isCorrect) {
@@ -234,7 +243,7 @@ function GamePage_question() {
         <>
           <div className="questionSection">
             <div className="questionNumber">{currentIndex + 1} / {questions.length}</div>
-            {currentQuestion.question ? (
+            {currentQuestion.question && type !== "GUESS_WHO" ? (
               <div className="questionCard">{currentQuestion.question}</div>
             ) : currentQuestion.imageUrl ? (
               <img className="questionImage" src={currentQuestion.imageUrl} />

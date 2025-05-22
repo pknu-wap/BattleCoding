@@ -16,6 +16,7 @@ import UserRanking from "./pages/ranking/UserRanking";
 import EditProfile from "./pages/Game/MyPage/MyAccount/EditProfile/EditProfile";
 import EditInfo from "./pages/Game/MyPage/MyAccount/EditInfo/EditInfo";
 import ModeSelect from "./pages/Game/ModeSelect/ModeSelect";
+import MiniGameReady from "./pages/Game/Game_page/ReadyPage/MiniGame_ready";
 
 const isAuthenticated = () => {
   return !!localStorage.getItem("token");
@@ -40,6 +41,7 @@ const Router = () => {
       <Route path="/mypage/edit-info" element={<ProtectedRoute element={<EditInfo />} />} />
       <Route path="game/mode" element={<ProtectedRoute element={<ModeSelect />} />} />
       <Route path="/game/ready" element={<ProtectedRoute element={<ReadyPage />} />} />
+      <Route path="/game/ready/mini" element={<ProtectedRoute element={<MiniGameReady />} />} />
       <Route path="/game/question" element={<ProtectedRoute element={<QuestionPage />} />} />
       <Route path="/game/answer/right" element={<ProtectedRoute element={<RightAnswerPage />} />} />
       <Route path="/game/answer/wrong" element={<ProtectedRoute element={<WrongAnswerPage />} />} />
