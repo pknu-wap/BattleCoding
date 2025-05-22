@@ -1,20 +1,26 @@
+/* ------------------ Header ------------------ */
 .userHeader {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 8px 12px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #bbbbbb;
-  background-color: #1e1f2b;
-  border-radius: 10px;
-  margin-bottom: 10px;
+  align-items: center;
+  padding: 10px 16px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #dddddd;
+  background-color: #2b2d42;
+  border-radius: 12px;
+  margin-bottom: 14px;
   box-sizing: border-box;
+  border: 1px solid #3a3b4d;
 }
 
 .userHeader span {
-  flex: 1;
   text-align: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .userHeader .placing {
@@ -22,17 +28,20 @@
 }
 
 .userHeader .username {
-  flex: 1.5;
+  flex: 1.8;
+  text-align: left;
+  padding-left: 8px;
 }
 
 .userHeader .scoreline {
-  flex: 2;
+  flex: 2.2;
 }
 
 .userHeader .percent {
-  flex: 1;
+  flex: 1.2;
 }
 
+/* ------------------ Leaderboard Title ------------------ */
 .Leaderboard {
   width: 100%;
   padding: 10px;
@@ -44,6 +53,7 @@
   color: #ffffff;
 }
 
+/* ------------------ User List ------------------ */
 .userList {
   width: 100%;
   display: flex;
@@ -113,7 +123,7 @@
   flex: 1;
 }
 
-/* Top 3 Styling */
+/* ------------------ Top 3 Styling ------------------ */
 .userRow.first {
   border: 3px solid #ffd700;
   background: linear-gradient(135deg, #fff9c4, #ffe082);
@@ -156,7 +166,7 @@
   text-shadow: 0 0 5px #f5deb3;
 }
 
-/* 현재 사용자 강조 */
+/* ------------------ Current User Highlight ------------------ */
 .userRow.currentUser {
   background-color: #3b4160 !important;
   border: 2px solid #00f0ff;
@@ -166,7 +176,7 @@
   z-index: 1;
 }
 
-/* 내 랭킹 박스 강조 */
+/* ------------------ 내 랭킹 박스 강조 ------------------ */
 .my-highlight {
   background-color: #3b4160;
   border: 2px solid #00f0ff;
@@ -180,7 +190,7 @@
   transition: background-color 0.5s ease;
 }
 
-/* 스크롤 후 깜빡임 애니메이션 */
+/* ------------------ 깜빡임 애니메이션 ------------------ */
 @keyframes highlightFlash {
   0%, 100% {
     background-color: #3b4160;
@@ -194,8 +204,62 @@
   animation: highlightFlash 1.5s ease;
 }
 
-/* 모바일 대응 */
+/* ------------------ Pagination ------------------ */
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  font-size: 16px;
+  color: #bbbbbb;
+  user-select: none;
+  padding-bottom: 12px;
+}
+
+.pagination button {
+  background-color: #44475a;
+  color: #f8f8f2;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #6272a4;
+}
+
+.pagination button:disabled {
+  background-color: #2f3136;
+  cursor: default;
+  color: #666666;
+}
+
+.pagination span {
+  min-width: 60px;
+  text-align: center;
+  font-weight: 700;
+  color: #f8f8f2;
+  user-select: none;
+}
+
+/* ------------------ Mobile Responsive ------------------ */
 @media (max-width: 768px) {
+  .userHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    font-size: 13px;
+  }
+
+  .userHeader span {
+    width: 100%;
+    text-align: left;
+  }
+
   .userRow {
     flex-direction: column;
     gap: 10px;
