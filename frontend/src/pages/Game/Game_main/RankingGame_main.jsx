@@ -14,13 +14,13 @@ function RankingGameMain() {
         profileImg: "https://cdn.pixabay.com/photo/2025/04/30/03/22/popsicle-9568309_1280.jpg"
     });
 
-    const token = localStorage.getItem("token");
+    useEffect(() => {
+        const token = localStorage.getItem("token");
         if (!token) {
             alert("로그인이 필요합니다.");
             navigate("/auth/login");
         }
 
-    useEffect(() => {
         const fetchUserInfo = async () => {
             try {
                 const [userRes, rankRes] = await Promise.all([
@@ -32,7 +32,7 @@ function RankingGameMain() {
                     nickname: userRes.data.nickname,
                     xp: userRes.data.xp,
                     rank: rankRes.data.rank,
-                    profileImg: userRes.data.profileImageUrl || "https://cdn.pixabay.com/photo/2025/04/30/03/22/popsicle-9568309_1280.jpg"
+                    profileImg: userRes.data.profileImage || "https://cdn.pixabay.com/photo/2025/04/30/03/22/popsicle-9568309_1280.jpg"
                 });
             } catch (err) {
                 console.error("유저 정보 오류", err);
