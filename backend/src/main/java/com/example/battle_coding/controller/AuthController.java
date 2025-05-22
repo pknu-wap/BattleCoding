@@ -8,6 +8,7 @@ import com.example.battle_coding.repository.UserRepository;
 import com.example.battle_coding.service.AuthService;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
 
@@ -46,7 +47,15 @@ public class AuthController {
     }
 
     @PostMapping("/refresh")
-    public ResponseEntity<LoginResponseDto> refresh(@CookieValue("refreshToken") String refreshToken) {
+    public ResponseEntity<LoginResponseDto> refresh(
+            @CookieValue(value = "refreshToken", required = false) String refreshToken
+    ) {
+
+        if (refreshToken == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body(new LoginResponseDto(false, "쿠키 없음", null, null));
+        }
+
         return ResponseEntity.ok(authService.reissueAccessToken(refreshToken));
     }
 }

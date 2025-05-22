@@ -52,7 +52,7 @@ public class AuthService {
         User user = validateUserCredentials(request.email(), request.password());
         String token = jwtTokenProvider.createAccessToken(user.getEmail());
 
-        String refreshToken = jwtTokenProvider.createRefreshToken();
+        String refreshToken = jwtTokenProvider.createRefreshToken(user.getEmail());
         user.updateRefreshToken(refreshToken);
         userRepository.save(user);
 
@@ -124,9 +124,11 @@ public class AuthService {
         User user = userRepository.findByEmail(email)
                 .orElseThrow(()->new IllegalArgumentException("사용자를 찾을 수 없습니다."));
 
-        if (!refreshToken.equals(user.getRefreshToken())) {
-            throw new IllegalArgumentException("토큰 정보가 일치하지 않습니다.");
-        }
+        // (임시) refreshToken 일치 검증 생략
+
+//        if (!refreshToken.equals(user.getRefreshToken())) {
+//            throw new IllegalArgumentException("토큰 정보가 일치하지 않습니다.");
+//        }
 
         String newAccessToken = jwtTokenProvider.createAccessToken(user.getEmail());
 

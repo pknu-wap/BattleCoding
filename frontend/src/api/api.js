@@ -5,7 +5,6 @@ const api = axios.create({
     withCredentials: true  // 쿠키 자동 전송을 위해 추가
 });
 
-
 // 요청 인터셉터 (Access Token 붙이기)
 api.interceptors.request.use(
     (config) => {
@@ -22,35 +21,38 @@ api.interceptors.request.use(
 api.interceptors.response.use(
     (response) => response,
     async (error) => {
-        const originalRequest = error.config;
+        try {
+            const originalRequest = error.config || {};
+            const status = error.response?.status;
 
-        if (
-            error.response?.status === 401 &&
-            !originalRequest._retry
-        ) {
-            originalRequest._retry = true;
 
-            try {
+            if (status === 401 && !originalRequest._retry) {
+                console.log("🚀 401 감지됨 → refresh 시도");
+
+                originalRequest._retry = true;
+
                 const refreshRes = await axios.post(
                     process.env.REACT_APP_API_URL + "/api/auth/refresh",
                     null,
                     { withCredentials: true }
                 );
 
-                const newAccessToken = refreshRes.data.accessToken;
+                const newAccessToken = refreshRes.data.token;
                 localStorage.setItem("token", newAccessToken);
 
+                originalRequest.headers = originalRequest.headers || {};
                 originalRequest.headers.Authorization = `Bearer ${newAccessToken}`;
-                return axios(originalRequest);  // 원래 요청 재시도
-            } catch (refreshError) {
-                console.error("토큰 재발급 실패", refreshError);
-                localStorage.removeItem("token");
-                window.location.href = "/login";
-                return Promise.reject(refreshError);
-            }
-        }
 
-        return Promise.reject(error);
+                return api(originalRequest);
+            }
+
+            return Promise.reject(error);
+        } catch (interceptorError) {
+            console.error("❌ 인터셉터 자체 에러 발생", interceptorError);
+            localStorage.removeItem("token");
+            window.location.href = "/auth/login";
+            return Promise.reject(interceptorError);
+        }
     }
 );
 
