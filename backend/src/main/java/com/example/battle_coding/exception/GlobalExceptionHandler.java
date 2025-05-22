@@ -16,6 +16,14 @@ public class GlobalExceptionHandler {
                 .body(new ErrorResponseDto(false, e.getMessage()));
     }
 
+    // 입력은 맞지만 외부 조건에 의해 거부되는 경우(닉네임 변경 이력 있음 등)
+    @ExceptionHandler(IllegalStateException.class)
+    public ResponseEntity<ErrorResponseDto> handleIllegalState(IllegalStateException e) {
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .body(new ErrorResponseDto(false, e.getMessage()));
+    }
+
     // 서버 예외
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponseDto> handleException(Exception e) {

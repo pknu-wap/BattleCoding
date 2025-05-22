@@ -16,6 +16,9 @@ import java.time.LocalDateTime;
 @Builder
 @Table(name = "users")
 public class User {
+
+    private static String DEFAULT_IMAGE = "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747656353/%EA%B8%B0%EB%B3%B8_%ED%94%84%EB%A1%9C%ED%95%84_o4xxyn.png";
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,11 +26,22 @@ public class User {
     @Column(unique = true, nullable = true)
     private String email;
 
+    @Setter
     @Column(nullable = true)
     private String password;
 
+    @Setter
     @Column(unique = true, nullable = false, length = 25)
     private String nickname;
+
+    @Builder.Default
+    @Setter
+    @Column(name = "profile_image", length = 500)
+    private String profileImage = DEFAULT_IMAGE;
+
+    @Setter
+    @Column(nullable = false)
+    private boolean nicknameChanged = false;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 10)
@@ -71,4 +85,9 @@ public class User {
                 rank
         );
     }
+
+    public void updateRefreshToken(String refreshToken) {
+        this.refreshToken = refreshToken;
+    }
+
 }
