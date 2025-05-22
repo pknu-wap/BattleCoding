@@ -37,7 +37,7 @@ export default function RBack() {
       const radius = Math.random() * (maxRadius - minRadius) + minRadius;
       const angle = Math.random() * 2 * Math.PI;
       particles.push({
-        size: Math.random() * 1.5 + 0.4,
+        size: Math.random() * 1.7 + 0.3,
         opacity: Math.random() * 0.5 + 0.3,
 
         speedX: Math.random() * 3 + 2,
@@ -55,12 +55,12 @@ export default function RBack() {
       });
     }
 
-    /* 오른쪽 -> 왼쪽
-    function animate() {
+    /* 오른쪽 -> 왼쪽 */
+    /* function animate() {
       ctx.globalCompositeOperation = "destination-out";
       ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.globalCompositeOperation = "multiply";
+      ctx.globalCompositeOperation = "lighter";
 
       particles.forEach((p) => {
         ctx.beginPath();
@@ -77,14 +77,14 @@ export default function RBack() {
         }
       }); */
 
-    /* 소용돌이
-    function animate() {
+    /* 소용돌이 */
+    /*     function animate() {
       ctx.globalCompositeOperation = "destination-out";
       ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       // ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      ctx.globalCompositeOperation = "multiply";
+      ctx.globalCompositeOperation = "lighter";
 
       particles.forEach((p) => {
         const speedFactor = (maxRadius - p.radius) / maxRadius;
@@ -105,12 +105,12 @@ export default function RBack() {
         ctx.fill();
       }); */
 
-    /* 파형
+    /* 파형 */
     function animate() {
       ctx.globalCompositeOperation = "destination-out";
       ctx.fillStyle = "rgba(0, 0, 0, 0.2)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.globalCompositeOperation = "darken";
+      ctx.globalCompositeOperation = "lighter";
 
       particles.forEach((p) => {
         const speedFactor = (maxRadius - p.radius) / maxRadius;
@@ -131,10 +131,10 @@ export default function RBack() {
         ctx.fillStyle = `rgba(120, 100, 80, ${p.opacity})`;
         ctx.arc(x, y, p.size, 0, Math.PI * 2);
         ctx.fill();
-      }); */
+      });
 
-    /* 무한대모양 */
-    function animate() {
+      /* 무한대모양 */
+      /*    function animate() {
       ctx.globalCompositeOperation = "destination-out";
       ctx.fillStyle = "rgba(0, 0, 0, 0.3)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -160,7 +160,7 @@ export default function RBack() {
         ctx.arc(x, y, p.size, 0, Math.PI * 2);
         ctx.fill();
       });
-
+ */
       requestAnimationFrame(animate);
     }
 
