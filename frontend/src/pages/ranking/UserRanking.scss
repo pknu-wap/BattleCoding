@@ -3,38 +3,36 @@ html, body {
   padding: 0;
   width: 100%;
   height: 100%;
-  background-color: #0f1225;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  box-sizing: border-box;
+  overflow: hidden; /* 스크롤 방지 */
 }
+
 
 .container {
-  max-width: 100vw;
-  width: 100%;
-  padding: 40px 20px;
-  min-height: 100vh;
-
+  height: 100vh;  /* 화면 높이에 맞춤 */
+  overflow: hidden; /* 내부 스크롤 방지 */
   display: flex;
   flex-direction: column;
+  justify-content: start;
   align-items: center;
-  gap: 40px;
+  padding: 2vh 2vw;
   box-sizing: border-box;
+  gap: 2vh;
 }
+
 
 /* Header */
 .userHeader {
   width: 100%;
-  max-width: 700px;
+  max-width: 2000px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 24px;
-  font-size: 15px;
+  padding: 12px 20px;
+  font-size: 14px;
   font-weight: 700;
   color: #dddddd;
   background-color: #2b2d42;
   border-radius: 12px;
-  margin-bottom: 20px;
   border: 1px solid #3a3b4d;
   box-sizing: border-box;
 }
@@ -64,51 +62,50 @@ html, body {
 /* Leaderboard Title */
 .Leaderboard {
   width: 100%;
-  max-width: 700px;
+  max-width: 2000px;
   padding: 0;
   text-align: center;
   font-size: 32px;
   font-weight: 900;
   color: #ffffff;
-  margin-bottom: 24px;
+  margin-bottom: px;
 }
 
 /* User List Container */
 .userList {
   width: 100%;
-  max-width: 700px;
-  padding: 0;
-  margin: 0 auto;
-  box-sizing: border-box;
+  max-width: 2000px;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  max-height: 80vh;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 /* User Row */
 .userRow {
+  flex: 1 1 0; /* 균등한 높이 */
+  min-height: 0; /* 높이 제한 */
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #2a2d3a;
-  padding: 16px 24px;
-  margin: 0;
+  padding: 12px 20px;
   border-radius: 12px;
   font-size: 16px;
-  transition: all 0.3s ease;
   box-sizing: border-box;
-  position: relative;
-  user-select: text;
-  cursor: text;
   gap: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
+
 
 .userRow:hover {
   background-color: #333d51;
   transform: scale(1.02);
+  transform-origin: center;
   z-index: 2;
+  overflow: hidden;  /* 호버 시에도 넘침 방지 */
 }
 
 .userRow .placing {
@@ -217,11 +214,18 @@ html, body {
   padding: 8px 20px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition:
+          background-color 0.3s ease,
+          color 0.3s ease,
+          transform 0.2s ease,
+          box-shadow 0.3s ease;
 }
 
 .pagination button:hover:not(:disabled) {
   background-color: #6272a4;
+  color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 0 8px #6272a4cc;
 }
 
 .pagination button:disabled {
@@ -235,7 +239,19 @@ html, body {
   text-align: center;
   font-weight: 700;
   color: #f8f8f2;
+  cursor: pointer; /* 마우스 포인터 변경 */
+  transition:
+          color 0.3s ease,
+          transform 0.2s ease,
+          text-shadow 0.3s ease;
 }
+
+.pagination span:hover {
+  color: #6272a4;
+  transform: scale(1.1);
+  text-shadow: 0 0 8px #6272a4cc;
+}
+
 
 /* Responsive Mobile */
 @media (max-width: 768px) {

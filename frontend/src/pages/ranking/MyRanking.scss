@@ -7,12 +7,16 @@
   flex-direction: column;
   align-items: center;
   gap: 40px;
+
+  /* 화면 전체 높이를 flex container가 채우도록 */
+  height: 100vh;
+  box-sizing: border-box;
 }
 
-/* 마이랭킹 내부 컨테이너 */
+/* 마이랭킹 내부 컨테이너 (타이틀 영역) */
 .MyRanking {
   width: 100%;
-  max-width: 700px;
+  max-width: 2000px;
   background-color: rgba(15, 18, 37, 0.8);
   cursor: pointer;
   border-radius: 12px;
@@ -22,9 +26,35 @@
   flex-direction: column;
   align-items: center;
   gap: 16px;
+
+  /* 타이틀은 컨텐츠 크기만큼만 공간 차지 */
+  flex: 0 0 auto;
 }
 
-/* 타이틀 */
+/* 유저랭킹 영역 스타일 (랭킹 리스트) */
+.User_Ranking {
+  width: 100%;
+  max-width: 2000px;
+  padding: 14px;
+  border-radius: 12px;
+  background-color: #1a1e3a;
+  box-shadow: 0 0 14px #00f0ff33;
+
+  /* 남은 공간 다 차지하도록 flex-grow 설정 */
+  flex: 1 1 auto;
+
+  /* 리스트가 길면 내부 스크롤 */
+  overflow-y: auto;
+
+  box-sizing: border-box;
+
+  /* 모바일 화면 대응 */
+  @media (max-width: 768px) {
+    max-height: 80vh;
+  }
+}
+
+/* 기존 스타일 유지 */
 .Ranking {
   font-size: 28px;
   font-weight: 800;
@@ -34,7 +64,7 @@
   text-shadow: 0 0 8px #00f0ff88;
 }
 
-/* 개별 랭킹 아이템 하이라이트 */
+/* 랭킹 하이라이트 아이템 스타일 */
 .Rank.my-highlight {
   background-color: #3b4160;
   border: 2px solid #00f0ff;
@@ -47,26 +77,28 @@
   align-items: center;
   gap: 24px;
   width: 100%;
+}
 
-  .Placing,
-  .Ranker,
-  .Percent {
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 20px;
-  }
+.Rank.my-highlight .Placing,
+.Rank.my-highlight .Ranker,
+.Rank.my-highlight .Percent {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 20px;
+}
 
-  .rank-icon {
-    margin-right: 10px;
-    font-size: 26px;
-    color: #00f0ff;
-  }
+.Rank.my-highlight .rank-icon {
+  margin-right: 10px;
+  font-size: 26px;
+  color: #00f0ff;
+}
 
-  .r {
-    color: #00f0ff;
-  }
+.Rank.my-highlight .r {
+  color: #00f0ff;
+}
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
+  .Rank.my-highlight {
     flex-direction: column;
     align-items: flex-start;
     gap: 14px;
@@ -81,22 +113,7 @@
   font-size: 18px;
   text-align: center;
   width: 100%;
-  max-width: 700px;
-}
-
-/* 유저랭킹 영역 스타일 (MyRank 안에서 사용) */
-.User_Ranking {
-  width: 100%;
-  max-width: 700px;
-  padding: 14px;
-  border-radius: 12px;
-  background-color: #1a1e3a;
-  box-shadow: 0 0 14px #00f0ff33;
-
-  @media (max-width: 768px) {
-    max-height: 80vh;
-    overflow-y: auto;
-  }
+  max-width: 2000px;
 }
 
 /* 하이라이트 깜빡임 애니메이션 */
