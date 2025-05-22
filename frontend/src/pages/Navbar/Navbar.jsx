@@ -10,12 +10,13 @@ export default function Navbar({ type = "main" }) {
 
   const [nickname, setNickname] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [sessionExpired, setSessionExpired] = useState(false);
 
   const isMainPage = location.pathname === "/";
 
-  const token = localStorage.getItem("token");
-
   useEffect(() => {
+    const token = localStorage.getItem("token");
+
     if (!token) {
       setIsAuthenticated(false);
       return;
@@ -33,10 +34,14 @@ export default function Navbar({ type = "main" }) {
         setIsAuthenticated(true);
       } catch (err) {
         console.error("닉네임 가져오기 실패", err);
+
         setIsAuthenticated(false);
         setNickname("");
 
-        if (err?.response?.status === 401) {
+        if (err?.response?.status === 401 && !sessionExpired) {
+          setSessionExpired(true);
+          localStorage.removeItem("token");
+          
           setTimeout(() => {
             alert("로그인 세션이 만료되었습니다. 다시 로그인해 주세요.");
             navigate("/auth/login");
@@ -46,7 +51,7 @@ export default function Navbar({ type = "main" }) {
     };
 
     fetchUserInfo();
-  }, [token]);
+  }, [navigate, sessionExpired]);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -60,13 +65,12 @@ export default function Navbar({ type = "main" }) {
     <nav className="navbar">
       <div className="navbarInner">
         <div className="navbarLeft">
-          <div className="navbarLogo" onClick={() => navigate("/")}>
-            Battle Coding
-          </div>
+          <div className="navbarLogo" onClick={() => navigate("/")}>Battle Coding</div>
 
           {(type === "main" || type === "user") && (
             <div className="navbarMenu">
-              <button onClick={() => navigate("/game")}>Quizzes</button>
+              <button onClick={() => navigate("/game/practice")}>Practice Game</button>
+              <button onClick={() => navigate("/game/ranking")}>Ranking Game</button>
               <button onClick={() => navigate("/ranking")}>Ranking</button>
             </div>
           )}

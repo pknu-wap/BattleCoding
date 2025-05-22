@@ -10,6 +10,36 @@
 
   font-family: 'Pretendard', sans-serif;
 
+  .countdownBox {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+
+    .countdownText {
+      font-size: 80px;
+      font-weight: 900;
+      color: #00f0ff;
+      animation: fadeScale 0.6s ease-in-out;
+    }
+
+     @keyframes fadeScale {
+      0% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.1);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(1);
+      }
+    }
+  }
+
   .questionSection {
     background: linear-gradient(to bottom, #0d1a2d, #11293d, #183b4e);    
 
@@ -87,6 +117,17 @@
     }
   }
 
+  .rankingTimer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 8px;
+      
+    font-size: 24px;
+    font-weight: 700;
+    color: #00f0ff;
+  }
+
   .answerSection {
     flex: 1;
     display: flex;
@@ -142,7 +183,7 @@
       justify-content: center;
       flex-direction: row;
       align-items: center;
-      padding: 20px;
+      padding: 0;
       gap: 10px;
 
       input {
