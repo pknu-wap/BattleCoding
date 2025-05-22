@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../../Navbar/Navbar";
 import api from "../../../api/api";
-import Rback from "../Game_main/Game_Rback";
 import "./RankingGame_main.scss";
+import Rback from "../Game_main/Game_Rback";
 
 function RankingGameMain() {
   const navigate = useNavigate();
@@ -15,13 +15,13 @@ function RankingGameMain() {
     profileImg: "https://cdn.pixabay.com/photo/2025/04/30/03/22/popsicle-9568309_1280.jpg",
   });
 
-  const token = localStorage.getItem("token");
-  if (!token) {
-    alert("로그인이 필요합니다.");
-    navigate("/auth/login");
-  }
-
   useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      alert("로그인이 필요합니다.");
+      navigate("/auth/login");
+    }
+
     const fetchUserInfo = async () => {
       try {
         const [userRes, rankRes] = await Promise.all([api.get("/user/me"), api.get("/user/my-ranking")]);
@@ -31,7 +31,7 @@ function RankingGameMain() {
           xp: userRes.data.xp,
           rank: rankRes.data.rank,
           profileImg:
-            userRes.data.profileImageUrl || "https://cdn.pixabay.com/photo/2025/04/30/03/22/popsicle-9568309_1280.jpg",
+            userRes.data.profileImage || "https://cdn.pixabay.com/photo/2025/04/30/03/22/popsicle-9568309_1280.jpg",
         });
       } catch (err) {
         console.error("유저 정보 오류", err);

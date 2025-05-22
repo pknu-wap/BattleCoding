@@ -27,11 +27,11 @@ export default function RBack() {
     const radiusSpeedMin = -0.05;
     const radiusSpeedMax = 0.05;
 
-    const minRadius = 50;
-    const maxRadius = Math.min(canvas.width, canvas.height) / 1.2;
+    const minRadius = 70;
+    const maxRadius = Math.min(canvas.width, canvas.height) / 1.5;
 
-    //    const maxRadius = canvas.width / 1.5;
-    //    const minRadius = 10;
+    // const maxRadius = canvas.width / 2;
+    // const minRadius = 50;
 
     for (let i = 0; i < particleCount; i++) {
       const radius = Math.random() * (maxRadius - minRadius) + minRadius;
@@ -47,7 +47,7 @@ export default function RBack() {
 
         angle: angle,
         radius: radius,
-        radiusSpeed: (Math.random() - 0.5) * 1.5,
+        radiusSpeed: (Math.random() - 0.5) * 1.2,
         angularSpeed: Math.random() * 0.009 + 0.004,
 
         // radiusSpeed: Math.random() * (radiusSpeedMax - radiusSpeedMin) + radiusSpeedMin,

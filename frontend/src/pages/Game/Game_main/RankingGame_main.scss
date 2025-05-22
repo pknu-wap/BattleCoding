@@ -1,112 +1,117 @@
 .rankingmodebackground {
   position: fixed;
 
-  top: 0;
-  left: 0;
-
   width: 100%;
   height: 100%;
 
-  z-index: 0;
-
+  background-color: transparent;
+  overflow: hidden;
   pointer-events: none;
+
+  z-index: -1;
 }
 
 .gameMain {
   background: linear-gradient(to bottom, #0d1a2d, #11293d, #183b4e);
 
   width: 100vw;
-  min-height: calc(100vh - 56px);
+  min-height: 100vh;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-sizing: border-box;
 
   font-family: "Pretendard", sans-serif;
   text-align: center;
 
   .quizIntro {
+    z-index: 5;
+
     .quizHeading {
       font-size: 30px;
       font-weight: 800;
       color: #ffffff;
 
-      z-index: 5;
-
-      .quizSubText {
-        font-size: 18px;
-        color: #cccccc;
-        margin: 12px 0 0 0;
-
-        p {
-          margin: 10px;
-        }
+      .highlight {
+        color: #00f0ff;
       }
     }
 
-    .profileSection {
-      background-color: #1b2430;
+    .quizSubText {
+      font-size: 18px;
+      color: #cccccc;
+      margin: 12px 0 0 0;
 
+      p {
+        margin: 10px;
+      }
+    }
+  }
+
+  .profileSection {
+    background-color: #1b2430;
+
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+
+    min-height: 120px;
+    padding: 25px 50px;
+    margin: 20px 0 30px;
+    gap: 50px;
+
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.15);
+
+    .profileImg {
+      width: 110px;
+      height: 110px;
+
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .userInfo {
       display: flex;
-      align-items: center;
+      flex-direction: column;
+      align-items: flex-start;
 
-      min-height: 120px;
-      padding: 25px 50px;
-      margin: 20px 0 30px;
-      gap: 50px;
-
-      z-index: 5;
-
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0, 240, 255, 0.15);
-
-      .profileImg {
-        width: 110px;
-        height: 110px;
-
-        border-radius: 50%;
-        object-fit: cover;
+      .nickname {
+        margin-bottom: 12px;
+        font-size: 26px;
+        font-weight: 700;
+        color: #00f0ff;
       }
 
-      .userInfo {
+      .stats {
+        width: 100%;
+        gap: 8px;
+
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 18px;
+        color: #cccccc;
 
-        .nickname {
-          margin-bottom: 12px;
-          font-size: 26px;
-          font-weight: 700;
-          color: #00f0ff;
-        }
-
-        .stats {
-          width: 100%;
-          gap: 8px;
-
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
-          font-size: 18px;
-          color: #cccccc;
-
-          .xp,
-          .rank {
-            display: inline-block;
-          }
+        .xp,
+        .rank {
+          display: inline-block;
         }
       }
     }
   }
+
   .ruleSection {
     background-color: rgba(255, 255, 255, 0.05);
+
+    z-index: 100;
 
     width: 100%;
     max-width: 650px;
     padding: 25px 30px;
     margin: 20px auto;
-
-    z-index: 5;
 
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(0, 240, 255, 0.12);
@@ -130,6 +135,8 @@
   .btnSection {
     margin-top: 20px;
 
+    z-index: 5;
+
     .startBtn {
       background-color: #00f0ff;
       color: #000;
@@ -149,45 +156,6 @@
         transform: translateY(-2px);
         box-shadow: 0 8px 20px rgba(0, 240, 255, 0.2);
       }
-    }
-  }
-
-  .userInfo {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-
-    .nickname {
-      font-size: 20px;
-      font-weight: 700;
-      color: #ffffff;
-    }
-
-    .xp,
-    .rank {
-      font-size: 14px;
-      color: #cccccc;
-    }
-  }
-}
-
-.btnSection {
-  margin-top: 40px;
-  z-index: 5;
-
-  .startBtn {
-    background-color: #00f0ff;
-    color: #000;
-    font-weight: bold;
-    font-size: 16px;
-    padding: 14px 28px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background-color: #00c2d3;
     }
   }
 }
