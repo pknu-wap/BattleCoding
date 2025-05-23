@@ -15,7 +15,6 @@ import java.util.List;
 public class ProfileImageController {
 
     private final ProfileImageRepository profileImageRepository;
-    private final UserService userService;
 
     @GetMapping("/images")
     public ResponseEntity<List<String>> getAllProfileImages() {
