@@ -1718,5 +1718,636 @@
       "르트"
     ],
     "difficulty": "EASY"
+  },
+
+  {
+    "id": 40173,
+    "type": "WORD_CHAIN",
+    "question": "견인",
+    "imageUrl": null,
+    "answers": [
+      "지역"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40174,
+    "type": "WORD_CHAIN",
+    "question": "게르",
+    "imageUrl": null,
+    "answers": [
+      "마늄"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40175,
+    "type": "WORD_CHAIN",
+    "question": "공기",
+    "imageUrl": null,
+    "answers": [
+      "놀이"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40176,
+    "type": "WORD_CHAIN",
+    "question": "제기",
+    "imageUrl": null,
+    "answers": [
+      "차기"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40177,
+    "type": "WORD_CHAIN",
+    "question": "차량",
+    "imageUrl": null,
+    "answers": [
+      "운행"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40178,
+    "type": "WORD_CHAIN",
+    "question": "안전",
+    "imageUrl": null,
+    "answers": [
+      "제일"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40179,
+    "type": "WORD_CHAIN",
+    "question": "퀵서",
+    "imageUrl": null,
+    "answers": [
+      "비스"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40180,
+    "type": "WORD_CHAIN",
+    "question": "바른",
+    "imageUrl": null,
+    "answers": [
+      "생활"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40181,
+    "type": "WORD_CHAIN",
+    "question": "게슴",
+    "imageUrl": null,
+    "answers": [
+      "츠레"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40182,
+    "type": "WORD_CHAIN",
+    "question": "고슴",
+    "imageUrl": null,
+    "answers": [
+      "도치"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40183,
+    "type": "WORD_CHAIN",
+    "question": "헬리",
+    "imageUrl": null,
+    "answers": [
+      "콥터"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40184,
+    "type": "WORD_CHAIN",
+    "question": "오토",
+    "imageUrl": null,
+    "answers": [
+      "바이"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40185,
+    "type": "WORD_CHAIN",
+    "question": "바이",
+    "imageUrl": null,
+    "answers": [
+      "올린"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40186,
+    "type": "WORD_CHAIN",
+    "question": "카멜",
+    "imageUrl": null,
+    "answers": [
+      "레온"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40187,
+    "type": "WORD_CHAIN",
+    "question": "바로",
+    "imageUrl": null,
+    "answers": [
+      "가기"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40188,
+    "type": "WORD_CHAIN",
+    "question": "탱크",
+    "imageUrl": null,
+    "answers": [
+      "로리"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40189,
+    "type": "WORD_CHAIN",
+    "question": "사자",
+    "imageUrl": null,
+    "answers": [
+      "성어"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40190,
+    "type": "WORD_CHAIN",
+    "question": "가상",
+    "imageUrl": null,
+    "answers": [
+      "계좌"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40191,
+    "type": "WORD_CHAIN",
+    "question": "만사",
+    "imageUrl": null,
+    "answers": [
+      "형통"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40192,
+    "type": "WORD_CHAIN",
+    "question": "레이",
+    "imageUrl": null,
+    "answers": [
+      "아웃"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40193,
+    "type": "WORD_CHAIN",
+    "question": "신문",
+    "imageUrl": null,
+    "answers": [
+      "사설"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40194,
+    "type": "WORD_CHAIN",
+    "question": "영재",
+    "imageUrl": null,
+    "answers": [
+      "교육"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40195,
+    "type": "WORD_CHAIN",
+    "question": "우리",
+    "imageUrl": null,
+    "answers": [
+      "은행"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40196,
+    "type": "WORD_CHAIN",
+    "question": "국민",
+    "imageUrl": null,
+    "answers": [
+      "은행"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40197,
+    "type": "WORD_CHAIN",
+    "question": "기업",
+    "imageUrl": null,
+    "answers": [
+      "은행"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40198,
+    "type": "WORD_CHAIN",
+    "question": "일본",
+    "imageUrl": null,
+    "answers": [
+      "뇌염"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40199,
+    "type": "WORD_CHAIN",
+    "question": "폐렴",
+    "imageUrl": null,
+    "answers": [
+      "구균"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40200,
+    "type": "WORD_CHAIN",
+    "question": "특별",
+    "imageUrl": null,
+    "answers": [
+      "활동"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40201,
+    "type": "WORD_CHAIN",
+    "question": "담임",
+    "imageUrl": null,
+    "answers": [
+      "교사"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40202,
+    "type": "WORD_CHAIN",
+    "question": "현장",
+    "imageUrl": null,
+    "answers": [
+      "학습"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40203,
+    "type": "WORD_CHAIN",
+    "question": "휴대",
+    "imageUrl": null,
+    "answers": [
+      "전화"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40204,
+    "type": "WORD_CHAIN",
+    "question": "프리",
+    "imageUrl": null,
+    "answers": [
+      "미엄"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40205,
+    "type": "WORD_CHAIN",
+    "question": "협동",
+    "imageUrl": null,
+    "answers": [
+      "조합"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40206,
+    "type": "WORD_CHAIN",
+    "question": "제품",
+    "imageUrl": null,
+    "answers": [
+      "설명"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40207,
+    "type": "WORD_CHAIN",
+    "question": "직사",
+    "imageUrl": null,
+    "answers": [
+      "광선", "각형"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40208,
+    "type": "WORD_CHAIN",
+    "question": "분리",
+    "imageUrl": null,
+    "answers": [
+      "수거"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40209,
+    "type": "WORD_CHAIN",
+    "question": "폼클",
+    "imageUrl": null,
+    "answers": [
+      "렝징"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40210,
+    "type": "WORD_CHAIN",
+    "question": "빨랫",
+    "imageUrl": null,
+    "answers": [
+      "비누"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40211,
+    "type": "WORD_CHAIN",
+    "question": "총각",
+    "imageUrl": null,
+    "answers": [
+      "김치"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40212,
+    "type": "WORD_CHAIN",
+    "question": "배추",
+    "imageUrl": null,
+    "answers": [
+      "김치"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40213,
+    "type": "WORD_CHAIN",
+    "question": "벼룩",
+    "imageUrl": null,
+    "answers": [
+      "시장"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40214,
+    "type": "WORD_CHAIN",
+    "question": "코스",
+    "imageUrl": null,
+    "answers": [
+      "모스"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40215,
+    "type": "WORD_CHAIN",
+    "question": "수면",
+    "imageUrl": null,
+    "answers": [
+      "장애"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40216,
+    "type": "WORD_CHAIN",
+    "question": "고지",
+    "imageUrl": null,
+    "answers": [
+      "혈증"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40217,
+    "type": "WORD_CHAIN",
+    "question": "학습",
+    "imageUrl": null,
+    "answers": [
+      "효과"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40218,
+    "type": "WORD_CHAIN",
+    "question": "비선",
+    "imageUrl": null,
+    "answers": [
+      "실세"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40219,
+    "type": "WORD_CHAIN",
+    "question": "초등",
+    "imageUrl": null,
+    "answers": [
+      "학생"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40220,
+    "type": "WORD_CHAIN",
+    "question": "고등",
+    "imageUrl": null,
+    "answers": [
+      "학생"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40221,
+    "type": "WORD_CHAIN",
+    "question": "카놀",
+    "imageUrl": null,
+    "answers": [
+      "라유"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40222,
+    "type": "WORD_CHAIN",
+    "question": "톱니",
+    "imageUrl": null,
+    "answers": [
+      "바퀴"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40223,
+    "type": "WORD_CHAIN",
+    "question": "공지",
+    "imageUrl": null,
+    "answers": [
+      "사항"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40224,
+    "type": "WORD_CHAIN",
+    "question": "비즈",
+    "imageUrl": null,
+    "answers": [
+      "공예"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40225,
+    "type": "WORD_CHAIN",
+    "question": "헤드",
+    "imageUrl": null,
+    "answers": [
+      "라인"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40226,
+    "type": "WORD_CHAIN",
+    "question": "황금",
+    "imageUrl": null,
+    "answers": [
+      "어장"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40227,
+    "type": "WORD_CHAIN",
+    "question": "다사",
+    "imageUrl": null,
+    "answers": [
+      "다난"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40228,
+    "type": "WORD_CHAIN",
+    "question": "잠금",
+    "imageUrl": null,
+    "answers": [
+      "모드"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40229,
+    "type": "WORD_CHAIN",
+    "question": "카카",
+    "imageUrl": null,
+    "answers": [
+      "오톡"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40230,
+    "type": "WORD_CHAIN",
+    "question": "대표",
+    "imageUrl": null,
+    "answers": [
+      "전화"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40231,
+    "type": "WORD_CHAIN",
+    "question": "백일",
+    "imageUrl": null,
+    "answers": [
+      "잔치"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40232,
+    "type": "WORD_CHAIN",
+    "question": "코스",
+    "imageUrl": null,
+    "answers": [
+      "프레"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40233,
+    "type": "WORD_CHAIN",
+    "question": "곤충",
+    "imageUrl": null,
+    "answers": [
+      "채집"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40234,
+    "type": "WORD_CHAIN",
+    "question": "박테",
+    "imageUrl": null,
+    "answers": [
+      "리아"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 40235,
+    "type": "WORD_CHAIN",
+    "question": "애벌",
+    "imageUrl": null,
+    "answers": [
+      "빨래"
+    ],
+    "difficulty": "EASY"
   }
 ]
