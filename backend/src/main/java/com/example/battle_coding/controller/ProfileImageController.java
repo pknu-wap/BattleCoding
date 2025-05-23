@@ -19,10 +19,7 @@ public class ProfileImageController {
 
     @GetMapping("/images")
     public ResponseEntity<List<String>> getAllProfileImages() {
-        List<String> imageUrls = profileImageRepository.findAll()
-                .stream()
-                .map(ProfileImage::getImageUrl)
-                .toList();
+        List<String> imageUrls = profileImageRepository.findAllOrderedById();
         return ResponseEntity.ok(imageUrls);
     }
 
