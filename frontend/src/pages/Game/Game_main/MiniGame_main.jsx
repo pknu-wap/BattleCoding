@@ -33,7 +33,7 @@ function MiniGameMain() {
             </p>
           </div>
           <div className="gameCards">
-            {GameCard_Data.length === 0 ? (
+            {MiniCard_Data.length === 0 ? (
               <div className="Browsing">퀴즈가 없습니다.</div>
             ) : (
               MiniCard_Data.map((data, index) => (
@@ -45,6 +45,7 @@ function MiniGameMain() {
                   type={data.type}
                   difficulty={data.difficulty}
                   isRanking={isRanking}
+                  mode="mini"
                   typing={data.typing}
                   typingPosition={data.typingPosition}
                 />

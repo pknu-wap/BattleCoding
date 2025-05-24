@@ -44,7 +44,7 @@ function RankingGameMain() {
 
     const handleClick = () => {
         navigate('/game/question', {
-            state: { isRanking: true }
+            state: { isRanking: true, mode: "ranking" }
         });
     };
 

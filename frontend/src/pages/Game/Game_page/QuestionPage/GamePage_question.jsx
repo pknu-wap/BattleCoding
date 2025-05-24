@@ -8,7 +8,15 @@ import "./GamePage_question.scss";
 function GamePage_question() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { type = null, difficulty = null, image, title, description, isRanking } = location.state || {};
+  const {
+    type = null, 
+    difficulty = null, 
+    image, 
+    title, 
+    description, 
+    isRanking,
+    mode = "practice",
+   } = location.state || {};
 
   const [questions, setQuestions] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -25,6 +33,7 @@ function GamePage_question() {
   const [isCountingDown, setIsCountingDown] = useState(true);
   const [hasShownCountdown, setHasShownCountdown] = useState(false);
 
+  const shouldCountDown = isRanking || mode === "mini";
   const [remainingTime, setRemainingTime] = useState(15);
   const [timerId, setTimerId] = useState(null);
 
@@ -109,9 +118,11 @@ function GamePage_question() {
   }, [isCountingDown, isRanking, hasShownCountdown]);
 
   useEffect(() => {
-    if (!isRanking || isCountingDown || !hasShownCountdown) return;
+    if (!shouldCountDown || isCountingDown || !hasShownCountdown) return;
 
-    setRemainingTime(15);
+    const limit = mode === "mini" ? 3 : 15;
+    setRemainingTime(limit);
+
     const id = setInterval(() => {
       setRemainingTime(prev => {
         if (prev <= 1) {
@@ -125,15 +136,15 @@ function GamePage_question() {
     setTimerId(id);
 
     return () => clearInterval(id);
-  }, [currentIndex, isRanking, isCountingDown, hasShownCountdown]);
+  }, [currentIndex, shouldCountDown, isCountingDown, hasShownCountdown]);
 
   useEffect(() => {
     if (questions.length > 0 && currentIndex >= questions.length) {
       navigate('/game/result', {
         state: {
-          image, title, description, type, difficulty, isRanking,
+          image, title, description, type, difficulty, isRanking, mode,
           score: Math.round(score),
-          submissionResults
+          submissionResults,
          }
       });
     }
@@ -152,7 +163,7 @@ function GamePage_question() {
   }, [isRanking, showFeedback]);
 
   const submitAnswer = async (questionId, userAnswer) => {
-    const timeTaken = isRanking ? (15 - remainingTime) : null;
+    const timeTaken = shouldCountDown ? (remainingTime === 0 ? 0 : (mode === "mini" ? 3 - remainingTime : 15 - remainingTime)) : null;
     const payload = {
       questionId,
       userAnswer,
@@ -252,7 +263,7 @@ function GamePage_question() {
             )}
           </div>
           
-          {isRanking && !isCountingDown && (
+          {shouldCountDown && !isCountingDown && (
             <div className="rankingTimer">⏱ {remainingTime}초</div>
           )}
           

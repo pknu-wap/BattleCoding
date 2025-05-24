@@ -90,50 +90,51 @@
     }
 
     .miniIntro {
-        margin-bottom: 30px;
+      margin-bottom: 40px;
 
-        .miniHeading {
-            margin-bottom: 20px;
-            font-size: 30px;
-            font-weight: 800;
-            color: #ffffff;
+      .miniHeading {
+        margin-bottom: 20px;
+        font-size: 30px;
+        font-weight: 800;
+        color: #ffffff;
 
-            .highlight {
-                color: #00f0ff;
-            }
-        }
+        .highlight {
+          color: #00f0ff;
+       }
+      }
 
-        .miniSubtext {
-            font-size: 18px;
-            color: #cccccc;
-            margin-top: 12px;
-        }
+      .miniSubtext {
+        font-size: 18px;
+        color: #cccccc;
+        margin-top: 12px;
+      }
     }
 
     .ruleSection {
-        background-color: rgba(255, 255, 255, 0.05);
+      background-color: rgba(255, 255, 255, 0.05);
 
-        width: 100%;
-        max-width: 650px;
-        padding: 30px;
-        
-        border-radius: 12px;
-        box-shadow: 0 0 10px rgba(0, 240, 255, 0.12);
+      width: 100%;
+      max-width: 650px;
+      padding: 30px;
+      margin-bottom: 50px;
+      
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 240, 255, 0.12);
 
-        text-align: left;
-        color: #ffffff;
+      text-align: left;
+      color: #ffffff;
 
-        h3 {
-            margin: 0 0 25px 0;
-            font-size: 26px;
-            color: #00f0ff;
-        }
+      h3 {
+        margin: 0 0 25px 0;
+        font-size: 25px;
+        color: #00f0ff;
+      }
 
-        p {
-            margin: 16px 0 0 0;
-            font-size: 16px;
-            color: #cccccc;
-        } 
+      p {
+        margin: 16px 0 0 0;
+        font-size: 17px;
+        color: #cccccc;
+      } 
     }
     
     .btnSection {
@@ -143,8 +144,8 @@
             background-color: #00f0ff;
             color: #000;
             font-weight: 700;
-            font-size: 18px;
-            padding: 14px 30px;
+            font-size: 22px;
+            padding: 18px 42px;
 
             border: 2px solid #00f0ff;
             border-radius: 12px;

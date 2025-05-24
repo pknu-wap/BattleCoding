@@ -4,15 +4,21 @@ import './Navbar_game.scss'
 export default function Navbar({ type = "main" }) {
     const navigate = useNavigate();
     const location = useLocation();
-    const isRanking = location.state?.isRanking;
+    const mode = location.state?.mode;
 
     const handleExit = () => {
-        if (isRanking) {
-            navigate('/game/ranking');
-        } else {
-            navigate('/game/practice');
+        switch (mode) {
+            case "ranking":
+                navigate('/game/ranking');
+                break;
+            case "practice":
+                navigate('/game/practice');
+                break;
+            case "mini":
+                navigate('/game/mini');
+                break;
         }
-    }
+    };
     
     return (
         <nav className='navbarGame'>

@@ -45,6 +45,7 @@ function PracticeGameMain() {
                   type={data.type}
                   difficulty={data.difficulty}
                   isRanking={isRanking}
+                  mode="practice"
                   typing={data.typing}
                   typingPosition={data.typingPosition}
                 />

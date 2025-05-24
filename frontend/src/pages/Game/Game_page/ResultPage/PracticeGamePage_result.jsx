@@ -6,12 +6,14 @@ import "./PracticeGamePage_result.scss";
 function PracticeResult() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { image, title, description, type, difficulty, score = 0, isRanking = false } = location.state || {};
+  const { image, title, description, type, difficulty, score = 0, isRanking = false, mode } = location.state || {};
 
   const [xpEarned, setXpEarned] = useState(0);
   const [updatedXp, setUpdatedXp] = useState(0);
 
   const difficultyLabel = { EASY: "초급", MEDIUM: "중급", HARD: "고급" }[difficulty] || "";
+  const titleLabel = difficultyLabel ? `${title} ${difficultyLabel} 결과` : `${title} 결과`;
+
   const totalQuestions = 10;
 
   useEffect(() => {
@@ -31,6 +33,19 @@ function PracticeResult() {
     fetchXp();
   }, [isRanking]);
 
+  const handleRetry = () => {
+    let retryPath = '/game/ready';
+
+    if (!difficulty) {
+      if (type === "WORD_CHAIN") retryPath = "/game/ready/mini/four";
+      else if (type === "GUESS_WHO") retryPath = "/game/ready/mini/person";
+    }
+
+    navigate(retryPath, {
+      state: { image, title, description, type, difficulty },
+    });
+  };
+
   return (
     <div className="practiceResultWrapper">
       <div className="practiceResultSection">
@@ -38,7 +53,7 @@ function PracticeResult() {
           <div className="resultText">
             <div className="resultInfo">
               <div className="leftSection">
-                <h2>{title} {difficultyLabel} 결과</h2>
+                <h2>{titleLabel}</h2>
                 <img className="resultImg" src={image} alt={title} />
                 <p><span className="highlightScore">{score}</span> 개 맞았습니다!</p>
               </div>
@@ -57,13 +72,7 @@ function PracticeResult() {
 
       <div className="btnSection">
         <button onClick={() => navigate("/mypage")}>마이페이지</button>
-        <button
-          onClick={() =>
-            navigate("/game/ready", {
-              state: { image, title, description, type, difficulty }
-            })
-          }
-        >다시</button>
+        <button onClick={handleRetry}>다시</button>
         <button onClick={() => navigate("/")}>메인</button>
       </div>
     </div>

@@ -15,7 +15,7 @@
   background: linear-gradient(to bottom, #0d1a2d, #11293d, #183b4e);
 
   width: 100vw;
-  min-height: 100vh;
+  min-height: calc(100vh - 56px);
 
   display: flex;
   flex-direction: column;
@@ -141,7 +141,7 @@
       background-color: #00f0ff;
       color: #000;
       font-weight: 700;
-      font-size: 18px;
+      font-size: 22px;
       padding: 14px 30px;
 
       border: 2px solid #00f0ff;
