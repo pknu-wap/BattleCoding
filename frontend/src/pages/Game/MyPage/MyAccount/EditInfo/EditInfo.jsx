@@ -1,78 +1,3 @@
-// import React, { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
-// import './EditInfo.scss';
-
-
-// function EditProfile() {
-//   const [nickname, setNickname] = useState(''); // 닉네임 상태
-//   const [password, setPassword] = useState(''); // 새 비밀번호 상태
-//   const [confirmPassword, setConfirmPassword] = useState(''); // 비밀번호 확인 상태
-//   const navigate = useNavigate();
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-
-//     if (password && password !== confirmPassword) {
-//       alert('비밀번호가 일치하지 않습니다.');
-//       return;
-//     }
-
-//     localStorage.setItem('nickname', nickname);
-//     if (password) {
-//       localStorage.setItem('password', password);
-//     }
-
-//     navigate('/mypage');
-//   };
-
-//   return (
-//     <div className="edit-profile">
-//       <span className='title'>정보 수정</span>
-//       <form onSubmit={handleSubmit}>
-
-//         <div className="nickname-section">
-//           <label htmlFor="nickname">닉네임</label>
-//           <input
-//             type="text"
-//             id="nickname"
-//             value={nickname}
-//             onChange={(e) => setNickname(e.target.value)}
-//             placeholder="새 닉네임"
-//           />
-//         </div>
-
-//         <div className="password-section">
-//           <label htmlFor="password">비밀번호 변경</label>
-//           <input
-//             type="password"
-//             id="password"
-//             value={password}
-//             onChange={(e) => setPassword(e.target.value)}
-//             placeholder="새 비밀번호 입력"
-//           />
-//           <input
-//             type="password"
-//             value={confirmPassword}
-//             onChange={(e) => setConfirmPassword(e.target.value)}
-//             placeholder="비밀번호 확인"
-//           />
-//         </div>
-
-//         <div className="buttons">
-//           <button type="submit">저장</button>
-//           <button type="button" onClick={(e) => {
-//             e.preventDefault(); navigate('/mypage')}}>
-//             취소
-//           </button>
-//         </div>
-//       </form>
-//     </div>
-//   );
-// }
-
-// export default EditProfile;
-
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './EditInfo.scss';
@@ -81,7 +6,7 @@ import api from '../../../../../api/api';
 const pwdRegex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{8,20}$/;
 const forbiddenspecials = /[^a-zA-Z0-9!@#$%^&*]/;
 
-function EditProfile() {
+function EditInfo() {
   const [nickname, setNickname] = useState('');
   const [originalNickname, setOriginalNickname] = useState('');
   const [nicknameMessage, setNicknameMessage] = useState('');
@@ -101,7 +26,6 @@ function EditProfile() {
     setNickname(storedNickname);
     setOriginalNickname(storedNickname);
 
-    // ✅ 닉네임 변경 여부 확인 API 호출
     api.get('/user/nickname-changed')
       .then((res) => {
         if (res.data.changed) {
@@ -215,23 +139,25 @@ function EditProfile() {
 
         <div className="nickname-section">
           <label htmlFor="nickname">닉네임</label>
-          <input
-            type="text"
-            id="nickname"
-            value={nickname}
-            onChange={(e) => handleNicknameChangeInput(e.target.value)}
-            placeholder="새 닉네임"
-            disabled={nicknameChangeDisabled} // ✅ 1회 제한 적용
-          />
-          <p className={isNicknameValid ? 'valid' : 'invalid'}>{nicknameMessage}</p>
+          <div className="nickname-input-wrapper">
+            <input
+              type="text"
+              id="nickname"
+              value={nickname}
+              onChange={(e) => handleNicknameChangeInput(e.target.value)}
+              placeholder="새 닉네임"
+              disabled={nicknameChangeDisabled} // ✅ 1회 제한 적용
+            />
 
-          <button
-            type="button"
-            onClick={submitNicknameChange}
-            disabled={nicknameChangeDisabled || !isNicknameValid || nickname === originalNickname} // ✅ 항상 표시되지만 조건부 비활성화
-          >
-            닉네임 변경 확정
-          </button>
+            <button
+              type="button"
+              onClick={submitNicknameChange}
+              disabled={nicknameChangeDisabled || !isNicknameValid || nickname === originalNickname}
+            >
+              변경
+            </button>
+          </div>
+          <p className={isNicknameValid ? 'valid' : 'invalid'}>{nicknameMessage}</p>
         </div>
 
         <div className="password-section">
@@ -273,5 +199,5 @@ function EditProfile() {
   );
 }
 
-export default EditProfile;
+export default EditInfo;
 
