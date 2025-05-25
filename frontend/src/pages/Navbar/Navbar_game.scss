@@ -37,15 +37,15 @@
   .navbarGameRight {
     display: flex;
     align-items: center;
-  }
+    gap: 20px;
 
-  .navbarAuth {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+    .navbarCountdown {
+      font-size: 18px;
+      font-weight: 700;
+      color: #00f0ff;
+    }
 
-  button {
+    .exitBtn {
     background-color: transparent;
 
     padding: 6px 20px;
@@ -69,5 +69,6 @@
       background-color: #00f0ff;
       color: #161d28;
     }
+  }
   }
 }

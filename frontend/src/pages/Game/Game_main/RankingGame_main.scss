@@ -133,19 +133,21 @@
   }
 
   .btnSection {
-    margin-top: 20px;
+    margin: 20px 0 60px;
 
     z-index: 5;
 
     .startBtn {
       background-color: #00f0ff;
-      color: #000;
-      font-weight: 700;
-      font-size: 22px;
+
       padding: 14px 30px;
 
       border: 2px solid #00f0ff;
       border-radius: 12px;
+
+      color: #000;
+      font-weight: 700;
+      font-size: 22px;
 
       cursor: pointer;
       transition: all 0.3s;

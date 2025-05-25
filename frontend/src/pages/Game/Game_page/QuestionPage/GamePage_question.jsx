@@ -5,7 +5,7 @@ import { getRandomQuestionByTypeAndDifficulty } from "../../../../api/questionAp
 import { getBonusRatio, calculateFinalScore } from "../../../../utils/scoring";
 import "./GamePage_question.scss";
 
-function GamePage_question() {
+function GamePage_question({ countdownText, setCountdownText, startCountdownText, setStartCountdownText }) {
   const navigate = useNavigate();
   const location = useLocation();
   const {
@@ -29,7 +29,6 @@ function GamePage_question() {
   const [submissionResults, setSubmissionResults] = useState([]);
   const [startTime, setStartTime] = useState(Date.now());
 
-  const [countdownText, setCountdownText] = useState("");
   const [isCountingDown, setIsCountingDown] = useState(true);
   const [hasShownCountdown, setHasShownCountdown] = useState(false);
 
@@ -99,17 +98,15 @@ function GamePage_question() {
     let idx = 0;
 
     const interval = setInterval(() => {
-      setCountdownText(steps[idx]);
+      setStartCountdownText(steps[idx]);
       idx++;
 
       if (idx === steps.length) {
         clearInterval(interval);
-
-        setStartTime(Date.now());
-
         setTimeout(() => {
           setIsCountingDown(false);
           setHasShownCountdown(true);
+          setStartCountdownText("");
         }, 800)
       }
     }, 1000);
@@ -122,17 +119,24 @@ function GamePage_question() {
 
     const limit = mode === "mini" ? 3 : 15;
     setRemainingTime(limit);
+    setCountdownText(`${limit}초`);
 
     const id = setInterval(() => {
       setRemainingTime(prev => {
-        if (prev <= 1) {
+        const updated = prev - 1;
+
+        if (updated <= 0) {
           clearInterval(id);
           document.querySelector("form").requestSubmit();
+          setCountdownText("");
           return 0;
         }
-        return prev - 1;
+
+        setCountdownText(`${updated}초`);
+        return updated;
       });
     }, 1000);
+
     setTimerId(id);
 
     return () => clearInterval(id);
@@ -246,7 +250,7 @@ function GamePage_question() {
     <form className="questionWrapper" onSubmit={handleSubmit}>
       {isRanking && isCountingDown && (
         <div className="countdownBox">
-          <div className="countdownText">{countdownText}</div>
+          <div className="countdownText">{startCountdownText}</div>
         </div>
       )}
 
@@ -262,11 +266,7 @@ function GamePage_question() {
               <p style={{ color: "white" }}>문제가 없습니다.</p>
             )}
           </div>
-          
-          {shouldCountDown && !isCountingDown && (
-            <div className="rankingTimer">⏱ {remainingTime}초</div>
-          )}
-          
+        
           <div className={`answerSection ${showFeedback ? "feedbackMode" : "inputMode"}`}>
             {!showFeedback ? (
               <>
