@@ -27,9 +27,9 @@
   align-items: center;
   gap: 16px;
 
-  /* 타이틀은 컨텐츠 크기만큼만 공간 차지 */
   flex: 0 0 auto;
 }
+
 
 /* 유저랭킹 영역 스타일 (랭킹 리스트) */
 .User_Ranking {
@@ -76,8 +76,12 @@
   justify-content: space-between;
   align-items: center;
   gap: 24px;
+
   width: 100%;
+  box-sizing: border-box; /* ✅ 핵심! 내부 padding 포함해서 width 맞추기 */
 }
+
+
 
 .Rank.my-highlight .Placing,
 .Rank.my-highlight .Ranker,
