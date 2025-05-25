@@ -25,15 +25,15 @@ function MiniGameMain() {
         <div className="gameContent">
           <div className="quizIntro">
             <p className="quizHeading">
-              <span className="highlight">어떤 유형의 문제</span>를 풀어볼까요?
+              <span className="highlight">미니 게임</span>을 풀어볼까요?
             </p>
             <p className="quizSubText">
-              다양한 유형의 문제를 풀며 <br />
-              실력을 키우고 재미있게 코딩 실력을 높여보세요!
+              코딩 쉬는 시간! <br />
+              짧고 유쾌한 게임 한 판 어때요?
             </p>
           </div>
           <div className="gameCards">
-            {GameCard_Data.length === 0 ? (
+            {MiniCard_Data.length === 0 ? (
               <div className="Browsing">퀴즈가 없습니다.</div>
             ) : (
               MiniCard_Data.map((data, index) => (
@@ -46,7 +46,9 @@ function MiniGameMain() {
                   difficulty={data.difficulty}
                   isRanking={isRanking}
                   typing={data.typing}
-                  typingPosition={data.typingPosition}
+                  typingPosition={data.mini_typingPosition}
+                  typingFontSize={data.typingFontSize}
+                  isMini={true}
                 />
               ))
             )}

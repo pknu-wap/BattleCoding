@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
 
 .gameCard {
   width: 100%;
@@ -34,10 +35,23 @@
     top: 20%;
     left: 15%;
 
-    color: rgba(0, 240, 255, 0.7);
+    color: rgba(0, 240, 255, 0.8);
 
     font-family: "Fira Code", monospace;
-    font-size: 15px;
+
+    pointer-events: none;
+    white-space: pre;
+
+    z-index: 10;
+  }
+  .mini_typingOverlay {
+    position: absolute;
+    top: 20%;
+    left: 15%;
+
+    color: rgba(0, 240, 255, 0.8);
+
+    font-family: "Jua", sans-serif;
 
     pointer-events: none;
     white-space: pre;

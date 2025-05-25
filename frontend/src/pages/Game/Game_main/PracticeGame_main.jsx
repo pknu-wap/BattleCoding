@@ -47,6 +47,7 @@ function PracticeGameMain() {
                   isRanking={isRanking}
                   typing={data.typing}
                   typingPosition={data.typingPosition}
+                  typingFontSize={data.typingFontSize}
                 />
               ))
             )}

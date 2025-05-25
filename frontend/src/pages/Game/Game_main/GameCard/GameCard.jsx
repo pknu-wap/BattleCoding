@@ -42,6 +42,8 @@ function GameCard({
   isRanking,
   typing = "",
   typingPosition = { top: "20%", left: "15%" },
+  typingFontSize = "15px",
+  isMini = false,
 }) {
   const navigate = useNavigate();
   const [displayText, setDisplayText] = useState("");
@@ -95,10 +97,11 @@ function GameCard({
       <div className="gameCardCover" style={{ position: "relative" }}>
         <img className="gameCardImage" src={image} alt={title} />
         <div
-          className="typingOverlay"
+          className={isMini ? "mini_typingOverlay" : "typingOverlay"}
           style={{
             top: typingPosition.top,
             left: typingPosition.left,
+            fontSize: typingFontSize,
           }}
         >
           {displayText}
