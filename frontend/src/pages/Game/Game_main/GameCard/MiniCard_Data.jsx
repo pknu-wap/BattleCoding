@@ -5,7 +5,7 @@ const miniData = [
   {
     image: imageFour,
     title: "네 글자 퀴즈",
-    description: "사라진 두 글자를 찾아 단어를 완성해 보세요",
+    description: "사라진 두 글자를 떠올려 단어를 완성해 보세요",
     type: "WORD_CHAIN",
     typing: "위 치",
     mini_typingPosition: { top: "37.5%", left: "56%" },
@@ -14,7 +14,7 @@ const miniData = [
   {
     image: imagePerson,
     title: "인물 퀴즈",
-    description: "사진 속 인물은 누구일까요? 이름을 맞혀보세요",
+    description: "사진 속 인물은 누구일까요? 사진을 보고 이름을 맞혀보세요",
     type: "GUESS_WHO",
     typing: "스티브 잡스",
     mini_typingPosition: { top: "83%", left: "23%" },
