@@ -78,16 +78,26 @@ public class QuestionService {
         Map<Difficulty, Integer> current = new EnumMap<>(Difficulty.class);
         for (Difficulty d : Difficulty.values()) current.put(d, 0);
 
+        int csKnowledgeCount = 0;
+        int csKnowledgeMax = 5;
+
         for (Question q : pool) {
             // 미니게임 유형은 건너뜀
             if (q.getType() == QuestionType.WORD_CHAIN) continue;
             if (q.getType() == QuestionType.GUESS_WHO) continue;
+
+            // CS_KNOWLEDGE 개수 제한
+            if (q.getType() == QuestionType.CS_KNOWLEDGE && csKnowledgeCount >= csKnowledgeMax) continue;
 
             Difficulty diff = q.getDifficulty();
             if (!usedIds.contains(q.getId()) && current.get(diff) < target.getOrDefault(diff, 0)) {
                 result.add(q);
                 usedIds.add(q.getId());
                 current.put(diff, current.get(diff) + 1);
+
+                if (q.getType() == QuestionType.CS_KNOWLEDGE) {
+                    csKnowledgeCount++;
+                }
             }
             if (result.size() >= easyCount + mediumCount + hardCount) break;
         }

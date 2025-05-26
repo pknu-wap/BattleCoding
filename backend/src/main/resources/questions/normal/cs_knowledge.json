@@ -613,6 +613,7 @@
     "imageUrl": null,
     "answers": [
       "개방 주소법",
+      "오픈 어드레싱",
       "open addressing"
     ],
     "difficulty": "HARD"
@@ -654,7 +655,7 @@
   {
     "id": 30071,
     "type": "CS_KNOWLEDGE",
-    "question": "여러 개의 우선순위를 가진 요소들을 정렬된 순서로 처리하는 자료구조는?",
+    "question": "요소마다 우선순위를 부여하고, 가장 높은 우선순위를 가진 요소를 먼저 꺼내는 방식으로 동작하는 자료구조는?",
     "imageUrl": null,
     "answers": [
       "우선순위 큐",
@@ -665,7 +666,7 @@
   {
     "id": 30072,
     "type": "CS_KNOWLEDGE",
-    "question": "자기 자신을 참조하는 포인터를 포함한 자료구조는?",
+    "question": "마지막 노드가 다시 첫 번째 노드를 가리켜, 전체 구조가 순환 형태를 이루는 자료구조는?",
     "imageUrl": null,
     "answers": [
       "순환 리스트",
@@ -681,8 +682,13 @@
     "imageUrl": null,
     "answers": [
       "크루스칼",
+      "크루스칼 알고리즘",
       "Kruskal",
-      "Kruskal's algorithm"
+      "Kruskal's algorithm",
+      "프림",
+      "프림 알고리즘",
+      "Prim",
+      "Prim algorithm"
     ],
     "difficulty": "HARD"
   },
@@ -693,7 +699,8 @@
     "imageUrl": null,
     "answers": [
       "B 트리",
-      "B-tree"
+      "B-tree",
+      "B-트리"
     ],
     "difficulty": "HARD"
   },
@@ -984,5 +991,225 @@
       "public"
     ],
     "difficulty": "MEDIUM"
+  },
+  {
+    "id": 30100,
+    "type": "CS_KNOWLEDGE",
+    "question": "이미지나 텍스트 등 여러 정보를 하나로 묶어 전송하는 최소 단위는?",
+    "imageUrl": null,
+    "answers": [
+      "패킷", "packet"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30101,
+    "type": "CS_KNOWLEDGE",
+    "question": "키보드, 마우스처럼 컴퓨터에 데이터를 입력하는 장치를 무엇이라 하는가?",
+    "imageUrl": null,
+    "answers": [
+      "입력 장치", "input device"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30102,
+    "type": "CS_KNOWLEDGE",
+    "question": "모니터, 프린터처럼 컴퓨터의 결과를 보여주는 장치를 무엇이라 하는가?",
+    "imageUrl": null,
+    "answers": [
+      "출력 장치", "output device"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30103,
+    "type": "CS_KNOWLEDGE",
+    "question": "8비트로 구성된 데이터의 단위는?",
+    "imageUrl": null,
+    "answers": [
+      "출력 장치", "output device"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30104,
+    "type": "CS_KNOWLEDGE",
+    "question": "웹 사이트에 접속하기 위한 프로그램으로, 크롬이나 사파리 등이 해당되는 것은?",
+    "imageUrl": null,
+    "answers": [
+      "웹 브라우저", "브라우저", "web browser", "browser"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30105,
+    "type": "CS_KNOWLEDGE",
+    "question": "10진수 5를 2진수로 표현하면?",
+    "imageUrl": null,
+    "answers": [
+      "101", "2진수 101", "0b101"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30106,
+    "type": "CS_KNOWLEDGE",
+    "question": "2진수 1100은 10진수로 얼마인가?",
+    "imageUrl": null,
+    "answers": [
+      "12"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30107,
+    "type": "CS_KNOWLEDGE",
+    "question": "10진수 15를 16진수로 표현하면?",
+    "imageUrl": null,
+    "answers": [
+      "F", "f", "0xF", "0xf"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30108,
+    "type": "CS_KNOWLEDGE",
+    "question": "10진수 8를 2진수로 표현하면?",
+    "imageUrl": null,
+    "answers": [
+      "1000", "2진수 1000", "0b1000"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30109,
+    "type": "CS_KNOWLEDGE",
+    "question": "2진수 1110은 10진수로 얼마인가?",
+    "imageUrl": null,
+    "answers": [
+      "14"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30110,
+    "type": "CS_KNOWLEDGE",
+    "question": "10진수 17를 16진수로 표현하면?",
+    "imageUrl": null,
+    "answers": [
+      "11", "11", "0x11", "0x11"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30111,
+    "type": "CS_KNOWLEDGE",
+    "question": "16진수 0x12를 10진수로 표현하면?",
+    "imageUrl": null,
+    "answers": [
+      "18"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30112,
+    "type": "CS_KNOWLEDGE",
+    "question": "마우스로 누르는 동작을 영어로 무엇이라 하는가?",
+    "imageUrl": null,
+    "answers": [
+      "클릭", "click"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30113,
+    "type": "CS_KNOWLEDGE",
+    "question": "파일 이름 뒤에 붙어 파일 종류를 구분해주는 것은 무엇인가?",
+    "imageUrl": null,
+    "answers": [
+      "확장자", "파일 확장자", "file extension"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30114,
+    "type": "CS_KNOWLEDGE",
+    "question": "프로그래밍 언어에서 값을 저장하기 위해 사용하는 이름을 가진 공간은 무엇인가?",
+    "imageUrl": null,
+    "answers": [
+      "변수", "variable"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30115,
+    "type": "CS_KNOWLEDGE",
+    "question": "참(True) 또는 거짓(False) 중 하나의 값을 가지는 자료형은?",
+    "imageUrl": null,
+    "answers": [
+      "불린", "불리언", "bool", "boolean"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30116,
+    "type": "CS_KNOWLEDGE",
+    "question": "C언어에서 정수를 저장하기 위해 사용하는 기본 자료형은?",
+    "imageUrl": null,
+    "answers": [
+      "int"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30117,
+    "type": "CS_KNOWLEDGE",
+    "question": "C언어에서 문자를 저장하기 위해 사용하는 자료형은?",
+    "imageUrl": null,
+    "answers": [
+      "char"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30118,
+    "type": "CS_KNOWLEDGE",
+    "question": "C언어에서 프로그램의 시작점을 나타내는 함수는?",
+    "imageUrl": null,
+    "answers": [
+      "main", "main()", "main 함수"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30119,
+    "type": "CS_KNOWLEDGE",
+    "question": "C언어에서 명령문이 끝났음을 나타내기 위해 사용하는 기호는?",
+    "imageUrl": null,
+    "answers": [
+      "세미콜론", ";"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30120,
+    "type": "CS_KNOWLEDGE",
+    "question": "C언어에서 한 줄 주석을 작성할 때 사용하는 기호는?",
+    "imageUrl": null,
+    "answers": [
+       "//", "슬래시 두 개"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30121,
+    "type": "CS_KNOWLEDGE",
+    "question": "C언어에서 프로그램이 정상 종료되었음을 알리는 코드는?",
+    "imageUrl": null,
+    "answers": [
+      "return 0", "return 0;"
+    ],
+    "difficulty": "EASY"
   }
 ]
