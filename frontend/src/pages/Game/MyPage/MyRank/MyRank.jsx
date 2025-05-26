@@ -30,8 +30,8 @@ function My_Rank() {
 
   return (
     <div className="My_Rank">
-      <div className="MyRanking">
-        <div className="Ranking">나의 랭킹</div>
+      <div className="My_Ranking">
+        <div className="Ranking1">나의 랭킹</div>
         <div className="Rank">
           <div className="MyPlacing"><b>{rank}</b> 등</div>
           <div className="Ranker">{nickname}</div>
