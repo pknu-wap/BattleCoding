@@ -1,15 +1,13 @@
 .MyRank {
-  background-color: #0f1225;
+  background: linear-gradient(to bottom, #0d1a2d, #11293d, #183b4e);
+
+  width: 100%;
   padding: 40px 20px;
-  min-height: 100vh;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 40px;
-
-  /* 화면 전체 높이를 flex container가 채우도록 */
-  height: 100vh;
   box-sizing: border-box;
 }
 
@@ -17,7 +15,7 @@
 .MyRanking {
   width: 100%;
   max-width: 2000px;
-  background-color: rgba(15, 18, 37, 0.8);
+  background-color: #161d28;
   cursor: pointer;
   border-radius: 12px;
   padding: 20px;
@@ -29,23 +27,26 @@
   gap: 16px;
 
   flex: 0 0 auto;
+  box-shadow: 0 0 14px #00f0ff33;
 }
 
 
 /* 유저랭킹 영역 스타일 (랭킹 리스트) */
 .User_Ranking {
+  background-color: #1b2430;
   width: 100%;
   max-width: 2000px;
-  padding: 14px;
+  padding: 32px;
   border-radius: 12px;
-  background-color: #1a1e3a;
   box-shadow: 0 0 14px #00f0ff33;
+  box-sizing: border-box;
 
   /* 남은 공간 다 차지하도록 flex-grow 설정 */
   flex: 1 1 auto;
 
   /* 리스트가 길면 내부 스크롤 */
-  overflow-y: auto;
+  height: auto;
+  overflow: visible;
 
   box-sizing: border-box;
 
@@ -57,19 +58,18 @@
 
 /* 기존 스타일 유지 */
 .Ranking {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 800;
   color: #00f0ff;
   margin-bottom: 12px;
   user-select: none;
-  text-shadow: 0 0 8px #00f0ff88;
 }
 
 /* 랭킹 하이라이트 아이템 스타일 */
 .Rank.my-highlight {
   background-color: #3b4160;
-  border: 2px solid #00f0ff;
-  box-shadow: 0 0 14px #00f0ff88;
+  border: 1px solid #00f0ff;
+  box-shadow: 0 0 8px #00f0ff88;
   border-radius: 12px;
   padding: 18px 24px;
 
