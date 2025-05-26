@@ -66,9 +66,11 @@ function UserRanking({ currentUsername, page, setPage }) {
             <div className="userHeader">
                 <span className="placing">순위</span>
                 <span className="username">사용자명</span>
+
                 <span className="totalSubmitted">풀이 개수</span>
                 <span className="totalCorrect">정답 개수</span>
                 <span className="totalWrong">오답 개수</span>
+
                 <span className="percent">XP</span>
             </div>
 

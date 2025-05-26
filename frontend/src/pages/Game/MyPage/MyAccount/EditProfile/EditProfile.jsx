@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './EditProfile.scss';
 import api from '../../../../../api/api';
+import Navbar from "../../../../Navbar/Navbar";
 
 function EditProfile() {
   const [profileImages, setProfileImages] = useState([]);
@@ -38,32 +39,35 @@ function EditProfile() {
   };
 
   return (
-    <div className="edit-profile">
-      <span className='title'>사진 선택</span>
-      <form onSubmit={handleSubmit}>
+    <>
+      <Navbar type="main" /> 
+      <div className="edit-profile">
+        <span className='title'>사진 선택</span>
+        <form onSubmit={handleSubmit}>
 
-        <label htmlFor="image">사진</label>
-        <div className="image-selection">
-          {profileImages.map((img, idx) => (
-            <img
-              key={idx}
-              src={img}
-              alt={`avatar-${idx}`}
-              className={selectedImage === img ? 'selected' : ''}
-              onClick={() => setSelectedImage(img)}
-            />
-          ))}
-        </div>
+          <label htmlFor="image">사진</label>
+          <div className="image-selection">
+            {profileImages.map((img, idx) => (
+              <img
+                key={idx}
+                src={img}
+                alt={`avatar-${idx}`}
+                className={selectedImage === img ? 'selected' : ''}
+                onClick={() => setSelectedImage(img)}
+              />
+            ))}
+          </div>
 
-        <div className="buttons">
-          <button type="submit">저장</button>
-          <button type="button" onClick={(e) => {
-            e.preventDefault(); navigate('/mypage')}}>
-            취소
-          </button>
-        </div>
-      </form>
-    </div>
+          <div className="buttons">
+            <button type="submit">저장</button>
+            <button type="button" onClick={(e) => {
+              e.preventDefault(); navigate('/mypage')}}>
+              취소
+            </button>
+          </div>
+        </form>
+      </div>
+    </>
   );
 }
 

@@ -117,7 +117,7 @@ function GamePage_question({ countdownText, setCountdownText, startCountdownText
   useEffect(() => {
     if (!shouldCountDown || isCountingDown || !hasShownCountdown) return;
 
-    const limit = mode === "mini" ? 3 : 15;
+    const limit = mode === "mini" ? 4 : 15;
     setRemainingTime(limit);
     setCountdownText(`${limit}초`);
 

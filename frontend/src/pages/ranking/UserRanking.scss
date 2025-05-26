@@ -2,16 +2,15 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
-  overflow: hidden; /* 스크롤 방지 */
+  min-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .container {
-  height: 100vh;  /* 화면 높이에 맞춤 */
-  overflow: hidden; /* 내부 스크롤 방지 */
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: start;
   align-items: center;
   padding: 2vh 2vw;
   box-sizing: border-box;
@@ -37,6 +36,7 @@ html, body {
   align-items: center;
   padding: 12px 20px;
   font-size: 20px;
+
   font-weight: 700;
   color: #dddddd;
   background-color: #2b2d42;
@@ -84,12 +84,12 @@ html, body {
 .userList {
   width: 100%;
   max-width: 2000px;
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  overflow: hidden;
+  overflow: visible;
 }
+
 
 /* userRow */
 .userRow {
@@ -127,6 +127,7 @@ html, body {
   padding-left: 8px;
 }
 
+
 .userRow .totalSubmitted,
 .userRow .totalCorrect,
 .userRow .totalWrong {
@@ -147,6 +148,7 @@ html, body {
   color: #ffffff;
   text-align: right;
 }
+
 
 /* Top 3 Rankers */
 .userRow.first {
