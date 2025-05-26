@@ -8,11 +8,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 
   .modeSelectWrapper {
     width: 100%;
     gap: 20px;
+    box-sizing: border-box;
     
     display: flex;
     justify-content: center;
@@ -26,6 +27,7 @@
 
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0, 240, 255, 0.1); 
+      box-sizing: border-box;
       
       text-align: center;
       font-family: 'Pretendard', sans-serif;
@@ -62,6 +64,70 @@
         p {
           font-size: 14px;
           color: #cccccc;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .modeSelectContainer {
+    .modeSelectWrapper {
+      .modeCard {
+        width: 240px;
+        height: 400px;
+
+        .modeImg {
+          height: 240px;
+        }
+
+        .modeInfo {
+          padding: 14px;
+
+          h2 {
+            font-size: 16px;
+          }
+
+          p {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .modeSelectContainer {
+    overflow-x: hidden;
+    box-sizing: border-box;
+
+    .modeSelectWrapper {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
+      gap: 24px;
+
+      .modeCard {
+        width: 240px;
+        max-width: 100%; 
+        height: 400px;
+        box-sizing: border-box;
+
+        .modeImg {
+          height: 240px;
+        }
+
+        .modeInfo {
+          padding: 16px;
+
+          h2 {
+            font-size: 18px;
+          }
+
+          p {
+            font-size: 13px;
+          }
         }
       }
     }

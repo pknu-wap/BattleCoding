@@ -162,3 +162,63 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+  .miniMain {
+    padding: 0 12px;
+
+    .miniContent {
+      padding: 24px 12px;
+    }
+
+    .miniIntro {
+      margin-bottom: 24px;
+
+      .miniHeading {
+        font-size: 22px;
+        margin-bottom: 10px;
+      }
+
+      .miniSubtext {
+        font-size: 14px;
+        margin-top: 8px;
+      }
+    }
+
+    .ruleSection {
+      padding: 20px;
+      margin-bottom: 30px;
+      width: 70%;
+
+      h3 {
+        font-size: 20px;
+        margin-bottom: 16px;
+      }
+
+      p {
+        font-size: 14px;
+        margin: 10px 0 0 0;
+      }
+    }
+
+    .btnSection {
+      margin-top: 30px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+
+      .startBtn {
+        width: 100%;
+        max-width: 240px;
+        font-size: 16px;
+        padding: 14px 20px;
+      }
+    }
+
+    .floatingWords .word {
+      font-size: 42px;
+    }
+  }
+}

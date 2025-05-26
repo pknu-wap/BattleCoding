@@ -5,33 +5,38 @@ html, body {
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
-  overflow-y: auto;
 }
 
 #root {
   width: 100%;
   height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .gameMain {
   background: linear-gradient(to bottom, #0d1a2d, #11293d, #183b4e);
-  width: 100vw;
-  height: calc(100vh - 56px);
+
+  width: 100%;
+  min-height: calc(100vh - 56px);
+  box-sizing: border-box;
 
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  overflow-x: hidden;
 
   .gameContent {
-    width: 100%;
-    max-width: 1100px;
-    padding: 0 20px 100px 20px;
+    width: auto;
+    max-width: 100%;
+    padding: 50px 20px 100px;
+    margin: 0 auto;
     box-sizing: border-box;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
 
     .quizIntro {
       text-align: center;
@@ -71,6 +76,99 @@ html, body {
       font-size: 18px;
       color: #ffffff;
       text-align: center;
+    }
+  }
+}
+
+
+@media (max-width: 950px) {
+  .gameMain {
+    overflow-x: hidden;
+    padding: 20px;
+
+    .gameContent {
+      width: auto;
+      max-width: 100%;
+      padding: 0 16px 80px 16px;
+
+      .quizIntro {
+        margin-bottom: 40px;
+
+        .quizHeading {
+          font-size: 30px;
+        }
+
+        .quizSubText {
+          font-size: 15px;
+        }
+      }
+
+      .gameCards {
+        gap: 30px;
+      }
+
+      .browsing {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 911px) {
+  .gameMain {
+    height: auto;
+    min-height: 100vh;
+
+    .gameContent {
+      padding-bottom: 120px;
+
+      .gameCards {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+
+        .gameCard {
+          width: 80%;
+          max-width: 280px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .gameMain {
+    overflow-x: hidden;
+    padding: 20px;
+
+    .gameContent {
+      width: auto;
+      max-width: 100%;
+      padding: 0 0 60px;
+
+      .quizIntro {
+        margin-bottom: 30px;
+
+        .quizHeading {
+          font-size: 28px;
+        }
+
+        .quizSubText {
+          font-size: 16px;
+        }
+      }
+
+      .gameCards {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 280px;
+        gap: 28px;
+      }
+
+      .browsing {
+        font-size: 15px;
+      }
     }
   }
 }
