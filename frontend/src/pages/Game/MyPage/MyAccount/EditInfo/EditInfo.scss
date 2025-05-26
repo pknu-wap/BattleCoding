@@ -30,19 +30,48 @@
     width: 100%;
     max-width: 490px;
 
-    input {
+    .nickname-input-wrapper {
+      display: flex;
+      gap: 10px;
       width: 100%;
-      padding: 10px;
-      border-radius: 6px;
-      border: none;
-      font-size: 16px;
-      font-family: 'Pretendard', sans-serif;
-      background-color: #1e1e2f;
-      color: #fff;
-      outline: none;
 
-      &::placeholder {
-        color: #aaa;
+      input {
+        flex: 1;
+        padding: 10px;
+        border-radius: 6px;
+        border: none;
+        font-size: 16px;
+        font-family: 'Pretendard', sans-serif;
+        background-color: #1e1e2f;
+        color: #fff;
+        outline: none;
+
+        &::placeholder {
+          color: #aaa;
+        }
+      }
+
+      button {
+        width: 70px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 700;
+        font-family: 'Pretendard', sans-serif;
+        cursor: pointer;
+        border: none;
+        background-color: #444;
+        color: #fff;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #666;
+        }
+
+        &:disabled {
+          background-color: #999 !important;
+          color: #ccc !important;
+          cursor: not-allowed;
+        }
       }
     }
   }
@@ -109,4 +138,12 @@
       }
     }
   }
+
+  p {
+    color: #00f0ff;
+    font-size: 14px;
+    margin-top: 8px;
+    font-family: 'Pretendard', sans-serif;
+  }
+
 }
