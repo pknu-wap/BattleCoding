@@ -56,7 +56,7 @@ const ModeSelect = () => {
             />
             <div className="modeInfo">
               <h2>미니 게임</h2>
-              <p>짧고 유쾌한 미니게임 한 판 어때요?</p>
+              <p>짧고 재밌는 미니게임 한 판 어때요?</p>
             </div>
           </div>
         </div>

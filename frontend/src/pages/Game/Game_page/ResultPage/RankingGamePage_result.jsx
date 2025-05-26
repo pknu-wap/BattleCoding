@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import api from "../../../../api/api";
+import FireworksEffect from "../../../../components/FireworksEffect";
 import "./RankingGamePage_result.scss";
 
 function RankingResult() {
@@ -45,6 +46,8 @@ function RankingResult() {
 
     return (
         <div className="rankingResultWrapper">
+            <FireworksEffect />
+
             <div className="rankingResultSection">
                 <h1>랭킹 모드 결과</h1>
                 <div className="resultSumarry">
