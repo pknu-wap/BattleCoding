@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './EditInfo.scss';
 import api from '../../../../../api/api';
+import Navbar from "../../../../Navbar/Navbar";
 
 const pwdRegex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{8,20}$/;
 const forbiddenspecials = /[^a-zA-Z0-9!@#$%^&*]/;
@@ -151,80 +152,83 @@ function EditInfo() {
   }, [newPassword, confirmPassword, validatePassword]);
 
   return (
-    <div className="edit-profile">
-      <span className="title">정보 수정</span>
-      <form onSubmit={handleSubmit}>
+    <>
+      <Navbar type="main" /> 
+      <div className="edit-profile">
+        <span className="title">정보 수정</span>
+        <form onSubmit={handleSubmit}>
 
-        <div className="nickname-section">
-          <label htmlFor="nickname">닉네임</label>
+          <div className="nickname-section">
+            <label htmlFor="nickname">닉네임</label>
 
-          {nicknameChangeDisabled ? (
-            // ✅ 닉네임 변경 불가 시: 입력창/버튼/유효성 없이 메시지만 출력
-            <p className="invalid">닉네임은 한 번만 변경할 수 있습니다.</p>
-          ) : (
-            // ✅ 닉네임 변경 가능 시: 전체 UI 노출
-            <>
-              <div className="nickname-input-wrapper">
-                <input
-                  type="text"
-                  id="nickname"
-                  value={nickname}
-                  onChange={(e) => handleNicknameChangeInput(e.target.value)}
-                  placeholder="새 닉네임"
-                />
+            {nicknameChangeDisabled ? (
+              // ✅ 닉네임 변경 불가 시: 입력창/버튼/유효성 없이 메시지만 출력
+              <p className="invalid">닉네임은 한 번만 변경할 수 있습니다.</p>
+            ) : (
+              // ✅ 닉네임 변경 가능 시: 전체 UI 노출
+              <>
+                <div className="nickname-input-wrapper">
+                  <input
+                    type="text"
+                    id="nickname"
+                    value={nickname}
+                    onChange={(e) => handleNicknameChangeInput(e.target.value)}
+                    placeholder="새 닉네임"
+                  />
 
-                <button
-                  type="button"
-                  onClick={submitNicknameChange}
-                  disabled={!isNicknameValid || nickname === originalNickname}
-                >
-                  변경
-                </button>
-              </div>
-              <p className={isNicknameValid ? 'valid' : 'invalid'}>{nicknameMessage}</p>
-            </>
-          )}
-        </div>
+                  <button
+                    type="button"
+                    onClick={submitNicknameChange}
+                    disabled={!isNicknameValid || nickname === originalNickname}
+                  >
+                    변경
+                  </button>
+                </div>
+                <p className={isNicknameValid ? 'valid' : 'invalid'}>{nicknameMessage}</p>
+              </>
+            )}
+          </div>
 
 
-        <div className="password-section">
-          <label htmlFor="password">비밀번호 변경</label>
-          <input
-            type="password"
-            id="currentPassword"
-            value={currentPassword}
-            onChange={(e) => setCurrentPassword(e.target.value)}
-            placeholder="현재 비밀번호 입력"
-          />
-          <input
-            type="password"
-            value={newPassword}
-            onChange={(e) => {
-              setNewPassword(e.target.value);
-              validatePassword(e.target.value);
-            }}
-            placeholder="새 비밀번호 입력"
-          />
-          <input
-            type="password"
-            value={confirmPassword}
-            onChange={(e) => {
-              setConfirmPassword(e.target.value);
-              validatePassword(newPassword);
-            }}
-            placeholder="비밀번호 확인"
-          />
-          <p className={isPasswordValid ? 'valid' : 'invalid'}>{passwordMessage}</p>
-        </div>
+          <div className="password-section">
+            <label htmlFor="password">비밀번호 변경</label>
+            <input
+              type="password"
+              id="currentPassword"
+              value={currentPassword}
+              onChange={(e) => setCurrentPassword(e.target.value)}
+              placeholder="현재 비밀번호 입력"
+            />
+            <input
+              type="password"
+              value={newPassword}
+              onChange={(e) => {
+                setNewPassword(e.target.value);
+                validatePassword(e.target.value);
+              }}
+              placeholder="새 비밀번호 입력"
+            />
+            <input
+              type="password"
+              value={confirmPassword}
+              onChange={(e) => {
+                setConfirmPassword(e.target.value);
+                validatePassword(newPassword);
+              }}
+              placeholder="비밀번호 확인"
+            />
+            <p className={isPasswordValid ? 'valid' : 'invalid'}>{passwordMessage}</p>
+          </div>
 
-        <div className="buttons">
-          <button type="submit">저장</button>
-          <button type="button" onClick={() => navigate('/mypage')}>취소</button>
-        </div>
-      </form>
-    </div>
-  );
-}
+          <div className="buttons">
+            <button type="submit">저장</button>
+            <button type="button" onClick={() => navigate('/mypage')}>취소</button>
+          </div>
+        </form>
+      </div>
+    </>
+    );
+  }
 
 export default EditInfo;
 
