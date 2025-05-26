@@ -23,20 +23,30 @@ function EditInfo() {
 
   useEffect(() => {
     const storedNickname = localStorage.getItem('nickname') || '';
-    setNickname(storedNickname);
     setOriginalNickname(storedNickname);
 
-    api.get('/user/nickname-changed')
+    api.get('/user/me')
       .then((res) => {
-        if (res.data.changed) {
+        console.log('✅ 사용자 정보 응답:', res.data);
+
+        const changed = res.data.nicknameChanged;
+
+        if (changed) {
+          console.log('🛑 사용자는 이미 닉네임을 변경했습니다.');
           setNicknameChangeDisabled(true);
-          setNicknameMessage('닉네임은 한 번만 변경할 수 있습니다.');
+          setNickname('');
+          setNicknameMessage('');
+        } else {
+          console.log('🟢 사용자는 아직 닉네임을 변경하지 않았습니다.');
+          setNickname('');
         }
       })
       .catch((err) => {
-        console.error(err);
+        console.error('❌ 사용자 정보 조회 실패:', err);
+        setNickname('');
       });
   }, []);
+
 
   const validateNickname = async (value) => {
     if (value.length < 4 || value.length > 12) {
@@ -82,6 +92,7 @@ function EditInfo() {
     setNickname(value);
     if (!nicknameChangeDisabled) {
       validateNickname(value);
+      setNickname(value);
     }
   };
 
@@ -100,7 +111,7 @@ function EditInfo() {
       }
     } catch (err) {
       console.error(err);
-      alert('닉네임 변경 중 오류가 발생했습니다.');
+      alert('이미 닉네임을 1회 변경했습니다.');
     }
   };
 
@@ -132,7 +143,6 @@ function EditInfo() {
       navigate('/mypage');
     }
   };
-
   
   useEffect(() => {
     if (newPassword) {
@@ -147,29 +157,35 @@ function EditInfo() {
 
         <div className="nickname-section">
           <label htmlFor="nickname">닉네임</label>
-          <div className="nickname-input-wrapper">
-            <input
-              type="text"
-              id="nickname"
-              value={nickname}
-              onChange={(e) => handleNicknameChangeInput(e.target.value)}
-              placeholder="새 닉네임"
-              disabled={nicknameChangeDisabled} // 1회 제한 적용
-            />
 
-            <button
-              type="button"
-              onClick={submitNicknameChange}
-              disabled={nicknameChangeDisabled || !isNicknameValid || nickname === originalNickname}
-            >
-              변경
-            </button>
-          </div>
-          {!nicknameChangeDisabled && (
-            <p className={isNicknameValid ? 'valid' : 'invalid'}>{nicknameMessage}</p>
+          {nicknameChangeDisabled ? (
+            // ✅ 닉네임 변경 불가 시: 입력창/버튼/유효성 없이 메시지만 출력
+            <p className="invalid">닉네임은 한 번만 변경할 수 있습니다.</p>
+          ) : (
+            // ✅ 닉네임 변경 가능 시: 전체 UI 노출
+            <>
+              <div className="nickname-input-wrapper">
+                <input
+                  type="text"
+                  id="nickname"
+                  value={nickname}
+                  onChange={(e) => handleNicknameChangeInput(e.target.value)}
+                  placeholder="새 닉네임"
+                />
+
+                <button
+                  type="button"
+                  onClick={submitNicknameChange}
+                  disabled={!isNicknameValid || nickname === originalNickname}
+                >
+                  변경
+                </button>
+              </div>
+              <p className={isNicknameValid ? 'valid' : 'invalid'}>{nicknameMessage}</p>
+            </>
           )}
-
         </div>
+
 
         <div className="password-section">
           <label htmlFor="password">비밀번호 변경</label>
