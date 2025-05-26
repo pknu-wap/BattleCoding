@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import api from "../../api/api";
 import UserRanking from "./UserRanking";
+import Navbar from "../Navbar/Navbar";
+
 import "./MyRanking.scss";
 
 function MyRanking() {
@@ -55,53 +57,56 @@ function MyRanking() {
     }, [page, myInfo]);
 
     return (
-        <div className="MyRank">
-            <button
-                type="button"
-                className="MyRanking"
-                onClick={handleScrollToMyRank}
-                onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                        e.preventDefault();
-                        handleScrollToMyRank();
-                    }
-                }}
-                style={{ cursor: "pointer" }}
-                aria-label="내 랭킹으로 스크롤"
-            >
-                <div className="Ranking">👑 My Ranking 👑</div>
+        <>
+            <Navbar type="main" />  {/* 여기서 Navbar 추가 */}
 
-                {myInfo ? (
-                    <div className="Rank my-highlight">
-                        <div className="Placing">
-                            <span className="rank-icon" aria-hidden="true">⭐</span>
-                            <b className="MyPlacing">{myInfo.rank}</b> 등
-                        </div>
-                        <div className="Ranker">{myInfo.nickname}</div>
-                        <div className="Percent">
-                            XP: <b className="r">{myInfo.xp}</b> XP
-                        </div>
-                    </div>
-                ) : error ? (
-                    <div className="Rank error-message" role="alert">
-                        {error}
-                    </div>
-                ) : (
-                    <div className="Rank loading">내 랭킹 정보를 불러오는 중...</div>
-                )}
-            </button>
+            <div className="MyRank">
+                <button
+                    type="button"
+                    className="MyRanking"
+                    onClick={handleScrollToMyRank}
+                    onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                            e.preventDefault();
+                            handleScrollToMyRank();
+                        }
+                    }}
+                    style={{ cursor: "pointer" }}
+                    aria-label="내 랭킹으로 스크롤"
+                >
+                    <div className="Ranking">👑 My Ranking 👑</div>
 
-            <div className="User_Ranking">
-                {/* UserRanking 컴포넌트에 페이지 상태와 변경 함수 전달 */}
-                {myInfo && (
-                    <UserRanking
-                        currentUsername={myInfo.nickname}
-                        page={page}
-                        setPage={setPage}
-                    />
-                )}
+                    {myInfo ? (
+                        <div className="Rank my-highlight">
+                            <div className="Placing">
+                                <span className="rank-icon" aria-hidden="true">⭐</span>
+                                <b className="MyPlacing">{myInfo.rank}</b> 등
+                            </div>
+                            <div className="Ranker">{myInfo.nickname}</div>
+                            <div className="Percent">
+                                XP: <b className="r">{myInfo.xp}</b> XP
+                            </div>
+                        </div>
+                    ) : error ? (
+                        <div className="Rank error-message" role="alert">
+                            {error}
+                        </div>
+                    ) : (
+                        <div className="Rank loading">내 랭킹 정보를 불러오는 중...</div>
+                    )}
+                </button>
+
+                <div className="User_Ranking">
+                    {myInfo && (
+                        <UserRanking
+                            currentUsername={myInfo.nickname}
+                            page={page}
+                            setPage={setPage}
+                        />
+                    )}
+                </div>
             </div>
-        </div>
+        </>
     );
 }
 

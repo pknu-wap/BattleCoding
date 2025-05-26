@@ -71,3 +71,58 @@
     }
   }
 }
+
+
+@media (max-width: 1024px) {
+  .quizsection {
+    max-height: unset;
+
+    .quizCards {
+      gap: 16px;
+      padding: 0 3vw;
+    }
+
+    .quizCard {
+      width: 200px;
+      height: auto;
+      padding: 16px;
+
+      .quizMain {
+        font-size: 18px;
+      }
+
+      .quizSub {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .quizsection {
+    padding: 24px 0;
+
+    .quizCards {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .quizCard {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+
+      font-size: 14px;
+      text-align: center;
+      align-items: center;
+
+      .quizMain {
+        font-size: 17px;
+      }
+
+      .quizSub {
+        font-size: 13px;
+      }
+    }
+  }
+}

@@ -8,14 +8,14 @@
   overflow: hidden;
   pointer-events: none;
 
-  z-index: -1;
+  z-index: 0;
 }
 
 .gameMain {
   background: linear-gradient(to bottom, #0d1a2d, #11293d, #183b4e);
 
   width: 100vw;
-  min-height: 100vh;
+  min-height: calc(100vh - 56px);
 
   display: flex;
   flex-direction: column;
@@ -133,19 +133,21 @@
   }
 
   .btnSection {
-    margin-top: 20px;
+    margin: 20px 0 60px;
 
     z-index: 5;
 
     .startBtn {
       background-color: #00f0ff;
-      color: #000;
-      font-weight: 700;
-      font-size: 18px;
+
       padding: 14px 30px;
 
       border: 2px solid #00f0ff;
       border-radius: 12px;
+
+      color: #000;
+      font-weight: 700;
+      font-size: 22px;
 
       cursor: pointer;
       transition: all 0.3s;
@@ -155,6 +157,78 @@
         color: #1b2430;
         transform: translateY(-2px);
         box-shadow: 0 8px 20px rgba(0, 240, 255, 0.2);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .gameMain {
+    padding: 0 16px;
+
+    .quizIntro {
+      .quizHeading {
+        font-size: 20px;
+      }
+
+      .quizSubText {
+        font-size: 14px;
+
+        p {
+          margin: 8px 0;
+        }
+      }
+    }
+
+    .profileSection {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 60px;
+      gap: 20px;
+
+      .profileImg {
+        width: 80px;
+        height: 80px;
+      }
+
+      .userInfo {
+        align-items: center;
+
+        .nickname {
+          font-size: 20px;
+        }
+
+        .stats {
+          font-size: 14px;
+          justify-content: center;
+        }
+      }
+    }
+
+    .ruleSection {
+      padding: 20px;
+      margin: 16px auto;
+      max-width: 80%;
+
+      h3 {
+        font-size: 20px;
+        margin-bottom: 16px;
+      }
+
+      p {
+        font-size: 14px;
+        margin: 12px 0 0 0;
+      }
+    }
+
+    .btnSection {
+      margin: 30px 0 80px;
+
+      .startBtn {
+        padding: 10px 20px;
+        font-size: 18px;
+        border-radius: 10px;
       }
     }
   }

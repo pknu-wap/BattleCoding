@@ -40,12 +40,17 @@ function GameCard({
   type,
   difficulty,
   isRanking,
+  mode,
   typing = "",
   typingPosition = { top: "20%", left: "15%" },
+  typingFontSize = "15px",
+  isMini = false,
 }) {
   const navigate = useNavigate();
+
   const [displayText, setDisplayText] = useState("");
   const [isHovered, setIsHovered] = useState(false);
+
   const indexRef = useRef(0);
   const timerRef = useRef(null);
 
@@ -80,8 +85,21 @@ function GameCard({
   }, [isHovered, typing]);
 
   const handleClick = () => {
-    navigate("/game/ready", {
-      state: { image, title, description, type, difficulty, isRanking },
+    const miniMap = {
+      WORD_CHAIN: "/game/ready/mini/four",
+      GUESS_WHO: "/game/ready/mini/person",
+    };
+
+    let targetPath = "/game/ready"; 
+
+    if (mode === "ranking") {
+      targetPath = "/game/question";
+    } else if (mode === "mini" && miniMap[type]) {
+      targetPath = miniMap[type];
+    }
+
+    navigate(targetPath, {
+      state: { image, title, description, type, difficulty, isRanking, mode },
     });
   };
 
@@ -95,10 +113,11 @@ function GameCard({
       <div className="gameCardCover" style={{ position: "relative" }}>
         <img className="gameCardImage" src={image} alt={title} />
         <div
-          className="typingOverlay"
+          className={isMini ? "mini_typingOverlay" : "typingOverlay"}
           style={{
             top: typingPosition.top,
             left: typingPosition.left,
+            fontSize: typingFontSize,
           }}
         >
           {displayText}

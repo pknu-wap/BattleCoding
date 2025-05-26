@@ -16,7 +16,14 @@ function PracticeReady() {
 
   const handleClick = (difficulty) => {
     navigate('/game/question', {
-      state: { type, difficulty, image, title, description, isRanking: location.state?.isRanking }
+      state: { 
+        type, 
+        difficulty, 
+        image, 
+        title, 
+        description, 
+        mode: "practice",
+        isRanking: location.state?.isRanking }
     });
   };
 

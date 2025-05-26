@@ -9,7 +9,7 @@ const gameData = [
     description: "빠진 부분은 무엇일까요? 빈칸을 채워 코드를 완성해 보세요",
     type: "FILL_IN_BLANK",
     typing: "x + y;",
-    typingPosition: { top: "43.7%", left: "41%" },
+    typingPosition: { top: "43.7%", left: "42%" },
   },
   {
     image: imageResult,
@@ -17,7 +17,7 @@ const gameData = [
     description: "코드를 보고 고민하는 시간! 어떤 출력이 나올지 예측해 보세요",
     type: "PREDICT_OUTPUT",
     typing: "Hello, Alice",
-    typingPosition: { top: "61%", left: "15%" },
+    typingPosition: { top: "61%", left: "17%" },
   },
   {
     image: imageCS,
@@ -25,7 +25,8 @@ const gameData = [
     description: "알아두면 유용한 지식! 컴퓨터 과학 기초 개념을 맞춰보세요",
     type: "CS_KNOWLEDGE",
     typing: "Central Processing Unit",
-    typingPosition: { top: "59.7%", left: "12.7%" },
+    typingPosition: { top: "61%", left: "12.3%" },
+    typingFontSize: "9.5px",
   },
 ];
 
