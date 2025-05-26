@@ -8,8 +8,8 @@ const miniData = [
     description: "사라진 두 글자를 떠올려 단어를 완성해 보세요",
     type: "WORD_CHAIN",
     typing: "위 치",
-    mini_typingPosition: { top: "37.5%", left: "56%" },
-    typingFontSize: "60px",
+    mini_typingPosition: { top: "38%", left: "57%" },
+    typingFontSize: "55px",
   },
   {
     image: imagePerson,
@@ -17,7 +17,7 @@ const miniData = [
     description: "사진 속 인물은 누구일까요? 사진을 보고 이름을 맞혀보세요",
     type: "GUESS_WHO",
     typing: "스티브 잡스",
-    mini_typingPosition: { top: "83%", left: "23%" },
+    mini_typingPosition: { top: "80.5%", left: "23.3%" },
     typingFontSize: "35px",
   },
 ];
