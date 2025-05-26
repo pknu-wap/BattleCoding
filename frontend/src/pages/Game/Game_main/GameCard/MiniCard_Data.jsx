@@ -5,18 +5,20 @@ const miniData = [
   {
     image: imageFour,
     title: "네 글자 퀴즈",
-    description: "빠진 부분은 무엇일까요? 빈칸을 채워 단어를 완성해 보세요",
+    description: "사라진 두 글자를 떠올려 단어를 완성해 보세요",
     type: "WORD_CHAIN",
     typing: "위 치",
-    typingPosition: { top: "43.7%", left: "41%" },
+    mini_typingPosition: { top: "38%", left: "57%" },
+    typingFontSize: "55px",
   },
   {
     image: imagePerson,
     title: "인물 퀴즈",
-    description: "사진을 보고 고민하는 시간! 사진 속 인물의 이름을 맞혀보세용",
+    description: "사진 속 인물은 누구일까요? 사진을 보고 이름을 맞혀보세요",
     type: "GUESS_WHO",
     typing: "스티브 잡스",
-    typingPosition: { top: "61%", left: "15%" },
+    mini_typingPosition: { top: "80.5%", left: "23.3%" },
+    typingFontSize: "35px",
   },
 ];
 

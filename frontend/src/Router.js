@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Main from "./pages/Main/Main";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
+import MiniGameMain from "./pages/Game/Game_main/MiniGame_main";
 import PracticeGameMain from "./pages/Game/Game_main/PracticeGame_main";
 import RankingGameMain from "./pages/Game/Game_main/RankingGame_main";
 import MiniGameMain from "./pages/Game/Game_main/MiniGame_main";
@@ -26,16 +27,15 @@ const isAuthenticated = () => {
 
 const ProtectedRoute = ({ element }) => {
   return isAuthenticated() ? element : <Navigate to="/auth/login" replace />;
-}
+};
 
 const Router = () => {
-
   return (
     <Routes>
       <Route path="/" element={<Main />} />
       <Route path="/auth/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-
+      <Route path="/game/mini" element={<ProtectedRoute element={<MiniGameMain />} />} />
       <Route path="/game/practice" element={<ProtectedRoute element={<PracticeGameMain />} />} />
       <Route path="/game/ranking" element={<ProtectedRoute element={<RankingGameMain />} />} />
       <Route path="/game/mini" element={<ProtectedRoute element={<MiniGameMain />} />} />

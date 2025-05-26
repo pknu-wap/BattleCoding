@@ -48,6 +48,7 @@ function PracticeGameMain() {
                   mode="practice"
                   typing={data.typing}
                   typingPosition={data.typingPosition}
+                  typingFontSize={data.typingFontSize}
                 />
               ))
             )}
