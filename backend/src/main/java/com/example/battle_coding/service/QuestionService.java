@@ -79,8 +79,9 @@ public class QuestionService {
         for (Difficulty d : Difficulty.values()) current.put(d, 0);
 
         for (Question q : pool) {
-            // ✅ WORD_CHAIN 유형은 건너뜀
+            // 미니게임 유형은 건너뜀
             if (q.getType() == QuestionType.WORD_CHAIN) continue;
+            if (q.getType() == QuestionType.GUESS_WHO) continue;
 
             Difficulty diff = q.getDifficulty();
             if (!usedIds.contains(q.getId()) && current.get(diff) < target.getOrDefault(diff, 0)) {
