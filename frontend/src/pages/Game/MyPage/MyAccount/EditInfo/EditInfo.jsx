@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './EditInfo.scss';
 import api from '../../../../../api/api';
@@ -61,7 +61,8 @@ function EditInfo() {
     }
   };
 
-  const validatePassword = (value) => {
+  // ✅ validatePassword 함수를 useCallback으로 감싸서 useEffect 의존성 문제 해결
+  const validatePassword = useCallback((value) => {
     if (forbiddenspecials.test(value)) {
       setPasswordMessage('사용할 수 없는 특수문자가 포함되어 있습니다.');
       setIsPasswordValid(false);
@@ -75,7 +76,7 @@ function EditInfo() {
       setPasswordMessage('사용 가능한 비밀번호입니다.');
       setIsPasswordValid(true);
     }
-  };
+  }, [confirmPassword]); // ✅ confirmPassword를 의존성에 포함
 
   const handleNicknameChangeInput = async (value) => {
     setNickname(value);
@@ -92,7 +93,7 @@ function EditInfo() {
         alert(res.data.message);
         localStorage.setItem('nickname', nickname);
         setOriginalNickname(nickname);
-        setNicknameChangeDisabled(true); // ✅ 1회 변경 후 비활성화
+        setNicknameChangeDisabled(true); // 비활성화
         setNicknameMessage('닉네임이 성공적으로 변경되었습니다.');
       } else {
         alert(res.data.message);
@@ -132,6 +133,13 @@ function EditInfo() {
     }
   };
 
+  
+  useEffect(() => {
+    if (newPassword) {
+      validatePassword(newPassword);
+    }
+  }, [newPassword, confirmPassword, validatePassword]);
+
   return (
     <div className="edit-profile">
       <span className="title">정보 수정</span>
@@ -146,7 +154,7 @@ function EditInfo() {
               value={nickname}
               onChange={(e) => handleNicknameChangeInput(e.target.value)}
               placeholder="새 닉네임"
-              disabled={nicknameChangeDisabled} // ✅ 1회 제한 적용
+              disabled={nicknameChangeDisabled} // 1회 제한 적용
             />
 
             <button
@@ -157,7 +165,10 @@ function EditInfo() {
               변경
             </button>
           </div>
-          <p className={isNicknameValid ? 'valid' : 'invalid'}>{nicknameMessage}</p>
+          {!nicknameChangeDisabled && (
+            <p className={isNicknameValid ? 'valid' : 'invalid'}>{nicknameMessage}</p>
+          )}
+
         </div>
 
         <div className="password-section">
