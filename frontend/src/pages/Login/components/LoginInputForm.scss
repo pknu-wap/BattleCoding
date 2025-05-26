@@ -142,3 +142,44 @@
       }
     }
   }
+
+@media (max-width: 768px) {
+    .loginSubmitForm {
+    padding: 30px 0 10px;
+
+    .inputForm {
+      padding: 30px 0;
+      gap: 24px;
+
+      .inputField {
+        padding: 8px;
+        gap: 6px;
+
+        label {
+          font-size: 14px;
+        }
+
+        .inputInfo {
+          input {
+            height: 34px;
+            padding-left: 30px;
+            font-size: 13px;
+          }
+
+          .icon {
+            font-size: 11px;
+          }
+        }
+
+        p {
+          font-size: 11px;
+        }
+      }
+    }
+
+    button {
+      font-size: 16px;
+      height: 44px;
+    }
+  }
+}

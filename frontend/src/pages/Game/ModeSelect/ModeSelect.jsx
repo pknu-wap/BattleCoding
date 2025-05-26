@@ -6,11 +6,19 @@ import Navbar from "../../Navbar/Navbar";
 const ModeSelect = () => {
     const navigate = useNavigate();
     
-    const handleSelectMode = (isRanking) => {
-        if (isRanking) {
-            navigate('/game/ranking');
-        } else {
-            navigate('/game/practice');
+    const handleSelectMode = (mode) => {
+        switch (mode) {
+            case "practice":
+                navigate('/game/practice');
+                break;
+            case "ranking":
+                navigate('/game/ranking');
+                break;
+            case "mini":
+                navigate('/game/mini');
+                break;
+            default:
+                break;
         }
     };
 
@@ -19,7 +27,7 @@ const ModeSelect = () => {
             <Navbar type='user' />
             <div className="modeSelectContainer">
                 <div className="modeSelectWrapper">
-                    <div className="modeCard" onClick={() => handleSelectMode(false)}>
+                    <div className="modeCard" onClick={() => handleSelectMode("practice")}>
                         <img src="https://res.cloudinary.com/dcvhzjuzc/image/upload/v1747917703/image1_tsjj4x.png" className="modeImg" />
                         <div className="modeInfo">
                             <h2>연습 모드</h2>
@@ -27,7 +35,7 @@ const ModeSelect = () => {
                         </div>
                     </div>
 
-                    <div className="modeCard" onClick={() => handleSelectMode(true)}>
+                    <div className="modeCard" onClick={() => handleSelectMode("ranking")}>
                         <img src="https://res.cloudinary.com/dcvhzjuzc/image/upload/v1747917798/image2_qxbncc.png" className="modeImg" />
                         <div className="modeInfo">
                             <h2>랭킹 모드</h2>
@@ -35,9 +43,9 @@ const ModeSelect = () => {
                         </div>
                     </div>
                     
-                    <div className='modeCard'>
+                    <div className='modeCard' onClick={() => handleSelectMode("mini")}>
                         <img src='https://res.cloudinary.com/dcvhzjuzc/image/upload/v1747918353/image3_jwouty.png' className='modeImg' />
-                        <div className='modeInfo' onClick={() => navigate('/game/ready/mini')}>
+                        <div className='modeInfo'>
                             <h2>미니 게임</h2>
                             <p>짧고 유쾌한 미니게임 한 판 어때요?</p>
                         </div>
