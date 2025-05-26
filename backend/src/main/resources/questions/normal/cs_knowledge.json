@@ -13,7 +13,7 @@
     "question": "TCP/IP 4계층 모델에서 데이터의 종단 간 전송을 담당하고, 흐름 제어 및 혼잡 제어 기능을 제공하는 계층은?",
     "imageUrl": null,
     "answers": ["전송", "트랜스포트", "Transport" ,"전송 계층", "트랜스포트 계층", "Transport Layer"],
-    "difficulty": "EASY"
+    "difficulty": "MEDIUM"
   },
   {
     "id": 30003,
@@ -21,7 +21,7 @@
     "question": "OSI 7계층 중에서 IP 주소를 기준으로 라우팅을 수행하며, 네트워크 간 통신을 담당하는 계층은?",
     "imageUrl": null,
     "answers": ["네트워크", "Network", "네트워크 계층", "Network Layer"],
-    "difficulty": "EASY"
+    "difficulty": "MEDIUM"
   },
   {
     "id": 30004,
@@ -53,7 +53,7 @@
     "question": "HTTP 상태 코드 중 요청이 성공적으로 처리되었음을 나타내는 상태 코드는 무엇인가?",
     "imageUrl": null,
     "answers": ["200", "OK", "200 OK"],
-    "difficulty": "EASY"
+    "difficulty": "MEDIUM"
   },
   {
     "id": 30008,
@@ -66,9 +66,12 @@
   {
     "id": 30009,
     "type": "CS_KNOWLEDGE",
-    "question": "웹 페이지의 구조를 정의하는 데 사용되는 표준 마크업 언어는 무엇인가?",
+    "question": "HTML에서 표를 만들 때 사용하는 태그는?",
     "imageUrl": null,
-    "answers": ["HTML", "html", "HyperText Markup Language"],
+    "answers": [
+      "<table>",
+      "table"
+    ],
     "difficulty": "EASY"
   },
   {
@@ -213,7 +216,7 @@
     "question": "인터넷에서 웹 페이지를 요청할 때 사용하는 HTTP 메소드는 무엇인가?",
     "imageUrl": null,
     "answers": ["GET", "get"],
-    "difficulty": "EASY"
+    "difficulty": "MEDIUM"
   },
   {
     "id": 30028,
@@ -252,7 +255,7 @@
     "type": "CS_KNOWLEDGE",
     "question": "한 객체의 상태가 변화하면 객체에 상속된 다른 객체들에게 변화된 상태를 전달하는 패턴으로, 일대다의 의존성을 정의하는 디자인 패턴은?",
     "imageUrl": null,
-    "answers": ["Observer Pattern", "Observer", "옵서버", "옵저버", "옵서버 패턴", "옵서버 배턴"],
+    "answers": ["Observer Pattern", "Observer", "옵서버", "옵저버", "옵저버 패턴", "옵서버 배턴"],
     "difficulty": "HARD"
   },
   {
@@ -357,6 +360,629 @@
     "question": "인터넷 상에서 암호화된 통신을 통해 사용자의 위치를 숨기고, 안전한 네트워크 환경을 제공하는 가상 사설망 기술은?",
     "imageUrl": null,
     "answers": ["VPN", "Virtual Private Network"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 30046,
+    "type": "CS_KNOWLEDGE",
+    "question": "클라이언트가 서버에 저장된 특정 데이터를 삭제할 때 사용하는 HTTP 메서드는?",
+    "imageUrl": null,
+    "answers": ["DELETE"],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 30047,
+    "type": "CS_KNOWLEDGE",
+    "question": "스택 자료구조에서 데이터를 꺼내는 연산을 무엇이라고 하는가?",
+    "imageUrl": null,
+    "answers": [
+      "pop",
+      "pop()"
+    ],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 30048,
+    "type": "CS_KNOWLEDGE",
+    "question": "큐 자료구조에서 데이터를 추가하는 연산은?",
+    "imageUrl": null,
+    "answers": [
+      "enqueue",
+      "enqueue()",
+      "enq",
+      "enq()"
+    ],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 30049,
+    "type": "CS_KNOWLEDGE",
+    "question": "큐에서 가장 먼저 들어온 데이터를 제거하는 연산은?",
+    "imageUrl": null,
+    "answers": [
+      "dequeue",
+      "dequeue()",
+      "deq",
+      "deq()"
+    ],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 30050,
+    "type": "CS_KNOWLEDGE",
+    "question": "먼저 삽입된 데이터가 먼저 삭제되는 특성을 가진 자료구조는?",
+    "imageUrl": null,
+    "answers": [
+      "큐",
+      "queue"
+    ],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 30051,
+    "type": "CS_KNOWLEDGE",
+    "question": "나중에 삽입된 데이터가 먼저 삭제되는 특성을 가진 자료구조는?",
+    "imageUrl": null,
+    "answers": [
+      "스택",
+      "stack"
+    ],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 30052,
+    "type": "CS_KNOWLEDGE",
+    "question": "각 노드가 하나의 다음 노드만 가지는 기본적인 연결 리스트는?",
+    "imageUrl": null,
+    "answers": [
+      "단일 연결 리스트",
+      "싱글 링크드 리스트",
+      "singly linked list"
+    ],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 30053,
+    "type": "CS_KNOWLEDGE",
+    "question": "모든 노드가 최대 두 개의 자식 노드를 가지는 계층형 구조는?",
+    "imageUrl": null,
+    "answers": [
+      "이진 트리",
+      "바이너리 트리",
+      "binary tree"
+    ],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 30054,
+    "type": "CS_KNOWLEDGE",
+    "question": "정점과 간선으로 구성되어 순환이 가능할 수 있는 비선형 자료구조는?",
+    "imageUrl": null,
+    "answers": [
+      "그래프",
+      "graph"
+    ],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 30055,
+    "type": "CS_KNOWLEDGE",
+    "question": "노드들이 정렬된 형태로 유지되며 탐색이 빠른 트리는?",
+    "imageUrl": null,
+    "answers": [
+      "이진 탐색 트리",
+      "BST",
+      "binary search tree"
+    ],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 30056,
+    "type": "CS_KNOWLEDGE",
+    "question": "각 노드가 최대 하나의 부모를 가지는 계층형 자료구조는?",
+    "imageUrl": null,
+    "answers": [
+      "트리",
+      "tree"
+    ],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 30057,
+    "type": "CS_KNOWLEDGE",
+    "question": "스택에서 가장 위의 요소를 삭제하지 않고 확인하는 연산은?",
+    "imageUrl": null,
+    "answers": [
+      "peek",
+      "peek()",
+      "top",
+      "top()"
+    ],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 30058,
+    "type": "CS_KNOWLEDGE",
+    "question": "트리에서 루트 노드부터 가장 깊은 리프 노드까지의 거리 중 최댓값은?",
+    "imageUrl": null,
+    "answers": [
+      "높이",
+      "height",
+      "트리 높이"
+    ],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 30059,
+    "type": "CS_KNOWLEDGE",
+    "question": "두 개의 스택을 사용하여 구현할 수 있는 선형 자료구조는?",
+    "imageUrl": null,
+    "answers": [
+      "큐",
+      "queue"
+    ],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 30060,
+    "type": "CS_KNOWLEDGE",
+    "question": "배열보다 삽입과 삭제가 유연하며 포인터로 연결된 자료구조는?",
+    "imageUrl": null,
+    "answers": [
+      "연결 리스트",
+      "링크드 리스트",
+      "linked list"
+    ],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 30061,
+    "type": "CS_KNOWLEDGE",
+    "question": "후위 표기식 계산 시 사용되는 대표적인 자료구조는?",
+    "imageUrl": null,
+    "answers": [
+      "스택",
+      "stack"
+    ],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 30062,
+    "type": "CS_KNOWLEDGE",
+    "question": "그래프에서 가까운 이웃 노드부터 탐색해 나가는 방식은?",
+    "imageUrl": null,
+    "answers": [
+      "너비 우선 탐색",
+      "bfs",
+      "breadth-first search"
+    ],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 30063,
+    "type": "CS_KNOWLEDGE",
+    "question": "그래프에서 가능한 한 깊게 탐색을 시도하는 방식은?",
+    "imageUrl": null,
+    "answers": [
+      "깊이 우선 탐색",
+      "dfs",
+      "depth-first search"
+    ],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 30064,
+    "type": "CS_KNOWLEDGE",
+    "question": "양쪽 끝에서 삽입과 삭제가 모두 가능한 선형 자료구조는?",
+    "imageUrl": null,
+    "answers": [
+      "덱",
+      "deque",
+      "double-ended queue"
+    ],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 30065,
+    "type": "CS_KNOWLEDGE",
+    "question": "키의 중복 없이 데이터를 저장하며 빠른 접근을 지원하는 자료구조는?",
+    "imageUrl": null,
+    "answers": [
+      "해시 맵",
+      "hash map",
+      "해시 테이블",
+      "hash table"
+    ],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 30066,
+    "type": "CS_KNOWLEDGE",
+    "question": "해시 테이블에서 충돌이 발생했을 때, 연결 리스트를 이용하여 같은 인덱스에 여러 값을 저장하는 방법은?",
+    "imageUrl": null,
+    "answers": [
+      "체이닝",
+      "chaining"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30067,
+    "type": "CS_KNOWLEDGE",
+    "question": "해시 테이블에서 충돌을 해결하기 위해, 빈 슬롯을 찾아 다음 위치에 데이터를 저장하는 방법은?",
+    "imageUrl": null,
+    "answers": [
+      "개방 주소법",
+      "open addressing"
+    ],
+    "difficulty": "HARD"
+  },
+
+  {
+    "id": 30068,
+    "type": "CS_KNOWLEDGE",
+    "question": "트리 구조에서 각 노드가 정확히 두 개의 자식을 가지며 모든 리프 노드가 동일한 깊이에 있는 트리는?",
+    "imageUrl": null,
+    "answers": [
+      "완전 이진 트리",
+      "perfect binary tree"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30069,
+    "type": "CS_KNOWLEDGE",
+    "question": "이진 탐색 트리에서 균형을 유지하기 위해 회전을 사용하는 트리는?",
+    "imageUrl": null,
+    "answers": [
+      "AVL 트리",
+      "AVL tree"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30070,
+    "type": "CS_KNOWLEDGE",
+    "question": "해시 테이블에서 충돌을 피하기 위해 해시 함수를 반복적으로 적용하는 방식은?",
+    "imageUrl": null,
+    "answers": [
+      "이중 해싱",
+      "double hashing"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30071,
+    "type": "CS_KNOWLEDGE",
+    "question": "여러 개의 우선순위를 가진 요소들을 정렬된 순서로 처리하는 자료구조는?",
+    "imageUrl": null,
+    "answers": [
+      "우선순위 큐",
+      "priority queue"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30072,
+    "type": "CS_KNOWLEDGE",
+    "question": "자기 자신을 참조하는 포인터를 포함한 자료구조는?",
+    "imageUrl": null,
+    "answers": [
+      "순환 리스트",
+      "circular list",
+      "순환 연결 리스트"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30073,
+    "type": "CS_KNOWLEDGE",
+    "question": "최소 신장 트리를 찾기 위해 사용하는 대표적인 알고리즘은?",
+    "imageUrl": null,
+    "answers": [
+      "크루스칼",
+      "Kruskal",
+      "Kruskal's algorithm"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30074,
+    "type": "CS_KNOWLEDGE",
+    "question": "삽입, 삭제가 자주 발생하는 대용량 데이터를 디스크 기반에서 효율적으로 관리하기 위해 사용하는 균형 트리는?",
+    "imageUrl": null,
+    "answers": [
+      "B 트리",
+      "B-tree"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30075,
+    "type": "CS_KNOWLEDGE",
+    "question": "균형잡힌 다중 자식 노드를 가지며, 디스크 기반 시스템에서 사용하는 트리는?",
+    "imageUrl": null,
+    "answers": [
+      "B+ 트리",
+      "B+tree",
+      "B+ Tree"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30076,
+    "type": "CS_KNOWLEDGE",
+    "question": "균형잡힌 이진 탐색 트리의 삽입/삭제 시 회전 연산을 사용하는 트리는?",
+    "imageUrl": null,
+    "answers": [
+      "레드블랙 트리",
+      "red-black tree"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30077,
+    "type": "CS_KNOWLEDGE",
+    "question": "그래프에서 서로 다른 두 정점이 같은 집합에 속하는지를 확인하고, 합치는 연산을 효율적으로 수행하는 알고리즘은?",
+    "imageUrl": null,
+    "answers": [
+      "유니온 파인드",
+      "union find"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30078,
+    "type": "CS_KNOWLEDGE",
+    "question": "분할 정복 방식을 기반으로 피벗을 기준으로 데이터를 분할하며 평균적으로 매우 빠른 성능을 보이는 정렬 알고리즘은?",
+    "imageUrl": null,
+    "answers": [
+      "퀵 정렬",
+      "quick sort"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30079,
+    "type": "CS_KNOWLEDGE",
+    "question": "HTML에서 문서의 단락을 정의할 때 사용하는 태그는?",
+    "imageUrl": null,
+    "answers": [
+      "<p>",
+      "p"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30080,
+    "type": "CS_KNOWLEDGE",
+    "question": "HTML에서 줄바꿈을 위해 사용하는 태그는?",
+    "imageUrl": null,
+    "answers": [
+      "<br>",
+      "br"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30081,
+    "type": "CS_KNOWLEDGE",
+    "question": "HTML에서 가장 큰 제목을 나타내는 태그는?",
+    "imageUrl": null,
+    "answers": [
+      "<h1>",
+      "h1"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30082,
+    "type": "CS_KNOWLEDGE",
+    "question": "HTML에서 웹 페이지에 이미지 삽입할 때 사용하는 태그는?",
+    "imageUrl": null,
+    "answers": [
+      "<img>",
+      "img"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30083,
+    "type": "CS_KNOWLEDGE",
+    "question": "HTML에서 다른 웹 페이지로 이동할 수 있는 링크를 만드는 태그는?",
+    "imageUrl": null,
+    "answers": [
+      "<a>",
+      "a"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30084,
+    "type": "CS_KNOWLEDGE",
+    "question": "HTML에서 글자를 기울여 표시하는 태그는?",
+    "imageUrl": null,
+    "answers": [
+      "<i>",
+      "i",
+      "<em>",
+      "em"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30085,
+    "type": "CS_KNOWLEDGE",
+    "question": "HTML에서 글자를 굵게 표시하는 태그는?",
+    "imageUrl": null,
+    "answers": [
+      "<b>",
+      "b",
+      "<strong>",
+      "strong"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30086,
+    "type": "CS_KNOWLEDGE",
+    "question": "HTML에서 목록을 순서 없이 나타내는 태그는?",
+    "imageUrl": null,
+    "answers": [
+      "<ul>",
+      "ul"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30087,
+    "type": "CS_KNOWLEDGE",
+    "question": "HTML에서 목록 항목을 나타내는 태그는?",
+    "imageUrl": null,
+    "answers": [
+      "<li>",
+      "li"
+    ],
+    "difficulty": "EASY"
+  },
+  {
+    "id": 30088,
+    "type": "CS_KNOWLEDGE",
+    "question": "요청을 처리하는 객체를 체인 형태로 연결해, 요청을 처리할 수 있는 객체가 책임을 맡도록 전달하는 디자인 패턴은?",
+    "imageUrl": null,
+    "answers": [
+      "Chain of Responsibility Pattern",
+      "Chain of Responsibility",
+      "책임 연쇄 패턴",
+      "책임 연쇄"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30089,
+    "type": "CS_KNOWLEDGE",
+    "question": "기존 객체를 복사하여 새로운 객체를 생성하는 방식으로, 객체 생성 비용이 클 때 사용하는 디자인 패턴은?",
+    "imageUrl": null,
+    "answers": [
+      "Prototype Pattern",
+      "Prototype",
+      "프로토타입 패턴",
+      "프로토타입"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30090,
+    "type": "CS_KNOWLEDGE",
+    "question": "서브클래스가 확장해도 그 기능을 변경하지 않도록 템플릿을 미리 정의하고, 알고리즘의 구조를 고정시키는 디자인 패턴은?",
+    "imageUrl": null,
+    "answers": [
+      "Template Method Pattern",
+      "Template Method",
+      "템플릿 메서드 패턴",
+      "템플릿 메소드 패턴",
+      "템플릿 메서드"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30091,
+    "type": "CS_KNOWLEDGE",
+    "question": "서로 관련된 인터페이스들이 일관되게 사용될 수 있도록, 인터페이스 간의 의존성을 줄이기 위한 디자인 패턴은?",
+    "imageUrl": null,
+    "answers": [
+      "Facade Pattern",
+      "Facade",
+      "퍼사드 패턴",
+      "퍼사드"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30092,
+    "type": "CS_KNOWLEDGE",
+    "question": "객체 생성 시점의 복잡한 조건을 캡슐화하여, 객체 생성을 단계별로 나눠 처리할 수 있게 하는 디자인 패턴은?",
+    "imageUrl": null,
+    "answers": [
+      "Builder Pattern",
+      "Builder",
+      "빌더 패턴",
+      "빌더"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30093,
+    "type": "CS_KNOWLEDGE",
+    "question": "객체지향 프로그래밍에서 객체의 내부 상태를 외부에 직접 노출하지 않고, 메서드를 통해서만 접근하게 하는 원칙은?",
+    "imageUrl": null,
+    "answers": [
+      "캡슐화",
+      "encapsulation"
+    ],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 30094,
+    "type": "CS_KNOWLEDGE",
+    "question": "객체지향에서 서로 다른 클래스가 동일한 메시지를 받았을 때, 각자의 방식으로 동작할 수 있도록 하는 개념은?",
+    "imageUrl": null,
+    "answers": [
+      "다형성",
+      "polymorphism"
+    ],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 30095,
+    "type": "CS_KNOWLEDGE",
+    "question": "객체지향에서 데이터와 그 데이터를 처리하는 함수를 하나의 단위로 묶은 프로그래밍 단위는?",
+    "imageUrl": null,
+    "answers": [
+      "클래스",
+      "class"
+    ],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 30096,
+    "type": "CS_KNOWLEDGE",
+    "question": "클래스에서 생성된 실질적인 데이터를 가지며, 메모리에 할당되는 구체적인 실체를 무엇이라 하는가?",
+    "imageUrl": null,
+    "answers": [
+      "객체",
+      "object"
+    ],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 30097,
+    "type": "CS_KNOWLEDGE",
+    "question": "객체지향에서 클래스 내부 멤버에 외부 접근을 제한하기 위해 사용하는 접근 제어자는?",
+    "imageUrl": null,
+    "answers": [
+      "private"
+    ],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 30098,
+    "type": "CS_KNOWLEDGE",
+    "question": "객체지향에서 같은 클래스나 상속받은 클래스에서만 접근 가능한 접근 제어자는?",
+    "imageUrl": null,
+    "answers": [
+      "protected"
+    ],
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": 30099,
+    "type": "CS_KNOWLEDGE",
+    "question": "객체지향에서 어디서든 접근 가능한 멤버를 만들기 위해 사용하는 접근 제어자는?",
+    "imageUrl": null,
+    "answers": [
+      "public"
+    ],
     "difficulty": "MEDIUM"
   }
 ]

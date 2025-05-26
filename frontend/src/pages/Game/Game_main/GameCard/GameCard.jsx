@@ -83,16 +83,17 @@ function GameCard({
   }, [isHovered, typing]);
 
   const handleClick = () => {
+    const miniMap = {
+      WORD_CHAIN: "/game/ready/mini/four",
+      GUESS_WHO: "/game/ready/mini/person",
+    };
+
     let targetPath = "/game/ready"; 
 
     if (mode === "ranking") {
       targetPath = "/game/question";
-    } else if (mode === "mini") {
-      if (type === "WORD_CHAIN") {
-        targetPath = "/game/ready/mini/four";
-    } else if (type === "GUESS_WHO") {
-        targetPath = "/game/ready/mini/person";
-    }
+    } else if (mode === "mini" && miniMap[type]) {
+      targetPath = miniMap[type];
     }
 
     navigate(targetPath, {
