@@ -1,4 +1,5 @@
 .MyRank {
+
   background: linear-gradient(to bottom, #0d1a2d, #11293d, #183b4e);
 
   width: 100%;
@@ -15,6 +16,7 @@
 .MyRanking {
   width: 100%;
   max-width: 2000px;
+
   background-color: #161d28;
   cursor: pointer;
   border-radius: 12px;
@@ -37,6 +39,7 @@
   width: 100%;
   max-width: 2000px;
   padding: 32px;
+
   border-radius: 12px;
   box-shadow: 0 0 14px #00f0ff33;
   box-sizing: border-box;
@@ -58,10 +61,11 @@
 
 /* 기존 스타일 유지 */
 .Ranking {
-  font-size: 32px;
+
+  font-size: 40px;
   font-weight: 800;
   color: #00f0ff;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
   user-select: none;
 }
 

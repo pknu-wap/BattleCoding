@@ -7,7 +7,6 @@ html, body {
   overflow-x: hidden;
 }
 
-
 .container {
   width: 100%;
   display: flex;
@@ -27,15 +26,17 @@ html, body {
   font-size: 32px;
   font-weight: 900;
   color: #ffffff;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
+/* userHeader */
 /* userHeader */
 .userHeader {
   display: flex;
   align-items: center;
-  padding: 20px 20px;
-  font-size: 14px;
+  padding: 12px 20px;
+  font-size: 20px;
+
   font-weight: 700;
   color: #dddddd;
   background-color: #2b2d42;
@@ -47,40 +48,37 @@ html, body {
 .userHeader .placing {
   flex: 0.5;
   text-align: center;
-  margin-right: 4px; /* 기존보다 작게 */
+  color: #dddddd;
 }
 
 .userHeader .username {
   flex: 1.8;
   padding-left: 8px;
   text-align: left;
-  margin-right: 20px; /* 사용자명과 다음 항목들 사이 넉넉한 간격 */
+  color: #dddddd;
 }
 
 .userHeader .totalSubmitted,
 .userHeader .totalCorrect,
 .userHeader .totalWrong {
-  flex: 1.8;
-  display: flex;              /* 내부 항목 정렬 추가 */
-  justify-content: center;
-  gap: 12px;
-  color: #aaaaaa;
+  flex: 1; /* 각각 같은 비율 */
+  text-align: center;
+  display: inline-block;
 }
 
 .userHeader .totalSubmitted span,
 .userHeader .totalCorrect span,
 .userHeader .totalWrong span {
-  min-width: 40px;
-  text-align: center;
-  display: inline-block;
+  min-width: auto; /* 고정 최소 너비 해제 */
 }
+
 
 .userHeader .percent {
   flex: 1.1;
   padding-right: 12px;
   text-align: right;
+  color: #dddddd;
 }
-
 
 /* User List Container */
 .userList {
@@ -129,20 +127,21 @@ html, body {
   padding-left: 8px;
 }
 
-.userRow .scoreline {
-  flex: 1.8;
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  color: #aaaaaa;
-}
 
-.userRow .scoreline b {
-  min-width: 40px;
+.userRow .totalSubmitted,
+.userRow .totalCorrect,
+.userRow .totalWrong {
+  flex: 1;               /* 각각 같은 비율 */
   text-align: center;
   display: inline-block;
+  color: #ffffff;/* 기존 유지 */
 }
 
+.userRow .totalSubmitted span,
+.userRow .totalCorrect span,
+.userRow .totalWrong span {
+  min-width: auto;       /* 고정 최소 너비 해제 */
+}
 .userRow .percent {
   flex: 1.1;
   padding-right: 12px;
@@ -157,13 +156,14 @@ html, body {
   border: 3px solid #ffd700;
   box-shadow: 0 0 12px #ffd700aa;
   font-weight: 800;
-  color: #000;
+  color: #A66F00; /* 기존 #000에서 약간 부드럽고 진한 회색으로 변경 */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4); /* 살짝 그림자 추가 */
 }
 
 .userRow.first .placing .rank {
   font-size: 32px;
-  color: #ffd700;
-  text-shadow: 0 0 5px #fff176;
+  color: #A66F00;
+  text-shadow: 0 0 5px #fff176, 1px 1px 2px rgba(0,0,0,0.5);
 }
 
 .userRow.second {
@@ -171,13 +171,14 @@ html, body {
   border: 3px solid #c0c0c0;
   box-shadow: 0 0 12px #c0c0c0aa;
   font-weight: 800;
-  color: #000;
+  color: #444444; /* 기존 #000에서 좀 더 부드럽고 진한 회색으로 변경 */
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.6);
 }
 
 .userRow.second .placing .rank {
   font-size: 32px;
-  color: #c0c0c0;
-  text-shadow: 0 0 5px #e0e0e0;
+  color: #5C5C5C; /* 좀 더 진한 회색 계열 */
+  text-shadow: 0 0 5px #e0e0e0, 1px 1px 2px rgba(0,0,0,0.3);
 }
 
 .userRow.third {
@@ -185,14 +186,16 @@ html, body {
   border: 3px solid #cd7f32;
   box-shadow: 0 0 12px #cd7f32aa;
   font-weight: 800;
-  color: #000;
+  color: #4b3a1b; /* 기존 #000에서 배경색과 조화되는 진한 갈색으로 변경 */
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.7);
 }
 
 .userRow.third .placing .rank {
   font-size: 32px;
-  color: #cd7f32;
-  text-shadow: 0 0 5px #f5deb3;
+  color: #804A2A;
+  text-shadow: 0 0 5px #f5deb3, 1px 1px 2px rgba(0,0,0,0.3);
 }
+
 
 /* Highlight Current User */
 .userRow.currentUser {
@@ -248,7 +251,7 @@ html, body {
   text-align: center;
   font-weight: 700;
   color: #f8f8f2;
-  cursor: pointer; /* 마우스 포인터 변경 */
+  cursor: pointer;
   transform: translateY(4px);
   transition:
           color 0.3s ease,
@@ -263,13 +266,13 @@ html, body {
   font-weight: 800;
   cursor: default;
 }
+
 .pagination span.active {
-  color: #00f0ff; /* 원하는 색상 */
+  color: #00f0ff;
   font-weight: 800;
   text-shadow: 0 0 10px #00f0ffcc;
-  cursor: default; /* 활성화된 페이지는 클릭 불가 느낌으로 */
+  cursor: default;
 }
-
 
 /* Responsive Mobile */
 @media (max-width: 768px) {
