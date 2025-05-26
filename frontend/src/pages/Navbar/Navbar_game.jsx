@@ -1,18 +1,24 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import './Navbar_game.scss'
 
-export default function Navbar({ type = "main" }) {
+export default function Navbar({ type = "main", countdownText = "" }) {
     const navigate = useNavigate();
     const location = useLocation();
-    const isRanking = location.state?.isRanking;
+    const mode = location.state?.mode;
 
     const handleExit = () => {
-        if (isRanking) {
-            navigate('/game/ranking');
-        } else {
-            navigate('/game/practice');
+        switch (mode) {
+            case "ranking":
+                navigate('/game/ranking');
+                break;
+            case "practice":
+                navigate('/game/practice');
+                break;
+            case "mini":
+                navigate('/game/mini');
+                break;
         }
-    }
+    };
     
     return (
         <nav className='navbarGame'>
@@ -21,7 +27,10 @@ export default function Navbar({ type = "main" }) {
                     <div className='navbarGameLogo' onClick={() => navigate("/")}>Battle Coding</div>
                 </div>
                 <div className='navbarGameRight'>
-                    <button className='exitButton' onClick={handleExit}>나가기</button>
+                    {countdownText && (
+                        <div className='navbarCountdown'>⏱ {countdownText}</div>
+                    )}
+                    <button className='exitBtn' onClick={handleExit}>나가기</button>
                 </div>
             </div>
         </nav>

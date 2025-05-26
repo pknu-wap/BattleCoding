@@ -45,6 +45,7 @@ function MiniGameMain() {
                   type={data.type}
                   difficulty={data.difficulty}
                   isRanking={isRanking}
+                  mode="mini"
                   typing={data.typing}
                   typingPosition={data.mini_typingPosition}
                   typingFontSize={data.typingFontSize}

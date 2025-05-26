@@ -110,10 +110,325 @@
   {
     "id": 31013,
     "type": "CS_KNOWLEDGE",
-    "question": "사용자가 정상적인 웹사이트로 접속했다고 믿게 만든 뒤, 악성코드나 DNS 변조 등을 통해 가짜 사이트로 유도해 개인정보를 탈취하는 공격 기법은?",
+    "question": "공격자가 악의적인 스크립트를 웹 페이지에 삽입하여 다른 사용자의 브라우저에서 실행되게 만드는 공격 기법은?",
     "imageUrl": null,
-    "answers": ["파밍", "Pharming"],
+    "answers": [
+      "XSS",
+      "크로스사이트스크립팅",
+      "Cross Site Scripting"
+    ],
+    "difficulty": "HARD",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31014,
+    "type": "CS_KNOWLEDGE",
+    "question": "컴퓨터가 데이터를 처리하는 가장 작은 단위는?",
+    "imageUrl": null,
+    "answers": ["비트", "bit"],
+    "difficulty": "EASY",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31015,
+    "type": "CS_KNOWLEDGE",
+    "question": "HTTP는 보안이 없지만, 암호화된 버전의 프로토콜은?",
+    "imageUrl": null,
+    "answers": ["HTTPS"],
+    "difficulty": "EASY",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31016,
+    "type": "CS_KNOWLEDGE",
+    "question": "웹 페이지의 제목, 문단, 이미지 등 전체 구조를 정의할 때 사용하는 마크업 언어는?",
+    "imageUrl": null,
+    "answers": ["HTML"],
+    "difficulty": "EASY",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31017,
+    "type": "CS_KNOWLEDGE",
+    "question": "웹 페이지의 글꼴, 색상, 레이아웃 등 디자인과 스타일을 설정할 때 사용하는 언어는?",
+    "imageUrl": null,
+    "answers": ["CSS"],
+    "difficulty": "EASY",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31018,
+    "type": "CS_KNOWLEDGE",
+    "question": "C언어에서 프로그램의 흐름을 조건에 따라 분기시키는 데 사용하는 키워드는?",
+    "imageUrl": null,
+    "answers": ["if"],
+    "difficulty": "EASY",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31019,
+    "type": "CS_KNOWLEDGE",
+    "question": "1과 0만으로 정보를 표현하는 수 체계는?",
+    "imageUrl": null,
+    "answers": ["이진수", "2진수", "binary"],
+    "difficulty": "EASY",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31020,
+    "type": "CS_KNOWLEDGE",
+    "question": "Python에서 코드를 한 줄 주석 처리할 때 사용하는 기호는?",
+    "imageUrl": null,
+    "answers": ["#"],
+    "difficulty": "EASY",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31021,
+    "type": "CS_KNOWLEDGE",
+    "question": "C 언어에서 화면에 출력을 하기 위해 사용하는 표준 함수는?",
+    "imageUrl": null,
+    "answers": ["printf", "printf()"],
+    "difficulty": "EASY",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31022,
+    "type": "CS_KNOWLEDGE",
+    "question": "Python에서 리스트의 길이를 구하는 내장 함수는?",
+    "imageUrl": null,
+    "answers": ["len", "len()"],
+    "difficulty": "EASY",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31023,
+    "type": "CS_KNOWLEDGE",
+    "question": "Python에서 리스트에 새로운 값을 추가할 때 사용하는 메서드는?",
+    "imageUrl": null,
+    "answers": ["append", "append()"],
+    "difficulty": "EASY",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31024,
+    "type": "CS_KNOWLEDGE",
+    "question": "여러 개의 데이터를 순서 없이 저장하고, 중복을 허용하지 않는 Python 자료형은?",
+    "imageUrl": null,
+    "answers": ["set", "세트", "집합"],
+    "difficulty": "MEDIUM",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31025,
+    "type": "CS_KNOWLEDGE",
+    "question": "여러 개의 데이터를 일정한 순서로 저장하고, 한쪽에서만 삽입·삭제가 가능한 자료구조는?",
+    "imageUrl": null,
+    "answers": ["스택", "stack"],
+    "difficulty": "MEDIUM",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31026,
+    "type": "CS_KNOWLEDGE",
+    "question": "같은 이름의 함수가 매개변수의 타입이나 개수에 따라 다르게 동작하는 것을 무엇이라 하는가?",
+    "imageUrl": null,
+    "answers": ["오버로딩", "overloading"],
+    "difficulty": "MEDIUM",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31027,
+    "type": "CS_KNOWLEDGE",
+    "question": "부모 클래스의 속성과 메서드를 자식 클래스가 물려받아 사용할 수 있게 하는 객체지향 개념은?",
+    "imageUrl": null,
+    "answers": ["상속"],
+    "difficulty": "MEDIUM",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31028,
+    "type": "CS_KNOWLEDGE",
+    "question": "클라이언트가 서버로 데이터를 전송하거나, 폼 제출 시 주로 사용하는 HTTP 메서드는?",
+    "imageUrl": null,
+    "answers": ["POST"],
+    "difficulty": "MEDIUM",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31029,
+    "type": "CS_KNOWLEDGE",
+    "question": "클라이언트가 서버에 있는 기존 데이터를 수정하거나 전체를 덮어쓸 때 사용하는 HTTP 메서드는?",
+    "imageUrl": null,
+    "answers": ["PUT"],
+    "difficulty": "MEDIUM",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31030,
+    "type": "CS_KNOWLEDGE",
+    "question": "HTML에서 입력 필드를 만들기 위해 사용하는 태그는?",
+    "imageUrl": null,
+    "answers": [
+      "<input>",
+      "input"
+    ],
+    "difficulty": "EASY",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31031,
+    "type": "CS_KNOWLEDGE",
+    "question": "HTML에서 순서 있는 목록을 만들 때 사용하는 태그는?",
+    "imageUrl": null,
+    "answers": [
+      "<ol>",
+      "ol"
+    ],
+    "difficulty": "EASY",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31032,
+    "type": "CS_KNOWLEDGE",
+    "question": "HTML에서 셀 병합 시 가로 방향 병합을 위해 사용하는 속성은?",
+    "imageUrl": null,
+    "answers": [
+      "colspan"
+    ],
+    "difficulty": "EASY",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31033,
+    "type": "CS_KNOWLEDGE",
+    "question": "HTML에서 셀 병합 시 세로 방향 병합을 위해 사용하는 속성은?",
+    "imageUrl": null,
+    "answers": [
+      "rowspan"
+    ],
+    "difficulty": "EASY",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31034,
+    "type": "CS_KNOWLEDGE",
+    "question": "HTML 문서에서 문서 전체를 감싸는 최상위 태그는?",
+    "imageUrl": null,
+    "answers": [
+      "<html>",
+      "html"
+    ],
+    "difficulty": "EASY",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31035,
+    "type": "CS_KNOWLEDGE",
+    "question": "HTML에서 문서의 본문을 나타내는 태그는?",
+    "imageUrl": null,
+    "answers": [
+      "<body>",
+      "body"
+    ],
+    "difficulty": "EASY",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31036,
+    "type": "CS_KNOWLEDGE",
+    "question": "HTML에서 표의 제목 셀을 나타내는 태그는?",
+    "imageUrl": null,
+    "answers": [
+      "<th>",
+      "th"
+    ],
+    "difficulty": "EASY",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31037,
+    "type": "CS_KNOWLEDGE",
+    "question": "하나의 객체만 생성되도록 보장하고, 전역 접근점을 제공하는 디자인 패턴은?",
+    "imageUrl": null,
+    "answers": [
+      "Singleton Pattern",
+      "Singleton",
+      "싱글톤 패턴",
+      "싱글톤"
+    ],
+    "difficulty": "HARD",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31038,
+    "type": "CS_KNOWLEDGE",
+    "question": "서로 다른 인터페이스를 가진 클래스들을 기존 코드 수정 없이 함께 사용할 수 있도록 변환해주는 디자인 패턴은?",
+    "imageUrl": null,
+    "answers": [
+      "Adapter Pattern",
+      "Adapter",
+      "어댑터 패턴",
+      "어댑터"
+    ],
+    "difficulty": "HARD",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31039,
+    "type": "CS_KNOWLEDGE",
+    "question": "실행 중에 객체의 기능을 동적으로 추가하거나 제거할 수 있는 디자인 패턴은?",
+    "imageUrl": null,
+    "answers": [
+      "Decorator Pattern",
+      "Decorator",
+      "데코레이터 패턴",
+      "데코레이터"
+    ],
+    "difficulty": "HARD",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31040,
+    "type": "CS_KNOWLEDGE",
+    "question": "여러 알고리즘을 하나의 추상 인터페이스로 정의하고, 런타임에 알고리즘을 선택할 수 있도록 하는 디자인 패턴은?",
+    "imageUrl": null,
+    "answers": [
+      "Strategy Pattern",
+      "Strategy",
+      "전략 패턴",
+      "스트래티지 패턴"
+    ],
+    "difficulty": "HARD",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31041,
+    "type": "CS_KNOWLEDGE",
+    "question": "객체의 상태에 따라 동작이 달라지도록 하고, 상태 전환을 객체로 캡슐화하는 디자인 패턴은?",
+    "imageUrl": null,
+    "answers": [
+      "State Pattern",
+      "State",
+      "상태 패턴",
+      "스테이트 패턴"
+    ],
+    "difficulty": "HARD",
+    "isRankingOnly": true
+  },
+  {
+    "id": 31042,
+    "type": "CS_KNOWLEDGE",
+    "question": "다른 객체에 대한 접근을 제어하고, 대신 요청을 처리하거나 로깅 등의 기능을 수행할 수 있도록 하는 디자인 패턴은?",
+    "imageUrl": null,
+    "answers": [
+      "Proxy Pattern",
+      "Proxy",
+      "프록시 패턴",
+      "프록시"
+    ],
     "difficulty": "HARD",
     "isRankingOnly": true
   }
+
 ]

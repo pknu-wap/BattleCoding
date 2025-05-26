@@ -1,5 +1,5 @@
-const imageFour = "https://res.cloudinary.com/drg2mizpe/image/upload/v1747408988/FILLINBLANK_hlrckr.png";
-const imagePerson = "https://res.cloudinary.com/drg2mizpe/image/upload/v1747409612/PREDICTOUTPUT_t4afyw.png";
+const imageFour = "https://res.cloudinary.com/dcvhzjuzc/image/upload/v1747964691/image1_lc80ck.png";
+const imagePerson = "https://res.cloudinary.com/dcvhzjuzc/image/upload/v1747965338/image2_pduqs3.png";
 
 const miniData = [
   {

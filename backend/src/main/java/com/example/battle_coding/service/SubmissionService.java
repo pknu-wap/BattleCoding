@@ -34,7 +34,7 @@ public class SubmissionService {
 
     private static final int MAX_TIME = 15; // 한 문제 제한 시간 (초)
     private static final int BONUS_TIME_LIMIT = 10; // 보너스 적용 가능한 최대 시간 (초)
-    private static final double MAX_BONUS_RATIO = 0.5; // 최대 보너스 비율
+    private static final double MAX_BONUS_RATIO = 0.6; // 최대 보너스 비율
 
     public SubmissionResponseDto submit(SubmissionRequestDto request, Authentication authentication) {
         User user = getUserFromAuth(authentication);

@@ -40,14 +40,17 @@ function GameCard({
   type,
   difficulty,
   isRanking,
+  mode,
   typing = "",
   typingPosition = { top: "20%", left: "15%" },
   typingFontSize = "15px",
   isMini = false,
 }) {
   const navigate = useNavigate();
+
   const [displayText, setDisplayText] = useState("");
   const [isHovered, setIsHovered] = useState(false);
+
   const indexRef = useRef(0);
   const timerRef = useRef(null);
 
@@ -82,8 +85,20 @@ function GameCard({
   }, [isHovered, typing]);
 
   const handleClick = () => {
-    navigate("/game/ready", {
-      state: { image, title, description, type, difficulty, isRanking },
+    let targetPath = "/game/ready"; 
+
+    if (mode === "ranking") {
+      targetPath = "/game/question";
+    } else if (mode === "mini") {
+      if (type === "WORD_CHAIN") {
+        targetPath = "/game/ready/mini/four";
+    } else if (type === "GUESS_WHO") {
+        targetPath = "/game/ready/mini/person";
+    }
+    }
+
+    navigate(targetPath, {
+      state: { image, title, description, type, difficulty, isRanking, mode },
     });
   };
 

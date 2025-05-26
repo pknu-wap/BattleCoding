@@ -39,11 +39,11 @@ function RankingGameMain() {
     };
 
     fetchUserInfo();
-  }, []);
+  }, [navigate]);
 
   const handleClick = () => {
     navigate("/game/question", {
-      state: { isRanking: true },
+      state: { isRanking: true, mode: "ranking" },
     });
   };
 

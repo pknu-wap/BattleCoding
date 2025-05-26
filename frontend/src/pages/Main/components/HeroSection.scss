@@ -103,3 +103,55 @@
     width: 100%;
   }
 }
+
+
+@media (max-width: 768px) {
+  html, body, #root {
+    height: 100%;
+    overflow: auto;
+  }
+
+  .hero {
+    .heroInner {
+      flex-direction: column;
+      padding: 0 24px;
+      text-align: center;
+
+      .heroTextBlock {
+        padding: 30px 0;
+      }
+    }
+
+    .heroTitle {
+      font-size: 48px;
+    }
+
+    .heroSubtitle {
+      font-size: 14px;
+
+      .heroHighlight {
+        font-size: 15px;
+      }
+
+      .heroSubtext {
+        font-size: 13px;
+      }
+    }
+
+    .heroBtn {
+      margin-top: 16px;
+
+      button {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+    }
+
+    .heroImage {
+      width: 80%;
+      max-width: 280px;
+      height: auto;
+      margin-top: 16px;
+    }
+  }
+}

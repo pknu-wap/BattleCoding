@@ -28,6 +28,7 @@ public class QuestionJsonLoader {
                 "questions/normal/predict_output.json",
                 "questions/normal/cs_knowledge.json",
                 "questions/normal/word_chain.json",
+                "questions/normal/guess_who.json",
                 "questions/ranking/cs_ranking_only.json",
                 "questions/ranking/fill_ranking_only.json",
                 "questions/ranking/predict_ranking_only.json"

@@ -43,7 +43,7 @@ public class SecurityConfig {
                                 // ✅ React SPA 라우트 허용 (중요!)
                                 "/game", "/game/**",
                                 "/user", "/user/**",
-                                "/ranking", "/mypage"
+                                "/ranking", "/mypage", "/mypage/**"
                         ).permitAll()
 
                         // ✅ 인증 없이 접근 가능한 API
