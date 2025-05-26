@@ -6,7 +6,6 @@ html, body {
   overflow: hidden; /* 스크롤 방지 */
 }
 
-
 .container {
   height: 100vh;  /* 화면 높이에 맞춤 */
   overflow: hidden; /* 내부 스크롤 방지 */
@@ -19,44 +18,6 @@ html, body {
   gap: 2vh;
 }
 
-
-/* userHeader */
-.userHeader {
-  display: flex;
-  align-items: center;
-  padding: 12px 20px;
-  font-size: 14px;
-  font-weight: 700;
-  color: #dddddd;
-  background-color: #2b2d42;
-  border-radius: 12px;
-  border: 1px solid #3a3b4d;
-  box-sizing: border-box;
-}
-
-.userHeader .placing {
-  flex: 0.5;
-  text-align: center;
-}
-
-.userHeader .username {
-  flex: 1.8;
-  padding-left: 8px;
-  text-align: left;
-}
-
-.userHeader .scoreline {
-  flex: 1.8; /* 고정 */
-  color: #aaaaaa; /* 헤더 스코어라인 색상 통일 */
-}
-
-.userHeader .percent {
-  flex: 1.1;
-  padding-right: 12px; /* 오른쪽으로 약간 밀기 */
-  text-align: right;
-}
-
-
 /* Leaderboard Title */
 .Leaderboard {
   width: 100%;
@@ -66,7 +27,57 @@ html, body {
   font-size: 32px;
   font-weight: 900;
   color: #ffffff;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+}
+
+/* userHeader */
+/* userHeader */
+.userHeader {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #dddddd;
+  background-color: #2b2d42;
+  border-radius: 12px;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+}
+
+.userHeader .placing {
+  flex: 0.5;
+  text-align: center;
+  color: #dddddd;
+}
+
+.userHeader .username {
+  flex: 1.8;
+  padding-left: 8px;
+  text-align: left;
+  color: #dddddd;
+}
+
+.userHeader .totalSubmitted,
+.userHeader .totalCorrect,
+.userHeader .totalWrong {
+  flex: 1; /* 각각 같은 비율 */
+  text-align: center;
+  display: inline-block;
+}
+
+.userHeader .totalSubmitted span,
+.userHeader .totalCorrect span,
+.userHeader .totalWrong span {
+  min-width: auto; /* 고정 최소 너비 해제 */
+}
+
+
+.userHeader .percent {
+  flex: 1.1;
+  padding-right: 12px;
+  text-align: right;
+  color: #dddddd;
 }
 
 /* User List Container */
@@ -97,8 +108,8 @@ html, body {
   transform: scale(1.02);
   transform-origin: center;
   z-index: 10;
-  position: relative; /* 추가 */
-  overflow: visible; /* 필요시 추가 */
+  position: relative;
+  overflow: visible;
 }
 
 .userRow .placing {
@@ -116,14 +127,20 @@ html, body {
   padding-left: 8px;
 }
 
-.userRow .scoreline {
-  flex: 1.8; /* 헤더와 동일하게 맞춤 */
-  display: flex;
-  gap: 4px;
-  color: #aaaaaa; /* 검은색에서 회색으로 수정 */
-  margin-left: 15px; /* 오른쪽으로 밀기 */
+.userRow .totalSubmitted,
+.userRow .totalCorrect,
+.userRow .totalWrong {
+  flex: 1;               /* 각각 같은 비율 */
+  text-align: center;
+  display: inline-block;
+  color: #ffffff;/* 기존 유지 */
 }
 
+.userRow .totalSubmitted span,
+.userRow .totalCorrect span,
+.userRow .totalWrong span {
+  min-width: auto;       /* 고정 최소 너비 해제 */
+}
 .userRow .percent {
   flex: 1.1;
   padding-right: 12px;
@@ -137,13 +154,14 @@ html, body {
   border: 3px solid #ffd700;
   box-shadow: 0 0 12px #ffd700aa;
   font-weight: 800;
-  color: #000;
+  color: #A66F00; /* 기존 #000에서 약간 부드럽고 진한 회색으로 변경 */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4); /* 살짝 그림자 추가 */
 }
 
 .userRow.first .placing .rank {
   font-size: 32px;
-  color: #ffd700;
-  text-shadow: 0 0 5px #fff176;
+  color: #A66F00;
+  text-shadow: 0 0 5px #fff176, 1px 1px 2px rgba(0,0,0,0.5);
 }
 
 .userRow.second {
@@ -151,13 +169,14 @@ html, body {
   border: 3px solid #c0c0c0;
   box-shadow: 0 0 12px #c0c0c0aa;
   font-weight: 800;
-  color: #000;
+  color: #444444; /* 기존 #000에서 좀 더 부드럽고 진한 회색으로 변경 */
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.6);
 }
 
 .userRow.second .placing .rank {
   font-size: 32px;
-  color: #c0c0c0;
-  text-shadow: 0 0 5px #e0e0e0;
+  color: #5C5C5C; /* 좀 더 진한 회색 계열 */
+  text-shadow: 0 0 5px #e0e0e0, 1px 1px 2px rgba(0,0,0,0.3);
 }
 
 .userRow.third {
@@ -165,14 +184,16 @@ html, body {
   border: 3px solid #cd7f32;
   box-shadow: 0 0 12px #cd7f32aa;
   font-weight: 800;
-  color: #000;
+  color: #4b3a1b; /* 기존 #000에서 배경색과 조화되는 진한 갈색으로 변경 */
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.7);
 }
 
 .userRow.third .placing .rank {
   font-size: 32px;
-  color: #cd7f32;
-  text-shadow: 0 0 5px #f5deb3;
+  color: #804A2A;
+  text-shadow: 0 0 5px #f5deb3, 1px 1px 2px rgba(0,0,0,0.3);
 }
+
 
 /* Highlight Current User */
 .userRow.currentUser {
@@ -228,7 +249,7 @@ html, body {
   text-align: center;
   font-weight: 700;
   color: #f8f8f2;
-  cursor: pointer; /* 마우스 포인터 변경 */
+  cursor: pointer;
   transform: translateY(4px);
   transition:
           color 0.3s ease,
@@ -243,13 +264,13 @@ html, body {
   font-weight: 800;
   cursor: default;
 }
+
 .pagination span.active {
-  color: #00f0ff; /* 원하는 색상 */
+  color: #00f0ff;
   font-weight: 800;
   text-shadow: 0 0 10px #00f0ffcc;
-  cursor: default; /* 활성화된 페이지는 클릭 불가 느낌으로 */
+  cursor: default;
 }
-
 
 /* Responsive Mobile */
 @media (max-width: 768px) {

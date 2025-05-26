@@ -84,7 +84,7 @@ function MyRanking() {
                             </div>
                             <div className="Ranker">{myInfo.nickname}</div>
                             <div className="Percent">
-                                XP: <b className="r">{myInfo.xp}</b> XP
+                                   <b className="r">{myInfo.xp}</b> XP
                             </div>
                         </div>
                     ) : error ? (
