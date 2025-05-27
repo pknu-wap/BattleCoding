@@ -26,7 +26,7 @@ html, body {
   font-size: 32px;
   font-weight: 900;
   color: #ffffff;
-  margin-bottom: 8px;
+  margin-bottom: 25px;
 }
 
 /* userHeader */
@@ -153,59 +153,194 @@ html, body {
 /* Top 3 Rankers */
 .userRow.first {
   background: linear-gradient(135deg, #fff9c4, #ffe082);
-  border: 3px solid #ffd700;
   box-shadow: 0 0 12px #ffd700aa;
   font-weight: 800;
-  color: #A66F00; /* 기존 #000에서 약간 부드럽고 진한 회색으로 변경 */
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.4); /* 살짝 그림자 추가 */
+  color: #5C4200; /* 더 짙은 황갈색으로 변경 */
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.7); /* 밝은 테두리로 가독성 강화 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  padding: 12px;
+  cursor: pointer;
 }
 
-.userRow.first .placing .rank {
-  font-size: 32px;
-  color: #A66F00;
-  text-shadow: 0 0 5px #fff176, 1px 1px 2px rgba(0,0,0,0.5);
+.userRow.first:hover {
+  animation: fireGlow 0.5s infinite alternate;
+  transform: scale(1.03);
 }
+
+/* 랭킹 숫자 강조 + hover 효과 포함 */
+.userRow.first {
+  background: linear-gradient(135deg, #fff9c4, #ffe082);
+  font-weight: 800;
+  color: #5C4200 !important;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  padding: 12px;
+  cursor: pointer;
+
+  /* 테두리처럼 보이는 box-shadow로 기본 glow 설정 */
+  box-shadow:
+          0 0 8px #ffd700aa,
+          0 0 12px #ffecb3,
+          inset 0 0 6px #fff17688;
+}
+
+.userRow.first:hover {
+  animation: goldenFlameBorder 1.2s infinite alternate;
+  transform: scale(1.03);
+}
+
+/* 랭킹 숫자 강조 */
+.userRow.first .placing .rank {
+  font-size: 36px;
+  color: #FFD700;
+  text-shadow: 0 0 6px #fff8dc, 2px 2px 3px rgba(0,0,0,0.4);
+  transition: text-shadow 0.3s ease;
+}
+
+.userRow.first:hover .placing .rank {
+  text-shadow: 0 0 10px #ffe57f, 0 0 20px #ffeb3b, 0 0 30px #ffd700;
+}
+
+/* 테두리 금빛 이글이글 효과 */
+@keyframes goldenFlameBorder {
+  0% {
+    box-shadow:
+            0 0 10px #ffd700,
+            0 0 16px #ffeb3b,
+            0 0 4px #fff59d inset;
+  }
+  50% {
+    box-shadow:
+            0 0 16px #fff176,
+            0 0 22px #ffca28,
+            0 0 6px #ffeb3b inset;
+  }
+  100% {
+    box-shadow:
+            0 0 20px #fff59d,
+            0 0 28px #ffd700,
+            0 0 8px #ffe082 inset;
+  }
+}
+
+
 
 .userRow.second {
-  background: linear-gradient(135deg, #eeeeee, #cfcfcf);
-  border: 3px solid #c0c0c0;
-  box-shadow: 0 0 12px #c0c0c0aa;
+  background: linear-gradient(135deg, #f0f0f0, #dcdcdc); /* 은빛 배경 */
   font-weight: 800;
-  color: #444444; /* 기존 #000에서 좀 더 부드럽고 진한 회색으로 변경 */
-  text-shadow: 1px 1px 2px rgba(255,255,255,0.6);
+  color: #5A5A5A; /* 진한 회색 텍스트 */
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;  /* 추가: 둥근 모서리 */
+  padding: 12px;
+  cursor: pointer;
+
+  /* 은빛 glow 효과 */
+  box-shadow:
+          0 0 8px #c0c0c0aa,
+          0 0 12px #e0e0e0,
+          inset 0 0 6px #f5f5f588;  /* 부드럽고 연한 inset 그림자 */
 }
 
-.userRow.second .placing .rank {
-  font-size: 32px;
-  color: #5C5C5C; /* 좀 더 진한 회색 계열 */
-  text-shadow: 0 0 5px #e0e0e0, 1px 1px 2px rgba(0,0,0,0.3);
+.userRow.second:hover {
+  animation: silverFlameBorder 1.2s infinite alternate;
+  transform: scale(1.03);
 }
+
+/* 순위 강조 */
+.userRow.second .placing .rank {
+  font-size: 36px;
+  color: #B0B0B0; /* 연한 은색 */
+  text-shadow: 0 0 6px #ffffffcc, 2px 2px 3px rgba(0,0,0,0.3);
+  transition: text-shadow 0.3s ease;
+}
+
+.userRow.second:hover .placing .rank {
+  text-shadow: 0 0 10px #f0f0f0, 0 0 20px #cccccc, 0 0 30px #b0b0b0;
+}
+
+/* 은빛 이글이글 테두리 애니메이션 */
+@keyframes silverFlameBorder {
+  0% {
+    box-shadow:
+            0 0 10px #dcdcdc,
+            0 0 16px #f5f5f5,
+            inset 0 0 4px #ffffff88; /* 투명도 높여서 선 같은 느낌 감소 */
+  }
+  50% {
+    box-shadow:
+            0 0 16px #eaeaea,
+            0 0 22px #d0d0d0,
+            inset 0 0 5px #ffffff66;
+  }
+  100% {
+    box-shadow:
+            0 0 20px #f5f5f5,
+            0 0 28px #cccccc,
+            inset 0 0 6px #e0e0e088;
+  }
+}
+
+
 
 .userRow.third {
-  background: linear-gradient(135deg, #f0c290, #d2a679);
-  border: 3px solid #cd7f32;
-  box-shadow: 0 0 12px #cd7f32aa;
+  background: linear-gradient(135deg, #c98e57, #d19b60); /* 동메달 느낌의 구리빛 그라데이션 */
   font-weight: 800;
-  color: #4b3a1b; /* 기존 #000에서 배경색과 조화되는 진한 갈색으로 변경 */
-  text-shadow: 1px 1px 2px rgba(255,255,255,0.7);
+  color: #6d4c41; /* 진한 동색 텍스트 */
+  text-shadow: 1px 1px 2px rgba(255, 244, 229, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  padding: 12px;
+  cursor: pointer;
+
+  /* 동색 glow 효과 */
+  box-shadow:
+          0 0 8px #a0522daa,
+          0 0 12px #c2663c,
+          inset 0 0 6px #d17c5233;
 }
 
+.userRow.third:hover {
+  animation: bronzeFlameBorder 1.2s infinite alternate;
+  transform: scale(1.03);
+}
+
+/* 랭킹 숫자 강조 */
 .userRow.third .placing .rank {
-  font-size: 32px;
-  color: #804A2A;
-  text-shadow: 0 0 5px #f5deb3, 1px 1px 2px rgba(0,0,0,0.3);
+  font-size: 36px;
+  color: #cd7f32; /* 동메달색 */
+  text-shadow: 0 0 6px #fff3e0cc, 2px 2px 3px rgba(0,0,0,0.4);
+  transition: text-shadow 0.3s ease;
 }
 
-
-/* Highlight Current User */
-.userRow.currentUser {
-  background-color: #3b4160 !important;
-  border: 2px solid #00f0ff;
-  box-shadow: 0 0 10px #00f0ff55;
-  font-weight: 700;
-  color: #ffffff;
-  z-index: 1;
+.userRow.third:hover .placing .rank {
+  text-shadow: 0 0 10px #e6b487, 0 0 20px #d2691e, 0 0 30px #cd7f32;
 }
+
+/* 동메달 테두리 애니메이션 */
+@keyframes bronzeFlameBorder {
+  0% {
+    box-shadow:
+            0 0 10px #b06a42,
+            0 0 16px #d17c52,
+            0 0 4px #c86c27 inset;
+  }
+  50% {
+    box-shadow:
+            0 0 16px #cd7f32,
+            0 0 22px #a0522d,
+            0 0 6px #b26e1e inset;
+  }
+  100% {
+    box-shadow:
+            0 0 20px #d99c6a,
+            0 0 28px #b87333,
+            0 0 8px #a85c1c inset;
+  }
+}
+
 
 /* Pagination */
 .pagination {
