@@ -695,7 +695,7 @@
   {
     "id": 30074,
     "type": "CS_KNOWLEDGE",
-    "question": "삽입, 삭제가 자주 발생하는 대용량 데이터를 디스크 기반에서 효율적으로 관리하기 위해 사용하는 균형 트리는?",
+    "question": "삽입과 삭제가 빈번한 상황에서 내부 노드에도 데이터를 저장하며, 디스크 접근 횟수를 최소화하는 트리는?",
     "imageUrl": null,
     "answers": [
       "B 트리",
@@ -707,7 +707,7 @@
   {
     "id": 30075,
     "type": "CS_KNOWLEDGE",
-    "question": "균형잡힌 다중 자식 노드를 가지며, 디스크 기반 시스템에서 사용하는 트리는?",
+    "question": "모든 데이터를 리프 노드에 저장하고, 범위 쿼리와 순차 접근에 최적화된 디스크 기반 트리 구조는?",
     "imageUrl": null,
     "answers": [
       "B+ 트리",
@@ -745,6 +745,7 @@
     "imageUrl": null,
     "answers": [
       "퀵 정렬",
+      "퀵 소트",
       "quick sort"
     ],
     "difficulty": "HARD"
