@@ -42,8 +42,18 @@ function UserRanking({ currentUsername, page, setPage }) {
         const myRow = document.querySelector(".userRow.currentUser");
         if (myRow) {
             myRow.scrollIntoView({ behavior: "smooth", block: "center" });
+
+            myRow.classList.add("flash");
+
+            // 애니메이션 효과 끝나면 제거
+            const timeout = setTimeout(() => {
+                myRow.classList.remove("flash");
+            }, 2000);
+
+            return () => clearTimeout(timeout);
         }
     }, [userData]);
+
 
     const handlePrevPage = () => {
         if (page > 0) setPage(page - 1);

@@ -17,7 +17,7 @@
   width: 100%;
   max-width: 2000px;
 
-  background-color: #161d28;
+  background: linear-gradient(to bottom, #0d1a2d, #11293d);
   cursor: pointer;
   border-radius: 12px;
   padding: 20px;
@@ -35,7 +35,7 @@
 
 /* 유저랭킹 영역 스타일 (랭킹 리스트) */
 .User_Ranking {
-  background-color: #1b2430;
+  background: linear-gradient(to bottom, #0d1a2d, #11293d, #183b4e);
   width: 100%;
   max-width: 2000px;
   padding: 32px;
@@ -70,6 +70,17 @@
 }
 
 /* 랭킹 하이라이트 아이템 스타일 */
+@keyframes blinkColor {
+  0%, 100% {
+    color: #00f0ff;
+    box-shadow: 0 0 8px #00f0ff88;
+  }
+  50% {
+    color: #ffffff;
+    box-shadow: 0 0 16px #00f0ffcc;
+  }
+}
+
 .Rank.my-highlight {
   background-color: #3b4160;
   border: 1px solid #00f0ff;
@@ -83,10 +94,15 @@
   gap: 24px;
 
   width: 100%;
-  box-sizing: border-box; /* ✅ 핵심! 내부 padding 포함해서 width 맞추기 */
+  box-sizing: border-box;
+
+  transition: transform 0.3s ease;
 }
 
-
+.Rank.my-highlight:hover {
+  transform: scale(1.02);
+  animation: blinkColor 1s infinite alternate;
+}
 
 .Rank.my-highlight .Placing,
 .Rank.my-highlight .Ranker,
@@ -94,16 +110,19 @@
   color: #ffffff;
   font-weight: 700;
   font-size: 20px;
+  transition: color 0.5s ease;
 }
 
 .Rank.my-highlight .rank-icon {
   margin-right: 10px;
   font-size: 26px;
   color: #00f0ff;
+  transition: color 0.5s ease, box-shadow 0.5s ease;
 }
 
 .Rank.my-highlight .r {
   color: #00f0ff;
+  transition: color 0.5s ease;
 }
 
 @media (max-width: 768px) {
@@ -113,6 +132,7 @@
     gap: 14px;
   }
 }
+
 
 /* 로딩 상태 */
 .Rank.loading {
@@ -135,6 +155,26 @@
   }
 }
 
-.my-highlight.flash {
-  animation: highlightFlash 1.5s ease;
+/* flash 효과 */
+.flash {
+  animation: flashHighlight 0.8s ease-in-out;
+  //background-color: #ffe066 !important;  // 강조 배경색 (예: 연노랑)
+  box-shadow: 0 0 10px #00f0ff88;
+  z-index: 1;
+  position: relative;
+}
+
+@keyframes flashHighlight {
+  0% {
+    //background-color: #ffe066;
+    transform: scale(1);
+  }
+  50% {
+    //background-color: #ffec99;
+    transform: scale(1.02);
+  }
+  100% {
+    //background-color: transparent;
+    transform: scale(1);
+  }
 }
