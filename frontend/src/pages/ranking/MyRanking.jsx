@@ -52,9 +52,12 @@ function MyRanking() {
     // page 또는 myInfo.rank 변경 시, 내 랭킹이 해당 페이지에 있다면 스크롤 실행
     useEffect(() => {
         if (myInfo?.rank && Math.floor((myInfo.rank - 1) / 10) === page) {
-            scrollToRank(myInfo.rank);
+            setTimeout(() => {
+                scrollToRank(myInfo.rank);
+            }, 100); // 딜레이 추가
         }
     }, [page, myInfo]);
+
 
     return (
         <>

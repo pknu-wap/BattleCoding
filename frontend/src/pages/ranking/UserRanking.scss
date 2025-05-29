@@ -285,6 +285,7 @@ html, body {
 
 
 
+
 .userRow.third {
   background: linear-gradient(135deg, #c98e57, #d19b60); /* 동메달 느낌의 구리빛 그라데이션 */
   font-weight: 800;
@@ -427,3 +428,35 @@ html, body {
     font-size: 14px;
   }
 }
+/* 1등 유저 전체 텍스트 색상 전용 */
+.userRow.first .username,
+.userRow.first .totalSubmitted,
+.userRow.first .totalCorrect,
+.userRow.first .totalWrong,
+.userRow.first .percent {
+  color: #A66F00 !important; /* 진한 황금/갈색 */
+  font-weight: 800;
+}
+
+/* 2등 유저 전체 텍스트 색상 전용 */
+.userRow.second .username,
+.userRow.second .totalSubmitted,
+.userRow.second .totalCorrect,
+.userRow.second .totalWrong,
+.userRow.second .percent {
+  color: #A66F00 !important; /* 진한 황금/갈색 */
+  font-weight: 800;
+}
+
+/* 3등 유저 전체 텍스트 색상 전용 */
+.userRow.third .username,
+.userRow.third .totalSubmitted,
+.userRow.third .totalCorrect,
+.userRow.third .totalWrong,
+.userRow.third .percent {
+  color: #A66F00 !important; /* 진한 황금/갈색 */
+  font-weight: 800;
+}
+/* UserRanking.scss */
+
+

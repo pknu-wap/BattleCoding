@@ -155,6 +155,26 @@
   }
 }
 
-.my-highlight.flash {
-  animation: highlightFlash 1.5s ease;
+/* flash 효과 */
+.flash {
+  animation: flashHighlight 0.8s ease-in-out;
+  //background-color: #ffe066 !important;  // 강조 배경색 (예: 연노랑)
+  box-shadow: 0 0 10px #00f0ff88;
+  z-index: 1;
+  position: relative;
+}
+
+@keyframes flashHighlight {
+  0% {
+    //background-color: #ffe066;
+    transform: scale(1);
+  }
+  50% {
+    //background-color: #ffec99;
+    transform: scale(1.02);
+  }
+  100% {
+    //background-color: transparent;
+    transform: scale(1);
+  }
 }
