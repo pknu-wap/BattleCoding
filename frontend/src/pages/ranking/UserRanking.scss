@@ -193,10 +193,11 @@ html, body {
 
 /* 랭킹 숫자 강조 */
 .userRow.first .placing .rank {
-  font-size: 36px;
+  font-size: 53px;
   color: #FFD700;
   text-shadow: 0 0 6px #fff8dc, 2px 2px 3px rgba(0,0,0,0.4);
   transition: text-shadow 0.3s ease;
+  margin-left: 14px;
 }
 
 .userRow.first:hover .placing .rank {
@@ -251,10 +252,11 @@ html, body {
 
 /* 순위 강조 */
 .userRow.second .placing .rank {
-  font-size: 36px;
+  font-size: 48px;
   color: #B0B0B0; /* 연한 은색 */
   text-shadow: 0 0 6px #ffffffcc, 2px 2px 3px rgba(0,0,0,0.3);
   transition: text-shadow 0.3s ease;
+  margin-left: 14px;
 }
 
 .userRow.second:hover .placing .rank {
@@ -310,10 +312,11 @@ html, body {
 
 /* 랭킹 숫자 강조 */
 .userRow.third .placing .rank {
-  font-size: 36px;
+  font-size: 43px;
   color: #cd7f32; /* 동메달색 */
   text-shadow: 0 0 6px #fff3e0cc, 2px 2px 3px rgba(0,0,0,0.4);
   transition: text-shadow 0.3s ease;
+  margin-left: 14px;
 }
 
 .userRow.third:hover .placing .rank {
@@ -434,9 +437,11 @@ html, body {
 .userRow.first .totalCorrect,
 .userRow.first .totalWrong,
 .userRow.first .percent {
-  color: #A66F00 !important; /* 진한 황금/갈색 */
+  color: #DAA520 !important; /* 진한 황금/갈색 */
   font-weight: 800;
+  font-size: 18px; /* 또는 18px 등으로도 가능 */
 }
+
 
 /* 2등 유저 전체 텍스트 색상 전용 */
 .userRow.second .username,
@@ -444,8 +449,9 @@ html, body {
 .userRow.second .totalCorrect,
 .userRow.second .totalWrong,
 .userRow.second .percent {
-  color: #A66F00 !important; /* 진한 황금/갈색 */
+  color: #A9A9A9 !important; /* 진한 황금/갈색 */
   font-weight: 800;
+  font-size: 18px;
 }
 
 /* 3등 유저 전체 텍스트 색상 전용 */
@@ -454,8 +460,9 @@ html, body {
 .userRow.third .totalCorrect,
 .userRow.third .totalWrong,
 .userRow.third .percent {
-  color: #A66F00 !important; /* 진한 황금/갈색 */
+  color: #A65C2B !important; /* 진한 황금/갈색 */
   font-weight: 800;
+  font-size: 18px;
 }
 /* UserRanking.scss */
 
