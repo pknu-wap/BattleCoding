@@ -4,7 +4,7 @@
     "type": "FILL_IN_BLANK",
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286605/1_dlexxs.png",
-    "answers": ["s"],
+    "answers": ["s", "\"algorithm\""],
     "difficulty": "EASY"
   },
   {
@@ -28,7 +28,7 @@
     "type": "FILL_IN_BLANK",
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286605/4_vlhozc.png",
-    "answers": ["_"],
+    "answers": ["_", "b"],
     "difficulty": "EASY"
   },
   {
@@ -44,7 +44,7 @@
     "type": "FILL_IN_BLANK",
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286606/6-1_hgncvo.png",
-    "answers": ["score"],
+    "answers": ["\"score\"", "'score'"],
     "difficulty": "MEDIUM"
   },
   {
@@ -116,7 +116,7 @@
     "type": "FILL_IN_BLANK",
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286622/String_acesgz.png",
-    "answers": ["String[]"],
+    "answers": ["String[]", "String args[]"],
     "difficulty": "MEDIUM"
   },
   {
@@ -132,7 +132,7 @@
     "type": "FILL_IN_BLANK",
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286624/True_wowicc.png",
-    "answers": ["True"],
+    "answers": ["true"],
     "difficulty": "EASY"
   },
   {
@@ -435,8 +435,8 @@
     "id": 10055,
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747304941/C6_yoycpj.png",
-    "answers": ["(*p)[1]"],
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1748723524/10055_gyamml.png",
+    "answers": ["&arr"],
     "difficulty": "HARD"
   },
   {
@@ -459,8 +459,8 @@
     "id": 10058,
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747304953/CP10_wgyrn6.png",
-    "answers": ["add<int>(2, 3)"],
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1748723341/10058_atl1lq.png",
+    "answers": ["template"],
     "difficulty": "HARD"
   },
   {
@@ -468,7 +468,7 @@
     "type": "FILL_IN_BLANK",
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747304953/J9_smnrcw.png",
-    "answers": ["int[] nums"],
+    "answers": ["int[] nums", "int nums[]"],
     "difficulty": "HARD"
   },
   {
