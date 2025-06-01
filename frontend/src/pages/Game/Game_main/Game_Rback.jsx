@@ -16,7 +16,7 @@ export default function RBack() {
     window.addEventListener("resize", resizeCanvas);
 
     const particles = [];
-    const particleCount = 1200;
+    const particleCount = 500;
 
     const centerX = canvas.width / 2;
     const centerY = canvas.height / 2;
