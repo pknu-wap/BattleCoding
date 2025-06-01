@@ -364,7 +364,7 @@
     "type": "FILL_IN_BLANK",
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286624/vec_0_qjqjvd.png",
-    "answers": ["vec[0]"],
+    "answers": ["vec[0]", "*vec.begin()"],
     "difficulty": "MEDIUM"
   },
   {
@@ -396,7 +396,7 @@
     "type": "FILL_IN_BLANK",
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746287210/arr_n-1_skaffl.png",
-    "answers": ["arr[n-1]"],
+    "answers": ["arr[n-1]", "arr[n - 1]"],
     "difficulty": "MEDIUM"
   },
   {
@@ -412,7 +412,7 @@
     "type": "FILL_IN_BLANK",
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746287210/s_len-i-1_qrppwl.png",
-    "answers": ["s[len-i-1]"],
+    "answers": ["s[len-i-1]", "s[len - i - 1]"],
     "difficulty": "HARD"
   },
   {
@@ -428,7 +428,7 @@
     "type": "FILL_IN_BLANK",
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746287210/reverse_pkr054.png",
-    "answers": ["reverse"],
+    "answers": ["reverse", "std::reverse"],
     "difficulty": "MEDIUM"
   },
   {
@@ -452,7 +452,7 @@
     "type": "FILL_IN_BLANK",
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747304952/C13_ojpabz.png",
-    "answers": ["int *p"],
+    "answers": ["int *p", "int* p", "int * p", "int*p"],
     "difficulty": "HARD"
   },
   {
@@ -476,7 +476,7 @@
     "type": "FILL_IN_BLANK",
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1748722310/10060_hmiyfb.png",
-    "answers": ["union"],
+    "answers": ["struct"],
     "difficulty": "HARD"
   },
   {
