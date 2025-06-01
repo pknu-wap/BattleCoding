@@ -43,7 +43,7 @@
 ---
 
 ### ✅ **2. 다양한 문제 유형**
-- ✏️ **코드 빈칸 채우기**
+- ✏️ **빈칸 삽입**
 - 🔍 **출력 예측**
 - 💡 **CS 지식 (운영체제, 네트워크, DB, 보안)**
 > 유형과 난이도도 다양하게! 한 문제씩 차근차근, 게임하듯이!  
@@ -60,7 +60,7 @@
 ---
 
 ## 👥 팀원 소개
-|                             <img src="https://github.com/Seol-Munhyeok.png?size=100" width="70" height="70">                              |                         <img src="https://github.com/yckim9137.png?size=100" width="70" height="70">                          |                         <img src="https://github.com/yuurmj.png?size=2.0" width="70" height="70">                          |                          <img src="https://github.com/juhyun0415.png?size=100" width="70" height="70">                           |                    <img src="https://github.com/PKJYJ.png?size=100" width="70" height="70">                     |
+|                             <img src="https://github.com/Seol-Munhyeok.png?size=100" width="70" height="70">                              |                         <img src="https://github.com/yckim9137.png?size=100" width="70" height="70">                          |                         <img src="https://github.com/yuurmj.png?size=100" width="70" height="70">                          |                          <img src="https://github.com/juhyun0415.png?size=100" width="70" height="70">                           |                    <img src="https://github.com/PKJYJ.png?size=100" width="70" height="70">                     |
 | :---------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------: |
 | **설문혁**<br>[@Seol-Munhyeok](https://github.com/Seol-Munhyeok)<br><sub>백엔드 리더<br>API 총괄, 배포 운영</sub> | **김예찬**<br>[@yckim9137](https://github.com/yckim9137)<br><sub>백엔드 개발<br>문제 / 랭킹 API</sub> | **정유림**<br>[@yuurmj](https://github.com/yuurmj)<br><sub>프론트 리더<br>로그인, 메인, 연동</sub> | **전주현**<br>[@juhyun0415](https://github.com/juhyun0415)<br><sub>프론트 개발<br>마이페이지, 게임</sub> | **정연지**<br>[@PKJYJ](https://github.com/PKJYJ)<br><sub>프론트 개발<br>랭킹 화면</sub> |
 
@@ -83,7 +83,7 @@
   <img src="https://img.shields.io/badge/RDS-527FFF?style=for-the-badge&logo=amazonrds&logoColor=white"/>
 </div>
 
-### 🤝 Cooperative
+### 🤝 Collaboration
 <div>
   <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"/>
   <img src="https://img.shields.io/badge/notion-000000?style=for-the-badge&logo=notion&logoColor=white"/>
