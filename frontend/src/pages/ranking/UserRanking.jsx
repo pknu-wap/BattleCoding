@@ -8,7 +8,6 @@ function UserRanking({ currentUsername, page, setPage }) {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        // 랭킹 데이터를 불러오는 함수
         const fetchRankingData = async () => {
             setLoading(true);
             try {
@@ -35,7 +34,6 @@ function UserRanking({ currentUsername, page, setPage }) {
         fetchRankingData();
     }, [page]);
 
-// userData가 바뀔 때마다 내 랭크 위치로 스크롤
     useEffect(() => {
         if (userData.length === 0) return;
 
@@ -45,7 +43,6 @@ function UserRanking({ currentUsername, page, setPage }) {
 
             myRow.classList.add("flash");
 
-            // 애니메이션 효과 끝나면 제거
             const timeout = setTimeout(() => {
                 myRow.classList.remove("flash");
             }, 2000);
@@ -53,7 +50,6 @@ function UserRanking({ currentUsername, page, setPage }) {
             return () => clearTimeout(timeout);
         }
     }, [userData]);
-
 
     const handlePrevPage = () => {
         if (page > 0) setPage(page - 1);
@@ -67,24 +63,18 @@ function UserRanking({ currentUsername, page, setPage }) {
         setPage(pageNumber);
     };
 
-
     return (
         <div className="UserRanking">
             <div className="Leaderboard">🎖️ LeaderBoard 🎖️</div>
 
-            {/* ✅ 헤더 줄 */}
             <div className="userHeader">
                 <span className="placing">순위</span>
                 <span className="username">사용자명</span>
-
                 <span className="totalSubmitted">풀이 개수</span>
                 <span className="totalCorrect">정답 개수</span>
                 <span className="totalWrong">오답 개수</span>
-
                 <span className="percent">XP</span>
             </div>
-
-
 
             {loading ? (
                 <div className="loading">랭킹 데이터를 불러오는 중...</div>
@@ -120,22 +110,32 @@ function UserRanking({ currentUsername, page, setPage }) {
                                     <span className="totalWrong">{user.totalWrong}</span>
                                     <span className="percent"><b>{user.xp}</b> XP</span>
                                 </div>
-
                             );
                         })
                     )}
                 </div>
             )}
 
-            {/* 페이징 버튼 */}
+            {/* 🔧 페이징 숫자 버튼 수정 */}
             <div className="pagination">
                 <button onClick={handlePrevPage} disabled={page === 0} className="pageBtn">
                     이전
                 </button>
 
-                {[...Array(totalPages).keys()]
-                    .slice(Math.max(0, page - 4), page + 5)
-                    .map((p) => (
+                {(() => {
+                    const pageGroupSize = 5;
+                    const startPage = Math.min(
+                        Math.max(0, totalPages - pageGroupSize),
+                        Math.max(0, page)
+                    );
+                    const endPage = Math.min(startPage + pageGroupSize, totalPages);
+
+                    const pageNumbers = [];
+                    for (let i = startPage; i < endPage; i++) {
+                        pageNumbers.push(i);
+                    }
+
+                    return pageNumbers.map((p) => (
                         <span
                             key={p}
                             className={`page-number ${page === p ? "active" : ""}`}
@@ -143,7 +143,8 @@ function UserRanking({ currentUsername, page, setPage }) {
                         >
                             {p + 1}
                         </span>
-                    ))}
+                    ));
+                })()}
 
                 <button onClick={handleNextPage} disabled={page === totalPages - 1} className="pageBtn">
                     다음
