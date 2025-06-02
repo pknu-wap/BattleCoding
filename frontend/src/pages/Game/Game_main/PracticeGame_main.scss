@@ -1,43 +1,35 @@
-html, body {
+html, body, #root {
   width: 100%;
-  height: 100%;
+  height: auto;
+  max-height: 100vh;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  overflow-x: hidden;
-}
-
-#root {
-  width: 100%;
-  height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
+  overflow: hidden;
 }
 
 .gameMain {
   background: linear-gradient(to bottom, #0d1a2d, #11293d, #183b4e);
 
   width: 100%;
+  height: auto;
   min-height: calc(100vh - 56px);
   box-sizing: border-box;
 
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
+  overflow: hidden;
 
   .gameContent {
     width: auto;
     max-width: 100%;
-    padding: 50px 20px 0;
+    height: auto;
+    padding: 30px 20px 30px;
     margin: 0 auto;
     box-sizing: border-box;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-
     .quizIntro {
       text-align: center;
       font-family: 'Pretendard', sans-serif;
@@ -115,9 +107,14 @@ html, body {
 }
 
 @media (max-width: 911px) {
+  html, body, #root {
+    overflow-y: auto;
+  }
+  
   .gameMain {
     height: auto;
     min-height: 100vh;
+    overflow-y: auto;
 
     .gameContent {
       padding-bottom: 120px;

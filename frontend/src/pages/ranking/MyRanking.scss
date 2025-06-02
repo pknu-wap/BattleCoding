@@ -2,6 +2,8 @@
   background: linear-gradient(to bottom, #0d1a2d, #11293d, #183b4e);
 
   width: 100%;
+  min-height: 100vh;
+  height: auto;
   padding: 40px 20px;
 
   display: flex;
@@ -36,6 +38,7 @@
   background-color: #1b2430;
   width: 100%;
   max-width: 2000px;
+  height: auto;
   padding: 32px;
   border-radius: 12px;
   box-shadow: 0 0 14px #00f0ff33;
