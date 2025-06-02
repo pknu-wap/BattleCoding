@@ -352,7 +352,8 @@ html, body {
   margin-top: 20px;
   display: flex;
   justify-content: center;
-  gap: 10px;
+  flex-wrap: wrap; /* 혹시 줄 넘칠 때 자동 줄바꿈 */
+  gap: 12px;
   font-size: 16px;
   color: #bbbbbb;
   padding-bottom: 12px;
@@ -387,14 +388,19 @@ html, body {
 }
 
 .pagination span {
-  min-width: 20px;
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
   text-align: center;
   font-weight: 700;
   color: #f8f8f2;
   cursor: pointer;
-  transform: translateY(4px);
+  border-radius: 8px;
+  margin: 0 4px;
   transition:
           color 0.3s ease,
+          background-color 0.3s ease,
           transform 0.2s ease,
           text-shadow 0.3s ease;
 }
@@ -404,15 +410,16 @@ html, body {
   transform: scale(1.1);
   text-shadow: 0 0 8px #6272a4cc;
   font-weight: 800;
-  cursor: default;
 }
 
 .pagination span.active {
   color: #00f0ff;
   font-weight: 800;
   text-shadow: 0 0 10px #00f0ffcc;
+
   cursor: default;
 }
+
 
 /* Responsive Mobile */
 @media (max-width: 768px) {
