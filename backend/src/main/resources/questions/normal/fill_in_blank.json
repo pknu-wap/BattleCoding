@@ -4,7 +4,7 @@
     "type": "FILL_IN_BLANK",
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286605/1_dlexxs.png",
-    "answers": ["s"],
+    "answers": ["s", "\"algorithm\""],
     "difficulty": "EASY"
   },
   {
@@ -28,7 +28,7 @@
     "type": "FILL_IN_BLANK",
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286605/4_vlhozc.png",
-    "answers": ["_"],
+    "answers": ["_", "b"],
     "difficulty": "EASY"
   },
   {
@@ -44,7 +44,7 @@
     "type": "FILL_IN_BLANK",
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286606/6-1_hgncvo.png",
-    "answers": ["score"],
+    "answers": ["\"score\"", "'score'"],
     "difficulty": "MEDIUM"
   },
   {
@@ -116,7 +116,7 @@
     "type": "FILL_IN_BLANK",
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286622/String_acesgz.png",
-    "answers": ["String[]"],
+    "answers": ["String[]", "String args[]"],
     "difficulty": "MEDIUM"
   },
   {
@@ -132,7 +132,7 @@
     "type": "FILL_IN_BLANK",
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286624/True_wowicc.png",
-    "answers": ["True"],
+    "answers": ["true"],
     "difficulty": "EASY"
   },
   {
@@ -364,7 +364,7 @@
     "type": "FILL_IN_BLANK",
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746286624/vec_0_qjqjvd.png",
-    "answers": ["vec[0]"],
+    "answers": ["vec[0]", "*vec.begin()"],
     "difficulty": "MEDIUM"
   },
   {
@@ -396,7 +396,7 @@
     "type": "FILL_IN_BLANK",
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746287210/arr_n-1_skaffl.png",
-    "answers": ["arr[n-1]"],
+    "answers": ["arr[n-1]", "arr[n - 1]"],
     "difficulty": "MEDIUM"
   },
   {
@@ -412,7 +412,7 @@
     "type": "FILL_IN_BLANK",
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746287210/s_len-i-1_qrppwl.png",
-    "answers": ["s[len-i-1]"],
+    "answers": ["s[len-i-1]", "s[len - i - 1]"],
     "difficulty": "HARD"
   },
   {
@@ -428,15 +428,15 @@
     "type": "FILL_IN_BLANK",
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1746287210/reverse_pkr054.png",
-    "answers": ["reverse"],
+    "answers": ["reverse", "std::reverse"],
     "difficulty": "MEDIUM"
   },
   {
     "id": 10055,
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747304941/C6_yoycpj.png",
-    "answers": ["(*p)[1]"],
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1748723524/10055_gyamml.png",
+    "answers": ["&arr"],
     "difficulty": "HARD"
   },
   {
@@ -452,15 +452,15 @@
     "type": "FILL_IN_BLANK",
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747304952/C13_ojpabz.png",
-    "answers": ["int *p"],
+    "answers": ["int *p", "int* p", "int * p", "int*p"],
     "difficulty": "HARD"
   },
   {
     "id": 10058,
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747304953/CP10_wgyrn6.png",
-    "answers": ["add<int>(2, 3)"],
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1748723341/10058_atl1lq.png",
+    "answers": ["template"],
     "difficulty": "HARD"
   },
   {
@@ -468,7 +468,111 @@
     "type": "FILL_IN_BLANK",
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747304953/J9_smnrcw.png",
-    "answers": ["int[] nums"],
+    "answers": ["int[] nums", "int nums[]"],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 10060,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1748722310/10060_hmiyfb.png",
+    "answers": ["struct"],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 10061,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1748722311/10061_r33cqj.png",
+    "answers": ["true"],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 10062,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1748722311/10062_fqo2es.png",
+    "answers": ["addAll"],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 10063,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1748722312/10063_dlisdq.png",
+    "answers": ["contextmanager"],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 10064,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1748722313/10064_tykcov.png",
+    "answers": ["inline"],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 10065,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1748722314/10065_lgrte9.png",
+    "answers": ["override"],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 10066,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1748722314/10066_wgnulg.png",
+    "answers": ["findFirst"],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 10067,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1748722315/10067_yfh4o5.png",
+    "answers": ["__call__"],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 10068,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1748722316/10068_gulayn.png",
+    "answers": ["LIKELY"],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 10069,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1748722316/10069_cmqhxk.png",
+    "answers": ["int"],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 10070,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1748722316/10070_owchrl.png",
+    "answers": ["shutdown"],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 10071,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1748722317/10071_hr8grf.png",
+    "answers": ["await"],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 10072,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1748722317/10072_gy0kcr.png",
+    "answers": ["Exception"],
     "difficulty": "HARD"
   }
 ]
