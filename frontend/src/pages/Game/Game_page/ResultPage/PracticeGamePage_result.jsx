@@ -16,6 +16,17 @@ function PracticeResult() {
 
   const totalQuestions = 10;
 
+  const handleExit = () => {
+    switch (mode) {
+      case "practice":
+        navigate("/game/practice");
+        break;
+      case "mini":
+        navigate("/game/mini");
+        break;
+    }
+  };
+
   useEffect(() => {
     const fetchXp = async () => {
       if (!isRanking) return;
@@ -24,7 +35,7 @@ function PracticeResult() {
         const response = await api.get("/user/me");
         console.log("내 정보 응답: ", response.data);
         setUpdatedXp(response.data.xp);
-        setXpEarned(score * 10);    // 일단 한 문제당 10xp라고 가정 -> 정해지면 수정
+        setXpEarned(score * 10); // 일단 한 문제당 10xp라고 가정 -> 정해지면 수정
       } catch (err) {
         console.error("XP 정보 가져오기 실패: ", err);
       }
@@ -34,7 +45,7 @@ function PracticeResult() {
   }, [isRanking]);
 
   const handleRetry = () => {
-    let retryPath = '/game/ready';
+    let retryPath = "/game/ready";
 
     if (!difficulty) {
       if (type === "WORD_CHAIN") retryPath = "/game/ready/mini/four";
@@ -55,14 +66,18 @@ function PracticeResult() {
               <div className="leftSection">
                 <h2>{titleLabel}</h2>
                 <img className="resultImg" src={image} alt={title} />
-                <p><span className="highlightScore">{score}</span> 개 맞았습니다!</p>
+                <p>
+                  <span className="highlightScore">{score}</span> 개 맞았습니다!
+                </p>
               </div>
 
               <div className="rightSection">
                 <div className="summaryBox">
                   <p>문제 수 : {totalQuestions}</p>
                   <p>정답 수 : {score}</p>
-                  <p className="summaryRatio">{score} / {totalQuestions}</p>
+                  <p className="summaryRatio">
+                    {score} / {totalQuestions}
+                  </p>
                 </div>
               </div>
             </div>
@@ -73,7 +88,7 @@ function PracticeResult() {
       <div className="btnSection">
         <button onClick={() => navigate("/mypage")}>마이페이지</button>
         <button onClick={handleRetry}>다시</button>
-        <button onClick={() => navigate("/")}>메인</button>
+        <button onClick={handleExit}>나가기</button>
       </div>
     </div>
   );
