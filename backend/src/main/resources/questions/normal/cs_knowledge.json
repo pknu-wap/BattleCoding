@@ -1212,5 +1212,295 @@
       "return 0", "return 0;"
     ],
     "difficulty": "EASY"
+  },
+  {
+    "id": 30122,
+    "type": "CS_KNOWLEDGE",
+    "question": "JavaScript를 사용한 비동기 통신기술로, 클라이언트와 서버 간에 XML 데이터를 주고받는 기술은?",
+    "imageUrl": null,
+    "answers": [
+      "AJAX", "Asynchronous JavaScript and XML"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30123,
+    "type": "CS_KNOWLEDGE",
+    "question": "물리적 저장 장치의 입장에서 본 데이터베이스 구조로서 실제로 데이터베이스에 저장될 레코드의 형식을 정의하고 저장 데이터 항목의 표현 방법, 내부 레코드의 물리적 순서 등을 나타내는 것은?",
+    "imageUrl": null,
+    "answers": [
+      "내부 스키마", "Internal Schema"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30124,
+    "type": "CS_KNOWLEDGE",
+    "question": "릴레이션 조작 시 데이터들이 불필요하게 중복되어 예기치 않게 발생하는 곤란한 현상은?",
+    "imageUrl": null,
+    "answers": [
+      "Anomaly", "이상", "이상 현상"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30125,
+    "type": "CS_KNOWLEDGE",
+    "question": "데이터베이스 전체를 정의한 것으로 데이터 개체, 관계, 제약조건, 접근권한, 무결성 규칙 등을 명세한 스키마는?",
+    "imageUrl": null,
+    "answers": [
+      "개념 스키마", "Conceptual Schema", "개념"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30126,
+    "type": "CS_KNOWLEDGE",
+    "question": "정규화된 엔티티, 속성, 관계를 시스템의 성능 향상과 개발 운영의 단순화를 위해 중복, 통합, 분리 등을 수행하는 데이터 모델링 기법은?",
+    "imageUrl": null,
+    "answers": [
+      "반정규화", "Denormalization"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30127,
+    "type": "CS_KNOWLEDGE",
+    "question": "SQL에서 VIEW를 삭제할 때 사용하는 명령은?",
+    "imageUrl": null,
+    "answers": [
+      "DROP", "DROP VIEW"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30128,
+    "type": "CS_KNOWLEDGE",
+    "question": "데이터베이스 시스템에서 삽입, 갱신, 삭제 등의 이벤트가 발생할 때마다 관련 작업이 자동으로 수행되는 절차형 SQL은?",
+    "imageUrl": null,
+    "answers": [
+      "트리거", "Trigger"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30129,
+    "type": "CS_KNOWLEDGE",
+    "question": "참조 무결성을 유지하기 위하여 DROP문에서 부모 테이블의 항목 값을 삭제할 경우 자동적으로 자식테이블의 해당 레코드를 삭제하기 위한 옵션은?",
+    "imageUrl": null,
+    "answers": [
+      "CASCADE"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30130,
+    "type": "CS_KNOWLEDGE",
+    "question": "데이터베이스 성능에 많은 영향을 주는 DBMS의 구성 요소로 테이블과 클러스터에 연관되어 독립적인 저장 공간을 보유하며, 데이터베이스에 저장된 자료를 더욱 빠르게 조회하기 위하여 사용되는 것은?",
+    "imageUrl": null,
+    "answers": [
+      "인덱스", "Index"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30131,
+    "type": "CS_KNOWLEDGE",
+    "question": "프로세스 처리 도중, 참조할 페이지가 주기억장치에 없어 프로세스 처리시간보다, 페이지 교체에 소요되는 시간이 더 많아지는 현상은?",
+    "imageUrl": null,
+    "answers": [
+      "Thrasing", "스레싱", "쓰레싱"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30132,
+    "type": "CS_KNOWLEDGE",
+    "question": "TCP/IP에서 사용되는 논리(IP) 주소를 물리(MAC) 주소로 변환시켜 주는 프로토콜은?",
+    "imageUrl": null,
+    "answers": [
+      "ARP", "Address Resolution Protocol"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30133,
+    "type": "CS_KNOWLEDGE",
+    "question": "TCP/IP에서 사용되는 물리(MAC) 주소를 논리(IP) 주소로 변환시켜 주는 프로토콜은?",
+    "imageUrl": null,
+    "answers": [
+      "RARP", "Reverse Address Resolution Protocol"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30134,
+    "type": "CS_KNOWLEDGE",
+    "question": "UNIX에서 새로운 프로세스를 생성하는 명령어는?",
+    "imageUrl": null,
+    "answers": [
+      "fork", "fork()"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30135,
+    "type": "CS_KNOWLEDGE",
+    "question": "무선 랜에서 데이터 전송 시, 매체가 비어있음을 확인한 뒤 충돌을 회피하기 위해 임의 시간을 기다린 후 데이터를 전송하는 방법이며, 네트워크에 데이터의 전송이 없는 경우라도 동시 전송에 의한 충돌에 대비하여 확인 신호를 전송하는 방식은?",
+    "imageUrl": null,
+    "answers": [
+      "CSMA/CA", "Carrier Sense Multiple Access/Collision Avoidance"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30136,
+    "type": "CS_KNOWLEDGE",
+    "question": "가상기억장치의 일반적인 구현 방법에는 프로그램을 고정된 크기의 일정한 블록으로 나누는 Paging 기법과 가변적인 크기의 블록으로 나누는 (  ) 기법이 있다.",
+    "imageUrl": null,
+    "answers": [
+      "Segmentation", "세그멘테이션"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30137,
+    "type": "CS_KNOWLEDGE",
+    "question": "고정된 크기의 메모리 공간보다 더 많은 데이터를 저장하려 할 때, 인접한 메모리 영역까지 침범하여 예기치 않은 동작이나 보안 취약점을 유발하는 현상은 무엇인가?",
+    "imageUrl": null,
+    "answers": [
+      "버퍼 오버플로", "버퍼 오버플로우", "Buffer Overflow"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30138,
+    "type": "CS_KNOWLEDGE",
+    "question": "TCP/IP에서 IP 계층에서 발생하는 오류 상황에 대비해, 오류 메시지나 진단 정보를 전송하는 데 사용되는 프로토콜은?",
+    "imageUrl": null,
+    "answers": [
+      "ICMP", "Internet Control Message Protocol"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30139,
+    "type": "CS_KNOWLEDGE",
+    "question": "사물 통신, 사물 인터넷과 같이 대역폭이 제한된 통신환경에 최적화하여 개발된 푸시기술 기반의 경량 메시지 전송 프로토콜로, 메시지 매개자(Broker)를 통해 송신자가 특정 메시지를 발행하고 수신자가 메시지를 구독하는 방식인 프로토콜은?",
+    "imageUrl": null,
+    "answers": [
+      "MQTT", "Message Queuing Telemetry Transport"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30140,
+    "type": "CS_KNOWLEDGE",
+    "question": "물리적인 사물과 컴퓨터에 동일하게 표현되는 가상의 모델로, 실제 물리적인 자산 대신 소프트웨어로 가상화함으로써 실제 자산의 특성에 대한 정확한 정보를 얻을 수 있고, 자산 최적화, 돌발 사고 최소화, 생산성 향상 등 설계부터 제조, 서비스에 이르는 모든 과정의 효율성을 향상시킬 수 있는 모델은?",
+    "imageUrl": null,
+    "answers": [
+      "디지털 트윈", "Digital Twin"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30141,
+    "type": "CS_KNOWLEDGE",
+    "question": "시스템이 몇 대가 되어도 하나의 시스템에서 인증에 성공하면 다른 시스템에 대한 접근 권한도 얻는 시스템을 의미하는 것은?",
+    "imageUrl": null,
+    "answers": [
+      "SSO", "Single Sign-On", "Single Sign On"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30142,
+    "type": "CS_KNOWLEDGE",
+    "question": "애플리케이션과 그 종속성을 하나의 이미지로 패키징하여, 어디서나 동일한 환경에서 실행할 수 있도록 해주는 경량 가상화 기술은?",
+    "imageUrl": null,
+    "answers": [
+      "도커", "Docker"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30143,
+    "type": "CS_KNOWLEDGE",
+    "question": "개인과 기업, 국가적으로 큰 위협이 되고 있는 주요 사이버 범죄 중 하나로, Snake, Darkside 등 시스템을 잠그거나 데이터를 암호화해 사용할 수 없도록 하고 이를 인질로 금전을 요구하는 데 사용되는 악성 프로그램은?",
+    "imageUrl": null,
+    "answers": [
+      "랜섬웨어", "Ransomware"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30144,
+    "type": "CS_KNOWLEDGE",
+    "question": "위조된 매체 접근 제어(MAC) 주소를 지속적으로 네트워크로 흘려보내, 스위치 MAC 주소 테이블의 저장 기능을 혼란시켜 더미 허브(Dummy Hub)처럼 작동하게 하는 공격은?",
+    "imageUrl": null,
+    "answers": [
+      "Switch Jamming", "MAC 플러딩", "스위치 재밍", "MAC Flooding"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30145,
+    "type": "CS_KNOWLEDGE",
+    "question": "시스템에 저장되는 패스워드들은 Hash 또는 암호화 알고리즘의 결과 값으로 저장된다. 이때 암호 공격을 막기 위해 똑같은 패스워드들이 다른 암호 값으로 저장되도록 추가되는 값을 의미하는 것은?",
+    "imageUrl": null,
+    "answers": [
+      "Salt", "솔트"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30146,
+    "type": "CS_KNOWLEDGE",
+    "question": "악성코드의 유형 중 다른 컴퓨터의 취약점을 이용하여 스스로 전파하거나 메일로 전파되며 스스로를 증식하는 것은?",
+    "imageUrl": null,
+    "answers": [
+      "웜", "Worm"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30147,
+    "type": "CS_KNOWLEDGE",
+    "question": "개별 모듈을 시험하는 것으로 모듈이 정확하게 구현되었는지, 예정한 기능이 제대로 수행되는지를 점검하는 것이 주목적인 테스트는?",
+    "imageUrl": null,
+    "answers": [
+      "단위 테스트", "Unit Test"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30148,
+    "type": "CS_KNOWLEDGE",
+    "question": "JAVA에서 힙(Heap)에 남아있으나 변수가 가지고 있던 참조값을 잃거나 변수 자체가 없어짐으로써 더 이상 사용되지 않는 객체를 제거해주는 역할을 하는 모듈은?",
+    "imageUrl": null,
+    "answers": [
+      "가비지 컬렉터", "Garbage Collector", "GC"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30149,
+    "type": "CS_KNOWLEDGE",
+    "question": "공유 자원에 대한 접근을 제한하기 위해, 하나의 자원에 여러 프로세스나 스레드가 동시에 접근하지 못하도록 제어하는 동기화 기법은 무엇인가?",
+    "imageUrl": null,
+    "answers": [
+      "세마포어", "Semaphore", "세마포"
+    ],
+    "difficulty": "HARD"
+  },
+  {
+    "id": 30150,
+    "type": "CS_KNOWLEDGE",
+    "question": "공유 자원에 여러 스레드가 동시에 접근하는 것을 방지하기 위해, 오직 하나의 스레드만 자원에 접근하도록 제어하는 잠금(Lock) 기반의 동기화 기법은?",
+    "imageUrl": null,
+    "answers": [
+      "뮤텍스", "Mutex"
+    ],
+    "difficulty": "HARD"
   }
 ]
