@@ -39,8 +39,8 @@
     "id": 11005,
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747301820/J1_amwkl6.png",
-    "answers": ["add(2, 3)", "add(2,3)"],
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1748771591/11005_avanbc.png",
+    "answers": ["return a+b", "return a + b", "return b+a", "return b + a"],
     "difficulty": "MEDIUM",
     "isRankingOnly": true
   },
@@ -57,8 +57,8 @@
     "id": 11007,
     "type": "FILL_IN_BLANK",
     "question": null,
-    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747301821/C5_vikyyx.png",
-    "answers": ["func(3, 4)", "func(3,4)"],
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1748771591/11007_i26uuj.png",
+    "answers": ["multiply"],
     "difficulty": "MEDIUM",
     "isRankingOnly": true
   },
@@ -67,7 +67,7 @@
     "type": "FILL_IN_BLANK",
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747301821/J4_qclquj.png",
-    "answers": ["a.equals(b)"],
+    "answers": ["a==b", "a == b"],
     "difficulty": "MEDIUM",
     "isRankingOnly": true
   },
@@ -103,7 +103,7 @@
     "type": "FILL_IN_BLANK",
     "question": null,
     "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1747301822/CP3_fr3fde.png",
-    "answers": ["int &ref"],
+    "answers": ["int &ref", "int& ref"],
     "difficulty": "HARD",
     "isRankingOnly": true
   },
@@ -114,6 +114,87 @@
     "imageUrl": "https://res.cloudinary.com/drg2mizpe/image/upload/v1747648450/q01_lwug5e.png",
     "answers": ["%d"],
     "difficulty": "EASY",
+    "isRankingOnly": true
+  },
+  {
+    "id": 11014,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1748722587/11014_gna0ho.png",
+    "answers": ["__attribute__"],
+    "difficulty": "HARD",
+    "isRankingOnly": true
+  },
+  {
+    "id": 11015,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1748722587/11015_ghvmer.png",
+    "answers": ["hello()"],
+    "difficulty": "HARD",
+    "isRankingOnly": true
+  },
+  {
+    "id": 11016,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1748722588/11016_km6xis.png",
+    "answers": ["setAccessible"],
+    "difficulty": "HARD",
+    "isRankingOnly": true
+  },
+  {
+    "id": 11017,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1748722588/11017_o50fmi.png",
+    "answers": ["StopIteration"],
+    "difficulty": "HARD",
+    "isRankingOnly": true
+  },
+  {
+    "id": 11018,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1748722589/11018_inwlve.png",
+    "answers": ["check"],
+    "difficulty": "HARD",
+    "isRankingOnly": true
+  },
+  {
+    "id": 11019,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1748722589/11019_wvjgcp.png",
+    "answers": ["t+t", "t + t"],
+    "difficulty": "HARD",
+    "isRankingOnly": true
+  },
+  {
+    "id": 11020,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1748722590/11020_r58hf0.png",
+    "answers": ["Exception"],
+    "difficulty": "HARD",
+    "isRankingOnly": true
+  },
+  {
+    "id": 11021,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1748722591/11021_n3qtg7.png",
+    "answers": ["offsetof"],
+    "difficulty": "HARD",
+    "isRankingOnly": true
+  },
+  {
+    "id": 11022,
+    "type": "FILL_IN_BLANK",
+    "question": null,
+    "imageUrl": "https://res.cloudinary.com/dmby7fmvo/image/upload/v1748722591/11022_qtdkkm.png",
+    "answers": ["__contains__"],
+    "difficulty": "HARD",
     "isRankingOnly": true
   }
 ]
