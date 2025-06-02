@@ -50,7 +50,7 @@ function RankingGameMain() {
   return (
     <>
       <Navbar type="user" />
-      <div className="gameMain">
+      <div className="rankingGameMain">
         <section className="rankingmodebackground">
           <Rback />
         </section>

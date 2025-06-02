@@ -2,7 +2,8 @@
   background: linear-gradient(to bottom, #0d1a2d, #11293d, #183b4e);
 
   width: 100vw;
-  min-height: 100vh;
+  height: auto;
+  min-height: calc(100vh - 56px);
 
   display: flex;
   flex-direction: column;
@@ -32,6 +33,34 @@
 
       p {
         margin: 10px;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 911px) {
+  html, body, #root {
+    overflow-y: auto;
+  }
+  
+  .gameMain {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+
+    .gameContent {
+      padding-bottom: 120px;
+
+      .gameCards {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+
+        .gameCard {
+          width: 80%;
+          max-width: 280px;
+        }
       }
     }
   }
