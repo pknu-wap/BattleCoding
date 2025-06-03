@@ -36,10 +36,10 @@ public class AuthController {
 
         ResponseCookie responseCookie = ResponseCookie.from("refreshToken", refreshToken)
                 .httpOnly(true)
-                .secure(false)  // https 도입시 true로 변경해야 함
+                .secure(true)  // https 도입시 true로 변경해야 함
                 .path("/")
                 .maxAge(30 * 24 * 60 * 60) // 30일
-                .sameSite("Lax")
+                .sameSite("None")
                 .build();
 
         response.addHeader("Set-Cookie", responseCookie.toString());
@@ -64,10 +64,10 @@ public class AuthController {
     public ResponseEntity<Void> logout(HttpServletResponse response) {
         ResponseCookie deleteCookie = ResponseCookie.from("refreshToken", "")
                 .httpOnly(true)
-                .secure(false) // 배포 서버면 true, 로컬 테스트면 false
+                .secure(true) // 배포 서버면 true, 로컬 테스트면 false
                 .path("/")
                 .maxAge(0)     // ✅ 즉시 만료
-                .sameSite("Lax") // 실제 쿠키 설정과 동일하게 맞춰야 함
+                .sameSite("None") // 실제 쿠키 설정과 동일하게 맞춰야 함
                 .build();
 
         response.addHeader(HttpHeaders.SET_COOKIE, deleteCookie.toString());
