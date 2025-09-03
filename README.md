@@ -1,5 +1,5 @@
 # 🚀 **BATTLE CODING**
-
+## 참고: 9월 12일까지 접속이 불가능합니다.
 ![Battle Coding Banner](https://res.cloudinary.com/dmby7fmvo/image/upload/v1748859307/start_zpfpsj.png)
 
 ### **🔥 코딩 퀴즈 기반 게임형 학습 플랫폼🔥**
